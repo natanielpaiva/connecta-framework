@@ -149,7 +149,7 @@
     </repositories>
     
     <modules>
-        <module>connecta-core</module>
+        <module>../connecta-core</module>
     </modules>
   
   
