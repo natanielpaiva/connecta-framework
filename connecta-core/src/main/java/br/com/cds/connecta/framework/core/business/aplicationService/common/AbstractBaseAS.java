@@ -15,16 +15,16 @@ public abstract class AbstractBaseAS<E extends AbstractBaseEntity> {
 	public abstract AbstractBaseEntity get(Long id) throws Exception;		
 
 	
-	public abstract List<AbstractBaseEntity> list() throws Exception;
+	public abstract List<E> list() throws Exception;
 
 	
-	public abstract AbstractBaseEntity saveOrUpdate(AbstractBaseEntity entity) throws Exception; 
+	public abstract E saveOrUpdate(E entity) throws Exception; 
 	
 	
 	public abstract void delete(Long id) throws Exception;
 		
 
-	public abstract void deleteAll(List<Long> listIds) throws Exception;
+	public abstract void delete(E entity) throws Exception;
 	
 	
 

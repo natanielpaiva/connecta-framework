@@ -49,11 +49,11 @@ public abstract class AbstractBaseJpaDAO<E extends AbstractBaseEntity> {
 	protected Class<E> entityClass = null;
 
 	@SuppressWarnings("unchecked")
-	protected E get(Long id) {
+	public E get(Long id) {
 		return (E) entityManager.find(getEntityClass(), id);
 	}
 
-	protected E saveOrUpdate(E entity) {
+	public E saveOrUpdate(E entity) {
 		return saveOrUpdate(entity, true);
 	}
 
@@ -83,7 +83,7 @@ public abstract class AbstractBaseJpaDAO<E extends AbstractBaseEntity> {
 		entityManager.flush();
 	}
 
-	protected void delete(Long id) {
+	public void delete(Long id) {
 		if (id == null) {
 			throw new IllegalArgumentException("A entidade não pode ser nula.");
 		}
@@ -91,7 +91,7 @@ public abstract class AbstractBaseJpaDAO<E extends AbstractBaseEntity> {
 		delete(obj);
 	}
 
-	protected void delete(E entity) {
+	public void delete(E entity) {
 		delete(entity, true);
 	}
 

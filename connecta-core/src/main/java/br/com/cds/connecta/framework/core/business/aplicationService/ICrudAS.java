@@ -20,8 +20,6 @@ public interface ICrudAS {
 
 	public abstract void delete(Long id) throws Exception;
 
-	public abstract void deleteAll(List<Long> listIds) throws Exception;
-
 	public abstract ICrudDAO getCrudDao();
 
 	public abstract void setCrudDao(ICrudDAO crudDao);

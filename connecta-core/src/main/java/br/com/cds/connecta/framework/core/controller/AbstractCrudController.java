@@ -56,12 +56,6 @@ public abstract class AbstractCrudController extends AbstractBaseController<Abst
 	    getCrudAS().delete(id);
 	}
 
-	@Override
-	protected void deleteAll(List<Long> listIds, HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-		getCrudAS().deleteAll(listIds);
-	}
-
 	public ICrudAS getCrudAS() {
 		return crudAS;
 	}

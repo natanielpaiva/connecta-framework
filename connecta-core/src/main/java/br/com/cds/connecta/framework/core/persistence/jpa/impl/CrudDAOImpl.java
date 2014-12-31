@@ -2,6 +2,7 @@ package br.com.cds.connecta.framework.core.persistence.jpa.impl;
 
 import java.util.List;
 
+import javax.persistence.Entity;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -35,12 +36,11 @@ public final class CrudDAOImpl extends AbstractBaseJpaDAO<AbstractBaseEntity> im
 	    }
 	    
 	    @Override
-		public void delete(List<Long> listIds){
-	        for (Long id : listIds) {
-	            AbstractBaseEntity entity = get(id);
-	            entityManager.remove(entity);
-	        }
-	        entityManager.flush();
+	    public void delete(AbstractBaseEntity entity){
+	      if (entity != null) {
+	    	  entityManager.remove(entity);
+		      entityManager.flush();
+	      }
 	    }
 	    
 	  

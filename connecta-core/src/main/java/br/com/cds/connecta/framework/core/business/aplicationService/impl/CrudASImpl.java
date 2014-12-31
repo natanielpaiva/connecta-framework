@@ -42,12 +42,6 @@ public final class CrudASImpl extends AbstractBaseAS<AbstractBaseEntity> impleme
 		crudDao.setEntityClass(getEntityClass());
 		crudDao.delete(id);
 	}
-
-	@Override
-	public void deleteAll(List<Long> listIds) throws Exception {
-		crudDao.setEntityClass(getEntityClass());
-		crudDao.delete(listIds);
-	}
 	
 	@Override
 	public Class<AbstractBaseEntity> getEntityClass() {
@@ -68,5 +62,12 @@ public final class CrudASImpl extends AbstractBaseAS<AbstractBaseEntity> impleme
 	public void setCrudDao(ICrudDAO crudDao) {
 		this.crudDao = crudDao;
 	}
+
+	@Override
+	public void delete(AbstractBaseEntity entity) throws Exception {
+		crudDao.setEntityClass(getEntityClass());
+		crudDao.delete(entity);
+	}
+
 	
 }

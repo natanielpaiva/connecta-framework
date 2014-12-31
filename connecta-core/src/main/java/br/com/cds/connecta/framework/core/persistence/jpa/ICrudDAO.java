@@ -12,7 +12,7 @@ public interface ICrudDAO {
 
 	public abstract void delete(Long id);
 
-	public abstract void delete(List<Long> listIds);
+	public abstract void delete(AbstractBaseEntity entity);
 
 	public abstract List<AbstractBaseEntity> list();
 	
