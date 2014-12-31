@@ -59,11 +59,7 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
 	}
 	
 	
-	 @ResponseBody
-	    @RequestMapping(method = RequestMethod.DELETE,produces = MediaType.APPLICATION_JSON_VALUE)
-	    public void delete(@RequestBody List<Long> listIds,HttpServletRequest request, HttpServletResponse response) throws Exception{
-		 deleteAll(listIds, request, response);
-	 }
+	
 
 	@RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
@@ -196,14 +192,6 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
 			HttpServletResponse response) throws Exception;
 	
 	
-	/**
-	 * @param listIds
-	 * @param request
-	 * @param response
-	 * @throws Exception
-	 */
-	protected abstract void deleteAll(List<Long> listIds, HttpServletRequest request,
-			HttpServletResponse response) throws Exception;
 
 
 }
