@@ -25,7 +25,7 @@ import br.com.cds.connecta.framework.core.exeception.SystemException;
 
 public abstract class InitController {
 
-	@Autowired
+	//@Autowired
 	protected TranslateMessage translate;
 
 	/**

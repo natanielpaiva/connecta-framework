@@ -1,25 +1,24 @@
 package br.com.cds.connecta.framework.core.bean.message;
 
-import java.io.Serializable;
 import java.util.Locale;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.NoSuchMessageException;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Component;
 
 import br.com.cds.connecta.framework.core.domain.MessageEnum;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.NoSuchMessageException;
 
 @Component
-public class TranslateMessage implements Serializable {
+public class TranslateMessage {
 
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = -7834720852460047555L;
-	
-	@Autowired
+     *
+     */
+    private static final long serialVersionUID = -7834720852460047555L;
+
+    @Autowired
     protected ApplicationContext context;
 
     /**

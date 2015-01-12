@@ -32,7 +32,6 @@ import br.com.cds.connecta.framework.core.exeception.SystemException;
  * uma Entity(JPA) ou Bean
  */
 
-
 public abstract class AbstractBaseController<E extends AbstractBaseEntity> extends
 		InitController {
 
