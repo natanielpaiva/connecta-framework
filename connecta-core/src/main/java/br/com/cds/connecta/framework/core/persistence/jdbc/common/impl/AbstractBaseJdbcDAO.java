@@ -19,7 +19,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.support.incrementer.OracleSequenceMaxValueIncrementer;
 import org.springframework.stereotype.Repository;
 
-import br.com.cds.connecta.framework.core.exeception.PersistenceException;
+import br.com.cds.connecta.framework.core.exception.PersistenceException;
 
 /**
  *
@@ -84,7 +84,11 @@ public abstract class AbstractBaseJdbcDAO  {
         }
     }
 
-//	 salve ,update ,delete
+    /**
+     * Save, update e delete
+     * @param sql
+     * @return 
+     */
     public int executeQuery(String sql) {
         try {
             return getJdbcTemplate().update(sql);
@@ -94,7 +98,12 @@ public abstract class AbstractBaseJdbcDAO  {
         }
     }
 
-    // salve ,update ,delete
+    /**
+     * Save, update e delete
+     * @param sql
+     * @param params
+     * @return 
+     */
     public int executeQuery(String sql, Object...params) {
         try {
             return getJdbcTemplate().update(sql, params);

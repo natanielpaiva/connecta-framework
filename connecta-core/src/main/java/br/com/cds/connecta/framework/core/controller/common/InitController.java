@@ -20,159 +20,133 @@ import br.com.cds.connecta.framework.core.bean.message.Message;
 import br.com.cds.connecta.framework.core.bean.message.MessageModel;
 import br.com.cds.connecta.framework.core.bean.message.TranslateMessage;
 import br.com.cds.connecta.framework.core.domain.MessageEnum;
-import br.com.cds.connecta.framework.core.exeception.BusinessException;
-import br.com.cds.connecta.framework.core.exeception.SystemException;
+import br.com.cds.connecta.framework.core.exception.BusinessException;
+import br.com.cds.connecta.framework.core.exception.SystemException;
 
 public abstract class InitController {
 
-	//@Autowired
-	protected TranslateMessage translate;
+    @Autowired
+    protected TranslateMessage translate;
 
-	/**
-	 * add uma notificacao de erro ao request
-	 * 
-	 * @param key
-	 *            chave da mensagem contida no arquivo properties
-	 * @param args
-	 *            parametros para formatar mensagem
-	 */
-	public void addErroRequest(BusinessException e) {
-		for (Message msg : e.getMessages()) {
-			addErroRequest(msg.getKey(), msg.getParams());
-		}
-	}
+    /**
+     * add uma notificacao de erro ao request
+     *
+     * @param e
+     */
+    public void addErroRequest(BusinessException e) {
+        for (Message msg : e.getMessages()) {
+            addErroRequest(msg.getKey(), msg.getParams());
+        }
+    }
 
-	/**
-	 * add uma notificacao de erro ao request
-	 * 
-	 * @param key
-	 *            chave da mensagem contida no arquivo properties
-	 * @param args
-	 *            parametros para formatar mensagem
-	 * @param viewName
-	 * @throws ModelNotification
-	 *             recuperada via interceptor para lancar mensagem
-	 */
-	public void addErroRequest(String key, Object... args) {
-		putMessageRequest(getMsgErro(key, args));
-	}
+    /**
+     * add uma notificacao de erro ao request
+     *
+     * @param key chave da mensagem contida no arquivo properties
+     * @param args parametros para formatar mensagem
+     */
+    public void addErroRequest(String key, Object... args) {
+        putMessageRequest(getMsgErro(key, args));
+    }
 
-	/**
-	 * add uma notificacao de info ao request
-	 * 
-	 * @param key
-	 *            chave da mensagem contida no arquivo properties
-	 * @param args
-	 *            parametros para formatar mensagem
-	 * @param viewName
-	 * @throws ModelNotification
-	 *             recuperada via interceptor para lancar mensagem
-	 */
-	public void addInfoRequest(String key, Object... args) {
-		putMessageRequest(getMsgInfo(key, args));
-	}
-	
-	
-	/**
-	 * add uma notificacao de alerta ao request
-	 * 
-	 * @param key
-	 *            chave da mensagem contida no arquivo properties
-	 * @param args
-	 *            parametros para formatar mensagem
-	 * @throws ModelNotification
-	 *             recuperada via interceptor para lancar mensagem
-	 */
-	public void addAlertaRequest(String key, Object... args) {
-		putMessageRequest(getMsgAlerta(key, args));
-	}
-	
-	/**
-	 * Traduz a chave com os parametros para uma mensagem mapeada no arquivo de
-	 * messages
-	 * 
-	 * @param key
-	 *            chave da mensagem contida no arquivo properties
-	 * @param args
-	 *            parametros para formatar mensagem
-	 * @return {@link MessageModel} com tipo {@link MessageType#ERROR}
-	 */
-	protected MessageModel getMsgErro(String key, Object... args) {
-		return translate.getMsg(key, MessageEnum.ERROR, args);
-	}
+    /**
+     * add uma notificacao de info ao request
+     *
+     * @param key chave da mensagem contida no arquivo properties
+     * @param args parametros para formatar mensagem
+     */
+    public void addInfoRequest(String key, Object... args) {
+        putMessageRequest(getMsgInfo(key, args));
+    }
 
-	/**
-	 * Traduz a chave com os parametros para uma mensagem mapeada no arquivo de
-	 * messages
-	 * 
-	 * @param key
-	 *            chave da mensagem contida no arquivo properties
-	 * @param args
-	 *            parametros para formatar mensagem
-	 * @return {@link MessageModel} com tipo {@link MessageType#INFO}
-	 */
-	protected MessageModel getMsgInfo(String key, Object... args) {
-		return translate.getMsg(key, MessageEnum.INFO, args);
-	}
+    /**
+     * add uma notificacao de alerta ao request
+     *
+     * @param key chave da mensagem contida no arquivo properties
+     * @param args parametros para formatar mensagem
+     */
+    public void addAlertaRequest(String key, Object... args) {
+        putMessageRequest(getMsgAlerta(key, args));
+    }
 
-	/**
-	 * Traduz a chave com os parametros para uma mensagem mapeada no arquivo de
-	 * messages
-	 * 
-	 * @param key
-	 *            chave da mensagem contida no arquivo properties
-	 * @param args
-	 *            parametros para formatar mensagem
-	 * @return {@link MessageModel} com tipo {@link MessageType#WARN}
-	 */
-	protected MessageModel getMsgAlerta(String key, Object... args) {
-		return translate.getMsg(key, MessageEnum.WARN, args);
-	}
-	
-	
-	@SuppressWarnings("unchecked")
-	protected void putMessageRequest(MessageModel message) {
+    /**
+     * Traduz a chave com os parametros para uma mensagem mapeada no arquivo de
+     * messages
+     *
+     * @param key chave da mensagem contida no arquivo properties
+     * @param args parametros para formatar mensagem
+     * @return {@link MessageModel} com tipo {@link MessageType#ERROR}
+     */
+    protected MessageModel getMsgErro(String key, Object... args) {
+        return translate.getMsg(key, MessageEnum.ERROR, args);
+    }
 
-		ServletRequestAttributes servletRequest = (ServletRequestAttributes) RequestContextHolder
-				.currentRequestAttributes();
-		List<MessageModel> notificatios = (List<MessageModel>) servletRequest
-				.getAttribute("notifications", RequestAttributes.SCOPE_REQUEST);
-		if (notificatios == null) {
-			notificatios = new ArrayList<MessageModel>();
-			servletRequest.setAttribute("notifications", notificatios,
-					RequestAttributes.SCOPE_REQUEST);
-		}
+    /**
+     * Traduz a chave com os parametros para uma mensagem mapeada no arquivo de
+     * messages
+     *
+     * @param key chave da mensagem contida no arquivo properties
+     * @param args parametros para formatar mensagem
+     * @return {@link MessageModel} com tipo {@link MessageType#INFO}
+     */
+    protected MessageModel getMsgInfo(String key, Object... args) {
+        return translate.getMsg(key, MessageEnum.INFO, args);
+    }
 
-		notificatios.add(message);
-	}
+    /**
+     * Traduz a chave com os parametros para uma mensagem mapeada no arquivo de
+     * messages
+     *
+     * @param key chave da mensagem contida no arquivo properties
+     * @param args parametros para formatar mensagem
+     * @return {@link MessageModel} com tipo {@link MessageType#WARN}
+     */
+    protected MessageModel getMsgAlerta(String key, Object... args) {
+        return translate.getMsg(key, MessageEnum.WARN, args);
+    }
 
-	@ExceptionHandler({ BusinessException.class })
-	public Object handleException(BusinessException e,
-			HttpServletResponse response) {
-		addErroRequest(e);
-		return null;
-	}
-	
+    @SuppressWarnings("unchecked")
+    protected void putMessageRequest(MessageModel message) {
 
-	@ExceptionHandler({ Throwable.class })
-	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-	public ModelAndView handleException(Throwable e,
-			HttpServletResponse response) {
-		response.setContentType(MediaType.TEXT_HTML_VALUE);
-		SystemException system;
-		if (SystemException.class == e.getClass()) {
-			system = (SystemException) e;
-		} else {
-			system = new SystemException(e);
-		}
+        ServletRequestAttributes servletRequest = (ServletRequestAttributes) RequestContextHolder
+                .currentRequestAttributes();
+        List<MessageModel> notificatios = (List<MessageModel>) servletRequest
+                .getAttribute("notifications", RequestAttributes.SCOPE_REQUEST);
+        if (notificatios == null) {
+            notificatios = new ArrayList<MessageModel>();
+            servletRequest.setAttribute("notifications", notificatios,
+                    RequestAttributes.SCOPE_REQUEST);
+        }
 
-		MessageModel msgVO = translate.getMsg(system.getMessage(),
-				MessageEnum.ERROR);
+        notificatios.add(message);
+    }
 
-		ModelAndView model = new ModelAndView("500");
-		model.addObject("msgVO", msgVO);
-		model.addObject("trace", system.getStackTrace());
-		return model;
-	}
+    @ExceptionHandler({BusinessException.class})
+    public Object handleException(BusinessException e,
+            HttpServletResponse response) {
+        addErroRequest(e);
+        return null;
+    }
+
+    @ExceptionHandler({Throwable.class})
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public ModelAndView handleException(Throwable e,
+            HttpServletResponse response) {
+        response.setContentType(MediaType.TEXT_HTML_VALUE);
+        SystemException system;
+        if (SystemException.class == e.getClass()) {
+            system = (SystemException) e;
+        } else {
+            system = new SystemException(e);
+        }
+
+        MessageModel msgVO = translate.getMsg(system.getMessage(),
+                MessageEnum.ERROR);
+
+        ModelAndView model = new ModelAndView("500");
+        model.addObject("msgVO", msgVO);
+        model.addObject("trace", system.getStackTrace());
+        return model;
+    }
 
 }

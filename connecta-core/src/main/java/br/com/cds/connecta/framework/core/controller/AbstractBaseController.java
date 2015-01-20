@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import br.com.cds.connecta.framework.core.controller.common.InitController;
 import br.com.cds.connecta.framework.core.domain.ExceptionEnum;
 import br.com.cds.connecta.framework.core.entity.AbstractBaseEntity;
-import br.com.cds.connecta.framework.core.exeception.SystemException;
+import br.com.cds.connecta.framework.core.exception.SystemException;
 
 /**
  * 

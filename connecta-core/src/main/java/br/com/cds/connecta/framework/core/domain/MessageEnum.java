@@ -8,7 +8,7 @@ package br.com.cds.connecta.framework.core.domain;
 public enum MessageEnum {
 
     /**
-     * Mensagens informativas que exibem o progreço da execução da aplicação
+     * Mensagens informativas que exibem o progresso da execução da aplicação
      */
     INFO,
     /**

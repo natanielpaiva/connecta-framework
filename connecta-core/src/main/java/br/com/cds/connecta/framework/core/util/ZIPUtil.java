@@ -18,14 +18,14 @@ import java.util.zip.ZipInputStream;
  */
 public class ZIPUtil {
 	
-	public static void main(String[] args){
-		
-		String filename = "D:\\Downloads\\sample.zip";
-		String outputFolder = "D:\\opt\\files";
-		
-		ZIPUtil.unzip(filename, outputFolder);
-		
-	}
+//	public static void main(String[] args){
+//		
+//		String filename = "D:\\Downloads\\sample.zip";
+//		String outputFolder = "D:\\opt\\files";
+//		
+//		ZIPUtil.unzip(filename, outputFolder);
+//		
+//	}
 	
 	private ZIPUtil(){
 		

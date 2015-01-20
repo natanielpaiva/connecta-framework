@@ -6,16 +6,16 @@ import br.com.cds.connecta.framework.core.entity.AbstractBaseEntity;
 
 public interface ICrudDAO {
 
-	public abstract AbstractBaseEntity saveOrUpdate(AbstractBaseEntity entity);
+    public abstract AbstractBaseEntity saveOrUpdate(AbstractBaseEntity entity);
 
-	public abstract AbstractBaseEntity get(Long id);
+    public abstract AbstractBaseEntity get(Long id);
 
-	public abstract void delete(Long id);
+    public abstract void delete(Long id);
 
-	public abstract void delete(AbstractBaseEntity entity);
+    public abstract void delete(AbstractBaseEntity entity);
 
-	public abstract List<AbstractBaseEntity> list();
-	
-	 public void setEntityClass(Class<AbstractBaseEntity> entityClass); 
+    public abstract List<AbstractBaseEntity> list();
+
+    public void setEntityClass(Class<AbstractBaseEntity> entityClass);
 
 }

@@ -1,6 +1,5 @@
 package br.com.cds.connecta.framework.core.controller;
 
-
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,57 +11,56 @@ import br.com.cds.connecta.framework.core.business.aplicationService.ICrudAS;
 import br.com.cds.connecta.framework.core.entity.AbstractBaseEntity;
 
 /**
- * Classe base com CRUD para Controladoras 
- * 
+ * Classe base com CRUD para Controladoras
+ *
  */
 public abstract class AbstractCrudController extends AbstractBaseController<AbstractBaseEntity> {
-	
-	@Autowired
-	protected ICrudAS crudAS;
-	
-	public AbstractCrudController(Class<AbstractBaseEntity> entityClass) {
-		this.getCrudAS().setEntityClass(entityClass);
-	}
 
-	@Override
-	protected AbstractBaseEntity get(Long id, HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-		return getCrudAS().get(id);
-	}
+    @Autowired
+    protected ICrudAS crudAS;
 
-	@Override
-	protected List<AbstractBaseEntity> list(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-		return getCrudAS().list();
-	}
+    public AbstractCrudController(Class<AbstractBaseEntity> entityClass) {
+        this.getCrudAS().setEntityClass(entityClass);
+    }
 
-	@Override
-	protected AbstractBaseEntity save(AbstractBaseEntity entity,
-			HttpServletRequest request, HttpServletResponse response)
-			throws Exception {
-		return getCrudAS().saveOrUpdate(entity);
-	}
+    @Override
+    protected AbstractBaseEntity get(Long id, HttpServletRequest request,
+            HttpServletResponse response) throws Exception {
+        return getCrudAS().get(id);
+    }
 
-	@Override
-	protected AbstractBaseEntity update(Long id, AbstractBaseEntity entity,
-			HttpServletRequest request, HttpServletResponse response)
-			throws Exception {
-		return getCrudAS().saveOrUpdate(entity);
-	}
+    @Override
+    protected List<AbstractBaseEntity> list(HttpServletRequest request,
+            HttpServletResponse response) throws Exception {
+        return getCrudAS().list();
+    }
 
-	@Override
-	protected void delete(Long id, HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-	    getCrudAS().delete(id);
-	}
+    @Override
+    protected AbstractBaseEntity save(AbstractBaseEntity entity,
+            HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        return getCrudAS().saveOrUpdate(entity);
+    }
 
-	public ICrudAS getCrudAS() {
-		return crudAS;
-	}
+    @Override
+    protected AbstractBaseEntity update(Long id, AbstractBaseEntity entity,
+            HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        return getCrudAS().saveOrUpdate(entity);
+    }
 
-	public void setCrudAS(ICrudAS crudAS) {
-		this.crudAS = crudAS;
-	}
-	
-   
+    @Override
+    protected void delete(Long id, HttpServletRequest request,
+            HttpServletResponse response) throws Exception {
+        getCrudAS().delete(id);
+    }
+
+    public ICrudAS getCrudAS() {
+        return crudAS;
+    }
+
+    public void setCrudAS(ICrudAS crudAS) {
+        this.crudAS = crudAS;
+    }
+
 }

@@ -11,7 +11,6 @@ import java.util.Collection;
  */
 
 public class Util {
-
     
     public static boolean isEmpty(Collection<?> collection) {
         return (isNull(collection) || collection.isEmpty());
@@ -24,5 +23,5 @@ public class Util {
     public static boolean isNull(Object s) {
         return (s == null);
     }
-	
+    
 }
