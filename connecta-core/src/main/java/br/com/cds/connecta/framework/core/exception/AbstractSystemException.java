@@ -1,4 +1,4 @@
-package br.com.cds.connecta.framework.core.exeception;
+package br.com.cds.connecta.framework.core.exception;
 
 import java.util.ArrayList;
 import java.util.List;

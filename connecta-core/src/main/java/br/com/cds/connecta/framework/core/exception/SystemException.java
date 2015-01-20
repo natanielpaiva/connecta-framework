@@ -1,5 +1,5 @@
 
-package br.com.cds.connecta.framework.core.exeception;
+package br.com.cds.connecta.framework.core.exception;
 
 
 
