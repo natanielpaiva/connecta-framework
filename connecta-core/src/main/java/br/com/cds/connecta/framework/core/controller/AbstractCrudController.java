@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.cds.connecta.framework.core.business.aplicationService.ICrudAS;
 import br.com.cds.connecta.framework.core.entity.AbstractBaseEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 /**
  * Classe base com CRUD para Controladoras
@@ -24,29 +26,33 @@ public abstract class AbstractCrudController extends AbstractBaseController<Abst
     }
 
     @Override
-    protected AbstractBaseEntity get(Long id, HttpServletRequest request,
+    protected ResponseEntity<AbstractBaseEntity> get(Long id, HttpServletRequest request,
             HttpServletResponse response) throws Exception {
-        return getCrudAS().get(id);
+        AbstractBaseEntity entity = getCrudAS().get(id);
+        return new ResponseEntity<AbstractBaseEntity>(entity, HttpStatus.OK);
     }
 
     @Override
-    protected List<AbstractBaseEntity> list(HttpServletRequest request,
+    protected ResponseEntity<List<AbstractBaseEntity>> list(HttpServletRequest request,
             HttpServletResponse response) throws Exception {
-        return getCrudAS().list();
+        List<AbstractBaseEntity> list = getCrudAS().list();
+        return new ResponseEntity<List<AbstractBaseEntity>>(list, HttpStatus.OK);
     }
 
     @Override
-    protected AbstractBaseEntity save(AbstractBaseEntity entity,
+    protected ResponseEntity<AbstractBaseEntity> save(AbstractBaseEntity entity,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        return getCrudAS().saveOrUpdate(entity);
+        AbstractBaseEntity newEntity = getCrudAS().saveOrUpdate(entity);
+        return new ResponseEntity<AbstractBaseEntity>(newEntity, HttpStatus.OK);
     }
 
     @Override
-    protected AbstractBaseEntity update(Long id, AbstractBaseEntity entity,
+    protected ResponseEntity<AbstractBaseEntity> update(Long id, AbstractBaseEntity entity,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        return getCrudAS().saveOrUpdate(entity);
+        AbstractBaseEntity newEntity = getCrudAS().saveOrUpdate(entity);
+        return new ResponseEntity<AbstractBaseEntity>(newEntity, HttpStatus.OK);
     }
 
     @Override
