@@ -18,13 +18,13 @@
         http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
-    <import resource="classpath:META-INF/br.com.cds.connecta.framework.core.xml" />
+    <import resource="br.com.cds.connecta.framework.core.xml" />
 
     <!--CONTEXT-->
     
     <aop:aspectj-autoproxy/>
     
-    <context:component-scan base-package="br.com.cds.portal" />
+    <context:component-scan base-package="br.com.cds" />
 
     <!-- Bundle de Mensagens -->
     <bean id="messageSource"
@@ -46,7 +46,11 @@
     </bean>
 
     <bean name="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="packagesToScan" value="br.com.cds.portal.entity" />
+        <property name="packagesToScan">
+            <array>
+                <ref bean="connectaTestEntityPackage" />
+            </array>
+        </property>
         <property name="dataSource" ref="dataSource" />
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
