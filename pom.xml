@@ -147,12 +147,12 @@
                 <version>2.4</version>
             </dependency>
             
-         <!--   
+           
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>connecta-core</artifactId>
                 <version>${project.version}</version>
-            </dependency> -->
+            </dependency>
             
             <!-- Other Dependencies -->
             
@@ -228,7 +228,7 @@
     </repositories>
     
     <modules>
-        <module>../connecta-core</module>
+        <module>connecta-core</module>
     </modules>
 
 </project>
