@@ -150,10 +150,9 @@
         </dependency>
         
         <dependency>
-            <groupId>com.fasterxml</groupId>
-            <artifactId>jackson-module-hibernate</artifactId>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-hibernate4</artifactId>
         </dependency>
-
 	
     </dependencies>
 

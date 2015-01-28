@@ -5,8 +5,9 @@
  */
 package br.com.cds.connecta.framework.core.bean.message;
 
-import com.fasterxml.jackson.module.hibernate.HibernateModule;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
+
 
 /**
  *
@@ -15,7 +16,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 public class HibernateAwareObjectMapper extends ObjectMapper {
 
     public HibernateAwareObjectMapper() {
-        registerModule(new HibernateModule());
+        registerModule(new Hibernate4Module());
     }
     
 }
