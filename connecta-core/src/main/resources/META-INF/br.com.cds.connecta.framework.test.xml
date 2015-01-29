@@ -62,6 +62,8 @@
         </property>
     </bean>
     
+    <!--TODO Subir pro core e usar o formato AOP-->
+    
     <bean name="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>

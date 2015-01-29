@@ -14,7 +14,7 @@
 
     <context:component-scan base-package="br.com.cds.connecta.framework.core" />
     
-    <aop:aspectj-autoproxy/>
+    <aop:aspectj-autoproxy />
 
     <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <!-- max size file upload 4mb 4096kb 4194304bytes-->
@@ -22,7 +22,6 @@
     </bean>
     
     <!-- ViewResolver e Configuração do Jackson -->
-    
     <bean id="objectMapper" class="br.com.cds.connecta.framework.core.bean.message.HibernateAwareObjectMapper" />
     
     <mvc:annotation-driven>
@@ -33,20 +32,7 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
     
-    <!--    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-        <property name="messageConverters">
-            <list>
-                <ref bean="jacksonMessageConverter"/>
-            </list>
-        </property>
-    </bean>-->
-    
-    <bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
-        <property name="objectMapper" ref="objectMapper" />
-    </bean>
-    
     <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-        <!--<property name="order" value="1" />-->
         <property name="mediaTypes">
             <map>
                 <entry key="html" value="text/html"/>
@@ -54,22 +40,7 @@
                 <entry key="xml"  value="application/xml"/>
             </map>
         </property>
-        <!-- FIXME Isso é necessário? -->
-        <!--        <property name="viewResolvers">
-            <list>
-                <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-                    <property name="prefix" value="/pages/" />
-                    <property name="suffix" value=".jsp" />
-                </bean>
-            </list>
-        </property>-->
         <property name="defaultContentType" value="application/json"/>
-        <property name="defaultViews">
-            <list>
-                <!-- JSON View -->
-                <ref bean="jsonView" />
-            </list>
-        </property>
     </bean>
 
     <!-- Internacionalização -->
@@ -85,6 +56,26 @@
         <ref bean="localeChangeInterceptor" />
     </mvc:interceptors>
     
+    <!--TRANSACTION-->
     
+    <!--
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="save*" propagation="NESTED"/>
+            <tx:method name="delete*" propagation="NESTED"/>
+            <tx:method name="update*" propagation="NESTED"/>
+            <tx:method name="get*" read-only="true" isolation="DEFAULT" propagation="SUPPORTS"/>
+            <tx:method name="list*" read-only="true" isolation="DEFAULT" propagation="SUPPORTS"/>
+            <tx:method name="*" propagation="NOT_SUPPORTED" isolation="DEFAULT" />
+        </tx:attributes>
+    </tx:advice>
     
+    <aop:config>
+        <aop:pointcut id="allServices" expression="execution(* br.com.cds.presenter.businnes.*.*.*(..))" />
+        <aop:advisor pointcut-ref="allServices"   advice-ref="txAdvice" />
+    </aop:config>
+    -->
+    
+    <!--SECURITY-->
+    <!--<security:global-method-security secured-annotations="enabled" jsr250-annotations="enabled" />-->
 </beans>
