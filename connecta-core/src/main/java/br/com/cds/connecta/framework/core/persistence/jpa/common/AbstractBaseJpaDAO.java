@@ -11,8 +11,6 @@ import br.com.cds.connecta.framework.core.entity.AbstractBaseEntity;
 import br.com.cds.connecta.framework.core.util.Util;
 import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Classe base para os serviços de persistência
@@ -40,7 +38,6 @@ public abstract class AbstractBaseJpaDAO<E extends AbstractBaseEntity> {
         return (E) getEntityManager().find(getEntityClass(), id);
     }
 
-    @Transactional(propagation = Propagation.REQUIRED)
     public E saveOrUpdate(E entity) {
         return saveOrUpdate(entity, true);
     }
@@ -71,7 +68,6 @@ public abstract class AbstractBaseJpaDAO<E extends AbstractBaseEntity> {
         getEntityManager().flush();
     }
 
-    @Transactional(propagation = Propagation.REQUIRED)
     public void delete(Long id) {
         if (id == null) {
             throw new IllegalArgumentException("A entidade não pode ser nula.");
@@ -80,17 +76,15 @@ public abstract class AbstractBaseJpaDAO<E extends AbstractBaseEntity> {
         delete(obj);
     }
 
-    @Transactional(propagation = Propagation.REQUIRED)
     public void delete(E entity) {
         delete(entity, true);
     }
 
-    @Transactional(propagation = Propagation.REQUIRED)
     protected void delete(E entity, boolean flush) {
         if (Util.isNull(entity)) {
             throw new IllegalArgumentException("A entidade não pode ser nula.");
         }
-        //refresh(entity);
+        
         getEntityManager().remove(entity);
         if (flush) {
             flush();
