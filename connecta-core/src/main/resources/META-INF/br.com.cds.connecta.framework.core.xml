@@ -14,61 +14,65 @@
 
     <context:component-scan base-package="br.com.cds.connecta.framework.core" />
     
-    <!--<tx:annotation-driven />-->
-    
-    <mvc:annotation-driven />
+    <aop:aspectj-autoproxy/>
 
     <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <!-- max size file upload 4mb 4096kb 4194304bytes-->
         <property name="maxUploadSize" value="4194304"/>
     </bean>
     
+    <!-- ViewResolver e Configuração do Jackson -->
+    
     <bean id="objectMapper" class="br.com.cds.connecta.framework.core.bean.message.HibernateAwareObjectMapper" />
-
-    <!-- Estratégia de Resolução de Pagina - ViewResolver -->
+    
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper" ref="objectMapper" />
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    
+    <!--    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="jacksonMessageConverter"/>
+            </list>
+        </property>
+    </bean>-->
+    
+    <bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+        <property name="objectMapper" ref="objectMapper" />
+    </bean>
+    
     <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-        <property name="order" value="1" />
+        <!--<property name="order" value="1" />-->
         <property name="mediaTypes">
             <map>
-                <entry key="json" value="application/json" />
-                <entry key="html" value="text/html" />
+                <entry key="html" value="text/html"/>
+                <entry key="json" value="application/json"/>
+                <entry key="xml"  value="application/xml"/>
             </map>
         </property>
         <!-- FIXME Isso é necessário? -->
-        <property name="viewResolvers">
+        <!--        <property name="viewResolvers">
             <list>
                 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
                     <property name="prefix" value="/pages/" />
                     <property name="suffix" value=".jsp" />
                 </bean>
             </list>
-        </property>
+        </property>-->
         <property name="defaultContentType" value="application/json"/>
         <property name="defaultViews">
             <list>
                 <!-- JSON View -->
-                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
-                    <property name="objectMapper" ref="objectMapper" />
-                </bean>
-            </list>
-        </property>
-    </bean>
-    
-    <bean id="jacksonMessageConverter"
-        class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-        <property name="objectMapper" ref="objectMapper" />
-    </bean>
-    
-    <bean
-        class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-        <property name="messageConverters">
-            <list>
-                <ref bean="jacksonMessageConverter"/>
+                <ref bean="jsonView" />
             </list>
         </property>
     </bean>
 
-    <!-- Internacionalizacao -->
+    <!-- Internacionalização -->
     <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
         <property name="paramName" value="lang" />
     </bean>
@@ -79,10 +83,8 @@
 
     <mvc:interceptors>
         <ref bean="localeChangeInterceptor" />
-        <!--<bean class="br.com.cds.framework.core.services.RestServiceInterceptor">
-            <property name="restServicePrefix" value="/services/rest/" />
-            <property name="superClassRest" value="br.com.cds.framework.core.services.template.AbstractRestService" />
-        </bean>-->
     </mvc:interceptors>
+    
+    
     
 </beans>

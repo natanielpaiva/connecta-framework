@@ -22,8 +22,6 @@
 
     <!--CONTEXT-->
     
-    <aop:aspectj-autoproxy/>
-    
     <context:component-scan base-package="br.com.cds" />
 
     <!-- Bundle de Mensagens -->
