@@ -9,7 +9,7 @@ import br.com.cds.connecta.framework.core.entity.AbstractBaseEntity;
 @Service
 public abstract class AbstractBaseAS<E extends AbstractBaseEntity> {
 
-    public abstract AbstractBaseEntity get(Long id) throws Exception;
+    public abstract E get(Long id) throws Exception;
 
     public abstract List<E> list() throws Exception;
 
