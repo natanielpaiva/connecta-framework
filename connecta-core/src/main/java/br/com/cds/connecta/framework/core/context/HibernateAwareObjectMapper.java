@@ -19,6 +19,7 @@ public class HibernateAwareObjectMapper extends ObjectMapper {
 
     public HibernateAwareObjectMapper() {
         final Hibernate4Module hibernate4Module = new Hibernate4Module();
+        hibernate4Module.configure(Hibernate4Module.Feature.USE_TRANSIENT_ANNOTATION, false);
         
         registerModule(hibernate4Module);
     }
