@@ -5,6 +5,7 @@
  */
 package br.com.cds.connecta.framework.core.context;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
 import org.springframework.stereotype.Component;
@@ -18,8 +19,11 @@ import org.springframework.stereotype.Component;
 public class HibernateAwareObjectMapper extends ObjectMapper {
 
     public HibernateAwareObjectMapper() {
-        final Hibernate4Module hibernate4Module = new Hibernate4Module();
+        Hibernate4Module hibernate4Module = new Hibernate4Module();
+        
         hibernate4Module.configure(Hibernate4Module.Feature.USE_TRANSIENT_ANNOTATION, false);
+        
+        configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         
         registerModule(hibernate4Module);
     }
