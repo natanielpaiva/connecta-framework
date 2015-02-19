@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import br.com.cds.connecta.framework.core.entity.AbstractBaseEntity;
 import br.com.cds.connecta.framework.core.util.Util;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -126,7 +127,7 @@ public abstract class AbstractBaseJpaDAO<E extends AbstractBaseEntity> {
         return getEntityManager().createNamedQuery(namedQuery);
     }
 
-    protected Query createNamedQuery(String namedQuery, Class<E> resultClass) {
+    protected TypedQuery<E> createNamedQuery(String namedQuery, Class<E> resultClass) {
         return getEntityManager().createNamedQuery(namedQuery, resultClass);
     }
 
