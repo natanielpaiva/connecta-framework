@@ -25,8 +25,6 @@
                 <version>${project.version}</version>
             </dependency>
 
-
-
             <dependency>
                 <!--for the annotations. -->
                 <groupId>org.springframework</groupId>
@@ -100,24 +98,12 @@
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-entitymanager</artifactId>
                 <version>${hibernate.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.javassist</groupId>
-                        <artifactId>javassist</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
 
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-core</artifactId>
                 <version>${hibernate.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.javassist</groupId>
-                        <artifactId>javassist</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
 
             <dependency>
@@ -125,19 +111,6 @@
                 <artifactId>hibernate-commons-annotations</artifactId>
                 <version>4.0.5.Final</version>
             </dependency>
-
-            <dependency>
-                <groupId>org.hibernate.javax.persistence</groupId>
-                <artifactId>hibernate-jpa-2.1-api</artifactId>
-                <version>1.0.0.Final</version>
-            </dependency>
-		
-            <dependency>
-                <groupId>org.javassist</groupId>
-                <artifactId>javassist</artifactId>
-                <version>3.19.0-GA</version>
-            </dependency>
-		    
 
             <dependency>
                 <groupId>org.hibernate</groupId>
@@ -207,9 +180,6 @@
                 <artifactId>javax.servlet-api</artifactId>
                 <version>3.0.1</version>
             </dependency>
-			
-			
-			
 
             <!-- Commons -->
             <dependency>
