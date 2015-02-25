@@ -1,3 +1,5 @@
+package br.com.cds.connecta.framework.core.util;
+
 
 import br.com.cds.connecta.framework.core.bean.message.TranslateMessage;
 import br.com.cds.connecta.framework.core.context.SpringContext;
