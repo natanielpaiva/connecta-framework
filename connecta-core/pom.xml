@@ -18,7 +18,6 @@
 	<!-- Spring-->
 	
 		<dependency>
-			<!--for the annotations. -->
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 		</dependency>
@@ -74,7 +73,6 @@
         </dependency>
         
         
-        
         <!-- HIBERNATE -->
 
         <dependency>
@@ -124,44 +122,6 @@
             <artifactId>commons-beanutils</artifactId>
             <version>1.8.3</version>
         </dependency>
-		
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            
-            <type>jar</type>
-        </dependency>
-        
-        <!-- Teste -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-        </dependency>
-        
-        	<dependency>
-				<groupId>com.jayway.jsonpath</groupId>
-				<artifactId>json-path</artifactId>
-			</dependency>
-             
-        <dependency>
-            <groupId>org.exparity</groupId>
-            <artifactId>hamcrest-date</artifactId>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-        </dependency>
-        
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
         
         <!-- Commons -->
         <dependency>
@@ -187,9 +147,21 @@
             <artifactId>jackson-datatype-hibernate4</artifactId>
         </dependency>
         
-        <!-- WEB -->
+      
         
         <!-- Dependências de Teste Unitário -->
+        
+        <dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+		</dependency>
+     
+        
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+        
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
@@ -211,16 +183,10 @@
                 <groupId>org.exparity</groupId>
                 <artifactId>hamcrest-date</artifactId>
             </dependency>     
-                        
-            <dependency>
-                <groupId>com.h2database</groupId>
-                <artifactId>h2</artifactId>
-            </dependency>
         
             <dependency>
 			    <groupId>com.fasterxml.jackson.core</groupId>
 			    <artifactId>jackson-core</artifactId>
-			
 			</dependency>
 
 			<dependency>
