@@ -16,6 +16,7 @@
             <tx:method name="update*" propagation="REQUIRED"/>
             <tx:method name="get*" read-only="true" isolation="DEFAULT" propagation="SUPPORTS"/>
             <tx:method name="list*" read-only="true" isolation="DEFAULT" propagation="SUPPORTS"/>
+            <tx:method name="*" propagation="NOT_SUPPORTED" isolation="DEFAULT" />
         </tx:attributes>
     </tx:advice>
     
