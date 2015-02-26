@@ -9,10 +9,7 @@
     <description>Manages dependencies and configuration</description>
 
     <properties>
-        <spring-framework.version>4.0.8.RELEASE</spring-framework.version>
-        <spring-security.version>3.2.5.RELEASE</spring-security.version>
-        <spring.security.jwt.version>1.0.2.RELEASE
-        </spring.security.jwt.version>
+        <spring-framework.version>4.1.5.RELEASE</spring-framework.version>
         <hibernate.version>4.2.7.Final</hibernate.version>
     </properties>
 
