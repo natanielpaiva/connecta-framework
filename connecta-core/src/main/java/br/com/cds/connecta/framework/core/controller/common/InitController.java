@@ -22,7 +22,9 @@ import br.com.cds.connecta.framework.core.bean.message.TranslateMessage;
 import br.com.cds.connecta.framework.core.domain.MessageEnum;
 import br.com.cds.connecta.framework.core.exception.BusinessException;
 import br.com.cds.connecta.framework.core.exception.SystemException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 
+@ControllerAdvice
 public abstract class InitController {
 
     @Autowired
