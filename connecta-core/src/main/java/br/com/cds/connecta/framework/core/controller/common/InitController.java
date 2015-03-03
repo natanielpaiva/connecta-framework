@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import org.springframework.web.servlet.ModelAndView;
 
 import br.com.cds.connecta.framework.core.bean.message.Message;
 import br.com.cds.connecta.framework.core.bean.message.MessageModel;
@@ -22,6 +21,7 @@ import br.com.cds.connecta.framework.core.bean.message.TranslateMessage;
 import br.com.cds.connecta.framework.core.domain.MessageEnum;
 import br.com.cds.connecta.framework.core.exception.BusinessException;
 import br.com.cds.connecta.framework.core.exception.SystemException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 @ControllerAdvice
@@ -129,10 +129,21 @@ public abstract class InitController {
         addErroRequest(e);
         return null;
     }
+    
+    @ExceptionHandler({
+        IllegalArgumentException.class,
+        IllegalStateException.class
+    })
+    public ResponseEntity handleException(RuntimeException e) {
+        
+        MessageModel mm = new MessageModel(null, e.getMessage(), MessageEnum.WARN);
+        
+        return new ResponseEntity(mm, HttpStatus.BAD_REQUEST);
+    }
 
     @ExceptionHandler({Throwable.class})
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public ModelAndView handleException(Throwable e,
+    public ResponseEntity handleException(Throwable e,
             HttpServletResponse response) {
         response.setContentType(MediaType.TEXT_HTML_VALUE);
         SystemException system;
@@ -142,13 +153,9 @@ public abstract class InitController {
             system = new SystemException(e);
         }
 
-        MessageModel msgVO = translate.getMsg(system.getMessage(),
-                MessageEnum.ERROR);
+        MessageModel mm = translate.getMsg(system.getMessage(), MessageEnum.ERROR);
 
-        ModelAndView model = new ModelAndView("500");
-        model.addObject("msgVO", msgVO);
-        model.addObject("trace", system.getStackTrace());
-        return model;
+        return new ResponseEntity(mm, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 }

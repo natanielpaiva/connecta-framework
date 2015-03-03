@@ -14,15 +14,22 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 /**
+ * Componente de paginação
  * 
- * @author pires
+ * @author vinicius.pires
  */
 public class PaginationFilter {
 
     private HashMap<String, Sort.Direction> sort;
     private Integer page;
     private Integer size;
+    private Boolean array;
 
+    /**
+     * Cria um objeto {@link Sort} de acordo com os parâmetros passados para o PaginationFilter
+     * @return 
+     * @throws IllegalStateException Caso não tenha informações suficientes para criar o Sort
+     */
     public Sort makeSort() {
         if ( sort == null ) {
             throw new IllegalStateException("Invalid sorting");
@@ -37,6 +44,13 @@ public class PaginationFilter {
         return new Sort(orders);
     }
 
+    /**
+     * Cria um objeto {@link Pageable} de acordo com os parâmetros de paginação
+     * passados para o PaginationFilter
+     * 
+     * @return 
+     * @throws IllegalStateException Caso não tenha informações suficientes para criar o Pageable
+     */
     public Pageable makePageable() {
         if ( !hasPagination() ) {
             throw new IllegalStateException("Invalid pagination");
@@ -45,6 +59,13 @@ public class PaginationFilter {
         return new PageRequest(page, size);
     }
     
+    /**
+     * Cria um objeto {@link Pageable} de acordo com os parâmetros de paginação
+     * e ordenação passados para o PaginationFilter
+     * @return 
+     * @throws IllegalStateException Caso não tenha informações suficientes
+     * para criar o Pageable com ordenação
+     */
     public Pageable makeSortablePageable() {
         if ( !hasPagination() ) {
             throw new IllegalStateException("Invalid sortable pagination");
@@ -52,7 +73,7 @@ public class PaginationFilter {
         
         return new PageRequest(page, size, makeSort());
     }
-
+    
     public HashMap<String, Sort.Direction> getSort() {
         return sort;
     }
@@ -75,6 +96,18 @@ public class PaginationFilter {
 
     public void setSize(Integer size) {
         this.size = size;
+    }
+    
+    /**
+     * Retorna se o conteúdo da resposta deve ser um Array ou o objeto {@link Pageable}
+     * @return 
+     */
+    public boolean isArray() {
+        return array != null && array;
+    }
+
+    public void setArray(Boolean array) {
+        this.array = array;
     }
 
     public boolean hasPagination() {
