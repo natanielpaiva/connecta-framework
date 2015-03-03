@@ -167,6 +167,20 @@ public class PaginationFilterTest {
         assertThat(filter.hasPaginationAndSorting(), equalTo(true));
     }
     
+    @Test
+    public void informsIfReturnTypeIsArray() {
+        PaginationFilter filter = newFilter(null, null);
+        
+        filter.setArray(true);
+        assertThat(filter.isArray(), equalTo(true));
+        
+        filter.setArray(false);
+        assertThat(filter.isArray(), equalTo(false));
+        
+        filter.setArray(null);
+        assertThat(filter.isArray(), equalTo(false));
+    }
+    
     @Test(expected = IllegalStateException.class)
     public void failsOnInvalidPaginationPage() {
         PaginationFilter filter = newFilter(null, 10);
