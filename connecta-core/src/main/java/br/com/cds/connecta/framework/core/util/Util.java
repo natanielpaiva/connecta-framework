@@ -24,6 +24,14 @@ public class Util {
     public static boolean isNull(Object s) {
         return (s == null);
     }
+    
+    public static boolean isNotEmpty(Collection<?> collection) {
+        return !(isNull(collection) || collection.isEmpty());
+    }
+    
+    public static boolean isNotNull(Object s) {
+        return !(s == null);
+    }
 
     /**
      * Metodo para verificar caso a lista seja null e retornar uma lista vazia.
