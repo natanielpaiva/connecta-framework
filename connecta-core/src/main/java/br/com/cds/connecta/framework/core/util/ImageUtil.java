@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
+import org.apache.commons.codec.binary.Base64;
 
 /**
  * 
@@ -111,5 +112,25 @@ public class ImageUtil {
 		
         return bigInputStream;
 	}
+    
+    /**
+     * Faz o encode de uma imagem para uma String Base64
+     *
+     * @param imageByteArray - byte array
+     * @return String a {@link java.lang.String}
+     */
+    public static String encodeImageToBase64(byte[] imageByteArray) {
+        return Base64.encodeBase64URLSafeString(imageByteArray);
+    }
+
+    /**
+     * Faz o decode de uma imagem a partir de uma String Base64
+     *
+     * @param imageDataString - a {@link java.lang.String}
+     * @return byte array
+     */
+    public static byte[] decodeImageFromBase64(String imageDataString) {
+        return Base64.decodeBase64(imageDataString);
+    }
  
 }
