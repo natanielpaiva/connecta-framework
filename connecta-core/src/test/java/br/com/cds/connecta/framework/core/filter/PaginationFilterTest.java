@@ -31,10 +31,10 @@ public class PaginationFilterTest {
         PaginationFilter filter = new PaginationFilter();
         
         if (page != null) {
-            filter.setPage(page);
+            filter.setPage(page+1);
         }
         if (size != null) {
-            filter.setSize(size);
+            filter.setCount(size);
         }
         if (sort != null) {
             filter.setSort(sort);
