@@ -120,7 +120,7 @@ public class ImageUtil {
      * @return String a {@link java.lang.String}
      */
     public static String encodeImageToBase64(byte[] imageByteArray) {
-        return Base64.encodeBase64URLSafeString(imageByteArray);
+        return Base64.encodeBase64String(imageByteArray);
     }
 
     /**
