@@ -4,9 +4,6 @@ import br.com.cds.connecta.framework.core.bean.common.AbstractBaseBean;
 
 /**
  * Classe para transpote de informações de erro ou alerta.
- *
- * 
- *
  */
 public class Message extends AbstractBaseBean {
 
