@@ -1,26 +1,23 @@
 package br.com.cds.connecta.framework.core.controller.common;
 
-import java.awt.TrayIcon.MessageType;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.context.request.RequestAttributes;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 import br.com.cds.connecta.framework.core.bean.message.Message;
 import br.com.cds.connecta.framework.core.bean.message.MessageModel;
 import br.com.cds.connecta.framework.core.bean.message.TranslateMessage;
+import br.com.cds.connecta.framework.core.domain.ExceptionEnum;
 import br.com.cds.connecta.framework.core.domain.MessageEnum;
 import br.com.cds.connecta.framework.core.exception.BusinessException;
 import br.com.cds.connecta.framework.core.exception.SystemException;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
@@ -30,122 +27,46 @@ public abstract class InitController {
     @Autowired
     protected TranslateMessage translate;
 
-    /**
-     * add uma notificacao de erro ao request
-     *
-     * @param e
-     */
-    public void addErroRequest(BusinessException e) {
-        for (Message msg : e.getMessages()) {
-            addErroRequest(msg.getKey(), msg.getParams());
-        }
-    }
+    
 
     /**
-     * add uma notificacao de erro ao request
-     *
-     * @param key chave da mensagem contida no arquivo properties
-     * @param args parametros para formatar mensagem
+     * Traduz a chave com os parametros para uma mensagem mapeada
+     * no arquivo de mensagens
+     * 
+     * @param key
+     * @param messageEnum
+     * @param args
+     * @return 
      */
-    public void addErroRequest(String key, Object... args) {
-        putMessageRequest(getMsgErro(key, args));
-    }
-
-    /**
-     * add uma notificacao de info ao request
-     *
-     * @param key chave da mensagem contida no arquivo properties
-     * @param args parametros para formatar mensagem
-     */
-    public void addInfoRequest(String key, Object... args) {
-        putMessageRequest(getMsgInfo(key, args));
-    }
-
-    /**
-     * add uma notificacao de alerta ao request
-     *
-     * @param key chave da mensagem contida no arquivo properties
-     * @param args parametros para formatar mensagem
-     */
-    public void addAlertaRequest(String key, Object... args) {
-        putMessageRequest(getMsgAlerta(key, args));
-    }
-
-    /**
-     * Traduz a chave com os parametros para uma mensagem mapeada no arquivo de
-     * messages
-     *
-     * @param key chave da mensagem contida no arquivo properties
-     * @param args parametros para formatar mensagem
-     * @return {@link MessageModel} com tipo {@link MessageType#ERROR}
-     */
-    protected MessageModel getMsgErro(String key, Object... args) {
-        return translate.getMsg(key, MessageEnum.ERROR, args);
-    }
-
-    /**
-     * Traduz a chave com os parametros para uma mensagem mapeada no arquivo de
-     * messages
-     *
-     * @param key chave da mensagem contida no arquivo properties
-     * @param args parametros para formatar mensagem
-     * @return {@link MessageModel} com tipo {@link MessageType#INFO}
-     */
-    protected MessageModel getMsgInfo(String key, Object... args) {
-        return translate.getMsg(key, MessageEnum.INFO, args);
-    }
-
-    /**
-     * Traduz a chave com os parametros para uma mensagem mapeada no arquivo de
-     * messages
-     *
-     * @param key chave da mensagem contida no arquivo properties
-     * @param args parametros para formatar mensagem
-     * @return {@link MessageModel} com tipo {@link MessageType#WARN}
-     */
-    protected MessageModel getMsgAlerta(String key, Object... args) {
-        return translate.getMsg(key, MessageEnum.WARN, args);
-    }
-
-    @SuppressWarnings("unchecked")
-    protected void putMessageRequest(MessageModel message) {
-
-        ServletRequestAttributes servletRequest = (ServletRequestAttributes) RequestContextHolder
-                .currentRequestAttributes();
-        List<MessageModel> notificatios = (List<MessageModel>) servletRequest
-                .getAttribute("notifications", RequestAttributes.SCOPE_REQUEST);
-        if (notificatios == null) {
-            notificatios = new ArrayList<MessageModel>();
-            servletRequest.setAttribute("notifications", notificatios,
-                    RequestAttributes.SCOPE_REQUEST);
-        }
-
-        notificatios.add(message);
+    protected MessageModel getTranslatedMessage(String key, MessageEnum messageEnum, Object... args) {
+        return translate.getMsg(key, messageEnum, args);
     }
 
     @ExceptionHandler({BusinessException.class})
-    public Object handleException(BusinessException e,
-            HttpServletResponse response) {
-        addErroRequest(e);
-        return null;
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ResponseEntity handleException(BusinessException e) {
+        List<MessageModel> messageModels = new ArrayList<>();
+
+        for (Message message : e.getMessages()) {
+            messageModels.add(getTranslatedMessage(message.getMessage(), MessageEnum.ERROR));
+        }
+
+        return new ResponseEntity(messageModels, HttpStatus.BAD_REQUEST);
     }
-    
+
     @ExceptionHandler({
         IllegalArgumentException.class,
         IllegalStateException.class
     })
     public ResponseEntity handleException(RuntimeException e) {
-        
-        MessageModel mm = new MessageModel(null, e.getMessage(), MessageEnum.WARN);
-        
+        MessageModel mm = getTranslatedMessage(e.getMessage(), MessageEnum.WARN);
+
         return new ResponseEntity(mm, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler({Throwable.class})
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public ResponseEntity handleException(Throwable e,
-            HttpServletResponse response) {
-        response.setContentType(MediaType.TEXT_HTML_VALUE);
+    public ResponseEntity handleException(Throwable e) {
         SystemException system;
         if (SystemException.class == e.getClass()) {
             system = (SystemException) e;
@@ -154,8 +75,11 @@ public abstract class InitController {
         }
 
         MessageModel mm = translate.getMsg(system.getMessage(), MessageEnum.ERROR);
+        
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
 
-        return new ResponseEntity(mm, HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity(mm, headers, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 }
