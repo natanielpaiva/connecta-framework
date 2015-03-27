@@ -11,7 +11,7 @@
 
     <context:component-scan base-package="br.com.cds.connecta.framework.core" />
 
-    <bean id="multipartResolver"  class="br.com.cds.connecta.framework.core.context.RestfulMultipartResolver">
+    <bean id="multipartResolver"  class="br.com.cds.connecta.framework.core.context.RestfulCommonsMultipartResolver">
         <property name="maxUploadSize" value="10485760"/> <!-- 10MB -->
     </bean>
     
