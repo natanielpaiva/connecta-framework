@@ -10,7 +10,7 @@ import static org.mockito.Mockito.*;
  *
  * @author Vinicius Pires <vinicius.costa.pires at gmail.com>
  */
-public class RestfulMultipartResolverTest {
+public class RestfulCommonsMultipartResolverTest {
     static final String MULTIPART = "multipart/form-data";
     static final String JSON = "application/json";
     static final String POST = "POST";
