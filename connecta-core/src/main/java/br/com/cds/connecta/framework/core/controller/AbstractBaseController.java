@@ -104,8 +104,10 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
      * @return
      * @throws Exception
      */
-    protected abstract ResponseEntity<E> get(Long id, HttpServletRequest request,
-            HttpServletResponse response) throws Exception;
+    protected ResponseEntity<E> get(Long id, HttpServletRequest request, HttpServletResponse response) 
+            throws Exception {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
     /**
      * Permite fazer a listagem de resources
@@ -115,8 +117,10 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
      * @return
      * @throws Exception
      */
-    protected abstract ResponseEntity<List<E>> list(HttpServletRequest request,
-            HttpServletResponse response) throws Exception;
+    protected ResponseEntity<List<E>> list(HttpServletRequest request, HttpServletResponse response) 
+            throws Exception {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
     /**
      * Permite a criação de um resource
@@ -127,8 +131,10 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
      * @return
      * @throws Exception
      */
-    protected abstract ResponseEntity<E> save(E entity, HttpServletRequest request,
-            HttpServletResponse response) throws Exception;
+    protected ResponseEntity<E> save(E entity, HttpServletRequest request, HttpServletResponse response) 
+            throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
 
     /**
      * Permite a criaçao de resources anexados a arquivos
@@ -139,10 +145,12 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
      * @return
      * @throws Exception
      */
-    protected abstract ResponseEntity<E> createWithUpload(
-            MultipartHttpServletRequest multipartRequest,
-            HttpServletRequest request, HttpServletResponse response)
-            throws Exception;
+    protected ResponseEntity<E> createWithUpload(
+            MultipartHttpServletRequest multipartRequest, 
+            HttpServletRequest request, 
+            HttpServletResponse response) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
     /**
      * Permite o update de um resource específico
@@ -154,9 +162,11 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
      * @return
      * @throws Exception
      */
-    protected abstract ResponseEntity<E> update(Long id, E entity,
-            HttpServletRequest request, HttpServletResponse response)
-            throws Exception;
+    protected ResponseEntity<E> update(Long id, E entity, 
+            HttpServletRequest request, 
+            HttpServletResponse response) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
 
     /**
      * Permite o update de um resource que possui um arquivo anexo
@@ -168,10 +178,12 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
      * @return
      * @throws Exception
      */
-    protected abstract ResponseEntity<E> updateWithUpload(Long id,
-            MultipartHttpServletRequest multipartRequest,
-            HttpServletRequest request, HttpServletResponse response)
-            throws Exception;
+    protected ResponseEntity<E> updateWithUpload(Long id, 
+            MultipartHttpServletRequest multipartRequest, 
+            HttpServletRequest request, 
+            HttpServletResponse response) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
     /**
      *
@@ -181,7 +193,9 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
      * @param response
      * @throws Exception
      */
-    protected abstract void delete(Long id, HttpServletRequest request,
-            HttpServletResponse response) throws Exception;
+    protected void delete(Long id, HttpServletRequest request, 
+            HttpServletResponse response) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
 }
