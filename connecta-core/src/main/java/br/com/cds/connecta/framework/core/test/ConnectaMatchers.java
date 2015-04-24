@@ -97,6 +97,11 @@ public class ConnectaMatchers {
     public static Matcher<Object[]> peloMenosUmItem(final Matcher<?> matcher) {
         return new PeloMenosUmItem(matcher);
     }
+    
+    
+    public static Matcher<String> stringIgnoringWhitespaceAndCase(String expected) {
+        return new StringIgnoringWhitespaceAndCase(expected);
+    }
 
     // ------------ INNER CLASSES ------------
     /**
@@ -287,6 +292,29 @@ public class ConnectaMatchers {
         @Override
         public void describeTo(Description description) {
             matcher.describeTo(description);
+        }
+
+    }
+    
+    private static class StringIgnoringWhitespaceAndCase extends BaseMatcher<String> {
+        
+        private final String expected;
+        private final String REGEX = "[ |\n|\r|\n]";
+        
+        public StringIgnoringWhitespaceAndCase(String expected) {
+            this.expected = expected.replaceAll(REGEX, "");
+        }
+
+        @Override
+        public boolean matches(Object o) {
+            String string = ((String) o).replaceAll(REGEX, "");
+            
+            return string.equalsIgnoreCase(expected);
+        }
+
+        @Override
+        public void describeTo(Description description) {
+            description.appendValue(expected);
         }
 
     }
