@@ -231,7 +231,11 @@ public class ConnectaMatchers {
         @Override
         public boolean matches(Object o) {
             boolean retorno = true;
-            for (Object item : (List<?>) o) {
+            List<?> list = (List<?>) o;
+            if (list == null || list.isEmpty()) {
+                retorno = false;
+            }
+            for (Object item : list) {
                 if (!matcher.matches(item)) {
                     retorno = false;
                 }
