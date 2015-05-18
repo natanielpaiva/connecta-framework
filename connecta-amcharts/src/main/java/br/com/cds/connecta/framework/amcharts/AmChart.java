@@ -1,7 +1,5 @@
 package br.com.cds.connecta.framework.amcharts;
 
-import br.com.cds.connecta.framework.amcharts.AmBalloon;
-import br.com.cds.connecta.framework.amcharts.AmBalloon;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +16,7 @@ public class AmChart implements Serializable {
     private Color borderColor;
     private Color color;
     private String creditsPosition;
-    private List<Object> dataProvider = new ArrayList<Object>();
+    private List<Object> dataProvider = new ArrayList<>();
     private String decimalSeparator;
     private Object exportConfig;
     private String fontFamily;

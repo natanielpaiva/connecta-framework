@@ -21,6 +21,6 @@ public class Color implements Serializable{
     // Append # to color values as we have hex values
     @Override
     public String toString() {
-        return "#" + this.colorHexVal;
+        return  this.colorHexVal;
     }
 }
