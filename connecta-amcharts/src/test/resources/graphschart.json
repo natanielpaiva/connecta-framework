@@ -1,0 +1,7 @@
+{
+    "id": "AmGraph-1",
+    "title": "Column graph",
+    "type": "column",
+    "valueField": "column-1",
+    "fillAlphas": 1
+}
