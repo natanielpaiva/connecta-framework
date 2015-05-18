@@ -8,9 +8,9 @@
         <version>0.0.3-SNAPSHOT</version>
     </parent>
     
-    <artifactId>connecta-obiee-connector</artifactId>
-    <name>Connecta OBIEE Connector</name>
-    <description>Specific API to read data from OBIEE</description>
+    <artifactId>connecta-connectors</artifactId>
+    <name>Connecta Connectors</name>
+    <description>API to read data from remote services</description>
     
     <packaging>jar</packaging>
     
