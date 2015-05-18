@@ -1,0 +1,17 @@
+{
+  "type"    : "funnel",
+  "neckHeight"  : "30%",
+  "neckWidth" : "40%",
+  "titleField"  : "title",
+  "valueField"  : "value",
+  "dataProvider"  : [
+    {
+      "title": "Website visits",
+      "value": 300
+    },
+    {
+      "title": "Downloads",
+      "value": 123
+    }
+  ]
+}
