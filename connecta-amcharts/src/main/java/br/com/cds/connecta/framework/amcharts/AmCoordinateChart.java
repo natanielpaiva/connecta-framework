@@ -1,7 +1,5 @@
 package br.com.cds.connecta.framework.amcharts;
 
-import br.com.cds.connecta.framework.amcharts.AmChart;
-import br.com.cds.connecta.framework.amcharts.AmChart;
 import java.util.List;
 
 import br.com.cds.connecta.framework.amcharts.addition.Color;
