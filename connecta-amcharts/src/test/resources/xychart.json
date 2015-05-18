@@ -1,0 +1,29 @@
+{
+    "type": "xy",
+    "graphs": [
+        {
+            "bullet": "diamond",
+            "lineAlpha": 0,
+            "valueField": "value",
+            "xField": "x",
+            "yField": "y"
+        }
+    ],
+    "dataProvider": [
+        {
+            "y": 10,
+            "x": 14,
+            "value": 59
+        },
+        {
+            "y": 5,
+            "x": 3,
+            "value": 50
+        },
+        {
+            "y": 8,
+            "x": 19,
+            "value": 55
+        }
+    ]
+}
