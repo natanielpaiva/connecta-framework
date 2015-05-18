@@ -28,7 +28,7 @@ public class AmChart implements Serializable {
     private AmLegend legend;
     private String legendDiv;
     private Boolean panEventsEnabled;
-    private String pathToImages;
+    private String path;
     private Double percentPrecision;
     private Double precision;
     private List<Object> prefixesOfBigNumbers;
@@ -299,11 +299,11 @@ public class AmChart implements Serializable {
     /**
      *      *Specifies path to the folder where images like resize grips, lens and similar are.
      **/
-    public String getPathToImages() {
-        return pathToImages;
+    public String getPath() {
+        return path;
     }
-    public AmChart setPathToImages(String pathToImages) {
-        this.pathToImages = pathToImages;
+    public AmChart setPath(String path) {
+        this.path = path;
         return this;
     }
 
