@@ -1,6 +1,6 @@
 {
     "type": "serial",
-    "path": "http://www.amcharts.com/lib/3/",
+    "path": "https://www.amcharts.com/lib/3/",
     "categoryField": "category",
     "startDuration": 1,
     "categoryAxis": {
