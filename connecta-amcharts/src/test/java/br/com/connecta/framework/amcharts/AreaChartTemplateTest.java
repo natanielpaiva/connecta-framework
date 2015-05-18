@@ -1,11 +1,19 @@
 package br.com.connecta.framework.amcharts;
 
+import br.com.cds.connecta.framework.amcharts.AmBalloon;
+import br.com.cds.connecta.framework.amcharts.AmLegend;
 import br.com.cds.connecta.framework.amcharts.AmSerialChart;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
 
+/**
+ * 
+ * @author Vinicius Pires <vinicius.pires@cds.com.br>
+ */
 @JsonSubFolder("area")
 public class AreaChartTemplateTest extends BaseChartTemplateTest {
     
@@ -36,7 +44,36 @@ public class AreaChartTemplateTest extends BaseChartTemplateTest {
         assertThat(chart.getGraphs().get(1).getValueField(), is("column-2"));
         
         assertThat(chart.getGuides().size(), is(0));
-        assertThat(chart.getGuides().size(), is(0));
+        
+        assertThat(chart.getValueAxes().size(), is(1));
+        assertThat(chart.getValueAxes().get(0).getId(), is("ValueAxis-1"));
+        assertThat(chart.getValueAxes().get(0).getTitle(), is("Axis title"));
+        
+        assertThat(chart.getAllLabels().size(), is(0));
+        assertThat(chart.getBalloon(), isA(AmBalloon.class));
+        assertThat(chart.getLegend(), isA(AmLegend.class));
+        
+        assertThat(chart.getTitles().size(), is(1));
+        assertThat(chart.getTitles().get(0).getId(), is("Title-1"));
+        assertThat(chart.getTitles().get(0).getSize(), is(15d));
+        assertThat(chart.getTitles().get(0).getText(), is("Chart Title"));
+        
+        testDataProviders(chart.getDataProvider(), new String[]{
+            "category 1", "category 2", "category 3", "category 4", "category 5", "category 6", "category 7"
+        }, new int[]{
+            8, 6, 2, 1, 2, 3, 6
+        }, new int[]{
+            5, 7, 3, 3, 1, 2, 8
+        });
+    }
+
+    private void testDataProviders(List<Object> dataProvider, String[] categories, int[] columns1, int[] columns2) {
+        for (int i=0; i < dataProvider.size(); i++) {
+            Map provider = (Map<String, Object>) dataProvider.get(i);
+            assertThat((String)provider.get("category"), equalTo(categories[i]));
+            assertThat((Integer)provider.get("column-1"), equalTo(columns1[i]));
+            assertThat((Integer)provider.get("column-2"), equalTo(columns2[i]));
+        }
     }
     
 }
