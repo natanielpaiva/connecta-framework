@@ -8,13 +8,13 @@ import br.com.cds.connecta.framework.amcharts.AmLegend;
 import br.com.cds.connecta.framework.amcharts.AmPieChart;
 import br.com.cds.connecta.framework.amcharts.AmRadarChart;
 import br.com.cds.connecta.framework.amcharts.AmSerialChart;
+import br.com.cds.connecta.framework.amcharts.AmXYChart;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.FileInputStream;
 import java.io.IOException;
 import org.apache.commons.io.IOUtils;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class JsonConversionTest {
@@ -124,6 +124,16 @@ public class JsonConversionTest {
         assertThat(chart.getValueAxes().get(0).getAxisAlpha(), is(0.15));
         assertThat(chart.getValueAxes().get(0).getDashLength(), is(3d));
 
+    }
+    
+    @Test
+    public void xychart() throws IOException {
+        AmXYChart chart = mapper.readValue(json("xychart"), AmXYChart.class);
+        
+        assertThat(chart.getType(), is("xy"));
+        assertThat(chart.getGraphs().size(), is(1));
+        assertThat(chart.getGraphs().get(0).getXField(), is("x"));
+        assertThat(chart.getDataProvider().get(0).getClass(), is(Object.class));
     }
     
 }
