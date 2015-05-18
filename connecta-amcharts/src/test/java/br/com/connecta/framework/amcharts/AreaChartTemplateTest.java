@@ -21,13 +21,7 @@ public class AreaChartTemplateTest extends BaseChartTemplateTest {
     public void area() throws IOException {
         AmSerialChart chart = mapper.readValue(json("area-area"), AmSerialChart.class);
         
-        assertThat(chart.getType(), is("serial"));
-        assertThat(chart.getPath(), is("http://www.amcharts.com/lib/3/"));
-        assertThat(chart.getCategoryField(), is("category"));
-        assertThat(chart.getStartDuration(), is(1d));
-        assertThat(chart.getCategoryAxis().getGridPosition(), is("start"));
-        assertThat(chart.getTrendLines().size(), is(0));
-        assertThat(chart.getGraphs().size(), is(2));
+        basicAreaAsserts(chart);
         
         assertThat(chart.getGraphs().get(0).getBalloonText(), is("[[title]] of [[category]]:[[value]]"));
         assertThat(chart.getGraphs().get(0).getFillAlphas(), is(0.7));
@@ -65,6 +59,23 @@ public class AreaChartTemplateTest extends BaseChartTemplateTest {
         }, new int[]{
             5, 7, 3, 3, 1, 2, 8
         });
+    }
+    
+    @Test
+    public void stackedArea() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("area-area"), AmSerialChart.class);
+        
+        basicAreaAsserts(chart);
+    }
+    
+    private void basicAreaAsserts(AmSerialChart chart) {
+        assertThat(chart.getType(), is("serial"));
+        assertThat(chart.getPath(), is("http://www.amcharts.com/lib/3/"));
+        assertThat(chart.getCategoryField(), is("category"));
+        assertThat(chart.getStartDuration(), is(1d));
+        assertThat(chart.getCategoryAxis().getGridPosition(), is("start"));
+        assertThat(chart.getTrendLines().size(), is(0));
+        assertThat(chart.getGraphs().size(), is(2));
     }
 
     private void testDataProviders(List<Object> dataProvider, String[] categories, int[] columns1, int[] columns2) {
