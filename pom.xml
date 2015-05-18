@@ -1,11 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    
     <groupId>br.com.cds.connecta.framework</groupId>
     <artifactId>connecta-parent</artifactId>
     <version>0.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Connecta Parent</name>
+    <name>Connecta Framework</name>
     <description>Manages dependencies and configuration</description>
 
     <properties>
@@ -231,7 +232,7 @@
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>2.4</version>
+                <version>2.3</version>
             </dependency>
             
             <dependency>
@@ -344,9 +345,10 @@
             <url>http://maven.springframework.org/release</url>
         </repository>
     </repositories>
- 
+
     <modules>
         <module>connecta-core</module>
+        <module>connecta-connectors</module>
     </modules>
 
 </project>
