@@ -257,6 +257,40 @@ public class AreaChartTemplateTest extends BaseChartTemplateTest {
         }, "date");
     }
     
+    @Test
+    public void timeSeriesMinutes() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("area-time-series-minutes"), AmSerialChart.class);
+        
+        assertThat(chart.getDataDateFormat(), is("YYYY-MM-DD HH:NN"));
+        assertThat(chart.getCategoryAxis().getMinPeriod(), is("mm"));
+        assertThat(chart.getCategoryAxis().getParseDates(), is(true));
+        assertThat(chart.getChartCursor().getCategoryBalloonDateFormat(), is("JJ:NN"));
+        assertThat(chart.getChartScrollbar(), notNullValue());
+
+        testBasicAreaFields(chart, "date", null, null);
+        testGraphList(chart.getGraphs(), 2, new Boolean[]{
+            null, null
+        }, new String[]{
+            null, null
+        }, new Double[]{
+            0.7, 0.7
+        }, new Double[]{
+            0d, 0d
+        }, new String[]{
+            null, null
+        });
+        testValueAxes(chart, null);
+        testDataProviders(chart.getDataProvider(), new String[]{
+            "2014-03-01 07:57", "2014-03-01 07:58", "2014-03-01 07:59", "2014-03-01 08:00",
+            "2014-03-01 08:01", "2014-03-01 08:02", "2014-03-01 08:03"
+        }, new int[]{
+            8, 6, 2, 1, 2, 3, 6
+        }, new int[]{
+            5, 7, 3, 3, 1, 2, 8
+        }, "date");
+    }
+    
+    
     // HELPERS
     private void testBasicAreaFields(AmSerialChart chart, final String categoryField, Double startDuration, String gridPosition) {
         assertThat(chart.getType(), is("serial"));
