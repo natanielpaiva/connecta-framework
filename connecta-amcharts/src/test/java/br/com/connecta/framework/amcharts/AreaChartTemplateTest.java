@@ -157,6 +157,39 @@ public class AreaChartTemplateTest extends BaseChartTemplateTest {
         }, "date");
     }
     
+    @Test
+    public void dateSeriesMonthly() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("area-date-series-monthly"), AmSerialChart.class);
+        
+        assertThat(chart.getDataDateFormat(), is("YYYY-MM"));
+        assertThat(chart.getCategoryAxis().getParseDates(), is(true));
+        assertThat(chart.getCategoryAxis().getMinPeriod(), is("MM"));
+        assertThat(chart.getTheme(), is("default"));
+        assertThat(chart.getChartCursor().getCategoryBalloonDateFormat(), is("MMM YYYY"));
+        assertThat(chart.getChartScrollbar(), notNullValue());
+
+        testBasicAreaFields(chart, "date", null, null);
+        testGraphList(chart.getGraphs(), 2, new Boolean[]{
+            null, null
+        }, new String[]{
+            null, null
+        }, new Double[]{
+            0.7, 0.7
+        }, new Double[]{
+            0d, 0d
+        }, new String[]{
+            null, null
+        });
+        testValueAxes(chart, null);
+        testDataProviders(chart.getDataProvider(), new String[]{
+            "2014-01", "2014-02", "2014-03", "2014-04", "2014-05", "2014-06", "2014-07"
+        }, new int[]{
+            8, 6, 2, 1, 2, 3, 6
+        }, new int[]{
+            5, 7, 3, 3, 1, 2, 8
+        }, "date");
+    }
+    
     // HELPERS
     private void testBasicAreaFields(AmSerialChart chart, final String categoryField, Double startDuration, String gridPosition) {
         assertThat(chart.getType(), is("serial"));
