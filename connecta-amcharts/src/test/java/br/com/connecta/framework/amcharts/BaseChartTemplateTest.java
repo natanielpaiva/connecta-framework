@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 import org.apache.commons.io.IOUtils;
 
 @JsonSubFolder
-public class BaseChartTemplateTest {
+public abstract class BaseChartTemplateTest {
     private static final String FILE_TEMPLATE = "src/test/resources/chart-templates/%s/%s.json";
     
     protected ObjectMapper mapper = new ObjectMapper();

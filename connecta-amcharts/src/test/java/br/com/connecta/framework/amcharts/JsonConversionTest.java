@@ -127,7 +127,7 @@ public class JsonConversionTest {
     }
     
     @Test
-    public void xychart() throws IOException {
+    public void xyChart() throws IOException {
         AmXYChart chart = mapper.readValue(json("xychart"), AmXYChart.class);
         
         assertThat(chart.getType(), is("xy"));
