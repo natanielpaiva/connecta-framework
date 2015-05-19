@@ -6,6 +6,7 @@
     <version>3.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Connecta AmCharts</name>
+    <description>Java mirror model for AmCharts configuration</description>
     
     <parent>
         <groupId>br.com.cds.connecta.framework</groupId>
