@@ -33,6 +33,14 @@ public class ValueAxis extends AxisBase {
     private String unitPosition;
     private Boolean usePrefixes;
     private Boolean useScientificNotation;
+    
+    public ValueAxis(String id){
+        this.id = id;
+    }
+    
+    public ValueAxis(){
+    }
+    
 
     /**
      * Radar chart only. Specifies distance from axis to the axis title (category)
