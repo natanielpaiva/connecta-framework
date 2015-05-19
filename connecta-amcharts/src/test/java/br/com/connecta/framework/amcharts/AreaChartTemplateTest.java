@@ -1,6 +1,7 @@
 package br.com.connecta.framework.amcharts;
 
 import br.com.cds.connecta.framework.amcharts.AmBalloon;
+import br.com.cds.connecta.framework.amcharts.AmGraph;
 import br.com.cds.connecta.framework.amcharts.AmLegend;
 import br.com.cds.connecta.framework.amcharts.AmSerialChart;
 import java.io.IOException;
@@ -21,117 +22,194 @@ public class AreaChartTemplateTest extends BaseChartTemplateTest {
     public void area() throws IOException {
         AmSerialChart chart = mapper.readValue(json("area-area"), AmSerialChart.class);
 
-        testBasicAreaFields(chart);
+        testBasicAreaFields(chart, "category", 1.0, "start");
+        testGraphList(chart.getGraphs(), 2, new Boolean[]{
+            null, null
+        }, new String[]{
+            "[[title]] of [[category]]:[[value]]",
+            "[[title]] of [[category]]:[[value]]"
+        }, new Double[]{
+            0.7, 0.7
+        }, new Double[]{
+            0d, 0d
+        }, new String[]{
+            null, null
+        });
         testValueAxes(chart, null);
-        testGraphList(chart);
-    }
-
-    @Test
-    public void stackedArea() throws IOException {
-        AmSerialChart chart = mapper.readValue(json("stacked-area"), AmSerialChart.class);
-
-        testBasicAreaFields(chart);
-        testGraphList(chart);
-        testValueAxes(chart, "regular");
-    }
-
-    @Test
-    public void percent100stackedArea() throws IOException {
-        AmSerialChart chart = mapper.readValue(json("100-stacked-area"), AmSerialChart.class);
-
-        testBasicAreaFields(chart);
-        testGraphList(chart);
-        testValueAxes(chart, "100%");
-    }
-
-    @Test
-    public void clusteredStackedArea() throws IOException {
-        AmSerialChart chart = mapper.readValue(json("clustered-stacked-area"), AmSerialChart.class);
-
-        testBasicAreaFields(chart);
-        assertThat(chart.getGraphs().size(), is(3));
-        
-        Boolean[] newStacks = {
-            null,
-            null,
-            true
-        };
-        String[] balloonTexts = {
-            "[[title]] of [[category]]:[[value]]",
-            "[[title]] of [[category]]:[[value]]",
-            null
-        };
-
-        for (int i=0; i<3; i++) {
-            assertThat(chart.getGraphs().get(i).getFillAlphas(), is(1d));
-            assertThat(chart.getGraphs().get(i).getId(), is("AmGraph-" + (i + 1)));
-            assertThat(chart.getGraphs().get(i).getTitle(), is("graph " + (i + 1)));
-            assertThat(chart.getGraphs().get(i).getType(), is("column"));
-            assertThat(chart.getGraphs().get(i).getValueField(), is("column-" + (i + 1)));
-            assertThat(chart.getGraphs().get(i).getNewStack(), is(newStacks[i]));
-            assertThat(chart.getGraphs().get(i).getBalloonText(), is(balloonTexts[i]));
-        }
-
-        testValueAxes(chart, "regular");
-    }
-
-    private void testBasicAreaFields(AmSerialChart chart) {
-        assertThat(chart.getType(), is("serial"));
-        assertThat(chart.getPath(), is("http://www.amcharts.com/lib/3/"));
-        assertThat(chart.getCategoryField(), is("category"));
-        assertThat(chart.getStartDuration(), is(1d));
-        assertThat(chart.getCategoryAxis().getGridPosition(), is("start"));
-        assertThat(chart.getTrendLines().size(), is(0));
-
-        assertThat(chart.getGuides().size(), is(0));
-
-        assertThat(chart.getAllLabels().size(), is(0));
-        assertThat(chart.getBalloon(), isA(AmBalloon.class));
-        assertThat(chart.getLegend(), isA(AmLegend.class));
-
-        assertThat(chart.getTitles().size(), is(1));
-        assertThat(chart.getTitles().get(0).getId(), is("Title-1"));
-        assertThat(chart.getTitles().get(0).getSize(), is(15d));
-        assertThat(chart.getTitles().get(0).getText(), is("Chart Title"));
-
         testDataProviders(chart.getDataProvider(), new String[]{
             "category 1", "category 2", "category 3", "category 4", "category 5", "category 6", "category 7"
         }, new int[]{
             8, 6, 2, 1, 2, 3, 6
         }, new int[]{
             5, 7, 3, 3, 1, 2, 8
-        });
+        }, "category");
     }
 
-    private void testValueAxes(AmSerialChart chart, final String stackType) {
+    @Test
+    public void stackedArea() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("area-stacked"), AmSerialChart.class);
+
+        testBasicAreaFields(chart, "category", 1.0, "start");
+        testGraphList(chart.getGraphs(), 2, new Boolean[]{
+            null, null
+        }, new String[]{
+            "[[title]] of [[category]]:[[value]]",
+            "[[title]] of [[category]]:[[value]]"
+        }, new Double[]{
+            0.7, 0.7
+        }, new Double[]{
+            0d, 0d
+        }, new String[]{
+            null, null
+        });
+        testValueAxes(chart, "regular");
+        testDataProviders(chart.getDataProvider(), new String[]{
+            "category 1", "category 2", "category 3", "category 4", "category 5", "category 6", "category 7"
+        }, new int[]{
+            8, 6, 2, 1, 2, 3, 6
+        }, new int[]{
+            5, 7, 3, 3, 1, 2, 8
+        }, "category");
+    }
+
+    @Test
+    public void percent100stackedArea() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("area-100-stacked"), AmSerialChart.class);
+
+        testBasicAreaFields(chart, "category", 1.0, "start");
+        testGraphList(chart.getGraphs(), 2, new Boolean[]{
+            null, null
+        }, new String[]{
+            "[[title]] of [[category]]:[[value]]",
+            "[[title]] of [[category]]:[[value]]"
+        }, new Double[]{
+            0.7, 0.7
+        }, new Double[]{
+            0d, 0d
+        }, new String[]{
+            null, null
+        });
+        testValueAxes(chart, "100%");
+        testDataProviders(chart.getDataProvider(), new String[]{
+            "category 1", "category 2", "category 3", "category 4", "category 5", "category 6", "category 7"
+        }, new int[]{
+            8, 6, 2, 1, 2, 3, 6
+        }, new int[]{
+            5, 7, 3, 3, 1, 2, 8
+        }, "category");
+    }
+
+    @Test
+    public void rotatedArea() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("area-rotated"), AmSerialChart.class);
+        
+        assertThat(chart.getRotate(), is(true));
+
+        testBasicAreaFields(chart, "category", 1.0, "start");
+        testGraphList(chart.getGraphs(), 2, new Boolean[]{
+            null, null
+        }, new String[]{
+            "[[title]] of [[category]]:[[value]]",
+            "[[title]] of [[category]]:[[value]]"
+        }, new Double[]{
+            0.7, 0.7
+        }, new Double[]{
+            0d, 0d
+        }, new String[]{
+            null, null
+        });
+        testValueAxes(chart, null);
+        testDataProviders(chart.getDataProvider(), new String[]{
+            "category 1", "category 2", "category 3", "category 4", "category 5", "category 6", "category 7"
+        }, new int[]{
+            8, 6, 4, 5, 2, 3, 6
+        }, new int[]{
+            5, 7, 3, 1, 3, 2, 8
+        }, "category");
+    }
+    
+    @Test
+    public void dateSeriesDaily() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("area-date-series-daily"), AmSerialChart.class);
+        
+        assertThat(chart.getDataDateFormat(), is("YYYY-MM-DD"));
+        assertThat(chart.getCategoryAxis().getParseDates(), is(true));
+        assertThat(chart.getChartCursor(), notNullValue());
+        assertThat(chart.getChartScrollbar(), notNullValue());
+
+        testBasicAreaFields(chart, "date", null, null);
+        testGraphList(chart.getGraphs(), 2, new Boolean[]{
+            null, null
+        }, new String[]{
+            null, null
+        }, new Double[]{
+            0.7, 0.7
+        }, new Double[]{
+            0d, 0d
+        }, new String[]{
+            null, null
+        });
+        testValueAxes(chart, null);
+        testDataProviders(chart.getDataProvider(), new String[]{
+            "2014-03-01", "2014-03-02", "2014-03-03", "2014-03-04", "2014-03-05", "2014-03-06", "2014-03-07"
+        }, new int[]{
+            8, 6, 2, 1, 2, 3, 6
+        }, new int[]{
+            5, 7, 3, 3, 1, 2, 8
+        }, "date");
+    }
+    
+    // HELPERS
+    private void testBasicAreaFields(AmSerialChart chart, final String categoryField, Double startDuration, String gridPosition) {
+        assertThat(chart.getType(), is("serial"));
+        assertThat(chart.getPath(), is("http://www.amcharts.com/lib/3/"));
+        assertThat(chart.getCategoryField(), is(categoryField));
+        assertThat(chart.getStartDuration(), is(startDuration));
+        assertThat(chart.getCategoryAxis().getGridPosition(), is(gridPosition));
+        assertThat(chart.getTrendLines().size(), is(0));
+
+        assertThat(chart.getGuides().size(), is(0));
+
+        assertThat(chart.getAllLabels().size(), is(0));
+        assertThat(chart.getBalloon(), notNullValue());
+        assertThat(chart.getLegend(), notNullValue());
+
+        assertThat(chart.getTitles().size(), is(1));
+        assertThat(chart.getTitles().get(0).getId(), is("Title-1"));
+        assertThat(chart.getTitles().get(0).getSize(), is(15d));
+        assertThat(chart.getTitles().get(0).getText(), is("Chart Title"));
+    }
+    
+    private void testGraphList(List<AmGraph> graphs, int size,
+            Boolean[] newStacks, String[] balloonTexts, Double[] fillAlphas,
+            Double[] lineAlphas, String[] types) {
+        
+        assertThat(graphs.size(), is(size));
+        
+        for (int i=0; i<graphs.size(); i++) {
+            assertThat(graphs.get(i).getId(), is("AmGraph-" + (i + 1)));
+            assertThat(graphs.get(i).getTitle(), is("graph " + (i + 1)));
+            assertThat(graphs.get(i).getValueField(), is("column-" + (i + 1)));
+            
+            assertThat(graphs.get(i).getNewStack(), is(newStacks[i]));
+            assertThat(graphs.get(i).getBalloonText(), is(balloonTexts[i]));
+            assertThat(graphs.get(i).getFillAlphas(), is(fillAlphas[i]));
+            assertThat(graphs.get(i).getLineAlpha(), is(lineAlphas[i]));
+            assertThat(graphs.get(i).getType(), is(types[i]));
+        }
+    }
+
+    private void testValueAxes(AmSerialChart chart, String stackType) {
         assertThat(chart.getValueAxes().size(), is(1));
         assertThat(chart.getValueAxes().get(0).getId(), is("ValueAxis-1"));
         assertThat(chart.getValueAxes().get(0).getTitle(), is("Axis title"));
         assertThat(chart.getValueAxes().get(0).getStackType(), is(stackType));
     }
 
-    private void testGraphList(AmSerialChart chart) {
-        assertThat(chart.getGraphs().size(), is(2));
-
-        assertThat(chart.getGraphs().get(0).getBalloonText(), is("[[title]] of [[category]]:[[value]]"));
-        assertThat(chart.getGraphs().get(0).getFillAlphas(), is(0.7));
-        assertThat(chart.getGraphs().get(0).getId(), is("AmGraph-1"));
-        assertThat(chart.getGraphs().get(0).getLineAlpha(), is(0d));
-        assertThat(chart.getGraphs().get(0).getTitle(), is("graph 1"));
-        assertThat(chart.getGraphs().get(0).getValueField(), is("column-1"));
-
-        assertThat(chart.getGraphs().get(1).getBalloonText(), is("[[title]] of [[category]]:[[value]]"));
-        assertThat(chart.getGraphs().get(1).getFillAlphas(), is(0.7));
-        assertThat(chart.getGraphs().get(1).getId(), is("AmGraph-2"));
-        assertThat(chart.getGraphs().get(1).getLineAlpha(), is(0d));
-        assertThat(chart.getGraphs().get(1).getTitle(), is("graph 2"));
-        assertThat(chart.getGraphs().get(1).getValueField(), is("column-2"));
-    }
-
-    private void testDataProviders(List<Object> dataProvider, String[] categories, int[] columns1, int[] columns2) {
+    private void testDataProviders(List<Object> dataProvider, String[] categories, int[] columns1, int[] columns2, String field) {
         for (int i = 0; i < dataProvider.size(); i++) {
             Map provider = (Map<String, Object>) dataProvider.get(i);
-            assertThat((String) provider.get("category"), equalTo(categories[i]));
+            assertThat((String) provider.get(field), equalTo(categories[i]));
             assertThat((Integer) provider.get("column-1"), equalTo(columns1[i]));
             assertThat((Integer) provider.get("column-2"), equalTo(columns2[i]));
         }
