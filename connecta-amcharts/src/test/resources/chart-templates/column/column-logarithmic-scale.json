@@ -2,8 +2,6 @@
     "type": "serial",
     "path": "https://www.amcharts.com/lib/3/",
     "categoryField": "category",
-    "angle": 30,
-    "depth3D": 30,
     "startDuration": 1,
     "categoryAxis": {
         "gridPosition": "start"
@@ -12,20 +10,11 @@
     ],
     "graphs": [
         {
-            "balloonText": "[[title]] of [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-1",
             "title": "graph 1",
             "type": "column",
-            "valueField": "column-1"
-        },
-        {
-            "balloonText": "[[title]] of [[category]]:[[value]]",
-            "fillAlphas": 1,
-            "id": "AmGraph-2",
-            "title": "graph 2",
-            "type": "column",
-            "valueField": "column-2"
+            "valueField": "graph 1"
         }
     ],
     "guides": [
@@ -33,16 +22,13 @@
     "valueAxes": [
         {
             "id": "ValueAxis-1",
-            "stackType": "3d",
+            "logarithmic": true,
             "title": "Axis title"
         }
     ],
     "allLabels": [
     ],
     "balloon": {},
-    "legend": {
-        "useGraphSettings": true
-    },
     "titles": [
         {
             "id": "Title-1",
@@ -53,18 +39,35 @@
     "dataProvider": [
         {
             "category": "category 1",
-            "column-1": 8,
-            "column-2": 5
+            "graph 1": 8
         },
         {
             "category": "category 2",
-            "column-1": 6,
-            "column-2": 7
+            "graph 1": "160"
         },
         {
             "category": "category 3",
-            "column-1": 2,
-            "column-2": 3
+            "graph 1": "989"
+        },
+        {
+            "category": "category 4",
+            "graph 1": "1560"
+        },
+        {
+            "category": "category 5",
+            "graph 1": "5006"
+        },
+        {
+            "category": "category 6",
+            "graph 1": "9012"
+        },
+        {
+            "category": "category 7",
+            "graph 1": "40124"
+        },
+        {
+            "category": "category 8",
+            "graph 1": "150200"
         }
     ]
 }
