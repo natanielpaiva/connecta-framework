@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
+import org.junit.Ignore;
 import org.junit.Test;
 
 @JsonSubFolder("bar")
@@ -14,128 +15,152 @@ public class BarChartTemplateTest extends BaseChartTemplateTest {
     @Test
     public void barClustered() throws IOException {
         AmSerialChart chart = mapper.readValue(json("bar-clustered"), AmSerialChart.class);
-        testColumnGeneral(chart, null);
+        testBarGeneral(chart, null);
         assertThat(chart.getLegend().getUseGraphSettings(), is(true));
-        assertThat(chart.getRotate(), is(true));
 
     }
 
     @Test
     public void barStacked() throws IOException {
         AmSerialChart chart = mapper.readValue(json("bar-stacked"), AmSerialChart.class);
-        testColumnGeneral(chart, "regular");
-        testAlphaAndColumn(chart);
+        testBarGeneral(chart, "regular");
+        testAlphaAndBar(chart);
         assertThat(chart.getLegend().getUseGraphSettings(), is(true));
 
     }
-//
-//    @Test
-//    public void columnCemPorCentoStacked() throws IOException {
-//        AmSerialChart chart = mapper.readValue(json("column-cem-por-cento-stacked"), AmSerialChart.class);
-//        testColumnGeneral(chart, "100%");
-//        testAlphaAndColumn(chart);
-//        assertThat(chart.getLegend().getUseGraphSettings(), is(true));
-//
-//    }
-//
-//    @Test
-//    public void columnClusteredAndStacked() throws IOException {
-//        AmSerialChart chart = mapper.readValue(json("column-clustered-and-stacked"), AmSerialChart.class);
-//        testColumnGeneral(chart, "regular");
-//        testGraph(chart, 2);
-//        testAlphaAndColumn(chart);
-//        assertThat(chart.getLegend().getUseGraphSettings(), is(true));
-//
-//    }
-//
-//    @Test
-//    public void columnClustered3D() throws IOException {
-//        AmSerialChart chart = mapper.readValue(json("column-clustered-3d"), AmSerialChart.class);
-//        testAll3D(chart, null);
-//    }
-//
-//    @Test
-//    public void columnStacked3D() throws IOException {
-//        AmSerialChart chart = mapper.readValue(json("column-stacked-3d"), AmSerialChart.class);
-//        testAll3D(chart, "regular");
-//    }
-//
-//    @Test
-//    public void column3DCemPorCentoStacked() throws IOException {
-//        AmSerialChart chart = mapper.readValue(json("column-3d-cem-por-cento-stacked"), AmSerialChart.class);
-//        testAll3D(chart, "100%");
-//    }
-//
-//    @Test
-//    public void column3DColumn() throws IOException {
-//        AmSerialChart chart = mapper.readValue(json("column-3d-column"), AmSerialChart.class);
-//        testAll3D(chart, "3d");
-//
-//    }
-//
-//    @Test
-//    public void columnAndLine() throws IOException {
-//        AmSerialChart chart = mapper.readValue(json("column-and-line"), AmSerialChart.class);
-//        baseAssertTest(chart);
-//        testGraph(chart, 1);
-//        testBalloon(chart);
-//        assertThat(chart.getLegend().getUseGraphSettings(), is(true));
-//    }
-//
-//    @Test
-//    public void columnDateBasedData() throws IOException {
-//        AmSerialChart chart = mapper.readValue(json("column-date-based-data"), AmSerialChart.class);
-//        baseAssertTest(chart);
-//        assertThat(chart.getDataDateFormat(), is("YYYY-MM-DD"));
-//        assertThat(chart.getCategoryAxis().getParseDates(), is(true));
-//    }
-//
-//    @Test
-//    public void columnWithScroll() throws IOException {
-//        AmSerialChart chart = mapper.readValue(json("column-width-scroll"), AmSerialChart.class);
-//        baseAssertTest(chart);
-//        assertThat(chart.getChartScrollbar().getGridCount(), is(1d));
-//    }
-//
-//    @Test
-//    public void columnFloatingColumns() throws IOException {
-//        AmSerialChart chart = mapper.readValue(json("column-floating-columns"), AmSerialChart.class);
-//        baseAssertTest(chart);
-//        assertThat(chart.getGraphs().get(0).getCloseField(), is("close"));
-//        assertThat(chart.getGraphs().get(0).getOpenField(), is("open"));
-//        assertThat(chart.getGraphs().get(0).getFillAlphas(), is(1d));
-//        assertThat(chart.getGraphs().get(0).getType(), is("column"));
-//    }
-//
-//    @Test
-//    public void columnTwoValueAxes() throws IOException {
-//        AmSerialChart chart = mapper.readValue(json("column-two-value-axes"), AmSerialChart.class);
-//        baseAssertTest(chart);
-//        assertThat(chart.getValueAxes().get(1).getId(), is("ValueAxis-2"));
-//        assertThat(chart.getValueAxes().get(1).getTitle(), is("Axis title"));
-//        assertThat(chart.getValueAxes().get(1).getPosition(), is("right"));
-//        assertThat(chart.getValueAxes().get(1).getGridAlpha(), is(0d));
-//        testGraph(chart, 0);
-//    }
-//
-//    @Test
-//    public void columnUsingCustomColors() throws IOException {
-//        AmSerialChart chart = mapper.readValue(json("column-using-custom-colors"), AmSerialChart.class);
-//        baseAssertTest(chart);
-//        assertThat(chart.getGraphs().get(0).getLineColorField(), is("color"));
-//        testGraph(chart, 0);
-//    }
-//
-//    @Test
-//    public void columnLogarithmicScale() throws IOException {
-//        AmSerialChart chart = mapper.readValue(json("column-logarithmic-scale"), AmSerialChart.class);
-//        baseAssertTest(chart);
-//        assertThat(chart.getValueAxes().get(0).getLogarithmic(), is(true));
-//        assertThat(chart.getGraphs().get(0).getId(), is("AmGraph-1"));
-//        assertThat(chart.getGraphs().get(0).getTitle(), is("graph 1"));
-//        assertThat(chart.getGraphs().get(0).getType(), is("column"));
-//        assertThat(chart.getGraphs().get(0).getValueField(), is("graph 1"));
-//    }
+
+    @Test
+    public void barCemPorCentoStacked() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("bar-cem-por-cento-stacked"), AmSerialChart.class);
+        testBarGeneral(chart, "100%");
+        testAlphaAndBar(chart);
+        assertThat(chart.getLegend().getUseGraphSettings(), is(true));
+
+    }
+
+    @Test
+    public void barClusteredAndStacked() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("bar-clustered-and-stacked"), AmSerialChart.class);
+        testBarGeneral(chart, "regular");
+        testGraph(chart, 2);
+        testAlphaAndBar(chart);
+        assertThat(chart.getLegend().getUseGraphSettings(), is(true));
+
+    }
+
+    @Test
+    public void barClustered3D() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("bar-clustered-3d"), AmSerialChart.class);
+        testAll3D(chart, null);
+    }
+
+    @Test
+    public void barStacked3D() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("bar-stacked-3d"), AmSerialChart.class);
+        testAll3D(chart, "regular");
+    }
+
+    @Test
+    public void bar3DCemPorCentoStacked() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("bar-3d-cem-por-cento-stacked"), AmSerialChart.class);
+        testAll3D(chart, "100%");
+    }
+
+    @Test
+    public void bar3Dbar() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("bar-3d-bar"), AmSerialChart.class);
+        testAll3D(chart, "3d");
+
+    }
+
+    @Test
+    public void barAndLine() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("bar-and-line"), AmSerialChart.class);
+        baseAssertTest(chart);
+        testGraph(chart, 1);
+        testBalloon(chart);
+        assertThat(chart.getLegend().getUseGraphSettings(), is(true));
+    }
+
+    @Test
+    @Ignore
+    public void barDateBasedData() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("bar-date-based-data"), AmSerialChart.class);
+        baseAssertTest(chart);
+        assertThat(chart.getDataDateFormat(), is("YYYY-MM-DD"));
+        assertThat(chart.getCategoryAxis().getParseDates(), is(true));
+    }
+
+    @Test
+    public void barWithScroll() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("bar-width-scroll"), AmSerialChart.class);
+        baseAssertTest(chart);
+        assertThat(chart.getChartScrollbar().getGridCount(), is(1d));
+    }
+
+    @Test
+    public void barFloatingBars() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("bar-floating-bars"), AmSerialChart.class);
+        baseAssertTest(chart);
+        assertThat(chart.getGraphs().get(0).getCloseField(), is("close"));
+        assertThat(chart.getGraphs().get(0).getOpenField(), is("open"));
+        assertThat(chart.getGraphs().get(0).getFillAlphas(), is(1d));
+        assertThat(chart.getGraphs().get(0).getType(), is("column"));
+    }
+
+    @Test
+    public void barTwoValueAxes() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("bar-two-value-axes"), AmSerialChart.class);
+        baseAssertTest(chart);
+        assertThat(chart.getValueAxes().get(1).getId(), is("ValueAxis-2"));
+        assertThat(chart.getValueAxes().get(1).getTitle(), is("Axis title"));
+        assertThat(chart.getValueAxes().get(1).getPosition(), is("right"));
+        assertThat(chart.getValueAxes().get(1).getGridAlpha(), is(0d));
+        testGraph(chart, 0);
+
+    }
+
+    @Test
+    public void barDashedStroke() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("bar-dashed-stroke"), AmSerialChart.class);
+        baseAssertTest(chart);
+        testGraph(chart, 0);
+        assertThat(chart.getGraphs().get(0).getDashLengthField(), is("dash length"));
+        assertThat(chart.getGraphs().get(0).getAlphaField(), is("fill alpha"));
+
+        Map provider = (Map<String, Object>) chart.getDataProvider().get(7);
+        assertThat((String) provider.get("category"), equalTo("category 8"));
+        assertThat((Integer) provider.get("column-1"), equalTo(15));
+        assertThat((Integer) provider.get("dash length"), equalTo(5));
+        assertThat((Double) provider.get("fill alpha"), equalTo(0.2));
+    }
+
+    @Test
+    public void barLogarithmicScale() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("bar-logarithmic-scale"), AmSerialChart.class);
+        baseAssertTest(chart);
+        assertThat(chart.getValueAxes().get(0).getLogarithmic(), is(true));
+        assertThat(chart.getGraphs().get(0).getId(), is("AmGraph-1"));
+        assertThat(chart.getGraphs().get(0).getTitle(), is("graph 1"));
+        assertThat(chart.getGraphs().get(0).getType(), is("column"));
+        assertThat(chart.getGraphs().get(0).getValueField(), is("graph 1"));
+    }
+    
+    @Test
+    public void barWithGuide() throws IOException {
+        AmSerialChart chart = mapper.readValue(json("bar-width-guide"), AmSerialChart.class);
+        baseAssertTest(chart);
+        assertThat(chart.getGuides().get(0).getAbove(), is(true));
+        assertThat(chart.getGuides().get(0).getDashLength(), is(5d));
+        assertThat(chart.getGuides().get(0).getId(), is("Guide-1"));
+        assertThat(chart.getGuides().get(0).getInside(), is(true));
+        assertThat(chart.getGuides().get(0).getLabel(), is("max allowed value"));
+        assertThat(chart.getGuides().get(0).getLabelRotation(), is(90d));
+        assertThat(chart.getGuides().get(0).getLineAlpha(), is(1d));
+        assertThat(chart.getGuides().get(0).getLineColor().toString(), is("#ff0000"));
+        assertThat(chart.getGuides().get(0).getValue(), is(10d));
+        
+    }
 
     private void baseAssertTest(AmSerialChart chart) {
         assertThat(chart.getType(), is("serial"));
@@ -145,9 +170,7 @@ public class BarChartTemplateTest extends BaseChartTemplateTest {
         assertThat(chart.getCategoryAxis().getGridPosition(), is("start"));
         assertThat(chart.getValueAxes().get(0).getId(), is("ValueAxis-1"));
         assertThat(chart.getValueAxes().get(0).getTitle(), is("Axis title"));
-        assertThat(chart.getTitles().get(0).getId(), is("Title-1"));
-        assertThat(chart.getTitles().get(0).getSize(), is(15d));
-        assertThat(chart.getTitles().get(0).getText(), is("Chart Title"));
+        assertThat(chart.getRotate(), is(true));
 
     }
 
@@ -160,7 +183,7 @@ public class BarChartTemplateTest extends BaseChartTemplateTest {
         assertThat(chart.getGraphs().get(countList).getValueField(), is("column-" + column));
     }
 
-    private void testAlphaAndColumn(AmSerialChart chart) {
+    private void testAlphaAndBar(AmSerialChart chart) {
         assertThat(chart.getGraphs().get(0).getFillAlphas(), is(1d));
         assertThat(chart.getGraphs().get(1).getFillAlphas(), is(1d));
         assertThat(chart.getGraphs().get(0).getType(), is("column"));
@@ -174,7 +197,7 @@ public class BarChartTemplateTest extends BaseChartTemplateTest {
         testBalloon(chart);
         test3D(chart);
         assertThat(chart.getValueAxes().get(0).getStackType(), is(stakeType));
-        testAlphaAndColumn(chart);
+        testAlphaAndBar(chart);
         assertThat(chart.getLegend().getUseGraphSettings(), is(true));
         testDataProviders(chart.getDataProvider(), new String[]{
             "category 1", "category 2", "category 3", "category 4", "category 5", "category 6", "category 7"
@@ -183,10 +206,10 @@ public class BarChartTemplateTest extends BaseChartTemplateTest {
         }, new int[]{
             5, 7, 3, 3, 1, 2, 8
         });
-
+        testTitles(chart);
     }
 
-    private void testColumnGeneral(AmSerialChart chart, String stakeType) {
+    private void testBarGeneral(AmSerialChart chart, String stakeType) {
         baseAssertTest(chart);
         testGraph(chart, 1);
         testBalloon(chart);
@@ -199,6 +222,7 @@ public class BarChartTemplateTest extends BaseChartTemplateTest {
         }, new int[]{
             5, 7, 3, 3, 1, 2, 8
         });
+        testTitles(chart);
     }
 
     private void test3D(AmSerialChart chart) {
@@ -219,6 +243,12 @@ public class BarChartTemplateTest extends BaseChartTemplateTest {
             assertThat((Integer) provider.get("column-1"), equalTo(columns1[i]));
             assertThat((Integer) provider.get("column-2"), equalTo(columns2[i]));
         }
+    }
+
+    private void testTitles(AmSerialChart chart) {
+        assertThat(chart.getTitles().get(0).getId(), is("Title-1"));
+        assertThat(chart.getTitles().get(0).getSize(), is(15d));
+        assertThat(chart.getTitles().get(0).getText(), is("Chart Title"));
     }
 
 }

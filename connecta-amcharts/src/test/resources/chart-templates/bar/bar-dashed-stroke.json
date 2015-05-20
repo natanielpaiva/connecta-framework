@@ -1,0 +1,80 @@
+{
+    "type": "serial",
+    "path": "https://www.amcharts.com/lib/3/",
+    "categoryField": "category",
+    "rotate": true,
+    "startDuration": 1,
+    "categoryAxis": {
+        "gridPosition": "start"
+    },
+    "trendLines": [
+    ],
+    "graphs": [
+        {
+            "alphaField": "fill alpha",
+            "dashLengthField": "dash length",
+            "fillAlphas": 1,
+            "id": "AmGraph-1",
+            "title": "graph 1",
+            "type": "column",
+            "valueField": "column-1"
+        }
+    ],
+    "guides": [
+    ],
+    "valueAxes": [
+        {
+            "id": "ValueAxis-1",
+            "title": "Axis title"
+        }
+    ],
+    "allLabels": [
+    ],
+    "balloon": {},
+    "legend": {
+        "useGraphSettings": true
+    },
+    "titles": [
+        {
+            "id": "Title-1",
+            "size": 15,
+            "text": "Chart Title"
+        }
+    ],
+    "dataProvider": [
+        {
+            "category": "category 1",
+            "column-1": 8
+        },
+        {
+            "category": "category 2",
+            "column-1": 16
+        },
+        {
+            "category": "category 3",
+            "column-1": 2
+        },
+        {
+            "category": "category 4",
+            "column-1": 7
+        },
+        {
+            "category": "category 5",
+            "column-1": 5
+        },
+        {
+            "category": "category 6",
+            "column-1": 9
+        },
+        {
+            "category": "category 7",
+            "column-1": 4
+        },
+        {
+            "category": "category 8",
+            "column-1": 15,
+            "dash length": 5,
+            "fill alpha": 0.2
+        }
+    ]
+}
