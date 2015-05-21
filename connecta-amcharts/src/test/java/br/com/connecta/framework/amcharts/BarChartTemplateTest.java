@@ -1,6 +1,6 @@
 package br.com.connecta.framework.amcharts;
 
-import br.com.cds.connecta.framework.amcharts.AmSerialChart;
+import br.com.cds.connecta.framework.amcharts.model.AmSerialChart;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;

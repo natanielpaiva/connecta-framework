@@ -1,0 +1,64 @@
+{
+    "type": "serial",
+    "path": "https://www.amcharts.com/lib/3/",
+    "categoryField": "category",
+    "startDuration": 1,
+    "categoryAxis": {
+        "gridPosition": "start"
+    },
+    "trendLines": [
+    ],
+    "graphs": [
+        {
+            "balloonText": "open:[[open]] close:[[close]]",
+            "closeField": "close",
+            "fillAlphas": 1,
+            "id": "AmGraph-1",
+            "openField": "open",
+            "title": "graph 1",
+            "type": "column",
+            "valueField": "Not set"
+        }
+    ],
+    "guides": [
+    ],
+    "valueAxes": [
+        {
+            "id": "ValueAxis-1",
+            "stackType": "regular",
+            "title": "Axis title"
+        }
+    ],
+    "allLabels": [
+    ],
+    "balloon": {},
+    "titles": [
+        {
+            "id": "Title-1",
+            "size": 15,
+            "text": "Chart Title"
+        }
+    ],
+    "dataProvider": [
+        {
+            "category": "category 1",
+            "open": 2,
+            "close": 5
+        },
+        {
+            "category": "category 2",
+            "open": 4,
+            "close": 7
+        },
+        {
+            "category": "category 3",
+            "open": 3,
+            "close": 6
+        },
+        {
+            "category": "category 3",
+            "open": 5,
+            "close": 8
+        }
+    ]
+}

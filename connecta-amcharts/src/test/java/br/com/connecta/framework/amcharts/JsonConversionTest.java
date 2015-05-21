@@ -1,14 +1,14 @@
 package br.com.connecta.framework.amcharts;
 
-import br.com.cds.connecta.framework.amcharts.AmAngularGauge;
-import br.com.cds.connecta.framework.amcharts.AmBalloon;
-import br.com.cds.connecta.framework.amcharts.AmFunnelChart;
-import br.com.cds.connecta.framework.amcharts.AmGraph;
-import br.com.cds.connecta.framework.amcharts.AmLegend;
-import br.com.cds.connecta.framework.amcharts.AmPieChart;
-import br.com.cds.connecta.framework.amcharts.AmRadarChart;
-import br.com.cds.connecta.framework.amcharts.AmSerialChart;
-import br.com.cds.connecta.framework.amcharts.AmXYChart;
+import br.com.cds.connecta.framework.amcharts.model.AmAngularGauge;
+import br.com.cds.connecta.framework.amcharts.model.AmBalloon;
+import br.com.cds.connecta.framework.amcharts.model.AmFunnelChart;
+import br.com.cds.connecta.framework.amcharts.model.AmGraph;
+import br.com.cds.connecta.framework.amcharts.model.AmLegend;
+import br.com.cds.connecta.framework.amcharts.model.AmPieChart;
+import br.com.cds.connecta.framework.amcharts.model.AmRadarChart;
+import br.com.cds.connecta.framework.amcharts.model.AmSerialChart;
+import br.com.cds.connecta.framework.amcharts.model.AmXYChart;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.FileInputStream;
 import java.io.IOException;

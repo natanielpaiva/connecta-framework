@@ -1,6 +1,6 @@
 package br.com.connecta.framework.amcharts;
 
-import br.com.cds.connecta.framework.amcharts.AmPieChart;
+import br.com.cds.connecta.framework.amcharts.model.AmPieChart;
 import java.io.IOException;
 import java.util.Map;
 import static org.hamcrest.Matchers.*;
