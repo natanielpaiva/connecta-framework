@@ -44,6 +44,10 @@ public class LineChartTemplateTest extends BaseChartTemplateTest {
         AmSerialChart chart = mapper.readValue(json("line-date-series-daily"), AmSerialChart.class);
         testLineDateGeneral(chart, null);
         assertThat(chart.getDataDateFormat(), is("YYYY-MM-DD"));
+
+        testProvidersData(chart,  "2014-03-01", "2014-03-02", "2014-03-03", 
+                "2014-03-04", "2014-03-05", "2014-03-06", "2014-03-07");
+
     }
 
     @Test
@@ -52,6 +56,9 @@ public class LineChartTemplateTest extends BaseChartTemplateTest {
         testLineDateGeneral(chart, null);
         testPeriod(chart, "YYYY-MM", "MM", "MMM YYYY");
         assertThat(chart.getTheme(), is("default"));
+        
+        testProvidersData(chart,  "2014-01", "2014-02", "2014-03", 
+                "2014-04", "2014-05", "2014-06", "2014-07");
 
     }
 
@@ -61,6 +68,9 @@ public class LineChartTemplateTest extends BaseChartTemplateTest {
         testLineDateGeneral(chart, null);
         testPeriod(chart, "YYYY", "YYYY", "YYYY");
         assertThat(chart.getChartCursor().getAnimationDuration(), is(0d));
+        
+        testProvidersData(chart,  "2001", "2002", "2003", 
+                "2004", "2005", "2006", "2007");
     }
 
     @Test
@@ -68,6 +78,9 @@ public class LineChartTemplateTest extends BaseChartTemplateTest {
         AmSerialChart chart = mapper.readValue(json("line-time-series-hourly"), AmSerialChart.class);
         testLineDateGeneral(chart, null);
         testPeriod(chart, "YYYY-MM-DD HH", "hh", "JJ:NN");
+        
+        testProvidersData(chart,  "2014-03-01 08", "2014-03-01 09", "2014-03-01 10", 
+                "2014-03-01 11", "2014-03-01 12", "2014-03-01 13", "2014-03-01 14");
     }
 
     @Test
@@ -75,6 +88,9 @@ public class LineChartTemplateTest extends BaseChartTemplateTest {
         AmSerialChart chart = mapper.readValue(json("line-time-series-minutes"), AmSerialChart.class);
         testLineDateGeneral(chart, null);
         testPeriod(chart, "YYYY-MM-DD HH:NN", "mm", "JJ:NN");
+        
+        testProvidersData(chart,  "2014-03-01 07:57", "2014-03-01 07:58", "2014-03-01 07:59", 
+                "2014-03-01 08:00", "2014-03-01 08:01", "2014-03-01 08:02", "2014-03-01 08:03");
     }
 
     @Test
@@ -82,6 +98,9 @@ public class LineChartTemplateTest extends BaseChartTemplateTest {
         AmSerialChart chart = mapper.readValue(json("line-time-series-seconds"), AmSerialChart.class);
         testLineDateGeneral(chart, null);
         testPeriod(chart, "YYYY-MM-DD HH:NN:SS", "ss", "JJ:NN:SS");
+        
+        testProvidersData(chart,  "2014-03-01 07:57:57", "2014-03-01 07:57:58", "2014-03-01 07:57:59", 
+                "2014-03-01 07:58:00", "2014-03-01 07:58:01", "2014-03-01 07:58:02", "2014-03-01 07:58:03");
     }
 
     @Test
@@ -96,12 +115,13 @@ public class LineChartTemplateTest extends BaseChartTemplateTest {
     public void lineStep() throws IOException {
         AmSerialChart chart = mapper.readValue(json("line-step"), AmSerialChart.class);
         testLineGeneral(chart, null, false);
+        testLineStep(chart);
         assertThat(chart.getGraphs().get(0).getType(), is("step"));
         assertThat(chart.getGraphs().get(1).getType(), is("step"));
         assertThat(chart.getGraphs().get(0).getLineThickness(), is(2d));
         assertThat(chart.getGraphs().get(1).getLineThickness(), is(2d));
     }
-    
+
     @Test
     public void lineStepNoRisers() throws IOException {
         AmSerialChart chart = mapper.readValue(json("line-step-no-risers"), AmSerialChart.class);
@@ -112,6 +132,7 @@ public class LineChartTemplateTest extends BaseChartTemplateTest {
         assertThat(chart.getGraphs().get(1).getLineThickness(), is(2d));
         assertThat(chart.getGraphs().get(0).getNoStepRisers(), is(true));
         assertThat(chart.getGraphs().get(1).getNoStepRisers(), is(true));
+        testLineStep(chart);
     }
 
     private void baseAssertTest(AmSerialChart chart) {
@@ -152,7 +173,7 @@ public class LineChartTemplateTest extends BaseChartTemplateTest {
                 8, 6, 2, 1, 2, 3, 6
             }, new int[]{
                 5, 7, 3, 3, 1, 2, 8
-            });
+            }, "category");
         }
 
     }
@@ -179,13 +200,36 @@ public class LineChartTemplateTest extends BaseChartTemplateTest {
         assertThat(chart.getGraphs().get(1).getBalloonText(), is("[[title]] of [[category]]:[[value]]"));
     }
 
-    private void testDataProviders(List<Object> dataProvider, String[] categories, int[] columns1, int[] columns2) {
+    private void testDataProviders(List<Object> dataProvider, String[] categories, int[] columns1, int[] columns2, String field) {
         for (int i = 0; i < dataProvider.size(); i++) {
             Map provider = (Map<String, Object>) dataProvider.get(i);
-            assertThat((String) provider.get("category"), equalTo(categories[i]));
+            assertThat((String) provider.get(field), equalTo(categories[i]));
+
             assertThat((Integer) provider.get("column-1"), equalTo(columns1[i]));
             assertThat((Integer) provider.get("column-2"), equalTo(columns2[i]));
         }
+    }
+
+    private void testLineStep(AmSerialChart chart) {
+        testDataProviders(chart.getDataProvider(), new String[]{
+            "category 1", "category 2", "category 3", "category 4", "category 5", "category 6", "category 7"
+        }, new int[]{
+            8, 6, 7, 9, 7, 8, 7
+        }, new int[]{
+            5, 2, 3, 3, 1, 2, 6
+        }, "category");
+    }
+    
+    private void testProvidersData(AmSerialChart chart,
+            String d1, String d2, String d3, String d4,
+            String d5, String d6, String d7) {
+        testDataProviders(chart.getDataProvider(), new String[]{
+            d1, d2, d3, d4, d5, d6, d7
+        }, new int[]{
+            8, 6, 2, 1, 2, 3, 6
+        }, new int[]{
+            5, 7, 3, 3, 1, 2, 8
+        }, "date");
     }
 
 }
