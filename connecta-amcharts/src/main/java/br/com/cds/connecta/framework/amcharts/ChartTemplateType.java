@@ -1,7 +1,6 @@
 package br.com.cds.connecta.framework.amcharts;
 
-import br.com.cds.connecta.framework.amcharts.ChartTemplate;
-import java.util.Set;
+import java.util.Collection;
 
 /**
  *
@@ -10,7 +9,18 @@ import java.util.Set;
 public class ChartTemplateType {
     
     private String id;
-    private Set<ChartTemplate> templates;
+    private Collection<ChartTemplate> templates;
+
+    public ChartTemplateType() {}
+    
+    public ChartTemplateType(String id) {
+        this.id = id;
+    }
+
+    public ChartTemplateType(String id, Collection<ChartTemplate> templates) {
+        this.id = id;
+        this.templates = templates;
+    }
 
     public String getId() {
         return id;
@@ -20,11 +30,11 @@ public class ChartTemplateType {
         this.id = id;
     }
 
-    public Set<ChartTemplate> getTemplates() {
+    public Collection<ChartTemplate> getTemplates() {
         return templates;
     }
 
-    public void setTemplates(Set<ChartTemplate> templates) {
+    public void setTemplates(Collection<ChartTemplate> templates) {
         this.templates = templates;
     }
 }
