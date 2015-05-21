@@ -11,7 +11,7 @@ import org.apache.commons.io.IOUtils;
 
 @JsonSubFolder
 public abstract class BaseChartTemplateTest {
-    private static final String FILE_TEMPLATE = "src/test/resources/chart-templates/%s/%s.json";
+    private static final String FILE_TEMPLATE = "src/main/resources/chart-templates/%s/%s.json";
     
     protected ObjectMapper mapper = new ObjectMapper();
     
