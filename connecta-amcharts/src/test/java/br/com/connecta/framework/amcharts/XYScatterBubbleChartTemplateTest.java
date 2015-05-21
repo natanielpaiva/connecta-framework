@@ -201,6 +201,8 @@ public class XYScatterBubbleChartTemplateTest extends BaseChartTemplateTest {
         }, new int[]{
             44, 12, 35, 168, 102, 41, 16 // VALUES2
         });
+        
+        testGuides(chart);
     }
 
     @Test
@@ -240,8 +242,10 @@ public class XYScatterBubbleChartTemplateTest extends BaseChartTemplateTest {
         }, new int[]{
             44, 12, 35, 168, 102, 41, 16 // VALUES2
         });
+        
+        testCursorAndScrollbar(chart);
     }
-
+        
     @Test
     public void fills() throws IOException {
         AmXYChart chart = mapper.readValue(json("xy-fills"), AmXYChart.class);
@@ -330,6 +334,21 @@ public class XYScatterBubbleChartTemplateTest extends BaseChartTemplateTest {
             assertThat(chart.getValueAxes().get(i).getAxisAlpha(), is(0d));
             assertThat(chart.getValueAxes().get(i).getPosition(), is(positions[i]));
         }
+    }
+    
+    private void testGuides(AmXYChart chart) {
+        assertThat(chart.getGuides().get(0).getFillAlpha(), is(0.21));
+        assertThat(chart.getGuides().get(0).getFillColor().toString(), is("#ff8000"));
+        assertThat(chart.getGuides().get(0).getId(), is("Guide-1"));
+        assertThat(chart.getGuides().get(0).getLineAlpha(), is(0d));
+        assertThat(chart.getGuides().get(0).getToValue(), is(-8d));
+        assertThat(chart.getGuides().get(0).getValue(), is(-3d));
+        assertThat(chart.getGuides().get(0).getValueAxis().getId(), is("ValueAxis-2"));
+    }
+    
+    private void testCursorAndScrollbar(AmXYChart chart) {
+        assertThat(chart.getChartCursor(), notNullValue());
+        assertThat(chart.getChartScrollbar(), notNullValue());
     }
 
     private void testDataProviderXY(AmXYChart chart, int dataProviderSize, int[] x, int[] y) {
