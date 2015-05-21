@@ -1,0 +1,89 @@
+{
+    "type": "xy",
+    "path": "http://www.amcharts.com/lib/3/",
+    "startDuration": 1.5,
+    "trendLines": [
+    ],
+    "graphs": [
+        {
+            "balloonText": "x:<b>[[x]]</b> y:<b>[[y]]</b>",
+            "bullet": "round",
+            "bulletAlpha": 0,
+            "id": "AmGraph-1",
+            "lineColor": "#b0de09",
+            "xField": "x",
+            "yField": "y"
+        },
+        {
+            "balloonText": "x:<b>[[x]]</b> y:<b>[[y]]</b>",
+            "bullet": "round",
+            "bulletAlpha": 0,
+            "id": "AmGraph-2",
+            "lineColor": "#fcd202",
+            "xField": "x2",
+            "yField": "y2"
+        }
+    ],
+    "guides": [
+    ],
+    "valueAxes": [
+        {
+            "id": "ValueAxis-1",
+            "axisAlpha": 0
+        },
+        {
+            "id": "ValueAxis-2",
+            "position": "bottom",
+            "axisAlpha": 0
+        }
+    ],
+    "allLabels": [
+    ],
+    "balloon": {},
+    "titles": [
+    ],
+    "dataProvider": [
+        {
+            "y": 10,
+            "x": 14,
+            "y2": -5,
+            "x2": -3
+        },
+        {
+            "y": 5,
+            "x": 3,
+            "y2": -15,
+            "x2": -8
+        },
+        {
+            "y": -10,
+            "x": -3,
+            "y2": -4,
+            "x2": 6
+        },
+        {
+            "y": -6,
+            "x": 5,
+            "y2": -5,
+            "x2": -6
+        },
+        {
+            "y": 15,
+            "x": -4,
+            "y2": -10,
+            "x2": -8
+        },
+        {
+            "y": 13,
+            "x": 1,
+            "y2": -2,
+            "x2": -3
+        },
+        {
+            "y": 1,
+            "x": 6,
+            "y2": 0,
+            "x2": -3
+        }
+    ]
+}
