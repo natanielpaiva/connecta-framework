@@ -9,10 +9,10 @@ import java.io.Serializable;
  * @author Vinicius Pires <vinicius.pires@cds.com.br>
  */
 @JsonTypeInfo(
-    use = JsonTypeInfo.Id.NONE,
-    include = JsonTypeInfo.As.EXISTING_PROPERTY,
-    property = "type",
-    visible = true
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.PROPERTY,
+    property = "type"
+    
 )
 @JsonSubTypes({
     @JsonSubTypes.Type(name="serial",   value=AmSerialChart.class),
@@ -25,22 +25,5 @@ import java.io.Serializable;
     //@JsonSubTypes.Type(name="gauge",    value=AmAngularGauge.class)
 })
 public abstract class ChartConfiguration implements Serializable {
-    
-    protected String type;
-
-    /**
-     * Type of a chart. Required when creating chart using JSON. Possible types are: serial,
-     * pie, xy, radar, funnel, gauge, map, stock.
-     * 
-     * @return 
-     **/
-    public String getType() {
-        return type;
-    }
-
-    public ChartConfiguration setType(String type) {
-        this.type = type;
-        return this;
-    }
 
 }

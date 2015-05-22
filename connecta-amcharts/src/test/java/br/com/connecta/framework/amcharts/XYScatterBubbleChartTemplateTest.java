@@ -280,7 +280,6 @@ public class XYScatterBubbleChartTemplateTest extends BaseChartTemplateTest {
     
     // HELPERS
     private void testBasicFields(AmXYChart chart, int trendLinesSize, int guidesSize) {
-        assertThat(chart.getType(), is("xy"));
         assertThat(chart.getPath(), is("http://www.amcharts.com/lib/3/"));
         assertThat(chart.getStartDuration(), is(1.5));
 

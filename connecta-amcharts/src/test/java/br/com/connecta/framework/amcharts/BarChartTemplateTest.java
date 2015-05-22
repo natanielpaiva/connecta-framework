@@ -163,7 +163,6 @@ public class BarChartTemplateTest extends BaseChartTemplateTest {
     }
 
     private void baseAssertTest(AmSerialChart chart) {
-        assertThat(chart.getType(), is("serial"));
         assertThat(chart.getPath(), is("https://www.amcharts.com/lib/3/"));
         assertThat(chart.getCategoryField(), is("category"));
         assertThat(chart.getStartDuration(), is(1d));
