@@ -1,0 +1,46 @@
+{
+    "type": "funnel",
+    "path": "https://www.amcharts.com/lib/3/",
+    "balloonText": "[[title]]:<b>[[value]]</b>",
+    "labelPosition": "right",
+    "rotate": true,
+    "marginLeft": 15,
+    "marginRight": 160,
+    "titleField": "title",
+    "valueField": "value",
+    "allLabels": [
+    ],
+    "balloon": {},
+    "titles": [
+    ],
+    "dataProvider": [
+        {
+            "title": "Website visits",
+            "value": 300
+        },
+        {
+            "title": "Downloads",
+            "value": 123
+        },
+        {
+            "title": "Requested prices",
+            "value": 98
+        },
+        {
+            "title": "Contaced",
+            "value": 72
+        },
+        {
+            "title": "Purchased",
+            "value": 35
+        },
+        {
+            "title": "Asked for support",
+            "value": 25
+        },
+        {
+            "title": "Purchased more",
+            "value": 18
+        }
+    ]
+}
