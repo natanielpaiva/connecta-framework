@@ -60,7 +60,6 @@ public class PieDonutChartTemplateTest extends BaseChartTemplateTest {
 
     // HELPERS
     private void testBasicFields(AmPieChart chart, Double angle, Double depth, String innerRadius) {
-        assertThat(chart.getType(), is("pie"));
         assertThat(chart.getPath(), is("http://www.amcharts.com/lib/3/"));
         assertThat(chart.getBalloonText(), is("[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>"));
         assertThat(chart.getTitleField(), is("category"));

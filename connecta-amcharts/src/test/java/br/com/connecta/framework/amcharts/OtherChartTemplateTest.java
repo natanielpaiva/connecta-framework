@@ -18,7 +18,6 @@ public class OtherChartTemplateTest extends BaseChartTemplateTest {
     public void otherAngularGauge() throws IOException {
         AmAngularGauge chart = mapper.readValue(json("other-angular-gauge"), AmAngularGauge.class);
 
-        assertThat(chart.getType(), is("gauge"));
         assertThat(chart.getPath(), is("https://www.amcharts.com/lib/3/"));
         assertThat(chart.getArrows().get(0).getId(), is("GaugeArrow-1"));
         assertThat(chart.getAxes().get(0).getBottomText(), is("0 km/h"));
@@ -65,7 +64,6 @@ public class OtherChartTemplateTest extends BaseChartTemplateTest {
     public void otherCandlestick() throws IOException{
         AmSerialChart chart = mapper.readValue(json("other-candlestick"), AmSerialChart.class);
         
-        assertThat(chart.getType(), is("serial"));
         assertThat(chart.getPath(), is("https://www.amcharts.com/lib/3/"));
         assertThat(chart.getCategoryField(), is("date"));
         assertThat(chart.getCategoryAxis().getParseDates(), is(true));
@@ -75,7 +73,6 @@ public class OtherChartTemplateTest extends BaseChartTemplateTest {
     }
 
     private void testeGeneral(AmFunnelChart chart) {
-        assertThat(chart.getType(), is("funnel"));
         assertThat(chart.getPath(), is("https://www.amcharts.com/lib/3/"));
         assertThat(chart.getBalloonText(), is("[[title]]:<b>[[value]]</b>"));
         assertThat(chart.getLabelPosition(), is("right"));

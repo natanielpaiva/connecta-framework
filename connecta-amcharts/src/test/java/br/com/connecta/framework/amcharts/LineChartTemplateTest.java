@@ -136,7 +136,6 @@ public class LineChartTemplateTest extends BaseChartTemplateTest {
     }
 
     private void baseAssertTest(AmSerialChart chart) {
-        assertThat(chart.getType(), is("serial"));
         assertThat(chart.getPath(), is("https://www.amcharts.com/lib/3/"));
         assertThat(chart.getValueAxes().get(0).getId(), is("ValueAxis-1"));
         assertThat(chart.getValueAxes().get(0).getTitle(), is("Axis title"));

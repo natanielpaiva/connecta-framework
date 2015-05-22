@@ -29,7 +29,6 @@ public class JsonConversionTest {
     public void serialchart() throws IOException {
         AmSerialChart chart = mapper.readValue(json("serialchart"), AmSerialChart.class);
         
-        assertThat(chart.getType(), is("serial"));
         assertThat(chart.getCategoryField(), is("category"));
         assertThat(chart.getGraphs().get(0).getValueField(), is("value"));
         assertThat(chart.getDataProvider().size(), is(2));
@@ -39,7 +38,6 @@ public class JsonConversionTest {
     public void angularChart() throws IOException {
         AmAngularGauge chart = mapper.readValue(json("angularchart"), AmAngularGauge.class);
         
-        assertThat(chart.getType(), is("gauge"));
         assertThat(chart.getArrows().size(), is(1));
         assertThat(chart.getArrows().get(0).getValue(), is(130d));
         assertThat(chart.getTitles().size(), is(1));
@@ -74,7 +72,6 @@ public class JsonConversionTest {
     public void funnelChart() throws IOException {
         AmFunnelChart chart = mapper.readValue(json("funnelchart"), AmFunnelChart.class);
         
-        assertThat(chart.getType(), is("funnel"));
         assertThat(chart.getNeckHeight(), is("30%"));
         assertThat(chart.getNeckWidth(), is("40%"));
         assertThat(chart.getTitleField(), is("title"));
@@ -106,7 +103,7 @@ public class JsonConversionTest {
     public void pieChart() throws IOException {
         AmPieChart chart = mapper.readValue(json("piechart"), AmPieChart.class);
         
-        assertThat(chart.getType(), is("pie"));
+//REVER         assertThat(chart.getType(), is("pie"));
         assertThat(chart.getTitleField(), is("category"));
         assertThat(chart.getValueField(), is("column-1"));
 
@@ -116,7 +113,7 @@ public class JsonConversionTest {
     public void radarChart() throws IOException {
         AmRadarChart chart = mapper.readValue(json("radarchart"), AmRadarChart.class);
         
-        assertThat(chart.getType(), is("radar"));
+//REVER         assertThat(chart.getType(), is("radar"));
         assertThat(chart.getCategoryField(), is("category"));
         assertThat(chart.getGraphs().get(0).getValueField(), is("value"));
         assertThat(chart.getValueAxes().get(0).getAxisTitleOffset(), is(20d));
@@ -130,7 +127,7 @@ public class JsonConversionTest {
     public void xyChart() throws IOException {
         AmXYChart chart = mapper.readValue(json("xychart"), AmXYChart.class);
         
-        assertThat(chart.getType(), is("xy"));
+//REVER         assertThat(chart.getType(), is("xy"));
         assertThat(chart.getGraphs().size(), is(1));
         assertThat(chart.getGraphs().get(0).getXField(), is("x"));
         assertThat(chart.getDataProvider().get(0).getClass(), is(Object.class));

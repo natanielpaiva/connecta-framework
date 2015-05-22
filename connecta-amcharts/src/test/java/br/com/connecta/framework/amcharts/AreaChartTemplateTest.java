@@ -326,7 +326,6 @@ public class AreaChartTemplateTest extends BaseChartTemplateTest {
     
     // HELPERS
     private void testBasicAreaFields(AmSerialChart chart, final String categoryField, Double startDuration, String gridPosition) {
-        assertThat(chart.getType(), is("serial"));
         assertThat(chart.getPath(), is("http://www.amcharts.com/lib/3/"));
         assertThat(chart.getCategoryField(), is(categoryField));
         assertThat(chart.getStartDuration(), is(startDuration));
