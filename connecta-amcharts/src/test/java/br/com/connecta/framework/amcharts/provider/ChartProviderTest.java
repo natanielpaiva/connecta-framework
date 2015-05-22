@@ -22,7 +22,7 @@ public class ChartProviderTest {
     public void providerListsTemplateTypes() {
         Collection<ChartTemplateType> list = provider.listTemplateTypes();
         
-        assertThat(list, hasSize(6));
+        assertThat(list, hasSize(7));
         
         for (ChartTemplateType type : list) {
             Collection<ChartTemplate> templates = type.getTemplates();

@@ -96,6 +96,16 @@ public class AmGraph implements Serializable {
     private ValueAxis yAxis;
     @JsonProperty(value = "yField")
     private String yField;
+    
+    
+    private String graph;
+    
+    private AmGraph(){
+    }
+    
+    private AmGraph(String graph){
+        this.graph = graph; 
+    }
 
     /**
      * Name of the alpha field in your dataProvider.
@@ -1332,6 +1342,11 @@ public class AmGraph implements Serializable {
     public AmGraph setYField(String yField) {
         this.yField = yField;
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        return  this.graph;
     }
 
 }
