@@ -20,6 +20,13 @@ public class ChartProvider {
     private static final String INVALID_TEMPLATE_ID = "Invalid template ID";
     private static final String JSON_EXT = ".json";
 
+    /**
+     * Lista todos os tipos de templates de Gráfico disponíveis populados com os
+     * respectivos templates, utilizando como fonte as pastas localizadas em
+     * /chart-templates no classpath.
+     * 
+     * @return A lista de ChartTemplateType
+     */
     public Collection<ChartTemplateType> listTemplateTypes() {
         File templateTypeFolder = new File(getClass().getResource(CHART_TEMPLATES).getPath());
 
@@ -35,28 +42,48 @@ public class ChartProvider {
         return types;
     }
 
+    /**
+     * Retorna o objeto do template do gráfico.
+     * 
+     * @param type O tipo do template
+     * @param file O identificador do template
+     * @return o ChartTemplate
+     */
     public ChartTemplate getTemplate(String type, String file) {
         File json = getTemplateFile(type, file);
-        
-        
         
         return new ChartTemplate(json.getName().replace(JSON_EXT, ""));
     }
 
-    private File getTemplateFile(String type, String file) throws RuntimeException {
-        File json = new File(getClass()
+    /**
+     * Retorna o arquivo do template
+     * 
+     * @param type O tipo (pasta) do template
+     * @param id O id (nome do arquivo) do template
+     * @return O objeto File do template
+     */
+    private File getTemplateFile(String type, String id) {
+        File file = new File(getClass()
                 .getResource(CHART_TEMPLATES.concat(File.separator)
                         .concat(type)
                         .concat(File.separator)
-                        .concat(file)
+                        .concat(id)
                         .concat(JSON_EXT)
                 ).getPath());
-        if (!json.exists()) {
+        
+        if (!file.exists()) {
             throw new RuntimeException(INVALID_TEMPLATE_ID);
         }
-        return json;
+        
+        return file;
     }
 
+    /**
+     * Lista todos os templates de um tipo de template especificado.
+     * 
+     * @param type A String do tipo (pasta) do template
+     * @return A lista de ChartTemplate
+     */
     public Collection<ChartTemplate> listTemplatesFor(String type) {
         File[] jsonFiles = new File(getClass()
                 .getResource(CHART_TEMPLATES.concat(File.separator)
@@ -72,10 +99,23 @@ public class ChartProvider {
         return templates;
     }
 
+    /**
+     * Lista todos os templates de um tipo de template especificado.
+     * 
+     * @param type O objeto do ChartTemplateType
+     * @return 
+     */
     public Collection<ChartTemplate> listTemplatesFor(ChartTemplateType type) {
         return listTemplatesFor(type.getId());
     }
 
+    /**
+     * Retorna o conteúdo do arquivo de template, em um JSON.
+     * 
+     * @param type A string do tipo do template
+     * @param templateName A string do id do template
+     * @return 
+     */
     public String getTemplateContent(String type, String templateName) {
         File file = getTemplateFile(type, templateName);
         
