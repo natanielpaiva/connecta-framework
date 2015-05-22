@@ -1,12 +1,11 @@
 package br.com.cds.connecta.framework.amcharts.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.cds.connecta.framework.amcharts.model.addition.Color;
 
-public class AmChart implements Serializable {
+public class AmChart extends ChartConfiguration {
     private List<Label> allLabels;
     private AmExport amExport;
     private Double backgroundAlpha;
@@ -36,7 +35,6 @@ public class AmChart implements Serializable {
     private String theme;
     private String thousandsSeparator;
     private List<Title> titles;
-    private String type;
     private Boolean usePrefixes;
     private String version;
 
@@ -387,18 +385,6 @@ public class AmChart implements Serializable {
     }
     public AmChart setTitles(List<Title> titles) {
         this.titles = titles;
-        return this;
-    }
-
-    /**
-     * Type of a chart. Required when creating chart using JSON. Possible types are: serial,
-     * pie, xy, radar, funnel, gauge, map, stock.
-     **/
-    public String getType() {
-        return type;
-    }
-    public AmChart setType(String type) {
-        this.type = type;
         return this;
     }
 
