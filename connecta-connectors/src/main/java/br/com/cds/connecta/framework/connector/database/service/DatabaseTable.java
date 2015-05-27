@@ -38,8 +38,8 @@ public class DatabaseTable {
         Connection con = null;
 
         try {
-            //String JDBCDriver = getJDBCDriverName(JDBCConnection);
-            String JDBCDriver = "oracle.jdbc.driver.OracleDriver";
+            String JDBCDriver = getJDBCDriverName(JDBCConnection);
+            //String JDBCDriver = "oracle.jdbc.driver.OracleDriver";
 
             Class.forName(JDBCDriver);
             con = DriverManager.getConnection(JDBCConnection, JDBCUser, JDBCPassword);

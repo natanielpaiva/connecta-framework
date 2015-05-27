@@ -1,31 +1,40 @@
-
 package br.com.cds.connecta.framework.connector.soap.service;
 
 import java.util.ArrayList;
-
 /**
  *
  * @author diego
  */
 public class Operation {
-    private String method;
-    private ArrayList<Parameters> params;
+    
+    private String operation;
+   // private String soapAction;
+    private ArrayList<Param> params;
 
-    public String getMethod() {
-        return method;
+    public String getOperation() {
+        return operation;
     }
 
-    public void setMethod(String method) {
-        this.method = method;
+    public void setOperation(String operation) {
+        this.operation = operation;
     }
 
-    public ArrayList<Parameters> getParams() {
+//    public String getSoapAction() {
+//        return soapAction;
+//    }
+//
+//    public void setSoapAction(String soapAction) {
+//        this.soapAction = soapAction;
+//    }
+    
+    public ArrayList<Param> getParams() {
         return params;
     }
 
-    public void setParams(ArrayList<Parameters> params) {
+    public void setParams(ArrayList<Param> params) {
         this.params = params;
     }
+
     
     
 }
