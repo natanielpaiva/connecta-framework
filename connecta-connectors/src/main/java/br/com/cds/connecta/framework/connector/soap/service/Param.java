@@ -1,24 +1,13 @@
-
 package br.com.cds.connecta.framework.connector.soap.service;
-
 /**
  *
  * @author diego
  */
-public class Parameters {
-
-    public Parameters(String attributes, String value) {
-        this.attributes = attributes;
-        this.value = value;
-    }
-    
-     public Parameters() {
-        
-    }
+public class Param {
     
     private String attributes;
     private String type;
-    private String value;
+     private String value;
 
     public String getAttributes() {
         return attributes;
@@ -36,7 +25,7 @@ public class Parameters {
         this.type = type;
     }
     
-     public String getValue() {
+      public String getValue() {
         return value;
     }
 
