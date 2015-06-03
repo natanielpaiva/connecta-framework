@@ -36,15 +36,15 @@ public class Util {
     /**
      * Metodo para verificar caso a lista seja null e retornar uma lista vazia.
      * Utilizado em for each's (enhanced for) para evitar NullPointerException's
-     * em getList()'s que retornam null.
-     * Ex.: 
-     * for(Object obj : isEmpty(getMyObjList()){}
+ em getList()'s que retornam null.
+ Ex.: 
+ for(Object obj : checkEmpty(getMyObjList()){}
      * 
      * @param <E>
      * @param list
      * @return 
      */
-    public static <E> List<E> isEmpty(List<E> list) {
+    public static <E> List<E> checkEmpty(List<E> list) {
         return list == null ? Collections.<E>emptyList() : list;
     }
 
