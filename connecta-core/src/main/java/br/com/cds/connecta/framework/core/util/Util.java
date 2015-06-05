@@ -21,6 +21,10 @@ public class Util {
         return (isNull(s) || s.trim().equals("") || s.trim().equals("null"));
     }
 
+    public static boolean isNotEmpty(String s) {
+        return !((isNull(s) || s.trim().equals("") || s.trim().equals("null")));
+    }
+
     public static boolean isNull(Object s) {
         return (s == null);
     }
