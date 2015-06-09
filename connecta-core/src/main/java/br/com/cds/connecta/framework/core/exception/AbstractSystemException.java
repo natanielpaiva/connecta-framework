@@ -6,7 +6,7 @@ import java.util.List;
 import br.com.cds.connecta.framework.core.bean.message.Message;
 import br.com.cds.connecta.framework.core.domain.ExceptionEnum;
 
-public abstract class AbstractSystemException extends Exception {
+public abstract class AbstractSystemException extends RuntimeException {
 
     /**
      *
