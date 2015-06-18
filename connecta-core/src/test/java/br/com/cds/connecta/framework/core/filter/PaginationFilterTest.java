@@ -34,7 +34,7 @@ public class PaginationFilterTest {
             filter.setPage(page+1);
         }
         if (size != null) {
-            filter.setCount(size);
+            filter.setSize(size);
         }
         if (sort != null) {
             filter.setSort(sort);
