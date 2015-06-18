@@ -22,7 +22,7 @@ public class PaginationFilter {
 
     private HashMap<String, Sort.Direction> sort;
     private Integer page;
-    private Integer size;
+    private Integer count;
     private Boolean array;
 
     /**
@@ -56,7 +56,7 @@ public class PaginationFilter {
             throw new IllegalStateException("Invalid pagination");
         }
         
-        PageRequest pageRequest = new PageRequest(page - 1, size);
+        PageRequest pageRequest = new PageRequest(page - 1, count);
         
         return pageRequest;
     }
@@ -73,7 +73,7 @@ public class PaginationFilter {
             throw new IllegalStateException("Invalid sortable pagination");
         }
         
-        PageRequest pageRequest = new PageRequest(page - 1, size, makeSort());
+        PageRequest pageRequest = new PageRequest(page - 1, count, makeSort());
         
         return pageRequest;
     }
@@ -94,12 +94,12 @@ public class PaginationFilter {
         this.page = page;
     }
 
-    public Integer getSize() {
-        return size;
+    public Integer getCount() {
+        return count;
     }
 
-    public void setSize(Integer size) {
-        this.size = size;
+    public void setCount(Integer count) {
+        this.count = count;
     }
     
     /**
@@ -115,7 +115,7 @@ public class PaginationFilter {
     }
 
     public boolean hasPagination() {
-        return page != null && size != null;
+        return page != null && count != null;
     }
 
     public boolean hasSorting() {
