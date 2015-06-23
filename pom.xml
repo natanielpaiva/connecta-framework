@@ -305,6 +305,12 @@
                 <version>1.7.2.RELEASE</version>
             </dependency>
             
+              <!-- Dependência Meta Model do apache -->
+        <dependency>
+            <groupId>org.apache.metamodel</groupId>
+            <artifactId>MetaModel-full</artifactId>
+            <version>4.3.4</version>
+        </dependency>
            
             
 
