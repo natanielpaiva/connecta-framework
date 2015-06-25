@@ -24,7 +24,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 @ControllerAdvice
-public abstract class InitController {
+public class InitController {
 
     @Autowired
     protected TranslateMessage translate;
