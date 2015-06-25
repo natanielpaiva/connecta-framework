@@ -123,8 +123,8 @@ public class DatabaseTable {
     private String getJDBCDriverName(String jdbcConnection) {
 
         HashMap<String, String> JDBCdrives = new HashMap<String,String>();
-        JDBCdrives.put("ORACLE_SID", "oracle.jdbc.driver.OracleDriver");
-        JDBCdrives.put("POSTGRES", "org.postgresql.Driver");
+        JDBCdrives.put("oracle", "oracle.jdbc.driver.OracleDriver");
+        JDBCdrives.put("postgres", "org.postgresql.Driver");
         
         for (String key : JDBCdrives.keySet()) {
 
