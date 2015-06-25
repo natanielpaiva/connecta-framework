@@ -35,5 +35,15 @@
             <version>1.6.3</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>org.apache.metamodel</groupId>
+            <artifactId>MetaModel-core</artifactId>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.metamodel</groupId>
+            <artifactId>MetaModel-xml</artifactId>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 </project>

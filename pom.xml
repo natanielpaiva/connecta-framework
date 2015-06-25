@@ -305,15 +305,24 @@
                 <version>1.7.2.RELEASE</version>
             </dependency>
             
-              <!-- Dependência Meta Model do apache -->
-        <dependency>
-            <groupId>org.apache.metamodel</groupId>
-            <artifactId>MetaModel-full</artifactId>
-            <version>4.3.4</version>
-        </dependency>
-           
-            
-
+            <!-- Dependência Meta Model do apache -->
+            <dependency>
+                <groupId>org.apache.metamodel</groupId>
+                <artifactId>MetaModel-full</artifactId>
+                <version>4.3.4</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.metamodel</groupId>
+                <artifactId>MetaModel-core</artifactId>
+                <version>4.3.4</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.metamodel</groupId>
+                <artifactId>MetaModel-xml</artifactId>
+                <version>4.3.4</version>
+                <type>jar</type>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
