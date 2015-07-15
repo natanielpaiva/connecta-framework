@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.cds.connecta.framework.core.test;
 
 import java.util.Calendar;
@@ -21,7 +16,7 @@ public class ConnectaMatchers {
 
     /**
      * Verifica se a data injetada está dentro do Mês/Ano informado.
-     * 
+     *
      * Exemplo:
      * <pre>
      * assertThat("1990-10-12", temDataDentroDoMesAno("1990-10"));
@@ -36,7 +31,7 @@ public class ConnectaMatchers {
 
     /**
      * Verifica se a data injetada está dentro do Mês/Ano informado.
-     * 
+     *
      * Exemplo:
      * <pre>
      * Date date = obj.getDate();
@@ -52,7 +47,7 @@ public class ConnectaMatchers {
 
     /**
      * Verifica se a data injetada está dentro do Mês/Ano informado.
-     * 
+     *
      * Exemplo:
      * <pre>
      * Calendar calendar = obj.getDate();
@@ -69,7 +64,7 @@ public class ConnectaMatchers {
     /**
      * Verifica se todos os itens da lista analisada passam no teste do Matcher
      * informado.
-     * 
+     *
      * Exemplo:
      * <pre>
      * String[] honestos = {
@@ -97,15 +92,32 @@ public class ConnectaMatchers {
     public static Matcher<Object[]> peloMenosUmItem(final Matcher<?> matcher) {
         return new PeloMenosUmItem(matcher);
     }
-    
-    
+
+    /**
+     * Verifica se a string é igual a analisada ignorando espaços em branco e
+     * maíusculas e minúsculas
+     * 
+     * @param expected
+     * @return 
+     */
     public static Matcher<String> stringIgnoringWhitespaceAndCase(String expected) {
         return new StringIgnoringWhitespaceAndCase(expected);
     }
 
-    // ------------ INNER CLASSES ------------
     /**
-     * Classe dso Matcher que verifica se a data injetada está dentro do Mês/Ano
+     * Verifica se a string analisada corresponde à chave no enum passado
+     * 
+     * @param expected
+     * @return 
+     */
+    public static Matcher<String> enumKeyFor(Enum expected) {
+        return new EnumKeyFor(expected);
+    }
+
+    // ------------ INNER CLASSES ------------
+    
+    /**
+     * Classe Matcher que verifica se a data injetada está dentro do Mês/Ano
      * informado.
      *
      * @author vinicius.pires
@@ -113,9 +125,9 @@ public class ConnectaMatchers {
     private static class TemDataDentroDoMesAno extends BaseMatcher<Object> {
 
         /**
-         * The esperado.
+         * A data esperada.
          */
-        private final Calendar esperado;
+        private final Calendar expected;
 
         /**
          * Instantiates a new tem data dentro do mes ano.
@@ -123,7 +135,7 @@ public class ConnectaMatchers {
          * @param mesano the mesano
          */
         public TemDataDentroDoMesAno(Calendar mesano) {
-            this.esperado = mesano;
+            this.expected = mesano;
         }
 
         /**
@@ -176,7 +188,7 @@ public class ConnectaMatchers {
          */
         @Override
         public void describeTo(Description description) {
-            description.appendText(esperado.toString());
+            description.appendText(expected.toString());
         }
 
         /* (non-Javadoc)
@@ -198,8 +210,8 @@ public class ConnectaMatchers {
                 throw new IllegalArgumentException("Deve receber um objeto Date ou o UNIX timestamp da data");
             }
 
-            return (c.get(Calendar.MONTH) == esperado.get(Calendar.MONTH)
-                    && c.get(Calendar.YEAR) == esperado.get(Calendar.YEAR));
+            return (c.get(Calendar.MONTH) == expected.get(Calendar.MONTH)
+                    && c.get(Calendar.YEAR) == expected.get(Calendar.YEAR));
         }
     }
 
@@ -299,12 +311,12 @@ public class ConnectaMatchers {
         }
 
     }
-    
+
     private static class StringIgnoringWhitespaceAndCase extends BaseMatcher<String> {
-        
+
         private final String expected;
         private final String REGEX = "[ |\n|\r|\n]";
-        
+
         public StringIgnoringWhitespaceAndCase(String expected) {
             this.expected = expected.replaceAll(REGEX, "");
         }
@@ -312,7 +324,7 @@ public class ConnectaMatchers {
         @Override
         public boolean matches(Object o) {
             String string = ((String) o).replaceAll(REGEX, "");
-            
+
             return string.equalsIgnoreCase(expected);
         }
 
@@ -321,5 +333,30 @@ public class ConnectaMatchers {
             description.appendValue(expected);
         }
 
+    }
+
+    /**
+     * Classe Matcher para comparar chaves de enums
+     */
+    private static class EnumKeyFor extends BaseMatcher<String> {
+
+        private final Enum expected;
+
+        public EnumKeyFor(Enum expected) {
+            this.expected = expected;
+        }
+
+        @Override
+        public boolean matches(Object item) {
+            if (item instanceof String) {
+                return expected.name().equals((String) item);
+            }
+            return false;
+        }
+
+        @Override
+        public void describeTo(Description description) {
+            description.appendValue(expected);
+        }
     }
 }
