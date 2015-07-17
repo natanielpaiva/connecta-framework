@@ -1,5 +1,6 @@
 package br.com.cds.connecta.framework.core.util;
 
+import java.text.Normalizer;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -40,9 +41,9 @@ public class Util {
     /**
      * Metodo para verificar caso a lista seja null e retornar uma lista vazia.
      * Utilizado em for each's (enhanced for) para evitar NullPointerException's
- em getList()'s que retornam null.
- Ex.: 
- for(Object obj : checkEmpty(getMyObjList()){}
+     * em getList()'s que retornam null.
+     * Ex.: 
+     * for(Object obj : checkEmpty(getMyObjList()){}
      * 
      * @param <E>
      * @param list
@@ -52,4 +53,31 @@ public class Util {
         return list == null ? Collections.<E>emptyList() : list;
     }
 
+    /**
+     * Remove os acentos das letras da string informada
+     * 
+     * @param string
+     * @return 
+     */
+    public static String removeSpecialCharacters(String string) {
+        return Normalizer.normalize(string, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+    }
+    
+    /**
+     * Remove os acentos, remove espaços em branco sobrando e coloca todas as
+     * letras em caixa alta.
+     * 
+     * @param string a string a ser processada
+     * @param addLike true para adicionar "%" antes e depois da string
+     * @return 
+     */
+    public static String prepareForSearch(String string, boolean addLike) {
+        String postfix = removeSpecialCharacters(string.trim().toUpperCase());
+        
+        if (addLike) {
+            postfix = "%"+postfix+"%";
+        }
+        
+        return postfix;
+    }
 }
