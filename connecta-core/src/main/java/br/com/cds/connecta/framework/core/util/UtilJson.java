@@ -1,7 +1,9 @@
 package br.com.cds.connecta.framework.core.util;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
+import java.util.HashMap;
 
 /**
  *
@@ -23,4 +25,12 @@ public class UtilJson {
         }
         return null;
     }
+
+    public static <T> T fromJson(String json, TypeReference<T> ref) throws IOException {
+        if (!Util.isEmpty(json) && json.startsWith("{") && json.endsWith("}")) {
+            return new ObjectMapper().readValue(json, ref);
+        }
+        return null;
+    }
+
 }
