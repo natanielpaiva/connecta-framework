@@ -8,9 +8,16 @@ import javax.persistence.Query;
 import org.springframework.context.annotation.Configuration;
 
 import br.com.cds.connecta.framework.core.entity.AbstractBaseEntity;
+import br.com.cds.connecta.framework.core.filter.PaginationFilter;
 import br.com.cds.connecta.framework.core.util.Util;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import javax.persistence.Parameter;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -137,5 +144,44 @@ public abstract class AbstractBaseJpaDAO<E extends AbstractBaseEntity> {
 
     protected Query createNativeQuery(String namedQuery, Class<?> resultClass) {
         return getEntityManager().createNativeQuery(namedQuery, resultClass);
+    }
+    
+    protected PageImpl<E> search(PaginationFilter filter, String searchNQ, String countNQ) {
+        //Retorna o total de resultados
+        Query count = createNamedQuery(countNQ);
+        for (String key : filter.getFilter().keySet()) {
+            count.setParameter(key, "%" + filter.getFilter().get(key) + "%");
+        }
+        setParametersWithoutValues(count, filter.getFilter());
+        Long total = (Long)count.getSingleResult();
+        //Retorna a lista de resultados
+        Query query = createNamedQuery(searchNQ);
+        for (String key : filter.getFilter().keySet()) {
+            query.setParameter(key, "%" + filter.getFilter().get(key) + "%");
+        }
+        setParametersWithoutValues(query, filter.getFilter());
+        query.setFirstResult((filter.getPage() - 1) * 10);
+        query.setMaxResults(filter.getCount());
+        List resultList = query.getResultList();
+        //Cria o Page
+        return new PageImpl<>(resultList, filter.makePageable(), total);
+    }
+    
+      
+    /**
+     * Método que seta as variáveis não setadas pelo filter como nulas
+     * @param query
+     * @param filter 
+     */
+    private void setParametersWithoutValues(Query query, HashMap<String, String> filter) {
+        Set<String> withValues = filter.keySet();
+        Set<Parameter<?>> parameters = query.getParameters();
+        Iterator<Parameter<?>> iterator = parameters.iterator();
+        while (iterator.hasNext()) {
+            Parameter<?> next = iterator.next();
+            if(!withValues.contains(next.getName())){
+                query.setParameter(next.getName(), null);
+            }
+        }
     }
 }
