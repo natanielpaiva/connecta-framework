@@ -13,12 +13,13 @@ import org.springframework.data.domain.Page;
  */
 public interface IBaseAS <E extends AbstractBaseEntity> {
     
-    E save(E entity);
-    E update(E entity);
-    E get(Long id);
-    List<E> list();
-    Page<E> find(PaginationFilter filter);
-    void delete (Long id);
-    void delete (E entity);
+    E save(E entity) throws Exception;
+    public E saveOrUpdate(E entity) throws Exception;
+    E update(E entity) throws Exception;
+    E get(Long id) throws Exception;
+    List<E> list() throws Exception;
+    Page<E> find(PaginationFilter filter) throws Exception;
+    void delete (Long id) throws Exception;
+    void delete (E entity) throws Exception;
 
 }
