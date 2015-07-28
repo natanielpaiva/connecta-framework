@@ -10,6 +10,8 @@
        http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
     <context:component-scan base-package="br.com.cds.connecta.framework.core" />
+    
+     <context:property-placeholder location="classpath:application.properties" />
 
     <bean id="multipartResolver"  class="br.com.cds.connecta.framework.core.context.RestfulCommonsMultipartResolver">
         <property name="maxUploadSize" value="10485760"/> <!-- 10MB -->

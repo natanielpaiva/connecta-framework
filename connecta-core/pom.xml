@@ -11,6 +11,26 @@
     <artifactId>connecta-core</artifactId>
     <name>Connecta Core</name>
     <packaging>jar</packaging>
+    
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <auth.provider.url>http://localhost:7002/connecta-portal</auth.provider.url>
+            </properties>
+        </profile>
+        <profile>
+            <id>development</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <environment>development</environment>
+                <auth.provider.url>http://connectad.cds.com.br/connecta-portal</auth.provider.url>
+            </properties>
+        </profile>
+    </profiles>
+
 
     <dependencies>
         <!-- Spring-->
@@ -250,6 +270,12 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
     
 </project>
