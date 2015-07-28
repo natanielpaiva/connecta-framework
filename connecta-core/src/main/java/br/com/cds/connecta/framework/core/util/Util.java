@@ -4,6 +4,7 @@ import java.text.Normalizer;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -16,6 +17,10 @@ public class Util {
 
     public static boolean isEmpty(Collection<?> collection) {
         return (isNull(collection) || collection.isEmpty());
+    }
+
+    public static boolean isEmpty(Map<?,?> map) {
+        return (isNull(map) || map.isEmpty());
     }
 
     public static boolean isEmpty(String s) {
