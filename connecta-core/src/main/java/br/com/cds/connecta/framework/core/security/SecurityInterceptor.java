@@ -28,7 +28,7 @@ public class SecurityInterceptor extends HandlerInterceptorAdapter {
 
         if (!hasToken) {
             for (Cookie cookie : request.getCookies()) {
-                if(cookie.getName().equals("Authorizantion")){
+                if(cookie.getName().equals("Authorization")){
                     userToken = cookie.getValue();
                     hasToken = true;
                     break;
