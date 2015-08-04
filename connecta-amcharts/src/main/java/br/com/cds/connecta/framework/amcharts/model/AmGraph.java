@@ -56,7 +56,7 @@ public class AmGraph implements Serializable {
     private String legendPeriodValueText;
     private String legendValueText;
     private Double lineAlpha;
-    private Color lineColor;
+    private String lineColor;
     private String lineColorField;
     private Double lineThickness;
     private String lowField;
@@ -796,19 +796,69 @@ public class AmGraph implements Serializable {
         return this;
     }
 
+    public String getLineColor() {
+        return lineColor;
+    }
+
+    public void setLineColor(String lineColor) {
+        this.lineColor = lineColor;
+    }
+
+    public ValueAxis getxAxis() {
+        return xAxis;
+    }
+
+    public void setxAxis(ValueAxis xAxis) {
+        this.xAxis = xAxis;
+    }
+
+    public String getxField() {
+        return xField;
+    }
+
+    public void setxField(String xField) {
+        this.xField = xField;
+    }
+
+    public ValueAxis getyAxis() {
+        return yAxis;
+    }
+
+    public void setyAxis(ValueAxis yAxis) {
+        this.yAxis = yAxis;
+    }
+
+    public String getyField() {
+        return yField;
+    }
+
+    public void setyField(String yField) {
+        this.yField = yField;
+    }
+
+    public String getGraph() {
+        return graph;
+    }
+
+    public void setGraph(String graph) {
+        this.graph = graph;
+    }
+
     /**
      *      *Color of the line (or column border). If you do not set any, the color
      * from [[AmCoordinateChart
      *
      */
-    public Color getLineColor() {
-        return lineColor;
-    }
-
-    public AmGraph setLineColor(Color lineColor) {
-        this.lineColor = lineColor;
-        return this;
-    }
+//    public Color getLineColor() {
+//        return lineColor;
+//    }
+//
+//    public AmGraph setLineColor(Color lineColor) {
+//        this.lineColor = lineColor;
+//        return this;
+//    }
+    
+    
 
     /**
      * Name of the line color field in your dataProvider. This property adds a
