@@ -25,7 +25,7 @@ public class SecurityInterceptor extends HandlerInterceptorAdapter {
         String userToken = req.getHeader("Authorization");
         Boolean hasToken = userToken != null && !userToken.isEmpty();
 
-        if (!hasToken) {
+        if (!hasToken && Util.isNotEmpty(request.getCookies())) {
             for (Cookie cookie : request.getCookies()) {
                 if (cookie.getName().equals("Authorization")) {
                     userToken = cookie.getValue();

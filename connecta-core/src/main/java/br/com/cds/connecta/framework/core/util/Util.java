@@ -39,8 +39,12 @@ public class Util {
         return !(isNull(collection) || collection.isEmpty());
     }
     
+    public static boolean isNotEmpty(Object[] array) {
+        return (isNotNull(array) && array.length != 0);
+    }
+    
     public static boolean isNotNull(Object s) {
-        return !(s == null);
+        return (s != null);
     }
 
     /**
