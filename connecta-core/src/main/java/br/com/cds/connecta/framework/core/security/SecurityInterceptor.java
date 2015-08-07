@@ -1,6 +1,6 @@
 package br.com.cds.connecta.framework.core.security;
 
-import br.com.cds.connecta.framework.core.domain.security.AuthenticationDTO;
+import br.com.cds.connecta.framework.core.domain.security.UserDTO;
 import br.com.cds.connecta.framework.core.util.Util;
 import java.io.IOException;
 import javax.servlet.http.Cookie;
@@ -36,12 +36,14 @@ public class SecurityInterceptor extends HandlerInterceptorAdapter {
         }
 
         if (hasToken) {
-            AuthenticationDTO auth = connector.verifyAuthentication(userToken);
+            UserDTO auth = connector.getAuthenticatedUser(userToken);
             if (Util.isNotNull(auth)) {
+                SecurityContextUtil.setCurrentUser(auth);
                 return true;
             }
         }
-
+        
+        SecurityContextUtil.setCurrentUser(null);
         sendUnauthorized(req, resp);
         return false;
     }

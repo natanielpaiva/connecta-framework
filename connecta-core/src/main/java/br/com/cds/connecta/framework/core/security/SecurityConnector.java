@@ -1,6 +1,6 @@
 package br.com.cds.connecta.framework.core.security;
 
-import br.com.cds.connecta.framework.core.domain.security.AuthenticationDTO;
+import br.com.cds.connecta.framework.core.domain.security.UserDTO;
 import br.com.cds.connecta.framework.core.http.RestClient;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
@@ -20,20 +20,20 @@ public class SecurityConnector {
 
     @PostConstruct
     public void initializeURIs() {
-        authEndpoint = authProviderUrl + "/auth";
+        authEndpoint = authProviderUrl + "/public/auth";
         getAuthUserEndpoint = authEndpoint + "/{token}";
     }
 
-    public AuthenticationDTO verifyAuthentication(String token) {
+    public UserDTO getAuthenticatedUser(String token) {
         try {
-            return RestClient.request(getAuthUserEndpoint, HttpMethod.GET, AuthenticationDTO.class, null, null, token);
+            return RestClient.request(getAuthUserEndpoint, HttpMethod.GET, UserDTO.class, null, null, token);
         } catch (RestClientException e) {
             Logger.getLogger(SecurityConnector.class.getSimpleName()).severe(e.getMessage());
         }
 
         return null;
     }
-
+    
     public String getAuthProviderUrl() {
         return authProviderUrl;
     }
