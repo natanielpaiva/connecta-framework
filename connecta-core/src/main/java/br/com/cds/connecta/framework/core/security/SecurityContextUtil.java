@@ -14,6 +14,10 @@ public class SecurityContextUtil {
     public static AuthenticationDTO getCurrentUser() {
         return currentUser;
     }
+    
+    public static String getCurrentUserId(){
+        return currentUser.getUserId();
+    }
 
     public static void setCurrentUser(AuthenticationDTO currentUser) {
         SecurityContextUtil.currentUser = currentUser;
