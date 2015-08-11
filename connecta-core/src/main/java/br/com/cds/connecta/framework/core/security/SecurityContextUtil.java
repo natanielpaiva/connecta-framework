@@ -11,7 +11,7 @@ public class SecurityContextUtil {
 
     private static AuthenticationDTO currentUser;
 
-    public static AuthenticationDTO getCurrentUser() {
+    public static AuthenticationDTO getCurrentUserAuthentication() {
         return currentUser;
     }
     
