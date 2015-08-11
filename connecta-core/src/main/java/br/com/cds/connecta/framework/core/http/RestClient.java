@@ -2,6 +2,7 @@ package br.com.cds.connecta.framework.core.http;
 
 import br.com.cds.connecta.framework.core.util.Util;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Map;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -12,7 +13,6 @@ import org.springframework.http.converter.FormHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Component;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -28,14 +28,36 @@ public class RestClient {
         return getRestClient().getForObject(url, responseObj, urlVariables);
     }
     
-    public static <T> T postForObject(String url, Object request, Class<T> responseObj, Object... urlVariables){
-        return getRestClient().postForObject(url, request, responseObj, urlVariables);
+    public static <T> T postForObject(String url, Object content, Class<T> responseObj, Object... urlVariables){
+        return getRestClient().postForObject(url, content, responseObj, urlVariables);
     }
     
-    public static <T> T request(String url, HttpMethod method, Class<T> responseObj, 
-            MultiValueMap<String, String> params, Map<String, String> headerMap, Object... urlVariables){
+    public static <T> T postForObject(String url, Object content, Map<String, String> headers, 
+            Class<T> responseObj, Object... urlVariables){
         
-        HttpEntity<MultiValueMap<String, String>> entity = getAcceptJsonEntity(params, headerMap);
+        HttpEntity entity = getJsonContentHttpEntity(content, headers);
+        RestTemplate restClient = getJsonRestClient();
+        
+        ResponseEntity<T> response = restClient.exchange(url, HttpMethod.POST, entity, responseObj, urlVariables);
+        
+        return response.getBody();
+    }
+    
+    public static <T> T putForObject(String url, Object content, Map<String, String> headers, 
+            Class<T> responseObj, Object... urlVariables){
+
+        HttpEntity entity = getJsonContentHttpEntity(content, headers);
+        RestTemplate restClient = getJsonRestClient();
+        
+        ResponseEntity<T> response = restClient.exchange(url, HttpMethod.PUT, entity, responseObj, urlVariables);
+        
+        return response.getBody();
+    }
+    
+    public static <T> T formRequest(String url, HttpMethod method, Class<T> responseObj, 
+            Object content, Map<String, String> headerMap, Object... urlVariables){
+        
+        HttpEntity entity = getFormContentHttpEntity(content, headerMap);
         RestTemplate restClient = getFormPostRestClient();
         
         ResponseEntity<T> response = restClient.exchange(url, method, entity, responseObj, urlVariables);
@@ -43,32 +65,52 @@ public class RestClient {
         return response.getBody();
     }
 
-    private static HttpEntity<MultiValueMap<String, String>> getAcceptJsonEntity(
-            MultiValueMap<String, String> params, Map<String, String> headerMap) {
-        HttpHeaders headers = createHttpHeader(headerMap, MediaType.APPLICATION_JSON);
-        return new HttpEntity<>(params, headers);
-    }
-
-    private static HttpHeaders createHttpHeader(Map<String, String> headerMap, MediaType... accept) {
+    private static HttpHeaders getJsonHttpHeaders() {
         HttpHeaders headers = new HttpHeaders();
-        headers.setAccept(Arrays.asList(accept));
-        
-        if(!Util.isEmpty(headerMap)){
-            headers.setAll(headerMap);
-        }
-        
+        headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+        headers.setContentType(MediaType.APPLICATION_JSON);
         return headers;
     }
     
+    private static HttpEntity getJsonContentHttpEntity(Object content, Map<String,String> headers){
+        HttpHeaders httpHeaders = getJsonHttpHeaders();
+        
+        if(!Util.isEmpty(headers)){
+            httpHeaders.setAll(headers);
+        }
+        
+        return new HttpEntity<>(content, httpHeaders);
+    }
+    
+    private static HttpEntity getFormContentHttpEntity(Object content, Map<String,String> headers){
+        HttpHeaders httpHeaders = getFormContentHttpHeaders();
+        
+        if(!Util.isEmpty(headers)){
+            httpHeaders.setAll(headers);
+        }
+        
+        return new HttpEntity<>(content, httpHeaders);
+    }
     
     
+    private static HttpHeaders getFormContentHttpHeaders() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+        return headers;
+    }
+
     private static RestTemplate getFormPostRestClient(){
         return getRestClient(
                 new FormHttpMessageConverter(), 
                 new MappingJackson2HttpMessageConverter()
         );
     }
-    
+
+    private static RestTemplate getJsonRestClient(){
+        return getRestClient(new MappingJackson2HttpMessageConverter());
+    }
+   
     
     private static <T> RestTemplate getRestClient(HttpMessageConverter<?>... converters){
         RestTemplate client = getRestClient();
