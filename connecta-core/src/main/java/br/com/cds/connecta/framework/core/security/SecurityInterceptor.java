@@ -1,11 +1,13 @@
 package br.com.cds.connecta.framework.core.security;
 
+import br.com.cds.connecta.framework.core.domain.annotation.PublicResource;
 import br.com.cds.connecta.framework.core.domain.security.AuthenticationDTO;
 import br.com.cds.connecta.framework.core.util.Util;
 import java.io.IOException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 /**
@@ -21,6 +23,22 @@ public class SecurityInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         final HttpServletRequest req = (HttpServletRequest) request;
         final HttpServletResponse resp = (HttpServletResponse) response;
+        
+        if(handler instanceof HandlerMethod){
+            HandlerMethod handlerMethod = (HandlerMethod) handler;
+        
+            PublicResource pub = handlerMethod.getMethodAnnotation(PublicResource.class);
+            if(Util.isNotNull(pub)){
+                return true;
+            }
+            
+            pub = handlerMethod.getBean().getClass().getAnnotation(PublicResource.class);
+            if(Util.isNotNull(pub)){
+                return true;
+            }
+        }
+        
+        
 
         String userToken = req.getHeader("Authorization");
         Boolean hasToken = userToken != null && !userToken.isEmpty();
