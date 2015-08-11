@@ -5,13 +5,14 @@ import java.util.List;
 /**
  * @author Julio Lemes
  */
-public class UserDTO {
+public class AuthenticationDTO {
 
     protected String userId;
     protected String firstName;
     protected String lastName;
     protected String email;
     protected String token;
+    protected String password;
     protected List<String> authorizedApps;
 
     // getter / setters /////////////////
@@ -61,6 +62,14 @@ public class UserDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

@@ -1,6 +1,6 @@
 package br.com.cds.connecta.framework.core.security;
 
-import br.com.cds.connecta.framework.core.domain.security.UserDTO;
+import br.com.cds.connecta.framework.core.domain.security.AuthenticationDTO;
 
 /**
  *
@@ -9,13 +9,13 @@ import br.com.cds.connecta.framework.core.domain.security.UserDTO;
  */
 public class SecurityContextUtil {
 
-    private static UserDTO currentUser;
+    private static AuthenticationDTO currentUser;
 
-    public static UserDTO getCurrentUser() {
+    public static AuthenticationDTO getCurrentUser() {
         return currentUser;
     }
 
-    public static void setCurrentUser(UserDTO currentUser) {
+    public static void setCurrentUser(AuthenticationDTO currentUser) {
         SecurityContextUtil.currentUser = currentUser;
     }
 
