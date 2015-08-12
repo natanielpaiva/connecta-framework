@@ -20,13 +20,13 @@ public class SecurityConnector {
 
     @PostConstruct
     public void initializeURIs() {
-        authEndpoint = authProviderUrl + "/public/auth";
+        authEndpoint = authProviderUrl + "/auth";
         getAuthUserEndpoint = authEndpoint + "/{token}";
     }
 
     public AuthenticationDTO getAuthenticatedUser(String token) {
         try {
-            return RestClient.formRequest(getAuthUserEndpoint, HttpMethod.GET, AuthenticationDTO.class, null, null, token);
+            return RestClient.getForObject(getAuthUserEndpoint, AuthenticationDTO.class, token);
         } catch (RestClientException e) {
             Logger.getLogger(SecurityConnector.class.getSimpleName()).severe(e.getMessage());
         }
