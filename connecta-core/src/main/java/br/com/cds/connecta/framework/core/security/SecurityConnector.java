@@ -4,7 +4,6 @@ import br.com.cds.connecta.framework.core.domain.security.AuthenticationDTO;
 import br.com.cds.connecta.framework.core.http.RestClient;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
-import org.springframework.http.HttpMethod;
 import org.springframework.web.client.RestClientException;
 
 /**
