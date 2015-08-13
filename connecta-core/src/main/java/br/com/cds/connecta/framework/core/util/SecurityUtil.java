@@ -1,12 +1,16 @@
 package br.com.cds.connecta.framework.core.util;
 
+import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
+import org.apache.commons.codec.binary.Base64;
 
 /**
  * Classe de segurança utilitária
@@ -175,6 +179,27 @@ public class SecurityUtil {
             s.append(Integer.toHexString(parteAlta | parteBaixa));
         }
         return s.toString();
+    }
+
+    /**
+     * Método utilizado para gerar um password com base no email do usuário
+     * nos casos em que o usuário criar conta no Connecta 2.0 através de uma rede social
+     * @param email
+     * @return Base64 Hash do Password, null caso não consiga executar
+     */
+    public static String getConnectaPasswordBase64Hash(String email) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(email.getBytes("UTF-8"));
+            return encodeToBase64(hash);
+            
+        } catch (NoSuchAlgorithmException | UnsupportedEncodingException ex) {
+            return null;
+        } 
+    }
+    
+    public static String encodeToBase64(byte[] imageByteArray) {
+        return Base64.encodeBase64String(imageByteArray);
     }
 
 }
