@@ -24,7 +24,7 @@ public class PaginationFilter {
     private Integer page;
     private Integer count;
     private Boolean array;
-    private HashMap<String, String> filter;
+    private HashMap<String, Object> filter;
 
     /**
      * Cria um objeto {@link Sort} de acordo com os parâmetros passados para o PaginationFilter
@@ -139,11 +139,11 @@ public class PaginationFilter {
         return filter != null && filter.size() > 0;
     }
     
-    public HashMap<String, String> getFilter() {
+    public HashMap<String, Object> getFilter() {
         return filter;
     }
 
-    public void setFilter(HashMap<String, String> filter) {
+    public void setFilter(HashMap<String, Object> filter) {
         this.filter = filter;
     }
 }
