@@ -4,6 +4,7 @@ import br.com.cds.connecta.framework.core.util.Util;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
+import org.apache.log4j.Logger;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -23,6 +24,7 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class RestClient {
     
+    private static final Logger logger = Logger.getLogger(RestClient.class);
     
     public static <T> T getForObject(String url, Class<T> responseObj, Object... urlVariables){
         return getRestClient().getForObject(url, responseObj, urlVariables);
@@ -61,6 +63,8 @@ public class RestClient {
         RestTemplate restClient = getFormPostRestClient();
         
         ResponseEntity<T> response = restClient.exchange(url, method, entity, responseObj, urlVariables);
+        
+        logger.debug(response.getBody());
         
         return response.getBody();
     }
