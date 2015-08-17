@@ -11,11 +11,11 @@ public class AuthenticationDTO {
     protected String firstName;
     protected String lastName;
     protected String email;
+    protected String avatarUrl;
     protected String token;
     protected String password;
     protected List<String> authorizedApps;
-
-    // getter / setters /////////////////
+    
     public String getUserId() {
         return userId;
     }
@@ -70,6 +70,14 @@ public class AuthenticationDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 
     @Override
