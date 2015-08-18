@@ -195,7 +195,7 @@ public abstract class AbstractBaseJpaDAO<E extends AbstractBaseEntity> {
     }
     
     public boolean isParameterDefault(String parameter){
-        String[] parameters = {"userId", "companies"};
+        String[] parameters = {"userId", "companies", "companyId"};
         return Arrays.asList(parameters).contains(parameter);
     }
 }
