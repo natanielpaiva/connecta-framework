@@ -188,7 +188,7 @@ public class SecurityUtil {
      */
     public static String getConnectaPasswordBase64Hash(String email) {
         try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            MessageDigest digest = MessageDigest.getInstance(SHA_256);
             byte[] hash = digest.digest(email.getBytes("UTF-8"));
             return encodeToBase64(hash);
             
