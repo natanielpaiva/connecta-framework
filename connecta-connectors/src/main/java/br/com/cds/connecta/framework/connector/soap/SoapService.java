@@ -2,20 +2,16 @@ package br.com.cds.connecta.framework.connector.soap;
 
 import br.com.cds.connecta.framework.connector.soap.service.Operation;
 import br.com.cds.connecta.framework.connector.soap.service.Parameters;
-import br.com.cds.connecta.framework.connector.soap.service.Param;
-
+import br.com.cds.connecta.framework.connector.util.ConnectorColumn;
 import java.io.IOException;
-import java.io.StringReader;
 import java.io.StringWriter;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.namespace.QName;
-import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.soap.MessageFactory;
@@ -40,8 +36,6 @@ import org.apache.metamodel.DataContext;
 import org.apache.metamodel.data.DataSet;
 import org.apache.metamodel.data.Row;
 import org.apache.metamodel.query.Query;
-import org.apache.metamodel.query.SelectItem;
-import org.apache.metamodel.schema.Column;
 import org.apache.metamodel.schema.Table;
 import org.apache.metamodel.util.InMemoryResource;
 import org.apache.metamodel.util.Resource;
@@ -50,7 +44,6 @@ import org.apache.metamodel.xml.XmlSaxTableDef;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
@@ -213,25 +206,25 @@ public class SoapService {
             NodeList columnList = (NodeList) findElementColumns.evaluate(document, XPathConstants.NODESET);
             NodeList typeList = (NodeList) findElementType.evaluate(document, XPathConstants.NODESET);
 
-            ArrayList<Param> params = new ArrayList<>();
+            ArrayList<Parameters> params = new ArrayList<>();
             for (int j = 0; j < columnList.getLength(); j++) {
-                Param param = new Param();
+                Parameters param = new Parameters();
 
                 Node column = columnList.item(j);
                 Node type = typeList.item(j);
-                String typeParame = null;
+                String Attibute = null;
 
                 if (type != null) {
-                    typeParame = type.getNodeValue();
+                    Attibute = type.getNodeValue();
 
                 } else {
-                    typeParame = "null";
+                    Attibute = "null";
                 }
-                param.setAttributes(column.getNodeValue());
-                param.setType(typeParame);
+                param.setParams(column.getNodeValue());
+                param.setAttributes(Attibute);
 
                 params.add(param);
-                System.out.println("-- ATTRIBUTO: " + column.getNodeValue() + " Parame --- " + typeParame);
+                System.out.println("**Parametro: " + column.getNodeValue() + " Attibute --- " + Attibute);
             }
             operation.setParams(params);
             operations.add(operation);
@@ -250,10 +243,7 @@ public class SoapService {
         } catch (TransformerException e) {
             throw new RuntimeException(e);
         }
-
-        // Now you have the XML as a String:
         System.out.println("************");
-
         System.out.println(sw.toString());
         System.out.println("**************");
 
@@ -275,9 +265,9 @@ public class SoapService {
         QName bodyName = new QName(targetNamespace, operation1);
         SOAPElement soapBodyElem = soapBody.addChildElement(bodyName);
         for (Parameters p : parameters) {
-            System.out.println("Attributes: " + p.getAttributes() + " ----" + p.getValue());
-            QName nCdServico = new QName(targetNamespace, p.getAttributes(), "ggg");
-            SOAPElement soapBodyElem1 = soapBodyElem.addChildElement(nCdServico);
+            System.out.println("Param: " + p.getParams() + " = Value: " + p.getValue());
+            QName QNameParameter = new QName(targetNamespace, p.getParams(), "cds");
+            SOAPElement soapBodyElem1 = soapBodyElem.addChildElement(QNameParameter);
             soapBodyElem1.addTextNode(p.getValue());
         }
         MimeHeaders headers = messageBody.getMimeHeaders();
@@ -298,29 +288,98 @@ public class SoapService {
         this.targetNamespace = targetNamespace;
     }
 
+    public List<Map<String, Object>> factoryResult(String operation, List<Parameters> parameters, String xPathTable, List<ConnectorColumn> xpathColumns) throws Exception {
+
+        String result = ResponseXml(operation, parameters);
+
+        String[] xpath = new String[xpathColumns.size()];
+        String[] columns1 = new String[xpathColumns.size()];
+        for (int i = 0; i < xpathColumns.size(); i++) {
+            xpath[i] = xpathColumns.get(i).getFormula();
+            columns1[i] = xpathColumns.get(i).getName();
+        }
+
+        XmlSaxTableDef tableDef = new XmlSaxTableDef(
+                xPathTable,
+                xpath);
+
+        Resource resource = new InMemoryResource(null, result.getBytes(), 0);
+        DataContext dc = new XmlSaxDataContext(resource, tableDef);
+
+        String[] tableNames = dc.getDefaultSchema().getTableNames();
+
+        for (String schemaName : tableNames) {
+            System.out.println("----------------" + schemaName);
+        }
+
+        Table table = dc.getDefaultSchema().getTableByName(tableNames[0]);
+
+        Query query = dc.query()
+                .from(table)
+                .select(columns1)
+                .toQuery();
+
+        DataSet dataSet = dc.executeQuery(query);
+
+        List<Map<String, Object>> Obj = new ArrayList<>();
+
+        for (Row row : dataSet) {
+            Object[] values = row.getValues();
+            Map<String, Object> object = new HashMap<>(row.size());
+            for (int i = 0; i < values.length; i++) {
+                Object value = values[i];
+
+                object.put(columns1[i], value);
+                //object.put(columns[i].getName(), value);
+                System.out.println("**" + columns1[i] + "==" + value);
+            }
+            Obj.add(object);
+        }
+
+        return Obj;
+
+    }
+
+//     public void getPortTypeMessage() throws XPathExpressionException{
+//        XPathExpression xInputMessage = factory.newXPath().compile(xpathInputMessage.replace(VAR, "ListarSiglasTipoProposicao"));
+//        String inputMessage = (String) xInputMessage.evaluate(document, XPathConstants.STRING);
+//        
+//         System.out.println("Primeiro parametro da resposta do xml --inputMessage: " + inputMessage);
+//        
+//        XPathExpression xMessageInteface = factory.newXPath().compile(xpathMessageInteface.replace(NAMESPACE, inputMessage));
+//        String messageInteface = (String) xMessageInteface.evaluate(document, XPathConstants.STRING);
+//      
+//             System.out.println("messageInteface: " + messageInteface);
+//            
+//            System.out.println(xpathInputMessage.replace("%var", "CalcPrazo"));
+//            System.out.println(xpathMessageInteface.replace(NAMESPACE, inputMessage));
+//    }
+    
+    
+    
+    
     public static void main(String... args) throws Exception {
-        String url = "http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx?WSDL";
-        List parameters = new ArrayList<>();
+//        String url = "http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx?WSDL";
+//        List parameters = new ArrayList<>();
+//
+//        String operation = "CalcPrazo";
+//        parameters.add(new Parameters("nCdServico", "41106"));
+//        parameters.add(new Parameters("sCepOrigem", "64002150"));
+//        parameters.add(new Parameters("sCepDestino", "72594235"));
+//
+//        SoapService soap = new SoapService(url);
+//        String soapAction = soap.getSoapAction(operation);
+//        String targetNamespace1 = soap.getTargetNamespace();
+//        //soap.getOutputMessage(operation);
+//        //soap.ResponseXml(operation, parameters);
+//
+//        String xPathTable = "/soap:Envelope/soap:Body/CalcPrazoResponse/CalcPrazoResult/Servicos";
+//         String[] xpathColumns= {
+//             "/soap:Envelope/soap:Body/CalcPrazoResponse/CalcPrazoResult/Servicos/cServico/Codigo",
+//             "/soap:Envelope/soap:Body/CalcPrazoResponse/CalcPrazoResult/Servicos/cServico/PrazoEntrega",
+//             "/soap:Envelope/soap:Body/CalcPrazoResponse/CalcPrazoResult/Servicos/cServico/EntregaDomiciliar"};
+//        soap.factoryResult(operation, parameters, xPathTable, xpathColumns);
 
-        String operation = "CalcPrazo";
-        parameters.add(new Parameters("nCdServico", "41106"));
-        parameters.add(new Parameters("sCepOrigem", "64002150"));
-        parameters.add(new Parameters("sCepDestino", "72594235"));
-
-        SoapService soap = new SoapService(url);
-        String soapAction = soap.getSoapAction(operation);
-        String targetNamespace1 = soap.getTargetNamespace();
-        //soap.getOutputMessage(operation);
-        //soap.ResponseXml(operation, parameters);
-
-        String xPathTable = "/soap:Envelope/soap:Body/CalcPrazoResponse/CalcPrazoResult/Servicos";
-         String[] xpathColumns= {
-             "/soap:Envelope/soap:Body/CalcPrazoResponse/CalcPrazoResult/Servicos/cServico/Codigo",
-             "/soap:Envelope/soap:Body/CalcPrazoResponse/CalcPrazoResult/Servicos/cServico/PrazoEntrega",
-             "/soap:Envelope/soap:Body/CalcPrazoResponse/CalcPrazoResult/Servicos/cServico/EntregaDomiciliar"};
-        soap.factoryResult(operation, parameters, xPathTable, xpathColumns);
-        
-        
 //        String url = "http://www.camara.gov.br/SitCamaraWS/Proposicoes.asmx?WSDL";
 //        List parameters = new ArrayList<>();
 //
@@ -338,97 +397,37 @@ public class SoapService {
 //             "/soap:Envelope/soap:Body/ListarSituacoesProposicaoResponse/ListarSituacoesProposicaoResult/situacaoProposicao/situacaoProposicao@id",
 //            "/soap:Envelope/soap:Body/ListarSituacoesProposicaoResponse/ListarSituacoesProposicaoResult/situacaoProposicao/situacaoProposicao@descricao"
 //         };
-//        soap.factoryResult(operation, parameters, xPathTable, xpathColumns);
-        
+//         
+        List<ConnectorColumn> columnsColumn = new ArrayList<>();
+        ConnectorColumn connectorColumn1 = new ConnectorColumn();
+        ConnectorColumn connectorColumn2 = new ConnectorColumn();
+
+        connectorColumn1.setId((long) 14452);
+        connectorColumn1.setName("/Codigo");
+        connectorColumn1.setLabel("/Codigo");
+        connectorColumn1.setFormula("/soap:Envelope/soap:Body/CalcPrazoResponse/CalcPrazoResult/Servicos/cServico/Codigo");
+
+        columnsColumn.add(connectorColumn1);
+
+        connectorColumn2.setId((long) 14450);
+        connectorColumn2.setName("/PrazoEntrega");
+        connectorColumn2.setLabel("/PrazoEntrega");
+        connectorColumn2.setFormula("/soap:Envelope/soap:Body/CalcPrazoResponse/CalcPrazoResult/Servicos/cServico/PrazoEntrega");
+
+        columnsColumn.add(connectorColumn2);
+
+        String xPathTable = "/soap:Envelope/soap:Body/CalcPrazoResponse/CalcPrazoResult/Servicos/cServico";
+
+        String url = "http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx?WSDL";
+        SoapService soap = new SoapService(url);
+        String operation = "CalcPrazo";
+        List parameters = new ArrayList<>();
+        parameters.add(new Parameters("nCdServico", "s:string", "41106"));
+        parameters.add(new Parameters("sCepOrigem", "s:string", "64002150"));
+        parameters.add(new Parameters("sCepDestino", "s:string", "72594235"));
+
+        soap.factoryResult(operation, parameters, xPathTable, columnsColumn);
+
     }
 
-    public List<Map<String, Object>> factoryResult(String operation, List<Parameters> parameters, String xPathTable, String[] xpathColumns) throws Exception {
-
-        String result = ResponseXml(operation, parameters);
-
-//        DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-//        InputSource is = new InputSource();
-//        is.setCharacterStream(new StringReader(result));
-//
-//        Document doc = db.parse(is);
-
-        XmlSaxTableDef tableDef = new XmlSaxTableDef(
-                xPathTable,
-                xpathColumns);
-        
-        Resource resource = new InMemoryResource(null, result.getBytes(), 0);
-        DataContext dc = new XmlSaxDataContext(resource, tableDef);
-
-
-        String[] tableNames = dc.getDefaultSchema().getTableNames();
-        
-        for (String schemaName : tableNames) {
-            System.out.println("----------------"+ schemaName);
-        }
-        
-        //Table table = dc.getDefaultSchema().getTableByName("/situacaoProposicao");
-        Table table = dc.getDefaultSchema().getTableByName(tableNames[0]);
-        
-        
-  
-        
-//        for (Column Columns : table.getColumns()) {
-//             logger.info(Columns.getName());
-//        }
-
-        Column[] columns = table.getColumns();
-        
-        String stringColumns = " ";
-        for(Column row : columns){
-           stringColumns += row.getName()+ " - ";
-        }
-        logger.log(Level.WARNING, "Columns: {0}", stringColumns);
-        
-        Query query = dc.query()
-                .from(table)
-                .select(columns)
-                .toQuery();
-
-        
-        
-        DataSet dataSet = dc.executeQuery(query);
-        
-        List<Map<String, Object>> Obj = new ArrayList<>();
-        
-        for (Row row : dataSet) {
-            Object[] values = row.getValues();
-            Map<String, Object> object = new HashMap<>(row.size());
-            for (int i = 0; i < values.length; i++) {
-                Object value = values[i];
-                object.put(columns[i].getName(), value);
-            }
-            Obj.add(object);
-        }
-        
-        return Obj;
-        
-//        for (Row row : dc.executeQuery(query)) {
-//            
-//            for (int i = 0; i < row.size(); i++) {
-//                //logger.info(row.getValue(i).toString());
-//                 System.out.println(row.getValue(i).toString());
-//            }
-//           
-//        }
-    }
-
-//     public void getPortTypeMessage() throws XPathExpressionException{
-//        XPathExpression xInputMessage = factory.newXPath().compile(xpathInputMessage.replace(VAR, "ListarSiglasTipoProposicao"));
-//        String inputMessage = (String) xInputMessage.evaluate(document, XPathConstants.STRING);
-//        
-//         System.out.println("Primeiro parametro da resposta do xml --inputMessage: " + inputMessage);
-//        
-//        XPathExpression xMessageInteface = factory.newXPath().compile(xpathMessageInteface.replace(NAMESPACE, inputMessage));
-//        String messageInteface = (String) xMessageInteface.evaluate(document, XPathConstants.STRING);
-//      
-//             System.out.println("messageInteface: " + messageInteface);
-//            
-//            System.out.println(xpathInputMessage.replace("%var", "CalcPrazo"));
-//            System.out.println(xpathMessageInteface.replace(NAMESPACE, inputMessage));
-//    }
 }

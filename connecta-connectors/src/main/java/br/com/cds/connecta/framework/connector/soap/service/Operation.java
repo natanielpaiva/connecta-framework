@@ -8,8 +8,7 @@ import java.util.ArrayList;
 public class Operation {
     
     private String operation;
-   // private String soapAction;
-    private ArrayList<Param> params;
+    private ArrayList<Parameters> parameters;
 
     public String getOperation() {
         return operation;
@@ -18,23 +17,13 @@ public class Operation {
     public void setOperation(String operation) {
         this.operation = operation;
     }
-
-//    public String getSoapAction() {
-//        return soapAction;
-//    }
-//
-//    public void setSoapAction(String soapAction) {
-//        this.soapAction = soapAction;
-//    }
     
-    public ArrayList<Param> getParams() {
-        return params;
+    public ArrayList<Parameters> getParams() {
+        return parameters;
     }
 
-    public void setParams(ArrayList<Param> params) {
-        this.params = params;
+    public void setParams(ArrayList<Parameters> params) {
+        this.parameters = params;
     }
 
-    
-    
 }
