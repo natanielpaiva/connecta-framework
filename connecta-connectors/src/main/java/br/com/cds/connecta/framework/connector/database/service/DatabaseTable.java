@@ -5,6 +5,7 @@
  */
 package br.com.cds.connecta.framework.connector.database.service;
 
+import br.com.cds.connecta.framework.connector.database.Database;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -120,6 +121,8 @@ public class DatabaseTable {
 
     }
     
+    
+    
     private String getJDBCDriverName(String jdbcConnection) {
 
         HashMap<String, String> JDBCdrives = new HashMap<String,String>();
@@ -135,5 +138,15 @@ public class DatabaseTable {
 
         return null;
     }
+    
+    
+     public static void main(String args[]) throws SQLException  {
+         
+         
+       DatabaseTable database = new DatabaseTable();
+       database.getTables("jdbc:oracle:thin:@192.168.3.14:1521:cdsbd", "PRESENTER_ANALYTICS", "portal", "cds312");
+//       String[] columns = {"id", "name"};
+//       database.getDados("ORACLE_SID", "192.168.3.14", "1521", "cdsdev", "portal", "cds312", columns);
+   }
     
 }
