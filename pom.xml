@@ -165,7 +165,18 @@
                 <artifactId>javax.el</artifactId>
                 <version>2.2.5</version>
             </dependency>
-
+            
+            <!--Dependências de full-text search-->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-search-orm</artifactId>
+                <version>5.3.0.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.solr</groupId>
+                <artifactId>solr-solrj</artifactId>
+                <version>4.0.0</version>
+            </dependency>
 
             <!-- Dependências de Teste Unitário -->
             <dependency>
