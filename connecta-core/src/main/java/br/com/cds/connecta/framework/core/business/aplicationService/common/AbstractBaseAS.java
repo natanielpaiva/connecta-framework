@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import br.com.cds.connecta.framework.core.entity.AbstractBaseEntity;
-import br.com.cds.connecta.framework.core.filter.PaginationFilter;
+import br.com.cds.connecta.framework.core.search.filter.PaginationFilter;
 import org.springframework.data.domain.Page;
 
 @Service

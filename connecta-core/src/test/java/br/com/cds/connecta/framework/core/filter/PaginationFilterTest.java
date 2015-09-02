@@ -5,6 +5,7 @@
  */
 package br.com.cds.connecta.framework.core.filter;
 
+import br.com.cds.connecta.framework.core.search.filter.PaginationFilter;
 import java.util.HashMap;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;

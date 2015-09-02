@@ -1,7 +1,7 @@
 package br.com.cds.connecta.framework.core.business.aplicationService.common;
 
 import br.com.cds.connecta.framework.core.entity.AbstractBaseEntity;
-import br.com.cds.connecta.framework.core.filter.PaginationFilter;
+import br.com.cds.connecta.framework.core.search.filter.PaginationFilter;
 import java.util.List;
 import org.springframework.data.domain.Page;
 

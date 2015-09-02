@@ -8,7 +8,7 @@ import javax.persistence.Query;
 import org.springframework.context.annotation.Configuration;
 
 import br.com.cds.connecta.framework.core.entity.AbstractBaseEntity;
-import br.com.cds.connecta.framework.core.filter.PaginationFilter;
+import br.com.cds.connecta.framework.core.search.filter.PaginationFilter;
 import br.com.cds.connecta.framework.core.util.Util;
 import java.util.Arrays;
 import java.util.HashMap;
