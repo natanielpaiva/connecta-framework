@@ -11,7 +11,7 @@
 
     <properties>
         <spring-framework.version>4.1.5.RELEASE</spring-framework.version>
-        <hibernate.version>4.2.7.Final</hibernate.version>
+        <hibernate.version>4.3.10.Final</hibernate.version>
     </properties>
 
     <dependencyManagement>

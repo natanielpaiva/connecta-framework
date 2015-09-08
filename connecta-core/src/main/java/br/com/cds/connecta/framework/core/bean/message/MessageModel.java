@@ -3,6 +3,7 @@ package br.com.cds.connecta.framework.core.bean.message;
 
 import br.com.cds.connecta.framework.core.bean.common.AbstractBaseBean;
 import br.com.cds.connecta.framework.core.domain.MessageEnum;
+import br.com.cds.connecta.framework.core.domain.MessageTypeEnum;
 
 public class MessageModel extends AbstractBaseBean {
 
@@ -10,14 +11,21 @@ public class MessageModel extends AbstractBaseBean {
 
     private String code;
     private String message;
-    private MessageEnum type = MessageEnum.INFO;
+    private MessageTypeEnum type = MessageTypeEnum.INFO;
 
     public MessageModel() {
     }
 
-    public MessageModel(String code, String message, MessageEnum tipo) {
+    public MessageModel(String code, String message, MessageTypeEnum tipo) {
         super();
         this.code = code;
+        this.message = message;
+        this.type = tipo;
+    }
+    
+    public MessageModel(MessageEnum code, String message, MessageTypeEnum tipo) {
+        super();
+        this.code = code.name();
         this.message = message;
         this.type = tipo;
     }
@@ -38,11 +46,11 @@ public class MessageModel extends AbstractBaseBean {
         this.message = message;
     }
 
-    public MessageEnum getType() {
+    public MessageTypeEnum getType() {
         return type;
     }
 
-    public void setType(MessageEnum type) {
+    public void setType(MessageTypeEnum type) {
         this.type = type;
     }
 
