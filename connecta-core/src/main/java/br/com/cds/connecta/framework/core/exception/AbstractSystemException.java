@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.cds.connecta.framework.core.bean.message.Message;
-import br.com.cds.connecta.framework.core.domain.ExceptionEnum;
+import br.com.cds.connecta.framework.core.domain.MessageEnum;
 
 public abstract class AbstractSystemException extends RuntimeException {
 
@@ -13,24 +13,24 @@ public abstract class AbstractSystemException extends RuntimeException {
      */
     private static final long serialVersionUID = -5270792712405112397L;
 
-    private ExceptionEnum exceptionType;
+    private MessageEnum exceptionType;
     private List<Message> messagesToThrow = new ArrayList<>();
 
-    public AbstractSystemException(ExceptionEnum type) {
+    public AbstractSystemException(MessageEnum type) {
         super(type.name());
         exceptionType = type;
     }
 
-    public AbstractSystemException(ExceptionEnum type, Throwable e) {
+    public AbstractSystemException(MessageEnum type, Throwable e) {
         super(type.name(), e);
     }
 
-    public AbstractSystemException(ExceptionEnum type, String key, Object... args) {
+    public AbstractSystemException(MessageEnum type, String key, Object... args) {
         super(type.name());
         addMessageToThrow(key, args);
     }
 
-    public AbstractSystemException(ExceptionEnum type, String key, String message, Object... args) {
+    public AbstractSystemException(MessageEnum type, String key, String message, Object... args) {
         super(type.name());
         addMessageToThrow(key, message, args);
     }
@@ -60,7 +60,7 @@ public abstract class AbstractSystemException extends RuntimeException {
         return messagesToThrow;
     }
 
-    public ExceptionEnum getExceptionEnum() {
+    public MessageEnum getExceptionEnum() {
         return exceptionType;
     }
 

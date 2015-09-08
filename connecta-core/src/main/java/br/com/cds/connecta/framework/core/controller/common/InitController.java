@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import br.com.cds.connecta.framework.core.bean.message.Message;
 import br.com.cds.connecta.framework.core.bean.message.MessageModel;
 import br.com.cds.connecta.framework.core.bean.message.TranslateMessage;
-import br.com.cds.connecta.framework.core.domain.MessageEnum;
+import br.com.cds.connecta.framework.core.domain.MessageTypeEnum;
 import br.com.cds.connecta.framework.core.exception.BusinessException;
+import br.com.cds.connecta.framework.core.exception.ResourceNotFoundException;
 import br.com.cds.connecta.framework.core.exception.SystemException;
 import javax.validation.ConstraintViolationException;
 import org.apache.commons.lang.exception.ExceptionUtils;
@@ -21,6 +22,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 @ControllerAdvice
@@ -38,8 +40,21 @@ public class InitController {
      * @param args
      * @return
      */
-    protected MessageModel getTranslatedMessage(String key, MessageEnum messageEnum, Object... args) {
+    protected MessageModel getTranslatedMessage(String key, MessageTypeEnum messageEnum, Object... args) {
         return translate.getMsg(key, messageEnum, args);
+    }
+    
+    @ExceptionHandler({ResourceNotFoundException.class})
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<MessageModel> handleException(ResourceNotFoundException e) {
+        String translatedResourceName = translate.getTextMsg(e.getResourceName(), null);
+        
+        MessageModel message = getTranslatedMessage(e.getExceptionEnum().name(),
+            MessageTypeEnum.ERROR,
+            translatedResourceName
+        );
+
+        return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler({BusinessException.class})
@@ -48,7 +63,7 @@ public class InitController {
         List<MessageModel> messageModels = new ArrayList<>();
 
         for (Message message : e.getMessages()) {
-            messageModels.add(getTranslatedMessage(message.getMessage(), MessageEnum.ERROR));
+            messageModels.add(getTranslatedMessage(message.getMessage(), MessageTypeEnum.ERROR));
         }
 
         return new ResponseEntity(messageModels, HttpStatus.BAD_REQUEST);
@@ -56,10 +71,11 @@ public class InitController {
 
     @ExceptionHandler({
         IllegalArgumentException.class,
-        IllegalStateException.class
+        IllegalStateException.class,
+        MissingServletRequestParameterException.class
     })
     public ResponseEntity handleException(Exception e) {
-        MessageModel mm = getTranslatedMessage(e.getMessage(), MessageEnum.WARN);
+        MessageModel mm = getTranslatedMessage(e.getMessage(), MessageTypeEnum.WARN);
 
         return new ResponseEntity(mm, HttpStatus.BAD_REQUEST);
     }
@@ -71,7 +87,7 @@ public class InitController {
         List<MessageModel> mms = new ArrayList<>();
 
         for (ObjectError error : e.getBindingResult().getAllErrors()) {
-            mms.add(getTranslatedMessage(error.getDefaultMessage(), MessageEnum.WARN));
+            mms.add(getTranslatedMessage(error.getDefaultMessage(), MessageTypeEnum.WARN));
         }
 
         return new ResponseEntity(mms, HttpStatus.BAD_REQUEST);
@@ -93,7 +109,7 @@ public class InitController {
 
         e.printStackTrace();
 
-        MessageModel mm = translate.getMsg(system.getMessage(), MessageEnum.ERROR);
+        MessageModel mm = translate.getMsg(system.getMessage(), MessageTypeEnum.ERROR);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);

@@ -1,12 +1,13 @@
 package br.com.cds.connecta.framework.core.bean.message;
 
+import br.com.cds.connecta.framework.core.domain.MessageEnum;
 import java.util.Locale;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Component;
 
-import br.com.cds.connecta.framework.core.domain.MessageEnum;
+import br.com.cds.connecta.framework.core.domain.MessageTypeEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.NoSuchMessageException;
 
@@ -40,6 +41,10 @@ public class TranslateMessage {
             return key;
         }
     }
+    
+    public MessageModel getMsg(MessageEnum key, MessageTypeEnum type, Object... args) {
+        return getMsg(key.name(), type, args);
+    }
 
     /**
      * Traduz a chave em mensagem com o locale da sessao do usuario. Locale
@@ -50,7 +55,7 @@ public class TranslateMessage {
      * @param args
      * @return
      */
-    public MessageModel getMsg(String key, MessageEnum type, Object... args) {
+    public MessageModel getMsg(String key, MessageTypeEnum type, Object... args) {
         return getMsg(key, type, LocaleContextHolder.getLocale(), args);
     }
 
@@ -63,7 +68,7 @@ public class TranslateMessage {
      * @param args
      * @return
      */
-    public MessageModel getMsg(String code, MessageEnum type, Locale locale, Object... args) {
+    public MessageModel getMsg(String code, MessageTypeEnum type, Locale locale, Object... args) {
 
         String message = getTextMsg(code, locale, args);
 

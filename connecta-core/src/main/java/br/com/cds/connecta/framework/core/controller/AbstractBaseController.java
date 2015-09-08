@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import br.com.cds.connecta.framework.core.controller.common.InitController;
-import br.com.cds.connecta.framework.core.domain.ExceptionEnum;
+import br.com.cds.connecta.framework.core.domain.MessageEnum;
 import br.com.cds.connecta.framework.core.entity.AbstractBaseEntity;
 import br.com.cds.connecta.framework.core.exception.SystemException;
 import org.springframework.http.HttpStatus;
@@ -90,7 +90,7 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
         ResponseEntity<E> out = updateWithUpload(id, multipartRequest, request, response);
         if (out.getBody() == null) {
             // quando o resource a ser atualizado nao existe,
-            throw new SystemException(ExceptionEnum.NOT_FOUND);
+            throw new SystemException(MessageEnum.NOT_FOUND);
         }
         return out;
     }

@@ -1,23 +1,18 @@
 package br.com.cds.connecta.framework.core.domain;
 
-
-
 /**
- * 
+ * Define as mensagens que as aplicaçoes podem retornar
  */
 public enum MessageEnum {
+    
+    // Error messages
+    SYSTEM_ERROR,
+    REJECTED,
+    UNAUTHORIZED,
+    FORBIDDEN,
+    NOT_FOUND,
+    
+    // Success messages
+    OPERATION_SUCESS;
 
-    /**
-     * Mensagens informativas que exibem o progresso da execução da aplicação
-     */
-    INFO,
-    /**
-     * Permite informar situações potencialmente nocivas
-     */
-    WARN,
-    /**
-     * Informa sobre eventos que não permite a continuação da execução de uma
-     * funcionalidade
-     */
-    ERROR
 }

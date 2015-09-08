@@ -22,7 +22,9 @@
     
     <aop:config>
         <aop:pointcut id="allServices" expression="execution(* br.com.cds.connecta.*.business.*.*.*(..))" />
+        <aop:pointcut id="frameworkServices" expression="execution(* br.com.cds.connecta.framework.core.business.*.*.*(..))" />
         <aop:advisor pointcut-ref="allServices" advice-ref="txAdvice" />
+        <aop:advisor pointcut-ref="frameworkServices" advice-ref="txAdvice" />
     </aop:config>
     
 </beans>
