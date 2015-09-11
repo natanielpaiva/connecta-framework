@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Vinicius Pires <vinicius.pires@cds.com.br>
  */
 @RestController
-@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 public class ConnectaSharedController extends InitController {
 
     @Autowired
