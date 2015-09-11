@@ -1,5 +1,6 @@
 package br.com.cds.connecta.framework.core.domain.security;
 
+import br.com.cds.connecta.framework.core.domain.AvatarUrlType;
 import java.util.List;
 
 /**
@@ -12,10 +13,11 @@ public class AuthenticationDTO {
     protected String lastName;
     protected String email;
     protected String avatarUrl;
+    protected AvatarUrlType avatarUrlType;
     protected String token;
     protected String password;
     protected List<String> authorizedApps;
-    
+
     public String getUserId() {
         return userId;
     }
@@ -78,6 +80,14 @@ public class AuthenticationDTO {
 
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
+    }
+
+    public AvatarUrlType getAvatarUrlType() {
+        return avatarUrlType;
+    }
+
+    public void setAvatarUrlType(AvatarUrlType avatarUrlType) {
+        this.avatarUrlType = avatarUrlType;
     }
 
     @Override
