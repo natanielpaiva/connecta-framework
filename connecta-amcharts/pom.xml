@@ -2,19 +2,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
-    <groupId>br.com.cds.connecta.framework</groupId>
-    <artifactId>connecta-amcharts</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
-    
-    <packaging>jar</packaging>
-    <name>Connecta AmCharts</name>
-    <description>Java mirror model for AmCharts configuration</description>
-    
     <parent>
         <groupId>br.com.cds.connecta.framework</groupId>
         <artifactId>connecta-parent</artifactId>
-        <version>0.0.3-SNAPSHOT</version>
+        <version>0.0.4-SNAPSHOT</version>
     </parent>
+
+    <artifactId>connecta-amcharts</artifactId>
+    <name>Connecta AmCharts</name>
+    <description>Java mirror model for AmCharts configuration</description>
+    <packaging>jar</packaging>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
