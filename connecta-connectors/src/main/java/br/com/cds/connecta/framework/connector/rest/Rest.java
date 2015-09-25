@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -62,7 +61,6 @@ public class Rest {
 
         final JsonDataContext dataContext = new JsonDataContext(resource, schemaBuilder);
 
-        //log.debug("Colunas :" + Arrays.toString(columns));
 
         final DataSet dataSet = dataContext.query().from("mytable").selectAll().execute();
         List<Map<String, Object>> Obj = new ArrayList<>();
@@ -83,10 +81,7 @@ public class Rest {
                 object.put(columns.get(i).getLabel(), value);
                 System.out.println("**" + columns.get(i).getLabel() + " --> " + value);
                 
-//                object.put(columns[i], value);
-//                System.out.println("**" + columns[i] + " --> " + value);
             }
-            System.out.println("----------------------------");
             Obj.add(object);
         }
         return Obj;
@@ -208,8 +203,6 @@ public class Rest {
 //        String[] columns = {"name","data.key" };
 //        rest.getResult("http://sabesp-api.herokuapp.com/", columns, "[*]");
 //        
-        
-        
         
         //ok
         //String[] columns = {"author", "category"};
