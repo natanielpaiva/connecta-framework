@@ -19,6 +19,10 @@ public class SecurityContextUtil {
         return currentUser.getUserId();
     }
     
+    public static String getCurrentUserName(){
+        return currentUser.getFirstName() + " " + currentUser.getLastName();
+    }
+    
     public static String getCurrentUserToken(){
         return currentUser.getToken();
     }
