@@ -16,7 +16,7 @@ public class ConnectorColumn {
 
     private String name;
 
-    private BigDecimal type;
+    private String type;
     
     public Long getId() {
         return id;
@@ -50,12 +50,15 @@ public class ConnectorColumn {
         this.name = name;
     }
 
-    public BigDecimal getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(BigDecimal type) {
+//    public void setType(BigDecimal type) {
+//        this.type = type;
+//    }
+    
+    public void setType(String type) {
         this.type = type;
     }
-    
 }
