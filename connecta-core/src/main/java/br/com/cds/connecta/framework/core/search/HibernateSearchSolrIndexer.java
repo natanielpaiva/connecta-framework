@@ -176,7 +176,7 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
                 stringBuilder.append(id);
             }
             stringBuilder.append(')');
-            solrServer.deleteByQuery(stringBuilder.toString());
+//            solrServer.deleteByQuery(stringBuilder.toString());
         }
     }
 
