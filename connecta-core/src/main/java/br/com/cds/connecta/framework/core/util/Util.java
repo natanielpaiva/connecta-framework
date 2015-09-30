@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -60,6 +61,11 @@ public class Util {
      */
     public static <E> List<E> checkEmpty(List<E> list) {
         return list == null ? Collections.<E>emptyList() : list;
+    }
+    
+    
+    public static <E> Set<E> checkEmpty(Set<E> list) {
+        return list == null ? Collections.<E>emptySet(): list;
     }
 
     /**
