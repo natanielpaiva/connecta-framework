@@ -1,5 +1,7 @@
 package br.com.cds.connecta.framework.core.domain;
 
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+
 /**
  * Interface Utilitária para os nomes de escopos dos Beans do Spring
  *
@@ -19,7 +21,7 @@ public interface SpringBeanScope {
      * <a href="http://www.tutorialspoint.com/spring/spring_bean_scopes.htm">Spring
      * Bean Scopes</a>
      */
-    String SINGLETON = "singleton";
+    String SINGLETON = ConfigurableBeanFactory.SCOPE_SINGLETON;
 
     /**
      * Scope identifier for the standard prototype scope: "prototype".
@@ -28,7 +30,7 @@ public interface SpringBeanScope {
      * <a href="http://www.tutorialspoint.com/spring/spring_bean_scopes.htm">Spring
      * Bean Scopes</a>
      */
-    String PROTOTYPE = "prototype";
+    String PROTOTYPE = ConfigurableBeanFactory.SCOPE_PROTOTYPE;
 
     /**
      * Scope identifier for the standard singleton scope: "request".
