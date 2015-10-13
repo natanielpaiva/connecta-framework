@@ -4,7 +4,10 @@ package br.com.cds.connecta.framework.core.domain;
  * Enum de tipos de mensagens das aplicações
  */
 public enum MessageTypeEnum {
-
+    /**
+     * Mensagens de sucesso
+     */
+    SUCCESS,
     /**
      * Mensagens informativas que exibem o progresso da execução da aplicação
      */
