@@ -41,7 +41,6 @@ public class Database {
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //return getResult(dataContext, columns);
         return dataContext;
     }
 
@@ -50,8 +49,6 @@ public class Database {
         if (drive.equals("ORACLE_SID")) {
 
             try {
-                //oracle.jdbc.xa.client.OracleXADataSource
-                //Class.forName("oracle.jdbc.driver.OracleDriver");
                 Class.forName("oracle.jdbc.xa.client.OracleXADataSource");
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
@@ -159,24 +156,34 @@ public class Database {
         return result;
 
     }
-//     public List<Map<String, Object>> getResultSql(DataContext dataContext, String sql) {
-//        
-//        Query q = new Query();
-//        
-//        Query parseQuery = dataContext.parseQuery(sql);
-//        
-//        DataSet dataset = dataContext.executeQuery(parseQuery);
-//
-//        List<Map<String, Object>> result = new ArrayList<>();
-//        for (Row row : dataset) {
-//            Object[] values = row.getValues();
-//            
-//            //result.add(object);
-//
-//        }
-//        dataset.close();
-//        return result;
-//        
-//    }
+     public List<Map<String, Object>> getResultTable(DataContext dataContext, String table ) {
+        
+        Query q = new Query();
+        q.from(table);
+        
+        DataSet dataset = dataContext.executeQuery(q);
+
+        
+        List<Map<String, Object>> result = new ArrayList<>();
+
+        for (Row row : dataset) {
+            Object[] values = row.getValues();
+
+            SelectItem[] selectItems = row.getSelectItems();
+
+            Map<String, Object> object = new HashMap<>(selectItems.length);
+
+            for (int i = 0; i < selectItems.length; i++) {
+
+                Object value = values[i];
+                object.put(selectItems[i].toString().replace("\"", ""), value);
+            }
+            result.add(object);
+
+        }
+        dataset.close();
+        return result;
+        
+    }
 
 }
