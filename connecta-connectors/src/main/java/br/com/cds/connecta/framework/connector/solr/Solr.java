@@ -80,7 +80,7 @@ public class Solr {
             result.add(object);
         }
         PrintResult printResult = new PrintResult();
-        printResult.print(result);
+       //printResult.print(result);
         return result;
 
     }
@@ -88,7 +88,7 @@ public class Solr {
      public static void main(String[] args) throws SolrServerException, IOException {
         Solr sorl = new Solr();
         sorl.searchSorl(
-                "http://167.114.116.94:9002/solr/comercial",
+                "http://connecta.cds.com.br/solr/comercial",
                 "((+JOBID:1201) AND (+SENTIMENT:neutral) AND (+FRIENDS:0))" , 50);
     }
 }
