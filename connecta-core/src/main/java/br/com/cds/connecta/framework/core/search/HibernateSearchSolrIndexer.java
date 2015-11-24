@@ -17,7 +17,6 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.lucene.index.IndexableField;
-import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;
 import org.apache.solr.client.solrj.request.UpdateRequest;
 import org.hibernate.search.indexes.spi.DirectoryBasedIndexManager;
@@ -39,7 +38,7 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
     private static final Logger logger = Logger.getLogger(HibernateSearchSolrIndexer.class.getName());
     private static final String SOLR_INDEX_ROOT_PROP = "connecta.search.solrbackend";
 
-    private SolrServer solrServer;
+    private HttpSolrServer solrServer;
 
     @Override
     public void initialize(Properties properties, WorkerBuildContext workerBuildContext, DirectoryBasedIndexManager directoryBasedIndexManager) {
