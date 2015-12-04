@@ -1,7 +1,5 @@
 package br.com.cds.connecta.framework.connector.solr;
 
-import br.com.cds.connecta.framework.connector.util.ConnectorColumn;
-import br.com.cds.connecta.framework.connector.util.PrintResult;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,14 +7,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.SolrServerException;
-import org.apache.solr.client.solrj.impl.HttpSolrClient;
+import org.apache.solr.client.solrj.impl.HttpSolrServer;
 import org.apache.solr.client.solrj.request.LukeRequest;
 import org.apache.solr.client.solrj.response.LukeResponse;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
+
+import br.com.cds.connecta.framework.connector.util.ConnectorColumn;
+import br.com.cds.connecta.framework.connector.util.PrintResult;
 
 /**
  *
@@ -25,7 +28,7 @@ import org.apache.solr.common.SolrDocumentList;
 public class Solr {
 
     public List<ConnectorColumn> getColumns(String address) {
-        HttpSolrClient solr = new HttpSolrClient(address);
+    	SolrServer solr = getSolrServer(address);
 
         ArrayList<ConnectorColumn> columns = new ArrayList<>();
 
@@ -57,10 +60,15 @@ public class Solr {
         }
         return columns;
     }
+    
+    private  SolrServer getSolrServer(String  address) {
+        SolrServer solrServer = new HttpSolrServer(address);
+        return solrServer;
+    }
 
     public List<Map<String, Object>> searchSorl(String address, String query, int facet) throws SolrServerException, IOException {
 
-        HttpSolrClient solr = new HttpSolrClient(address);
+    	SolrServer solr = getSolrServer(address);
 
         SolrQuery solrQuery = new SolrQuery();
         solrQuery.setQuery(query);
@@ -79,8 +87,8 @@ public class Solr {
             }
             result.add(object);
         }
-        PrintResult printResult = new PrintResult();
-       //printResult.print(result);
+       // PrintResult printResult = new PrintResult();
+       // printResult.print(result);
         return result;
 
     }
@@ -88,7 +96,11 @@ public class Solr {
      public static void main(String[] args) throws SolrServerException, IOException {
         Solr sorl = new Solr();
         sorl.searchSorl(
-                "http://connecta.cds.com.br/solr/comercial",
-                "((+JOBID:1201) AND (+SENTIMENT:neutral) AND (+FRIENDS:0))" , 50);
+                "http://167.114.116.94:7004/solr/comercial/",
+                "((+JOBID:901) AND (+SENTIMENT:positive) AND (+FRIENDS:0))" , 50);
+        
+        
     }
+     
+    
 }
