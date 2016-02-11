@@ -63,9 +63,15 @@
         
         <!-- Spring OAUTH2 -->
         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>4.0.3.RELEASE</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.security.oauth</groupId>
             <artifactId>spring-security-oauth2</artifactId>
-            <version>2.0.5.RELEASE</version>
+            <version>2.0.8.RELEASE</version>
         </dependency>
         
         <!-- HIBERNATE -->
@@ -219,7 +225,6 @@
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
         </dependency>
-	
     </dependencies>
 
     <build>
