@@ -27,7 +27,24 @@
             </plugin>
         </plugins>
     </build>
+    
+    <repositories>
+        <repository>
+            <id>cds</id>
+            <url>http://nexus.cds.com.br/content/repositories/public</url>
+        </repository>
+        <repository>
+            <id>d-maven</id>
+            <url>http://d-maven.googlecode.com/svn/trunk/repo</url>
+        </repository>
+    </repositories>
+    
     <dependencies>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.3</version>
+        </dependency>
         <dependency>
             <groupId>wsdl4j</groupId>
             <artifactId>wsdl4j</artifactId>
@@ -44,7 +61,7 @@
             <artifactId>MetaModel-xml</artifactId>
             <type>jar</type>
         </dependency>
-         <dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
             <version>1.2.5.RELEASE</version>
@@ -78,13 +95,35 @@
         <dependency>
             <groupId>org.apache.metamodel</groupId>
             <artifactId>MetaModel-full</artifactId>
-            <version>4.3.4</version>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-solrj</artifactId>
         </dependency>
-       
+        
+        <dependency>
+            <groupId>dnl.utils</groupId>
+            <artifactId>j-text-utils</artifactId>
+            <version>0.3.3</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.38</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.predic8</groupId>
+            <artifactId>soa-model-core</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>20020423</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 </project>
