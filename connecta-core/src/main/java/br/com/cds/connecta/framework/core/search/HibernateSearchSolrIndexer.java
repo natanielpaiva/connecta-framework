@@ -1,6 +1,7 @@
 package br.com.cds.connecta.framework.core.search;
 
-import org.apache.lucene.document.Document;
+import br.com.cds.connecta.framework.core.search.solradapter.*;
+import static br.com.cds.connecta.framework.core.search.solradapter.SolrWorkAdapterUtils.*;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.common.SolrInputDocument;
 import org.hibernate.search.backend.*;
@@ -16,7 +17,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.apache.lucene.index.IndexableField;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;
 import org.apache.solr.client.solrj.request.UpdateRequest;
 import org.hibernate.search.indexes.spi.DirectoryBasedIndexManager;
@@ -30,8 +30,6 @@ import org.hibernate.search.indexes.spi.DirectoryBasedIndexManager;
  */
 public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
 
-    private static final String ID_FIELD_NAME = "id";
-
     private static final ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
     private static final ReentrantReadWriteLock.WriteLock writeLock = readWriteLock.writeLock();
 
@@ -39,7 +37,7 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
     private static final String SOLR_INDEX_ROOT_PROP = "connecta.search.solrbackend";
 
     private HttpSolrServer solrServer;
-
+    
     @Override
     public void initialize(Properties properties, WorkerBuildContext workerBuildContext, DirectoryBasedIndexManager directoryBasedIndexManager) {
         try {
@@ -61,49 +59,32 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
 
     @Override
     public void applyWork(List<LuceneWork> luceneWorks, IndexingMonitor indexingMonitor) {
-        List<SolrInputDocument> solrWorks = new ArrayList<>(luceneWorks.size());
-        List<String> documentsForDeletion = new ArrayList<>();
-
-        boolean purgeAll = false;
+        List<SolrInputDocument> solrInputDocuments = new ArrayList<>(luceneWorks.size());
+        List<String> idsForDeletion = new ArrayList<>();
+        Boolean purgeAll = false;
 
         for (LuceneWork work : luceneWorks) {
-            SolrInputDocument solrInputDocument = null;
-
             logger.log(Level.INFO, "Running Lucene work: {0}", work);
-
-            if (work instanceof AddLuceneWork) {
-                solrInputDocument = new SolrInputDocument();
-                handleAddLuceneWork((AddLuceneWork) work, solrInputDocument);
-            } else if (work instanceof UpdateLuceneWork) {
-                solrInputDocument = new SolrInputDocument();
-                handleUpdateLuceneWork((UpdateLuceneWork) work, solrInputDocument);
-            } else if (work instanceof DeleteLuceneWork) {
-                solrInputDocument = new SolrInputDocument();
-                documentsForDeletion.add(((DeleteLuceneWork) work).getIdInString());
-            } else if (work instanceof PurgeAllLuceneWork) {
-                purgeAll = true;
-            } else {
-                logger.log(Level.SEVERE, "Unsupported LuceneWork: {0}", work);
-            }
-
-            if (solrInputDocument != null) {
-                logger.log(Level.INFO, "Adding to queue Solr Work: {0}", solrInputDocument);
-                solrWorks.add(solrInputDocument);
+            
+            SolrWorkAdapter adapter = getSolrWorkAdapter(work);
+            SolrInputDocument document = adapter.adaptRequest(work, idsForDeletion, purgeAll);
+            if (document != null) {
+                solrInputDocuments.add(document);
             }
         }
+        
         try {
-            deleteDocs(documentsForDeletion, purgeAll);
+            deleteDocs(idsForDeletion, purgeAll);
 
-            if (solrWorks.size() > 0) {
-                solrServer.add(solrWorks);
-                commit(solrWorks);
+            if (solrInputDocuments.size() > 0) {
+                solrServer.add(solrInputDocuments);
+                commit(solrInputDocuments);
             } else {
                 commit();
             }
         } catch (SolrServerException | IOException e) {
             throw new RuntimeException("Failed to update solr", e);
         }
-
     }
 
     /**
@@ -115,29 +96,14 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
     @Override
     public void applyStreamWork(LuceneWork work, IndexingMonitor indexingMonitor) {
         logger.log(Level.INFO, "APPLY STREAM WORK", work);
-        SolrInputDocument solrInputDocument = null;
+        List<String> idsForDeletion = new ArrayList<>();
+        Boolean purgeAll = false;
 
-        List<String> documentsForDeletion = new ArrayList<>();
-
-        boolean purgeAll = false;
-
-        if (work instanceof AddLuceneWork) {
-            solrInputDocument = new SolrInputDocument();
-            handleAddLuceneWork((AddLuceneWork) work, solrInputDocument);
-        } else if (work instanceof UpdateLuceneWork) {
-            solrInputDocument = new SolrInputDocument();
-            handleUpdateLuceneWork((UpdateLuceneWork) work, solrInputDocument);
-        } else if (work instanceof DeleteLuceneWork) {
-            solrInputDocument = new SolrInputDocument();
-            documentsForDeletion.add(((DeleteLuceneWork) work).getIdInString());
-        } else if (work instanceof PurgeAllLuceneWork) {
-            purgeAll = true;
-        } else {
-            logger.log(Level.SEVERE, "Unsupported LuceneWork: {0}", work);
-        }
+        SolrWorkAdapter adapter = getSolrWorkAdapter(work);
+        SolrInputDocument solrInputDocument = adapter.adaptRequest(work, idsForDeletion, purgeAll);
         
         try {
-            deleteDocs(documentsForDeletion, purgeAll);
+            deleteDocs(idsForDeletion, purgeAll);
 
             solrServer.add(solrInputDocument);
             List<SolrInputDocument> solrWorks = new ArrayList<>(1);
@@ -176,20 +142,6 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
             }
             stringBuilder.append(')');
 //            solrServer.deleteByQuery(stringBuilder.toString());
-        }
-    }
-
-    private void copyFields(Document document, SolrInputDocument solrInputDocument) {
-        boolean addedId = false;
-        for (IndexableField fieldable : document.getFields()) {
-            if (fieldable.name().equals(ID_FIELD_NAME)) {
-                if (addedId) {
-                    continue;
-                } else {
-                    addedId = true;
-                }
-            }
-            solrInputDocument.addField(fieldable.name(), fieldable.stringValue());
         }
     }
 
