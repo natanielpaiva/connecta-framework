@@ -1,5 +1,6 @@
 package br.com.cds.connecta.framework.core.search.solradapter;
 
+import br.com.cds.connecta.framework.core.search.annotation.ConnectaViewer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -9,6 +10,7 @@ import org.apache.lucene.index.IndexableField;
 import org.apache.solr.common.SolrInputDocument;
 import org.hibernate.search.backend.*;
 import org.hibernate.search.backend.spi.DeleteByQueryLuceneWork;
+import org.springframework.core.annotation.AnnotationUtils;
 
 /**
  *
@@ -17,6 +19,8 @@ import org.hibernate.search.backend.spi.DeleteByQueryLuceneWork;
 public class SolrWorkAdapterUtils {
     
     public static final String ID_FIELD_NAME = "id";
+    public static final String MODULE_FIELD_NAME = "module";
+    
     private static final Logger logger = Logger.getLogger(SolrWorkAdapterUtils.class.getName());
     private static final Map<Class<? extends LuceneWork>, Class<? extends SolrWorkAdapter>> adapters;
 
@@ -56,6 +60,15 @@ public class SolrWorkAdapterUtils {
         }
         
         return adapter;
+    }
+
+    public static void addModuleFieldIfViewer(LuceneWork work, SolrInputDocument solrInputDocument) {
+        ConnectaViewer viewer = AnnotationUtils.findAnnotation(work.getEntityClass(), ConnectaViewer.class);
+        
+        if (viewer != null) {   // Caso seja um viewer, indexa o módulo do qual está vindo
+            logger.log(Level.SEVERE, "Unsupported LuceneWork: {0}", work.getClass().getCanonicalName());
+            solrInputDocument.addField(MODULE_FIELD_NAME, viewer.module());
+        }
     }
 
 }
