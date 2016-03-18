@@ -22,9 +22,7 @@ import org.apache.solr.client.solrj.request.UpdateRequest;
 import org.hibernate.search.indexes.spi.DirectoryBasedIndexManager;
 
 /**
- * Backend processor para indexar os dados no Solr ao inves do Lucene
- *
- * FIXME Less if, more power http://antiifcampaign.com/
+ * Backend processor para indexar os dados no Solr ao invés do Lucene
  *
  * @author Vinicius Pires <vinicius.pires@cds.com.br>
  */
@@ -37,7 +35,7 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
     private static final String SOLR_INDEX_ROOT_PROP = "connecta.search.solrbackend";
 
     private HttpSolrServer solrServer;
-    
+
     @Override
     public void initialize(Properties properties, WorkerBuildContext workerBuildContext, DirectoryBasedIndexManager directoryBasedIndexManager) {
         try {
@@ -65,14 +63,46 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
 
         for (LuceneWork work : luceneWorks) {
             logger.log(Level.INFO, "Running Lucene work: {0}", work);
-            
+
             SolrWorkAdapter adapter = getSolrWorkAdapter(work);
             SolrInputDocument document = adapter.adaptRequest(work, idsForDeletion, purgeAll);
             if (document != null) {
                 solrInputDocuments.add(document);
             }
         }
-        
+
+        commitAndFinish(idsForDeletion, purgeAll, solrInputDocuments);
+    }
+
+    /**
+     *
+     * @param work
+     * @param indexingMonitor
+     */
+    @Override
+    public void applyStreamWork(LuceneWork work, IndexingMonitor indexingMonitor) {
+        List<SolrInputDocument> solrInputDocuments = new ArrayList<>(1);
+        List<String> idsForDeletion = new ArrayList<>();
+        Boolean purgeAll = false;
+
+        SolrWorkAdapter adapter = getSolrWorkAdapter(work);
+        SolrInputDocument solrInputDocument = adapter.adaptRequest(work, idsForDeletion, purgeAll);
+        solrInputDocuments.add(solrInputDocument);
+
+        commitAndFinish(idsForDeletion, purgeAll, solrInputDocuments);
+    }
+
+    @Override
+    public Lock getExclusiveWriteLock() {
+        return writeLock;
+    }
+
+    @Override
+    public void indexMappingChanged() {
+        logger.info("[UnsupportedOperation] Index mapping changed");
+    }
+    
+    private void commitAndFinish(List<String> idsForDeletion, Boolean purgeAll, List<SolrInputDocument> solrInputDocuments) throws RuntimeException {
         try {
             deleteDocs(idsForDeletion, purgeAll);
 
@@ -85,43 +115,6 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
         } catch (SolrServerException | IOException e) {
             throw new RuntimeException("Failed to update solr", e);
         }
-    }
-
-    /**
-     * FIXME Refatorar pra não ficar duplicado
-     * 
-     * @param work
-     * @param indexingMonitor 
-     */
-    @Override
-    public void applyStreamWork(LuceneWork work, IndexingMonitor indexingMonitor) {
-        logger.log(Level.INFO, "APPLY STREAM WORK", work);
-        List<String> idsForDeletion = new ArrayList<>();
-        Boolean purgeAll = false;
-
-        SolrWorkAdapter adapter = getSolrWorkAdapter(work);
-        SolrInputDocument solrInputDocument = adapter.adaptRequest(work, idsForDeletion, purgeAll);
-        
-        try {
-            deleteDocs(idsForDeletion, purgeAll);
-
-            solrServer.add(solrInputDocument);
-            List<SolrInputDocument> solrWorks = new ArrayList<>(1);
-            solrWorks.add(solrInputDocument);
-            commit(solrWorks);
-        } catch (SolrServerException | IOException e) {
-            throw new RuntimeException("Failed to update solr", e);
-        }
-    }
-
-    @Override
-    public Lock getExclusiveWriteLock() {
-        return writeLock;
-    }
-
-    @Override
-    public void indexMappingChanged() {
-        logger.info("[UnsupportedOperation] Index mapping changed");
     }
 
     private void deleteDocs(Collection<String> collection, boolean purgeAll) throws IOException, SolrServerException {
@@ -141,16 +134,8 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
                 stringBuilder.append(id);
             }
             stringBuilder.append(')');
-//            solrServer.deleteByQuery(stringBuilder.toString());
+            solrServer.deleteByQuery(stringBuilder.toString());
         }
-    }
-
-    private void handleAddLuceneWork(AddLuceneWork luceneWork, SolrInputDocument solrWork) {
-        copyFields(luceneWork.getDocument(), solrWork);
-    }
-
-    private void handleUpdateLuceneWork(UpdateLuceneWork luceneWork, SolrInputDocument solrWork) {
-        copyFields(luceneWork.getDocument(), solrWork);
     }
 
     private void commit() throws IOException, SolrServerException {
