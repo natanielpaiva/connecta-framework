@@ -9,7 +9,6 @@ import org.springframework.web.client.RestClientException;
 /**
  *
  * @author Julio Lemes
- * @date Jul 27, 2015
  */
 public class SecurityConnector {
 

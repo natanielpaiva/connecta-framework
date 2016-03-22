@@ -25,10 +25,10 @@ public class TranslateMessage {
     /**
      * Traduz a chave em mensagem com o locale informado. Locale padrão pt_BR
      *
-     * @param key
-     * @param locale (opcional)
-     * @param args
-     * @return
+     * @param key Chave da mensagem de tradução
+     * @param locale O Locale (opcional)
+     * @param args Argumentos da mensagem
+     * @return A mensagem traduzida
      */
     public String getTextMsg(String key, Locale locale, Object... args) {
         if (locale == null) {
@@ -50,10 +50,10 @@ public class TranslateMessage {
      * Traduz a chave em mensagem com o locale da sessao do usuario. Locale
      * padrão pt_BR
      *
-     * @param key
-     * @param type
-     * @param args
-     * @return
+     * @param key Chave da mensagem de tradução
+     * @param type O tipo da mensagem
+     * @param args Argumentos da mensagem
+     * @return A mensagem traduzida
      */
     public MessageModel getMsg(String key, MessageTypeEnum type, Object... args) {
         return getMsg(key, type, LocaleContextHolder.getLocale(), args);

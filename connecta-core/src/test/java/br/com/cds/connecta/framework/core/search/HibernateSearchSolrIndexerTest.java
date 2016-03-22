@@ -1,5 +1,6 @@
 package br.com.cds.connecta.framework.core.search;
 
+import br.com.cds.connecta.framework.core.context.ConnectaConfigurationService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -20,11 +21,12 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.mockito.Mockito;
+import org.springframework.context.ApplicationContext;
 import org.springframework.test.util.ReflectionTestUtils;
 
 /**
  *
- * @author Vinicius Pires <vinicius.pires@cds.com.br>
+ * @author Vinicius Pires
  */
 @Ignore
 public class HibernateSearchSolrIndexerTest {
@@ -34,6 +36,9 @@ public class HibernateSearchSolrIndexerTest {
     public HibernateSearchSolrIndexerTest() {
         instance = new HibernateSearchSolrIndexer();
         ReflectionTestUtils.setField(instance, "solrServer", Mockito.mock(HttpSolrServer.class));
+        ApplicationContext mock = Mockito.mock(ApplicationContext.class);
+        Mockito.when(mock.getBean(ConnectaConfigurationService.class)).thenReturn(new ConnectaConfigurationService());
+        instance.setApplicationContext(mock);
     }
 
     @Before

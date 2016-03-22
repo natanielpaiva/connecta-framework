@@ -8,13 +8,12 @@ import org.springframework.data.domain.Page;
 /**
  *
  * @author Julio Lemes
- * @param <E>
- * @date May 29, 2015
+ * @param <E> Entidade gerenciada
  */
 public interface IBaseAS <E extends AbstractBaseEntity> {
     
     E save(E entity) throws Exception;
-    public E saveOrUpdate(E entity) throws Exception;
+    E saveOrUpdate(E entity) throws Exception;
     E update(E entity) throws Exception;
     E get(Long id) throws Exception;
     List<E> list() throws Exception;
