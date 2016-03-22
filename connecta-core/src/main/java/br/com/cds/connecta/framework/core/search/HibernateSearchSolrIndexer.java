@@ -1,5 +1,6 @@
 package br.com.cds.connecta.framework.core.search;
 
+import br.com.cds.connecta.framework.core.context.ConnectaConfigurationService;
 import br.com.cds.connecta.framework.core.search.solradapter.*;
 import static br.com.cds.connecta.framework.core.search.solradapter.SolrWorkAdapterUtils.*;
 import org.apache.solr.client.solrj.SolrServerException;
@@ -12,6 +13,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Properties;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -20,33 +23,31 @@ import java.util.logging.Logger;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;
 import org.apache.solr.client.solrj.request.UpdateRequest;
 import org.hibernate.search.indexes.spi.DirectoryBasedIndexManager;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 /**
  * Backend processor para indexar os dados no Solr ao invés do Lucene
  *
  * @author Vinicius Pires
  */
-public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
+public class HibernateSearchSolrIndexer implements BackendQueueProcessor, ApplicationContextAware, Observer {
 
     private static final ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
     private static final ReentrantReadWriteLock.WriteLock writeLock = readWriteLock.writeLock();
 
     private static final Logger logger = Logger.getLogger(HibernateSearchSolrIndexer.class.getName());
-    private static final String SOLR_INDEX_ROOT_PROP = "connecta.search.solrbackend";
 
     private HttpSolrServer solrServer;
+    private ApplicationContext applicationContext;
 
     @Override
     public void initialize(Properties properties, WorkerBuildContext workerBuildContext, DirectoryBasedIndexManager directoryBasedIndexManager) {
-        try {
-            Properties props = new Properties();
-
-            props.load(getClass().getClassLoader().getResourceAsStream("application.properties"));
-
-            solrServer = new HttpSolrServer(props.getProperty(SOLR_INDEX_ROOT_PROP));
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
+        ConnectaConfigurationService configService = applicationContext.getBean(ConnectaConfigurationService.class);
+        configService.addObserver(this);
+        
+        setNewHttpSolrServer(configService.getConfiguration().getSolrBackend());
     }
 
     @Override
@@ -96,12 +97,26 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
     public Lock getExclusiveWriteLock() {
         return writeLock;
     }
+    
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        setNewHttpSolrServer(((ConnectaConfigurationService)o).getConfiguration().getSolrBackend());
+    }
 
     @Override
     public void indexMappingChanged() {
         logger.info("[UnsupportedOperation] Index mapping changed");
     }
     
+    public void setNewHttpSolrServer(String location) {
+        solrServer = new HttpSolrServer(location);
+    }
+
     private void commitAndFinish(List<String> idsForDeletion, Boolean purgeAll, List<SolrInputDocument> solrInputDocuments) throws RuntimeException {
         try {
             deleteDocs(idsForDeletion, purgeAll);
