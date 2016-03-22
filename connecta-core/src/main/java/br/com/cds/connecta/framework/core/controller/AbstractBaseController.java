@@ -98,11 +98,11 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
     /**
      * Executa a busca por id
      *
-     * @param id
-     * @param request
-     * @param response
-     * @return
-     * @throws Exception
+     * @param id identificador da Entidade
+     * @param request Objeto de request da Servlet
+     * @param response Objeto de response da Servlet
+     * @return RersponseEntity Objeto de retorno
+     * @throws Exception gerando erro
      */
     protected ResponseEntity<E> get(Long id, HttpServletRequest request, HttpServletResponse response) 
             throws Exception {
@@ -112,10 +112,10 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
     /**
      * Permite fazer a listagem de resources
      *
-     * @param request
-     * @param response
-     * @return
-     * @throws Exception
+     * @param request Objeto de request da Servlet
+     * @param response Objeto de response da Servlet
+     * @return RersponseEntity Objeto de retorno
+     * @throws Exception gerando erro
      */
     protected ResponseEntity<List<E>> list(HttpServletRequest request, HttpServletResponse response) 
             throws Exception {
@@ -125,11 +125,11 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
     /**
      * Permite a criação de um resource
      *
-     * @param entity
-     * @param request
-     * @param response
-     * @return
-     * @throws Exception
+     * @param entity Objeto da Entidade que irá persistir
+     * @param request Objeto de request da Servlet
+     * @param response Objeto de response da Servlet
+     * @return RersponseEntity Objeto de retorno
+     * @throws Exception gerando erro
      */
     protected ResponseEntity<E> save(E entity, HttpServletRequest request, HttpServletResponse response) 
             throws Exception {
@@ -139,11 +139,11 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
     /**
      * Permite a criaçao de resources anexados a arquivos
      *
-     * @param multipartRequest
-     * @param request
-     * @param response
-     * @return
-     * @throws Exception
+     * @param multipartRequest MultipartHttpServletRequest Objeto Multipart para upload
+     * @param request Objeto de request da Servlet
+     * @param response Objeto de response da Servlet
+     * @return RersponseEntity Objeto de retorno
+     * @throws Exception gerando erro
      */
     protected ResponseEntity<E> createWithUpload(
             MultipartHttpServletRequest multipartRequest, 
@@ -156,11 +156,11 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
      * Permite o update de um resource específico
      *
      * @param id
-     * @param entity
-     * @param request
-     * @param response
-     * @return
-     * @throws Exception
+     * @param entity Objeto da Entidade que irá persistir
+     * @param request Objeto de request da Servlet
+     * @param response Objeto de response da Servlet
+     * @return RersponseEntity Objeto de retorno
+     * @throws Exception gerando erro
      */
     protected ResponseEntity<E> update(Long id, E entity, 
             HttpServletRequest request, 
@@ -171,12 +171,12 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
     /**
      * Permite o update de um resource que possui um arquivo anexo
      *
-     * @param id
-     * @param multipartRequest
-     * @param request
-     * @param response
-     * @return
-     * @throws Exception
+     * @param id identificador da entidade
+     * @param multipartRequest MultipartHttpServletRequest Objeto Multipart para upload
+     * @param request Objeto de request da Servlet
+     * @param response Objeto de response da Servlet
+     * @return RersponseEntity Objeto de retorno
+     * @throws Exception gerando erro
      */
     protected ResponseEntity<E> updateWithUpload(Long id, 
             MultipartHttpServletRequest multipartRequest, 
@@ -188,10 +188,10 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
     /**
      *
      *
-     * @param id
-     * @param request
-     * @param response
-     * @throws Exception
+     * @param id identificador da entidade
+     * @param request Objeto de request da Servlet
+     * @param response Objeto de response da Servlet
+     * @throws Exception gerando erro
      */
     protected void delete(Long id, HttpServletRequest request, 
             HttpServletResponse response) throws Exception {
