@@ -18,6 +18,7 @@ import org.hibernate.search.spi.WorkerBuildContext;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.mockito.Mockito;
 import org.springframework.test.util.ReflectionTestUtils;
 
@@ -25,6 +26,7 @@ import org.springframework.test.util.ReflectionTestUtils;
  *
  * @author Vinicius Pires <vinicius.pires@cds.com.br>
  */
+@Ignore
 public class HibernateSearchSolrIndexerTest {
 
     private final HibernateSearchSolrIndexer instance;

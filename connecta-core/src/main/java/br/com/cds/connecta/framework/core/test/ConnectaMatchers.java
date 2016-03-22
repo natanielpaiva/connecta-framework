@@ -97,8 +97,8 @@ public class ConnectaMatchers {
      * Verifica se a string é igual a analisada ignorando espaços em branco e
      * maíusculas e minúsculas
      * 
-     * @param expected
-     * @return 
+     * @param expected expected
+     * @return return
      */
     public static Matcher<String> stringIgnoringWhitespaceAndCase(String expected) {
         return new StringIgnoringWhitespaceAndCase(expected);
@@ -107,8 +107,8 @@ public class ConnectaMatchers {
     /**
      * Verifica se a string analisada corresponde à chave no enum passado
      * 
-     * @param expected
-     * @return 
+     * @param expected expected
+     * @return return
      */
     public static Matcher<String> enumKeyFor(Enum expected) {
         return new EnumKeyFor(expected);
