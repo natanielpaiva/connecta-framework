@@ -62,11 +62,11 @@ public class TranslateMessage {
     /**
      * Traduz a chave em mensagem com o locale informado da sessao do usuario
      *
-     * @param code
-     * @param type
-     * @param locale
-     * @param args
-     * @return
+     * @param code code 
+     * @param type type
+     * @param locale locate
+     * @param args args
+     * @return return
      */
     public MessageModel getMsg(String code, MessageTypeEnum type, Locale locale, Object... args) {
 

@@ -24,7 +24,7 @@ import org.hibernate.search.indexes.spi.DirectoryBasedIndexManager;
 /**
  * Backend processor para indexar os dados no Solr ao invés do Lucene
  *
- * @author Vinicius Pires <vinicius.pires@cds.com.br>
+ * @author Vinicius Pires
  */
 public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
 
@@ -76,8 +76,8 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
 
     /**
      *
-     * @param work
-     * @param indexingMonitor
+     * @param work work
+     * @param indexingMonitor indexingMonitor
      */
     @Override
     public void applyStreamWork(LuceneWork work, IndexingMonitor indexingMonitor) {
