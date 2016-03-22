@@ -13,7 +13,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 /**
  *
  * @author Julio Lemes
- * @date Jul 27, 2015
  */
 public class SecurityInterceptor extends HandlerInterceptorAdapter {
 

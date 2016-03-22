@@ -2,7 +2,7 @@ package br.com.cds.connecta.framework.core.business.aplicationService;
 
 /**
  *
- * @author Vinicius Pires <vinicius.pires@cds.com.br>
+ * @author Vinicius Pires
  */
 public interface IConnectaSharedIndexerService {
 

@@ -176,7 +176,6 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
      * @param request Objeto de request da Servlet
      * @param response Objeto de response da Servlet
      * @return RersponseEntity Objeto de retorno
-     * @throws Exception gerando erro
      */
     protected ResponseEntity<E> updateWithUpload(Long id, 
             MultipartHttpServletRequest multipartRequest, 
@@ -186,12 +185,11 @@ public abstract class AbstractBaseController<E extends AbstractBaseEntity> exten
     }
 
     /**
+     * Permite a remoção de um registro com o ID informado
      *
-     *
-     * @param id identificador da entidade
-     * @param request Objeto de request da Servlet
-     * @param response Objeto de response da Servlet
-     * @throws Exception gerando erro
+     * @param id ID do recurso
+     * @param request Objeto do Request da Servlet
+     * @param response Objeto do Response da Servlet
      */
     protected void delete(Long id, HttpServletRequest request, 
             HttpServletResponse response) throws Exception {
