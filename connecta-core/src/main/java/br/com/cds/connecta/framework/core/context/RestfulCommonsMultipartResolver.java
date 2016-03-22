@@ -13,7 +13,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
  * bug por provavelmente terem nascido com alguns parafusos a menos:
  * https://issues.apache.org/jira/browse/FILEUPLOAD-197
  *
- * @author Vinicius Pires <vinicius.costa.pires at gmail.com>
+ * @author Vinicius Pires
  */
 public class RestfulCommonsMultipartResolver extends CommonsMultipartResolver {
     /**
@@ -23,8 +23,8 @@ public class RestfulCommonsMultipartResolver extends CommonsMultipartResolver {
      * (linha 68). Pra melhorar ele é final, pra fazer necessário criar outra
      * classe se não quiser que um if idiota domine sua vida pra sempre.
      *
-     * @param request
-     * @return
+     * @param request request
+     * @return return
      */
     @Override
     public boolean isMultipart(HttpServletRequest request) {
