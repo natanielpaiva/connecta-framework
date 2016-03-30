@@ -52,19 +52,19 @@ public class DatabaseTable {
 
             while (rs.next()) {
 
-                try {
-                    String tableName = rs.getString("TABLE_NAME");
-                    String tableType = rs.getString("TABLE_TYPE");
+                String tableName = rs.getString("TABLE_NAME");
+                String tableType = rs.getString("TABLE_TYPE");
 
-                    TableImpl table = new TableImpl(tableName);
-                    table.setSchema(JDBCSchema);
-                    table.setTableType(tableType);
+                TableImpl table = new TableImpl(tableName);
+                table.setSchema(JDBCSchema);
+                table.setTableType(tableType);
 
-                    //recuperando os metadados da tabela
-                    String sql = "select * from ".concat(JDBCSchema.concat(".".concat(tableName)));
-                    Statement stm = con.createStatement();
-
-                    ResultSet rsTable = stm.executeQuery(sql);
+                //recuperando os metadados da tabela
+                String sql = "select * from ".concat(JDBCSchema.concat(".".concat(tableName)));
+            	
+            	try(Statement stm = con.createStatement();
+            			ResultSet rsTable = stm.executeQuery(sql);) {
+                    
                     ResultSetMetaData rsmetadata = rsTable.getMetaData();
 
                     List<ColumnImp> columns = new ArrayList<ColumnImp>();
@@ -98,17 +98,13 @@ public class DatabaseTable {
                     table.getColumns().addAll(columns);
                     tables.add(table);
                     
-                    stm.close();
-                    rsTable.close();
                 } catch (SQLException e) {
                     System.out.println(e.getLocalizedMessage());
                 }
             }
-
             rs.close();
-
+            
             return tables;
-
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         } finally {
@@ -177,8 +173,8 @@ public class DatabaseTable {
             }
         }
         
-        stm.close();
         rs.close();
+        stm.close();
         con.close();
 
         return Obj;
