@@ -55,8 +55,7 @@ public class Util {
      * Ex.: 
      * for(Object obj : checkEmpty(getMyObjList()){}
      * 
-     * @param <E>
-     * @param list
+     * @param list informada para checar se é vazia ou não
      * @return 
      */
     public static <E> List<E> checkEmpty(List<E> list) {
