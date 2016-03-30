@@ -662,7 +662,7 @@ public class UtilString {
     /**
      * Troca uma string fixa por outra string fixa.
      *
-     * @param A string original.
+     * @param s A string original.
      * @param oldString A string fixa (nao padrao!) a ser procurada.
      * @param newString A string que substitui oldString.
      * @return A string com as instancias de oldString trocadas por newString.
@@ -732,10 +732,10 @@ public class UtilString {
      *
      * Obt�m a quantidade de palavras que tem uma string
      *
-     * @param String - String contendo as palavras
+     * @param inStr String - String contendo as palavras
      * @return Quantidade de palavras
      * @exception Exception - Exception
-     * @see Strings
+     * @see String
      */
     public static int qtdPalavras(String inStr) throws Exception {
 
@@ -824,7 +824,7 @@ public class UtilString {
     /**
      * Retira acentos
      *
-     * @param String s
+     * @param String s string de entrada
      * @return String
      */
     public static String retiraAcento(String s) {
@@ -864,7 +864,7 @@ public class UtilString {
     /**
      * Troca uma palavra por outra.
      *
-     * @param A string original.
+     * @param s A string original.
      * @param oldString A string fixa (nao padrao!) a ser procurada.
      * @param newString A string que substitui oldString.
      * @return A string com as instancias de oldString trocadas por newString.

@@ -15,7 +15,7 @@ public final class DomUtils {
 	
 	/**
 	 * 
-	 * @param strxml
+	 * @param strxml string a ser convertida
 	 * @return retorna um document a partir de uma string
 	 */
 	public static Document converterStringToDocumentXML(String strxml){
