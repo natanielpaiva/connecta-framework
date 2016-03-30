@@ -1,7 +1,6 @@
 
 package br.com.cds.connecta.framework.connector.database.service;
 
-import br.com.cds.connecta.framework.connector.database.Database;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -98,7 +97,8 @@ public class DatabaseTable {
                     }
                     table.getColumns().addAll(columns);
                     tables.add(table);
-
+                    
+                    stm.close();
                     rsTable.close();
                 } catch (SQLException e) {
                     System.out.println(e.getLocalizedMessage());
@@ -175,9 +175,10 @@ public class DatabaseTable {
                 Obj.add(object);
                 
             }
-            //rs.close();
         }
-
+        
+        stm.close();
+        rs.close();
         con.close();
 
         return Obj;
