@@ -171,9 +171,8 @@ public class DatabaseTable {
                 Obj.add(object);
                 
             }
+            rs.close();
         }
-        
-        rs.close();
         stm.close();
         con.close();
 
