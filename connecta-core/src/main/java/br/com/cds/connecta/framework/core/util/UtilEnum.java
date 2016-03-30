@@ -10,7 +10,6 @@ import org.springframework.context.i18n.LocaleContextHolder;
 /**
  *
  * @author Julio Lemes
- * @date Feb 24, 2015
  */
 public class UtilEnum {
     

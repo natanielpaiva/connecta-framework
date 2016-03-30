@@ -13,6 +13,8 @@
         <spring-framework.version>4.1.5.RELEASE</spring-framework.version>
         <!--<spring-framework.version>4.2.4.RELEASE</spring-framework.version>-->
         <hibernate.version>4.3.10.Final</hibernate.version>
+        <svn.url>http://dsvn.cds.com.br/svn</svn.url>
+        <nexus.url>http://192.168.1.185:8081/nexus</nexus.url>
     </properties>
 
     <dependencyManagement>
@@ -331,20 +333,58 @@
         </dependencies>
     </dependencyManagement>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<tagBase>http://dsvn.cds.com.br/svn/connecta-2.0/connecta-framework/tag</tagBase>
+					<checkModificationExcludes>
+						<checkModificationExclude>.sonar</checkModificationExclude>
+					</checkModificationExcludes>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.google.code.maven-scm-provider-svnjava</groupId>
+						<artifactId>maven-scm-provider-svnjava</artifactId>
+						<version>2.1.1</version>
+						<scope>compile</scope>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>cdt</id>
+			<name>NexusCDT</name>
+			<url>http://192.168.1.185:8081/nexus/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>cds</id>
+			<name>NexusCDS</name>
+			<url>http://nexus.cds.com.br/content/groups/public</url>
+		</repository>
+	</repositories>
+
+	<scm>
+		<connection>scm:svn:${svn.url}/connecta-2.0/connecta-framework/trunk/</connection>
+		<url>${svn.url}</url>
+	</scm>
 
     <profiles>
         <profile>
@@ -361,14 +401,19 @@
         </profile>
     </profiles>
 
-    <!--    <repositories>
-        <repository>
-            <id>spring-release</id>
-            <name>Spring Framework Release Repository</name>
-            <url>http://maven.springframework.org/release</url>
-        </repository>
-    </repositories>-->
-
+	<distributionManagement>
+		<snapshotRepository>
+			<id>Nexus-Snapshots</id>
+			<name>Snapshots</name>
+			<url>${nexus.url}/content/repositories/snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>Nexus-Releases</id>
+			<name>Releases</name>
+			<url>${nexus.url}/content/repositories/releases/</url>
+		</repository>
+	</distributionManagement>
+	
     <modules>
         <module>connecta-core</module>
         <module>connecta-connectors</module>

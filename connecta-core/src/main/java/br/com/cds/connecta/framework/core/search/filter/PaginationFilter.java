@@ -99,8 +99,7 @@ public class PaginationFilter {
     }
     
     /**
-     * Retorna se o conteúdo da resposta deve ser um Array ou o objeto {@link Pageable}
-     * @return 
+     * @return se o conteúdo da resposta deve ser um Array ou o objeto {@link Pageable}
      */
     public boolean isArray() {
         return array != null && array;
