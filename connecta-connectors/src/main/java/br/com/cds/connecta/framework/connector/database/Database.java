@@ -103,10 +103,17 @@ public class Database {
             Map<String, Object> object = new HashMap<>(selectItems.length);
             for (int i = 0; i < selectItems.length; i++) {
                 for (ConnectorColumn column : columns) {
-                    if (column.getName().equals(selectItems[i].getColumn().getName())) {
-                        Object value = values[i];
-                        object.put(column.getLabel(), value);
-                    }
+                	if(selectItems[i].getAlias() != null){
+                		if(column.getName().equals(selectItems[i].getAlias())){
+                			Object value = values[i];
+                            object.put(column.getLabel(), value);
+                		}
+                	}else{
+                        if (column.getName().equals(selectItems[i].getColumn().getName())) {
+                            Object value = values[i];
+                            object.put(column.getLabel(), value);
+                        }
+                	}
                 }
             }
             result.add(object);
@@ -128,7 +135,11 @@ public class Database {
             Map<String, Object> object = new HashMap<>(selectItems.length);
             for (int i = 0; i < selectItems.length; i++) {
                 Object value = values[i];
-                object.put(selectItems[i].toString().replace("\"", ""), value);
+                if(selectItems[i].getAlias() != null){
+                	object.put(selectItems[i].getAlias(), value);
+                }else{
+                	object.put(selectItems[i].toString().replace("\"", ""), value);
+                }
             }
             result.add(object);
         }
