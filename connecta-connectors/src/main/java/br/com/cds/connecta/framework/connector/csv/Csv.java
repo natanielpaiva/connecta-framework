@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import org.apache.metamodel.DataContext;
 import org.apache.metamodel.DataContextFactory;
@@ -46,7 +47,7 @@ public class Csv {
         DataSet dataSet = dataContext.query().from(table).selectAll().execute();
 
         List<Map<String, Object>> obj = new ArrayList<>();
-
+        
         for (Row row : dataSet) {
             Object[] values = row.getValues();
 
@@ -55,7 +56,7 @@ public class Csv {
 
                 String value;
                 try {
-                    value = values[i].toString();
+                	value = values[i].toString();
                 } catch (NullPointerException e) {
                 	log.error("error", e);
                     value = null;
@@ -93,6 +94,9 @@ public class Csv {
         
         List<Map<String, Object>> obj = new ArrayList<>();
         
+        String regex = "\\d+,\\d+";
+        Pattern pattern = Pattern.compile(regex);
+        
         for (Row row : dataSet) {
             Object[] values = row.getValues();
             
@@ -102,6 +106,10 @@ public class Csv {
                 String value;
                 try {
                     value = values[i].toString();
+                    
+                	if(pattern.matcher(value).matches()){
+                		value = value.replace(",", ".");
+                	}
                 } catch (NullPointerException e) {
                 	log.error("error", e);
                     value = null;
