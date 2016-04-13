@@ -1,12 +1,12 @@
 package br.com.cds.connecta.framework.connector2.context.database.mysql;
 
-import br.com.cds.connecta.framework.connector2.context.database.Drive;
+import br.com.cds.connecta.framework.connector2.context.database.Driver;
 
 /**
  *
  * @author diego
  */
-public class MySqlConnection implements Drive {
+public class MySqlConnection implements Driver {
 
     String host;
     String port;
@@ -21,9 +21,8 @@ public class MySqlConnection implements Drive {
     public MySqlConnection(String host, String port) {
         this.host = host;
         this.port = port;
-        //this.database = database;
     }
-//    
+    
     @Override
     public String jdbcUrl() {
         
@@ -32,8 +31,6 @@ public class MySqlConnection implements Drive {
         if(database != null){
             url += "/" + database;
         }
-        
-        //System.out.println(url);
         return url;
     }
 

@@ -12,7 +12,6 @@ public class Base {
 
     protected QueryContext queryContext = null;
     
-    
     public DataContext createDataContext() {
         return dataContext;
     }
@@ -28,6 +27,4 @@ public class Base {
     public DataContext getDataContext() {
         return dataContext;
     }
-    
-
 }

@@ -196,7 +196,7 @@ public class Rest {
      public static void main(String args[]) throws IOException {
         Rest rest = new Rest();
         //ok
-        //rest.getPartJson("http://www.mocky.io/v2/55ba80a03b5df2e0082f1444", "$.store.book[*]");
+        rest.getPartJson("http://www.mocky.io/v2/55ba80a03b5df2e0082f1444", "$.store.book[*]");
         //rest.getPartJson("http://sabesp-api.herokuapp.com/", "[*].data[*]");
 
         
@@ -217,4 +217,5 @@ public class Rest {
 //        rest.getResult("http://www.mocky.io/v2/55ad27d2052573a60e262f4f", columns);
     }
 
+     //
 }
