@@ -228,15 +228,15 @@ public class Database {
         }
     }
 
-//    public static void main(String args[]) {
-//        PrintResult printResult = new PrintResult();
-//        Database database = new Database();
-//        //dbc:oracle:thin:@192.168.1.185:1521:cdsdev
-//        DataContext dados = database.getDados("ORACLE_SID", "192.168.1.185", "1521", "cdsdev", "presenter2", "cds312");
-//
-//        List<Map<String, Object>> resultSql = database.getResultSql(dados, "select * from TB_ANALYSIS");
-//
-//        printResult.printMap(resultSql);
-//    }
+    public static void main(String args[]) {
+        PrintResult printResult = new PrintResult();
+        Database database = new Database();
+        //dbc:oracle:thin:@192.168.1.185:1521:cdsdev
+        DataContext dados = database.getDados("ORACLE_SID", "192.168.1.185", "1521", "cdsdev", "presenter2", "cds312");
+
+        List<Map<String, Object>> resultSql = database.getResultSql(dados, "select * from TB_ANALYSIS");
+
+        printResult.printMap(resultSql);
+    }
 
 }

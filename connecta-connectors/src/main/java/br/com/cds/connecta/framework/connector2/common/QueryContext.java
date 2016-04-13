@@ -1,9 +1,11 @@
 package br.com.cds.connecta.framework.connector2.common;
 
 import java.util.List;
-import org.apache.metamodel.DataContext;
-import org.apache.metamodel.query.JoinType;
+import org.apache.commons.lang.ArrayUtils;
+import org.apache.metamodel.query.FunctionType;
+import org.apache.metamodel.query.OperatorType;
 import org.apache.metamodel.query.Query;
+import org.apache.metamodel.schema.Column;
 
 /**
  *
@@ -11,7 +13,7 @@ import org.apache.metamodel.query.Query;
  */
 public class QueryContext {
     
-    DataContext dataContext;
+   // DataContext dataContext;
     
     Query query = new Query();
     
@@ -23,33 +25,30 @@ public class QueryContext {
 
     String foreignKey, primaryKey; 
              
-    List<ConnectorColumn> connectorColumn;
+    List<ConnectorColumn> connectorColumns;
     
     //provisorio
     ContextFactory leftContextFactory, rightContextFactory;
     
-    public String[] getColumns() {
-        return columns;
-    }
+//    public String[] getColumns() {
+//        return columns;
+//    }
 
-    public QueryContext setColumns(String[] columns) {
-        this.columns = columns;
+//    public QueryContext setColumns(String[] columns) {
+//        this.columns = columns;
+//        return this;
+//    }
+    
+    
+    public QueryContext setColumns( List<ConnectorColumn>  connectorColumns) {
+        this.connectorColumns = connectorColumns;
         return this;
     }
     
-    public List<ConnectorColumn> getConnectorColumn() {
-        return connectorColumn;
+    public List<ConnectorColumn> getColumns() {
+        return connectorColumns;
     }
-
-    public void setConnectorColumn(List<ConnectorColumn> connectorColumn) {
-        this.connectorColumn = connectorColumn;
-        
-    }
-
     
-    public QueryContext() {
-        System.out.println("Contrutor QueryContext");
-    }
 
     public QueryContext setTable(String table) {
         this.table = table;
@@ -68,15 +67,53 @@ public class QueryContext {
         this.schema = schema;
         return this;
     }
+
+    public List<ConnectorColumn> getConnectorColumns() {
+        return connectorColumns;
+    }
+
+    
+    public QueryContext setConnectorColumns(List<ConnectorColumn> connectorColumns) {
+        this.connectorColumns = connectorColumns;
+       
+        return this;
+    }
     
     public QueryContext setPagination(int start, int size){
         this.query.setFirstRow(start).setMaxRows(size);
         return this;
     }
     
+    public QueryContext setColumnWhere(Column column, String condition){
+        this.query.where(column, OperatorType.EQUALS_TO, condition);
+        return this;
+    }
     
+    public QueryContext setGroupBy(Column column){
+        this.query.select(column);
+        this.query.groupBy(column);
+        
+         System.out.println("-----------" + this.query.toString());
+        return this;
+    }
     
+    public QueryContext setCount(Column column){
+        
+        this.query.select(FunctionType.SUM, column);
+        
+//        .select(FunctionType.AVG, getColumn("funcionario"))
+//                    .select(getColumn("nome"))
+//                    .groupBy("nome"));
+        
+//         DataSet executeQuery = dataContext.executeQuery(queryContext.getQuery().select(FunctionType.COUNT, getColumn("funcionario")).select(getColumn("nome")).groupBy("nome"));
+
+        return this;
+    }
     
+    public QueryContext setColumn(Column column){
+        this.query.select(column);
+        return this;
+    }
     
     
     public Query getQuery(){
@@ -87,57 +124,6 @@ public class QueryContext {
         return this;
     }
 
-    public String getForeignKey() {
-        return foreignKey;
-    }
 
-    public QueryContext setForeignKey(String foreignKey) {
-        this.foreignKey = foreignKey;
-        return this;
-    }
-
-    public String getPrimaryKey() {
-        return primaryKey;
-    }
-
-    public QueryContext setPrimaryKey(String primaryKey) {
-        this.primaryKey = primaryKey;
-        return this;
-    }
-    
-    
-    
-//   public QueryContext creatJoin(ContextFactory leftContextFactory, ContextFactory rightContextFactory ){
-//       this.leftContextFactory = leftContextFactory;
-//       this.rightContextFactory = rightContextFactory;
-//       
-//       this.query.from(leftContextFactory.getTable(),
-//                    rightContextFactory.getTable(),
-//                    JoinType.LEFT,
-//                    leftContextFactory.getKey(),
-//                    rightContextFactory.getKey());
-//        return this;
-//       
-//   }
-
-    public ContextFactory getLeftContextFactory() {
-        return leftContextFactory;
-    }
-
-    public void setLeftContextFactory(ContextFactory leftContextFactory) {
-        this.leftContextFactory = leftContextFactory;
-    }
-
-    public ContextFactory getRightContextFactory() {
-        return rightContextFactory;
-    }
-
-    public void setRightContextFactory(ContextFactory rightContextFactory) {
-        this.rightContextFactory = rightContextFactory;
-    }
-   
-   
-   
-   
-    
+ 
 }

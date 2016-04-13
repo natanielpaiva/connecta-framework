@@ -14,6 +14,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import org.apache.metamodel.schema.Column;
 
 
 /**
@@ -29,76 +30,78 @@ public class FileTest {
         FusionClient fusionClient = new FusionClient();
          FileTest fileTest = new FileTest();
         
-//        String csv = "funcionario,nome,departamento\n"
-//                + "1,Diego,1\n"
-//                + "2,Natan,1\n"
-//                + "3,Vinicius,2\n"
-//                + "4,Diego,1\n"
-//                + "5,Natan,1\n"
-//                + "6,Vinicius,2\n"
-//                + "7,Diego,1\n"
-//                + "8,Natan,1\n"
-//                + "9,Vinicius,2\n"
-//                + "10,Diego,1\n"
-//                + "11,Natan,1\n"
-//                + "12,Vinicius,2";
         
-        File csvFile = fileTest.getFile(TESTFOLDER + "csvdata.csv");
+        //File csvFile = fileTest.getFile(TESTFOLDER + "csvdata.csv");
+        File csvFile = fileTest.getFile(TESTFOLDER + "cidades2.csv");
         CSVDataContextFactory csvDataContextFactory = new CSVDataContextFactory(csvFile);
-        //CSVDataContextFactory csvDataContextFactory = new CSVDataContextFactory(csv);
         
         FileDataContextFactory fileDataContextFactory = new FileDataContextFactory(csvDataContextFactory);
         
+        Column vendas = fileDataContextFactory.getColumn("Vendas");
+        Column UF = fileDataContextFactory.getColumn("UF");
+        
         Request requestCsv = new Request(fileDataContextFactory, 
-                                        new QueryContext()
-                                                .setColumns(new String[]{"nome"}));
+                                        new QueryContext().setGroupBy(UF).setCount(vendas));
+        
+         //.select(FunctionType.AVG, getColumn("funcionario"))
+//                    .select(getColumn("nome"))
+//                    .groupBy("nome"));
+
         printResult.printMap2(fusionClient.getAll(requestCsv));
+       
+//SELECT csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email, AVG(csvdata.csv.funcionario), csvdata.csv.nome FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
         
-        printResult.printColumns(fusionClient.getColumns(requestCsv));
+//printResult.printMap2(fusionClient.getAll(requestCsv));
         
+        //printResult.printColumns(fusionClient.getColumns(requestCsv));
+
+        //fusionClient.getColumns(requestCsv);
         
+       //        Request requestCsv = new Request(fileDataContextFactory, 
+//                                        new QueryContext()
+//                                                .setColumns(new String[]{"nome"})); 
         ///------------------
        
-        File xlmFile = fileTest.getFile(TESTFOLDER + "xmldata.xml");
-        
-        XMLDataContextFactory xmlDataContextFactory = new XMLDataContextFactory(
-                xlmFile,
-                "/departamentos/departamento",
-                new String[]{
-                    "/departamentos/departamento@id",
-                    "/departamentos/departamento/nome",
-                    "/departamentos/departamento/analise"
-                } );
-        
-          
-        FileDataContextFactory contextFactory = new FileDataContextFactory(xmlDataContextFactory);
-        
-        QueryContext xmlQuery = new QueryContext();
-        
-       Request requestXml = new Request(contextFactory, xmlQuery.setColumns(new String[]{"/nome","@id"}).setPagination(1, 3));
-       printResult.printMap2(fusionClient.getAll(requestXml));
-       printResult.printColumns(fusionClient.getColumns(requestXml));
-       
-       //--------------------------
-       
-       File xlsFile = fileTest.getFile(TESTFOLDER + "xlsdata.xls");
-       
-        XlsDataContextFactory xlsDataContextFactory = new XlsDataContextFactory(xlsFile);
-       
-        FileDataContextFactory xlsContext = new FileDataContextFactory(xlsDataContextFactory);
-        
-        QueryContext xlsQuery = new QueryContext();
-        Request xlsRequest = new Request(xlsContext, xlsQuery.setPagination(1, 10).setColumns(new String[]{"Sales", "Row ID", "Quantity", "Profit", "Postal Code", "Ship Mode", "Customer ID", "Order Date" }));
-        printResult.printMap2(fusionClient.getAll(xlsRequest));
-       
-        //--------------------------------------------
-        File file = fileTest.getFile(TESTFOLDER + "jsondata.json");
-        //URL url = new URL("http://www.mocky.io/v2/569fcc27270000d94efb71cb");
-        FileDataContextFactory jsonDataContextFactory = new FileDataContextFactory(new JsonDataContextFactory(file));
-        
-        QueryContext jsonQuery = new QueryContext();
-        Request jsonRequest = new Request(jsonDataContextFactory, jsonQuery);
-        printResult.printMap2(fusionClient.getAll(jsonRequest));
+//        File xlmFile = fileTest.getFile(TESTFOLDER + "xmldata.xml");
+//        
+//        XMLDataContextFactory xmlDataContextFactory = new XMLDataContextFactory(
+//                xlmFile,
+//                "/departamentos/departamento",
+//                new String[]{
+//                    "/departamentos/departamento@id",
+//                    "/departamentos/departamento/nome",
+//                    "/departamentos/departamento/analise"
+//                } );
+//        
+//          
+//        FileDataContextFactory contextFactory = new FileDataContextFactory(xmlDataContextFactory);
+//        
+//        QueryContext xmlQuery = new QueryContext();
+//        
+//       Request requestXml = new Request(contextFactory, xmlQuery.setColumns(new String[]{"/nome","@id"}).setPagination(1, 3));
+//       printResult.printMap2(fusionClient.getAll(requestXml));
+//       printResult.printColumns(fusionClient.getColumns(requestXml));
+//       
+//       //--------------------------
+//       
+//       File xlsFile = fileTest.getFile(TESTFOLDER + "xlsdata.xls");
+//       
+//        XlsDataContextFactory xlsDataContextFactory = new XlsDataContextFactory(xlsFile);
+//       
+//        FileDataContextFactory xlsContext = new FileDataContextFactory(xlsDataContextFactory);
+//        
+//        QueryContext xlsQuery = new QueryContext();
+//        Request xlsRequest = new Request(xlsContext, xlsQuery.setPagination(1, 10).setColumns(new String[]{"Sales", "Row ID", "Quantity", "Profit", "Postal Code", "Ship Mode", "Customer ID", "Order Date" }));
+//        printResult.printMap2(fusionClient.getAll(xlsRequest));
+//       
+//        //--------------------------------------------
+//        File file = fileTest.getFile(TESTFOLDER + "jsondata.json");
+//        //URL url = new URL("http://www.mocky.io/v2/569fcc27270000d94efb71cb");
+//        FileDataContextFactory jsonDataContextFactory = new FileDataContextFactory(new JsonDataContextFactory(file));
+//        
+//        QueryContext jsonQuery = new QueryContext();
+//        Request jsonRequest = new Request(jsonDataContextFactory, jsonQuery);
+//        printResult.printMap2(fusionClient.getAll(jsonRequest));
         
         
     }

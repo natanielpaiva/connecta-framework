@@ -7,6 +7,9 @@ import br.com.cds.connecta.framework.connector2.common.QueryContext;
 import java.util.List;
 import org.apache.metamodel.DataContext;
 import org.apache.metamodel.data.DataSet;
+import org.apache.metamodel.query.FilterItem;
+import org.apache.metamodel.query.OperatorType;
+import org.apache.metamodel.schema.Column;
 
 /**
  * gardem
@@ -37,7 +40,6 @@ public class Request {
     public DataSet getResultAll() {
         dataContextFactory.setQueryContext(queryContext);
         dataContextFactory.createDataContext();
-        
 
         return dataContextFactory.getResultAll();
     }
@@ -48,6 +50,15 @@ public class Request {
 
         return dataContextFactory.getColumns();
     }
+    
+//    public DataSet getResultApplyingFilter(String column, String condition){
+//        dataContextFactory.createDataContext();
+//        Column column1 = dataContextFactory.getColumn(column);
+//        
+//        queryContext.getColumnWhere(column1);
+//        queryContext.getQuery().where(column1, OperatorType.EQUALS_TO, condition);
+//        return dataContextFactory.getResultAll();
+//    }
 
     
     
