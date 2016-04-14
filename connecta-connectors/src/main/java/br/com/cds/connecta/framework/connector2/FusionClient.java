@@ -9,7 +9,6 @@ import org.apache.metamodel.DataContext;
 import org.apache.metamodel.data.DataSet;
 import org.apache.metamodel.data.Row;
 import org.apache.metamodel.query.SelectItem;
-import org.apache.metamodel.schema.Column;
 
 /**
  *
@@ -50,29 +49,7 @@ public class FusionClient {
         List<ConnectorColumn> columns = request.getColumns();
         return columns;
     }
-
-//    /**
-//     * Retorna Todos os dados de um context
-//     * @param request
-//     * @return
-//     */
-//    public List<Map<String, Object>> getAll(Request request, String column, String condition){
-//        Column cl = request.dataContextFactory.getColumn(column);
-//        request.queryContext.setColumnWhere(cl, condition);
-//        DataSet resultAll = request.getResultAll();
-//        return toList(resultAll);
-//    }
-//    
-//    public List<Map<String, Object>> getResultList(Request request){
-//        DataContext dataContextFactory = request.getDataContextFactory();
-//        
-//        return null;
-//    }
-//    public List<Map<String, Object>> getResultList(Request request){
-//        DataSet dataContextFactory = request.getDataContextFactory();
-//        
-//        return toList(dataContextFactory);
-//    }
+    
     public boolean isValid(Request request) {
         return true;
     }
