@@ -33,9 +33,9 @@ public class DatabaseTest {
                 new OracleConnection("192.168.1.185", "1521", "cdsdev"),
                 "presenter2", "cds312");
 
-        //Oracledatabase.createDataContext();
-        // String[] schema1 = Oracledatabase.getSchemas();
-        //printResult.printArrayString(schema1);
+        //dataContextFactory.createDataContext();
+        String[] schema1 = dataContextFactory.getSchemas();
+        printResult.printArrayString(schema1);
         
       
         List<ConnectorColumn> columnsColumn = new ArrayList<>();
@@ -191,7 +191,7 @@ public class DatabaseTest {
         List<Map<String, Object>> all1 = fusionClient.getAll(dataBaseMySqlRequest);
         printResult.printMap2(all1);
 //        
-//        List<ConnectorColumn> mysqlColumns = fusionClient.getColumns(dataBaseMySqlRequest);
+        List<ConnectorColumn> mysqlColumns = fusionClient.getColumns(dataBaseMySqlRequest);
 //        printResult.printColumns(mysqlColumns);
 //        
 //        

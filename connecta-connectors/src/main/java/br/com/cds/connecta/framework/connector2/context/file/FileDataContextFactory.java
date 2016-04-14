@@ -107,4 +107,14 @@ System.out.println("-dddddddddddddddddd----------" + queryContext.getQuery().toS
         return getTable().getColumnByName(columnName);
     }
 
+    @Override
+    public String[] getSchemas() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String[] getTables() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

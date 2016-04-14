@@ -3,45 +3,25 @@ package br.com.cds.connecta.framework.connector2.context.soap;
 import br.com.cds.connecta.framework.connector2.common.Base;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
-import com.ibm.wsdl.util.xml.DOM2Writer;
-import com.predic8.policy.Policy;
-import com.predic8.schema.Attribute;
-import com.predic8.schema.ComplexType;
 import com.predic8.schema.Element;
-import com.predic8.schema.Field;
 import com.predic8.schema.Schema;
-import static com.predic8.schema.Schema.STRING;
-import com.predic8.schema.SchemaComponent;
-import com.predic8.schema.Sequence;
-import com.predic8.schema.TypeDefinition;
-import com.predic8.schema.Unique;
 import com.predic8.wsdl.AbstractSOAPBinding;
 import com.predic8.wsdl.Binding;
 import com.predic8.wsdl.BindingOperation;
 import com.predic8.wsdl.Definitions;
-import com.predic8.wsdl.Fault;
 import com.predic8.wsdl.Import;
-import com.predic8.wsdl.Input;
 import com.predic8.wsdl.Message;
 import com.predic8.wsdl.Operation;
 import com.predic8.wsdl.Part;
 import com.predic8.wsdl.Port;
 import com.predic8.wsdl.PortType;
 import com.predic8.wsdl.Service;
-import com.predic8.wsdl.Types;
 import com.predic8.wsdl.WSDLParser;
-import com.predic8.wstool.creator.RequestCreator;
-import com.predic8.wstool.creator.SOARequestCreator;
-import groovy.xml.MarkupBuilder;
-import groovy.xml.QName;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
@@ -54,7 +34,6 @@ import javax.xml.soap.SOAPConnection;
 import javax.xml.soap.SOAPConnectionFactory;
 import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPEnvelope;
-import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPMessage;
 import javax.xml.soap.SOAPPart;
 import javax.xml.transform.OutputKeys;
@@ -64,10 +43,7 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
-import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import org.apache.metamodel.DataContext;
@@ -90,7 +66,7 @@ public class SoapContextFactory extends Base implements ContextFactory {
 
     private Definitions defs;
 
-    WSDLParser parser = new WSDLParser();
+    private WSDLParser parser = new WSDLParser();
 
     private static final XPathFactory xpathFactory = XPathFactory.newInstance();
 
@@ -99,6 +75,7 @@ public class SoapContextFactory extends Base implements ContextFactory {
         defs = parser.parse(url);
     }
 
+    @Override
     public DataContext createDataContext() {
         return dataContext;
     }
@@ -554,6 +531,17 @@ public class SoapContextFactory extends Base implements ContextFactory {
 
     private static void out(String str) {
         System.out.println(str);
+    }
+    
+
+    @Override
+    public String[] getSchemas() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String[] getTables() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

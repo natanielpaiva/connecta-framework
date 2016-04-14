@@ -1,15 +1,11 @@
 package br.com.cds.connecta.framework.connector2;
 
-import br.com.cds.connecta.framework.connector2.common.CompositeDataContextFactory;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
 import br.com.cds.connecta.framework.connector2.common.QueryContext;
 import java.util.List;
 import org.apache.metamodel.DataContext;
 import org.apache.metamodel.data.DataSet;
-import org.apache.metamodel.query.FilterItem;
-import org.apache.metamodel.query.OperatorType;
-import org.apache.metamodel.schema.Column;
 
 /**
  * gardem
