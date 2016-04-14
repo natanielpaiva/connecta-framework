@@ -1,7 +1,6 @@
 package br.com.cds.connecta.framework.connector2;
 
 import static br.com.cds.connecta.framework.connector2.TestUtil.*;
-import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
 import br.com.cds.connecta.framework.connector2.common.QueryContext;
 import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataContextFactory;
@@ -11,7 +10,6 @@ import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleCo
 import java.util.List;
 import java.util.Map;
 import org.apache.log4j.Logger;
-import org.apache.metamodel.schema.Table;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import org.junit.Ignore;
@@ -21,6 +19,7 @@ import org.junit.Test;
  *
  * @author diego
  */
+@Ignore
 public class DatabaseTest {
     
     private static final String MYSQL_HOST      = "192.168.33.10";
