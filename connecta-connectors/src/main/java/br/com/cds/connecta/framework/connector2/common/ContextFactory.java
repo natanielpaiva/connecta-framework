@@ -26,4 +26,8 @@ public interface ContextFactory {
 
     DataContext getDataContext();
     
+    String[] getSchemas();
+    
+    String[] getTables();
+    
 }

@@ -3,7 +3,6 @@ package br.com.cds.connecta.framework.connector2.context.database;
 import br.com.cds.connecta.framework.connector2.common.Base;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
-import br.com.cds.connecta.framework.connector2.common.DatabaseContextFactory;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -31,7 +30,7 @@ import org.apache.metamodel.util.SimpleTableDef;
  *
  * @author diego
  */
-public class DatabaseDataContextFactory extends Base implements ContextFactory, DatabaseContextFactory {
+public class DatabaseDataContextFactory extends Base implements ContextFactory {
 
     private final Logger logger = Logger.getLogger(DatabaseDataContextFactory.class);
 
@@ -111,7 +110,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory, 
         // String[] requiredColumns = queryContext.getColumns();
         List<ConnectorColumn> columns = queryContext.getColumns();
 
-        Query from = queryContext.getQuery().from(table);
+        Query from = queryContext.getQuery().from(table).select(table.getColumns());
 
         
 
@@ -193,7 +192,6 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory, 
         return sc;
     }
 
-    //   Schema tables
     @Override
     public String[] getTables() {
         Schema schema = discoverSchema();
@@ -241,8 +239,8 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory, 
             while (rs.next()) {
                 Map<String, Object> row = new HashMap<>();
                 for (String name : columns) {
-                    row.put(name, rs.getString(name));
-                    System.out.println(name + " -------  " + rs.getString(name));
+                    row.put(name, rs.getObject(name));
+                    System.out.println(name + " -------  " + rs.getObject(name));
                 }
                 System.out.println("\n");
                 rowset.add(row);
