@@ -1,5 +1,5 @@
 SELECT     m.id_memorando				  AS cod     ,
-           m.id_memorando_can    				  AS cod2    ,
+           m.id_memorando_can                       AS cod2    ,
            date_format(m.dt_timestamp,'%d/%m/%y') AS Data    ,
            m.assunto                              AS Assunto ,
            p.nome                                 AS Projeto ,
