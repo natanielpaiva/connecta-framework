@@ -37,16 +37,23 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     private String jdbcDrive;
     private String jdbcUrl;
 
-    //private Connection connection;
-    private Driver drive;
     private String sql;
     private String table;
     private String user;
     private String password;
+    
+    private Table tableContext;
+    
+    private final String DEFAULT_SCHEMA_NAME = "DEFAULT_SCHEMA_NAME";
+    private final String DEFAULT_TABLE_NAME = "DEFAULT_TABLE_NAME";
 
-    private String DEFAULT_SCHEMA_NAME = "DEFAULT_SCHEMA_NAME";
-    private String DEFAULT_TABLE_NAME = "DEFAULT_TABLE_NAME";
-
+    /**
+     *  
+     * @param sql
+     * @param db
+     * @param user
+     * @param password
+     */
     public DatabaseDataContextFactory(String sql, Driver db, String user, String password) {
         this.sql = sql;
         this.user = user;
@@ -57,6 +64,13 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         dataContext = sqlCreateDataContext();
     }
 
+    /**
+     *
+     * @param db
+     * @param table
+     * @param user
+     * @param password
+     */
     public DatabaseDataContextFactory(Driver db, String table, String user, String password) {
         this.table = table;
         this.user = user;
@@ -67,6 +81,12 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         dataContext = tableCreateDataContext();
     }
 
+    /**
+     *
+     * @param db
+     * @param user
+     * @param password
+     */
     public DatabaseDataContextFactory(Driver db, String user, String password) {
         this.user = user;
         this.password = password;
@@ -106,33 +126,28 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         Schema schema = discoverSchema();
 
         Table table = discoverTable(schema);
-
-        // String[] requiredColumns = queryContext.getColumns();
-        List<ConnectorColumn> columns = queryContext.getColumns();
-
-        Query from = queryContext.getQuery().from(table).select(table.getColumns());
+        table.getColumns();
+        
+        List<ConnectorColumn> listColumns = queryContext.getColumns();
 
         
-
-        if (columns != null) {
-
-            for (ConnectorColumn column : columns) {
-
+        //Query from = queryContext.getQuery().from(table).select(table.getColumns());
+        Query from = queryContext.getQuery().from(table);
+        
+        if (listColumns != null) {
+            for (ConnectorColumn column : listColumns) {
                 Column columnByName = table.getColumnByName(column.getName());
                 queryContext.getQuery().select(columnByName);
             }
 
-            //Schema defaultSchema = dataContext.getDefaultSchema();
-            //dataContext.getSchemaByName(schema.getName());
             return dataContext.executeQuery(from);
         } else {
 
             return dataContext.executeQuery(from.selectAll());
         }
-
     }
 
-    public Schema discoverSchema() {
+    private Schema discoverSchema() {
         if (queryContext == null || queryContext.getSchema() == null) {
             return dataContext.getDefaultSchema();
         } else {
@@ -140,34 +155,36 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         }
     }
 
-    public Table discoverTable(Schema schema) {
-        Table table;
+    private Table discoverTable(Schema schema) {
 
         if (queryContext != null && queryContext.getTable() != null) {
             logger.info("QUERY CONTEXT AND TABLE NOT NULL: " + queryContext.getTable());
-            table = schema.getTableByName(queryContext.getTable());
+            tableContext = schema.getTableByName(queryContext.getTable());
         } else if (this.table != null) {
             logger.info("DATA CONTEXT TABLE NOT NULL: " + this.table);
-            table = schema.getTableByName(this.table);
+            tableContext = schema.getTableByName(this.table);
         } else {
             logger.info("DATA CONTEXT TABLE IS NULL PA CARALHO: " + DEFAULT_TABLE_NAME);
-            table = schema.getTableByName(DEFAULT_TABLE_NAME);
+            tableContext = schema.getTableByName(DEFAULT_TABLE_NAME);
             logger.info("Table was not defined");
         }
 
-        return table;
+        return tableContext;
     }
 
+    /**
+     *  Lista as colunas de um context
+     * @return
+     */
     @Override
-    public List getColumns() {
+    public List<ConnectorColumn> getColumns() {
 
         List<ConnectorColumn> connectorColumns = new ArrayList<>();
 
         Schema schema = discoverSchema();
-        Table tableByName = schema.getTableByName(queryContext.getTable());
+        Table discoverTable = discoverTable(schema);
 
-        //Table table = dataContext.getDefaultSchema().getTableByName(queryContext.getTable());
-        Column[] columns = tableByName.getColumns();
+        Column[] columns = discoverTable.getColumns();
 
         for (Column column : columns) {
             ConnectorColumn cc = new ConnectorColumn();
@@ -182,6 +199,10 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         return connectorColumns;
     }
 
+    /**
+     *  Retorna todos os Schemas do Banco
+     * @return
+     */
     @Override
     public String[] getSchemas() {
         Schema[] schemas = dataContext.getSchemas();

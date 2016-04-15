@@ -62,8 +62,8 @@ public class DatabaseTest {
         QueryContext oracleQuery = new QueryContext();
         oracleQuery.setSchema("PRESENTER2")
                 .setTable("TB_ANALYSIS")
-                .setPagination(1, 10)
-                .setConnectorColumns(columnsColumn);
+                .setPagination(1, 10);
+                //.setConnectorColumns(columnsColumn);
                 //.setColumns(new String[]{"DS_ANALYSIS", "TP_ANALYSIS"});
                 //.setColumns(columnsColumn);
 
@@ -232,8 +232,8 @@ public class DatabaseTest {
 
         columnsColumn.add(connectorColumn1);
         columnsColumn.add(connectorColumn2);
-        QueryContext query = new QueryContext()
-                .setConnectorColumns(columnsColumn);
+        QueryContext query = new QueryContext();
+                //.setConnectorColumns(columnsColumn);
         
         Request request = new Request(dataContextFactory, query);
         List<Map<String, Object>> all = fusionClient.getAll(request);

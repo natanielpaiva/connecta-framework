@@ -72,8 +72,12 @@ public class QueryContext {
         return connectorColumns;
     }
 
-    
-    public QueryContext setConnectorColumns(List<ConnectorColumn> connectorColumns) {
+    /**
+     * Seta as colunas do resultSet
+     * @param connectorColumns
+     * @return
+     */
+    public QueryContext setListColumns(List<ConnectorColumn> connectorColumns) {
         this.connectorColumns = connectorColumns;
        
         return this;
