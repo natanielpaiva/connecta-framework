@@ -21,6 +21,7 @@ import org.junit.Test;
  *
  * @author diego
  */
+@Ignore
 public class DatabaseTest {
 
     private static final String DEFAULT_TABLE_NAME = "DEFAULT_TABLE_NAME";
