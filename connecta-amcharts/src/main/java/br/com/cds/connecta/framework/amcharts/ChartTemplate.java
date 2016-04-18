@@ -7,6 +7,8 @@ package br.com.cds.connecta.framework.amcharts;
 public class ChartTemplate {
     private String id;
 
+    public ChartTemplate() {}
+
     public ChartTemplate(String id) {
         this.id = id;
     }

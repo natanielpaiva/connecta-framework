@@ -72,13 +72,11 @@
         <property name="timeout" value="30" />
     </bean>
     
+    <!--SECURITY-->
+    <!--<security:global-method-security secured-annotations="enabled" jsr250-annotations="enabled" />-->
+    
     <!--SPRING REPOSITORIES-->
     <jpa:repositories base-package="br.com.cds.connecta"
                       entity-manager-factory-ref="entityManagerFactory"
                       transaction-manager-ref="transactionManager"  />
-    
-    <!--APPLICATION BEANS-->
-    <bean class="br.com.cds.connecta.framework.core.context.ConnectaConfigurationService"
-        factory-method="getInstance" />
-    
 </beans>

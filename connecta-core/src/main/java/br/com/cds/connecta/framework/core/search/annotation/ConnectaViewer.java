@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  *
- * @author Vinicius Pires
+ * @author Vinicius Pires <vinicius.pires@cds.com.br>
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

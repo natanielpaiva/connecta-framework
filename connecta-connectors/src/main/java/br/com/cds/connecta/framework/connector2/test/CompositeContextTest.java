@@ -62,8 +62,8 @@ public class CompositeContextTest {
 
         QueryContext xmlQuery = new QueryContext();
 
-        //Request requestXml = new Request(xmlContext, xmlQuery.setColumns(new String[]{"/nome", "@id"}).setPagination(1, 3));
-        //printResult.printMap2(fusionClient.getAll(requestXml));
+        Request requestXml = new Request(xmlContext, xmlQuery.setColumns(new String[]{"/nome", "@id"}).setPagination(1, 3));
+        printResult.printMap2(fusionClient.getAll(requestXml));
 
         //---------------------------------------------------------------------
         

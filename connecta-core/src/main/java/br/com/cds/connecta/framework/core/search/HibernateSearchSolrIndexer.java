@@ -1,6 +1,5 @@
 package br.com.cds.connecta.framework.core.search;
 
-import br.com.cds.connecta.framework.core.context.ConnectaConfigurationService;
 import br.com.cds.connecta.framework.core.search.solradapter.*;
 import static br.com.cds.connecta.framework.core.search.solradapter.SolrWorkAdapterUtils.*;
 import org.apache.solr.client.solrj.SolrServerException;
@@ -13,8 +12,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
 import java.util.Properties;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -27,25 +24,34 @@ import org.hibernate.search.indexes.spi.DirectoryBasedIndexManager;
 /**
  * Backend processor para indexar os dados no Solr ao invés do Lucene
  *
- * @author Vinicius Pires
+ * @author Vinicius Pires <vinicius.pires@cds.com.br>
  */
-public class HibernateSearchSolrIndexer implements BackendQueueProcessor, Observer {
+public class HibernateSearchSolrIndexer implements BackendQueueProcessor {
 
     private static final ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
     private static final ReentrantReadWriteLock.WriteLock writeLock = readWriteLock.writeLock();
 
     private static final Logger logger = Logger.getLogger(HibernateSearchSolrIndexer.class.getName());
+    private static final String SOLR_INDEX_ROOT_PROP = "connecta.search.solrbackend";
 
     private HttpSolrServer solrServer;
 
     @Override
     public void initialize(Properties properties, WorkerBuildContext workerBuildContext, DirectoryBasedIndexManager directoryBasedIndexManager) {
-        logger.info("Initializing Hibernate Search SOLR Indexer");
+        try {
+            Properties props = new Properties();
+
+            props.load(getClass().getClassLoader().getResourceAsStream("application.properties"));
+
+            solrServer = new HttpSolrServer(props.getProperty(SOLR_INDEX_ROOT_PROP));
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
     @Override
     public void close() {
-        getSolrServer().shutdown();
+        solrServer.shutdown();
         logger.info("Closing.");
     }
 
@@ -70,8 +76,8 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor, Observ
 
     /**
      *
-     * @param work work
-     * @param indexingMonitor indexingMonitor
+     * @param work
+     * @param indexingMonitor
      */
     @Override
     public void applyStreamWork(LuceneWork work, IndexingMonitor indexingMonitor) {
@@ -92,25 +98,16 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor, Observ
     }
 
     @Override
-    public void update(Observable o, Object arg) {
-        setNewHttpSolrServer(((ConnectaConfigurationService) o).getConfiguration().getSolrBackend());
-    }
-
-    @Override
     public void indexMappingChanged() {
         logger.info("[UnsupportedOperation] Index mapping changed");
     }
-
-    public void setNewHttpSolrServer(String location) {
-        solrServer = new HttpSolrServer(location);
-    }
-
+    
     private void commitAndFinish(List<String> idsForDeletion, Boolean purgeAll, List<SolrInputDocument> solrInputDocuments) throws RuntimeException {
         try {
             deleteDocs(idsForDeletion, purgeAll);
 
             if (solrInputDocuments.size() > 0) {
-                getSolrServer().add(solrInputDocuments);
+                solrServer.add(solrInputDocuments);
                 commit(solrInputDocuments);
             } else {
                 commit();
@@ -123,7 +120,7 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor, Observ
     private void deleteDocs(Collection<String> collection, boolean purgeAll) throws IOException, SolrServerException {
         if (purgeAll) {
             logger.info("RUNNING PURGE ALL SOLR WORK");
-            getSolrServer().deleteByQuery(ID_FIELD_NAME.concat(":*"));
+            solrServer.deleteByQuery(ID_FIELD_NAME.concat(":*"));
         } else if (collection.size() > 0) {
             StringBuilder stringBuilder = new StringBuilder(collection.size() * 10);
             stringBuilder.append(ID_FIELD_NAME).append(":(");
@@ -137,14 +134,14 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor, Observ
                 stringBuilder.append(id);
             }
             stringBuilder.append(')');
-            getSolrServer().deleteByQuery(stringBuilder.toString());
+            solrServer.deleteByQuery(stringBuilder.toString());
         }
     }
 
     private void commit() throws IOException, SolrServerException {
         logger.info("Commiting the changes to Solr");
 
-        getSolrServer().commit();
+        solrServer.commit();
     }
 
     private void commit(List<SolrInputDocument> docs) throws IOException, SolrServerException {
@@ -152,17 +149,6 @@ public class HibernateSearchSolrIndexer implements BackendQueueProcessor, Observ
         UpdateRequest req = new UpdateRequest();
         req.setAction(UpdateRequest.ACTION.COMMIT, false, false);
         req.add(docs);
-        req.process(getSolrServer());
-    }
-
-    private HttpSolrServer getSolrServer() {
-        if (solrServer == null) {
-            ConnectaConfigurationService configService = ConnectaConfigurationService.getInstance();
-            configService.addObserver(this);
-            
-            setNewHttpSolrServer(configService.getConfiguration().getSolrBackend());
-        }
-
-        return solrServer;
+        req.process(solrServer);
     }
 }

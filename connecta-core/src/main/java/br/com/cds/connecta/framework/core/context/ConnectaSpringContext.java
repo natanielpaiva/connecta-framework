@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  *
  * @author Julio Lemes
+ * @date Aug 13, 2015
  */
 @Component
 public class ConnectaSpringContext extends ApplicationObjectSupport {

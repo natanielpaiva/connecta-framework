@@ -6,6 +6,7 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
  * Interface Utilitária para os nomes de escopos dos Beans do Spring
  *
  * @author Julio Lemes
+ * @date Aug 13, 2015
  *
  * @see
  * <a href="http://www.tutorialspoint.com/spring/spring_bean_scopes.htm">Spring

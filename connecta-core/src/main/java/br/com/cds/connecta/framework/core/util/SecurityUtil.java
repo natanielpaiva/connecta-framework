@@ -56,12 +56,11 @@ public class SecurityUtil {
     /**
      * Gera um hash com base na frase e algoritmo informados.
      *
-     * @param frase base para a geração do hash
-     * @param algorithm base para a geração do hash
-     * @param random variavel de controle
-     * @return o hash gerado
+     * @param frase
+     * @param algoritm
+     * @return
      */
-    public static String getHash(String frase, String algorithm, boolean random) {
+    public static String getHash(String frase, String algoritm, boolean random) {
 
         SimpleDateFormat sd = new SimpleDateFormat();
         sd.applyPattern("yyyy.MM.dd.HH.mm.ss");
@@ -69,27 +68,27 @@ public class SecurityUtil {
 
         frase = strDate.concat(frase);
 
-        return stringHexa(gerarHash(frase, algorithm));
+        return stringHexa(gerarHash(frase, algoritm));
     }
 
     /**
      * Gera um hash com base na frase e algoritmo informados.
      *
-     * @param frase base para geração do hash
-     * @param algorithm base para geração do hash
-     * @return o hash gerado
+     * @param frase
+     * @param algoritm
+     * @return
      */
-    public static String getHash(String frase, String algorithm) {
-        return stringHexa(gerarHash(frase, algorithm));
+    public static String getHash(String frase, String algoritm) {
+        return stringHexa(gerarHash(frase, algoritm));
     }
 
     /**
      * Cria a criptografia para o valor informado conforme a chave indicada.
      *
-     * @param value informado
-     * @param key indicada
-     * @return a criptografia
-     * @throws Exception caso aconteca algum erro na criptografia
+     * @param value
+     * @param key
+     * @return
+     * @throws Exception
      */
     public static String getCripto(String value, String key) throws Exception {
 
@@ -107,10 +106,12 @@ public class SecurityUtil {
     }
 
     /**
-     * @param value informado
-     * @param hexKey chave para descriptografar
-     * @return o valor descriptografado confome a chave indicada
-     * @throws Exception caso aconteça algum erro na descriptografia
+     * Descriptografa o valor informado conforme a chave hexadecial indicada.
+     *
+     * @param value
+     * @param hexKey
+     * @return
+     * @throws Exception
      */
     public static String getDescriptoHexa(String value, String hexKey) throws Exception {
 
@@ -122,10 +123,12 @@ public class SecurityUtil {
     }
 
     /**
-     * @param value informado
-     * @param key chave para descriptografar
-     * @return o valor descriptografado conforme a chave indicada
-     * @throws Exception caso aconteça algum erro na descriptografia
+     * Descriptografa o valor informado conforme a chave indicada.
+     *
+     * @param value
+     * @param key
+     * @return
+     * @throws Exception
      */
     public static String getDescripto(String value, String key) throws Exception {
 
@@ -178,7 +181,7 @@ public class SecurityUtil {
     /**
      * Método utilizado para gerar um password com base no email do usuário
      * nos casos em que o usuário criar conta no Connecta 2.0 através de uma rede social
-     * @param email informado
+     * @param email
      * @return Base64 Hash do Password, null caso não consiga executar
      */
     public static String getConnectaPasswordBase64Hash(String email) {

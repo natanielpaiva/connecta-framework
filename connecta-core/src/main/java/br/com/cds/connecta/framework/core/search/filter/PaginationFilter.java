@@ -23,7 +23,7 @@ public class PaginationFilter {
 
     /**
      * Cria um objeto {@link Sort} de acordo com os parâmetros passados para o PaginationFilter
-     * @return return
+     * @return 
      * @throws IllegalStateException Caso não tenha informações suficientes para criar o Sort
      */
     public Sort makeSort() {
@@ -44,7 +44,7 @@ public class PaginationFilter {
      * Cria um objeto {@link Pageable} de acordo com os parâmetros de paginação
      * passados para o PaginationFilter
      * 
-     * @return return
+     * @return 
      * @throws IllegalStateException Caso não tenha informações suficientes para criar o Pageable
      */
     public Pageable makePageable() {
@@ -60,7 +60,7 @@ public class PaginationFilter {
     /**
      * Cria um objeto {@link Pageable} de acordo com os parâmetros de paginação
      * e ordenação passados para o PaginationFilter
-     * @return return
+     * @return 
      * @throws IllegalStateException Caso não tenha informações suficientes
      * para criar o Pageable com ordenação
      */
@@ -99,7 +99,8 @@ public class PaginationFilter {
     }
     
     /**
-     * @return se o conteúdo da resposta deve ser um Array ou o objeto {@link Pageable}
+     * Retorna se o conteúdo da resposta deve ser um Array ou o objeto {@link Pageable}
+     * @return 
      */
     public boolean isArray() {
         return array != null && array;

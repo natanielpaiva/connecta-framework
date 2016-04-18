@@ -19,6 +19,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  *
  * @author Julio Lemes
+ * @date Jul 24, 2015
  */
 @Component
 public class RestClient {

@@ -35,21 +35,6 @@ public class CSVDataContextFactory implements FileContextFactory{
         dataContext = DataContextFactory.createCsvDataContext(inputStream, separatorChar, quoteChar);
     }
     
-    public CSVDataContextFactory(String csv , char separatorChar, char quoteChar) {
-        this.csv = csv;
-        
-        if(separatorChar != ' '){
-            this.separatorChar = separatorChar;
-        }
-         
-        if(quoteChar != ' '){
-            this.quoteChar = quoteChar;
-        }
-        
-        InputStream inputStream = new ByteArrayInputStream(csv.getBytes(StandardCharsets.UTF_8));
-        dataContext = DataContextFactory.createCsvDataContext(inputStream, this.separatorChar, this.quoteChar);
-    }
-    
     public CSVDataContextFactory(File file) {
         this.file = file;
         dataContext = DataContextFactory.createCsvDataContext(file, separatorChar, quoteChar, FileHelper.UTF_8_ENCODING);

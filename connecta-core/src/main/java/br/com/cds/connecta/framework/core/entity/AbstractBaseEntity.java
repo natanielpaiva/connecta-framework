@@ -31,9 +31,6 @@ public abstract class AbstractBaseEntity extends AbstractBaseBean {
         if (obj == null) {
             return false;
         }
-        if(this.getClass() != obj.getClass()){
-        	return false;
-        }
         // nao pode ser == por causa do proxy Javassist!
         if (!getClass().isAssignableFrom(obj.getClass())) {
             return false;

@@ -4,7 +4,7 @@ import br.com.cds.connecta.framework.core.domain.MessageEnum;
 
 /**
  *
- * @author Vinicius Pires
+ * @author Vinicius Pires <vinicius.pires@cds.com.br>
  */
 public class ResourceNotFoundException extends SystemException {
     

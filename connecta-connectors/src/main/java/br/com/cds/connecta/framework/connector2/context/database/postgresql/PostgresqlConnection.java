@@ -1,6 +1,6 @@
 package br.com.cds.connecta.framework.connector2.context.database.postgresql;
 
-import br.com.cds.connecta.framework.connector2.context.database.Driver;
+import br.com.cds.connecta.framework.connector2.context.database.Drive;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

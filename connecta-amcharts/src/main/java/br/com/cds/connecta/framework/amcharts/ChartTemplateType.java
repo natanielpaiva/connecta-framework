@@ -11,6 +11,8 @@ public class ChartTemplateType {
     private String id;
     private Collection<ChartTemplate> templates;
 
+    public ChartTemplateType() {}
+    
     public ChartTemplateType(String id) {
         this.id = id;
     }

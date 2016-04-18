@@ -1,15 +1,15 @@
 package br.com.cds.connecta.framework.connector2.context.database.oracle;
 
-import br.com.cds.connecta.framework.connector2.context.database.Driver;
+import br.com.cds.connecta.framework.connector2.context.database.Drive;
 
 /**
  *
  * @author diego
  */
-public class OracleConnection implements Driver {
+public class OracleConnection  implements Drive{
 
-    String host;
-    String port;
+    String host; 
+    String port; 
     String database;
 
     public OracleConnection(String host, String port, String database) {
@@ -17,17 +17,21 @@ public class OracleConnection implements Driver {
         this.port = port;
         this.database = database;
     }
-
+    
+    
     @Override
     public String jdbcUrl() {
-        String url = "jdbc:oracle:thin:@" + host + ":" + port + ":" + database;
+         String url = "jdbc:oracle:thin:@"+ host + ":" + port + ":" + database;
         System.out.println(url);
         return url;
     }
 
     @Override
     public String jdbcDrive() {
-        return "oracle.jdbc.driver.OracleDriver";
+         return "oracle.jdbc.driver.OracleDriver";
     }
-
+    
 }
+ 
+
+    

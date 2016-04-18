@@ -16,12 +16,11 @@ import java.util.Scanner;
  */
 public class UtilIO {
 	/**
-	 * @see <a href="http://stackoverflow.com/a/5445161/239151">
-	 * Read/convert an InputStream to a String </a>
-	 *  
-	 * @param filename nome do arquivo
+	 * @see "Read/convert an InputStream to a String"
+	 *      http://stackoverflow.com/a/5445161/239151
+	 * @param filename
 	 * @return the concatenated string from the file
-	 * @throws IOException caso dê algum erro de leitura
+	 * @throws IOException
 	 */
 	public static String readFileToString(String filename) throws IOException {
 		String text;
@@ -51,7 +50,7 @@ public class UtilIO {
 	 * @param inputStream
 	 *            The input stream
 	 * @return The read string
-	 * @throws IOException caso dê algum erro de leitura
+	 * @throws IOException
 	 */
 	public static String readStreamToString(InputStream inputStream) throws IOException {
 		StringBuilder builder = new StringBuilder();
@@ -62,7 +61,7 @@ public class UtilIO {
 		while ((count = reader.read(buffer)) >= 0) {
 			builder.append(buffer, 0, count);
 		}
-		
+
 		return builder.toString();
 	}
 
@@ -72,7 +71,7 @@ public class UtilIO {
 	 * @param filename
 	 *            The path of the file to read
 	 * @return a list of words in ArrayList
-	 * @throws IOException caso dê algum erro de leitura
+	 * @throws IOException
 	 */
 	public static ArrayList<String> readWordList(String filename) throws IOException {
 		String text = readFileToString(filename);

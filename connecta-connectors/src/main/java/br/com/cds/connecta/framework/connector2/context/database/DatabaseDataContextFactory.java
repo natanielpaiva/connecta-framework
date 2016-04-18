@@ -3,122 +3,81 @@ package br.com.cds.connecta.framework.connector2.context.database;
 import br.com.cds.connecta.framework.connector2.common.Base;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
+import br.com.cds.connecta.framework.connector2.common.DatabaseContextFactory;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import org.apache.log4j.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.apache.metamodel.DataContext;
 import org.apache.metamodel.DataContextFactory;
 import org.apache.metamodel.data.DataSet;
-import org.apache.metamodel.pojo.MapTableDataProvider;
-import org.apache.metamodel.pojo.PojoDataContext;
-import org.apache.metamodel.pojo.TableDataProvider;
 import org.apache.metamodel.query.Query;
 import org.apache.metamodel.schema.Column;
 import org.apache.metamodel.schema.Schema;
 import org.apache.metamodel.schema.Table;
-import org.apache.metamodel.util.SimpleTableDef;
 
 /**
  *
  * @author diego
  */
-public class DatabaseDataContextFactory extends Base implements ContextFactory {
-
-    private final Logger logger = Logger.getLogger(DatabaseDataContextFactory.class);
+public class DatabaseDataContextFactory extends Base implements ContextFactory, DatabaseContextFactory {
 
     private String jdbcDrive;
     private String jdbcUrl;
 
-    private String sql;
+    private Connection connection;
+
+    private Drive drive;
+
     private String table;
     private String user;
     private String password;
-    
-    private Table tableContext;
-    
-    private final String DEFAULT_SCHEMA_NAME = "DEFAULT_SCHEMA_NAME";
-    private final String DEFAULT_TABLE_NAME = "DEFAULT_TABLE_NAME";
 
-    /**
-     *  
-     * @param sql
-     * @param db
-     * @param user
-     * @param password
-     */
-    public DatabaseDataContextFactory(String sql, Driver db, String user, String password) {
-        this.sql = sql;
-        this.user = user;
-        this.password = password;
-        this.jdbcDrive = db.jdbcDrive();
-        this.jdbcUrl = db.jdbcUrl();
-
-        dataContext = sqlCreateDataContext();
-    }
-
-    /**
-     *
-     * @param db
-     * @param table
-     * @param user
-     * @param password
-     */
-    public DatabaseDataContextFactory(Driver db, String table, String user, String password) {
+    public DatabaseDataContextFactory(Drive db, String table, String user, String password) {
         this.table = table;
         this.user = user;
         this.password = password;
         this.jdbcDrive = db.jdbcDrive();
         this.jdbcUrl = db.jdbcUrl();
 
-        dataContext = tableCreateDataContext();
+        dataContext = createDataContext();
     }
 
-    /**
-     *
-     * @param db
-     * @param user
-     * @param password
-     */
-    public DatabaseDataContextFactory(Driver db, String user, String password) {
+    public DatabaseDataContextFactory(Drive db, String user, String password) {
         this.user = user;
         this.password = password;
         this.jdbcDrive = db.jdbcDrive();
         this.jdbcUrl = db.jdbcUrl();
-
-        this.dataContext = tableCreateDataContext();
+        this.dataContext = createDataContext();
     }
 
     @Override
     public DataContext createDataContext() {
-        return dataContext;
-    }
 
-    private DataContext tableCreateDataContext() {
-        dataContext = DataContextFactory.createJdbcDataContext(getConnection());
-        return dataContext;
-    }
+        if (dataContext == null) {
+            try {
+                System.out.println(jdbcDrive);
+                Class.forName(jdbcDrive);
+            } catch (ClassNotFoundException ex) {
+                System.out.println("jdbcDrive nao encontrado");
+                Logger.getLogger(DatabaseDataContextFactory.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
-    public Connection getConnection() {
-        Connection conn = null;
-        try {
-            System.out.println(jdbcDrive);
-            Class.forName(jdbcDrive);
-            conn = DriverManager.getConnection(jdbcUrl, user, password);
-            System.out.println(jdbcUrl);
-            logger.info("JDBC URL: " + jdbcUrl);
-        } catch (SQLException | ClassNotFoundException ex) {
-            logger.error("Connection problem", ex);
+            try {
+                connection = DriverManager.getConnection(jdbcUrl, user, password);
+                System.out.println(jdbcUrl);
+            } catch (SQLException ex) {
+                System.out.println("problema com a conexão");
+                Logger.getLogger(DatabaseDataContextFactory.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            dataContext = DataContextFactory.createJdbcDataContext(connection);
         }
 
-        return conn;
+        return dataContext;
     }
 
     @Override
@@ -126,28 +85,29 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         Schema schema = discoverSchema();
 
         Table table = discoverTable(schema);
-        table.getColumns();
-        
-        List<ConnectorColumn> listColumns = queryContext.getColumns();
 
-        
-        //Query from = queryContext.getQuery().from(table).select(table.getColumns());
+        String[] requiredColumns = queryContext.getColumns();
+
         Query from = queryContext.getQuery().from(table);
-        
-        if (listColumns != null) {
-            for (ConnectorColumn column : listColumns) {
-                Column columnByName = table.getColumnByName(column.getName());
+
+        if (requiredColumns != null) {
+
+            for (String requiredColumn : requiredColumns) {
+                Column columnByName = table.getColumnByName(requiredColumn);
                 queryContext.getQuery().select(columnByName);
             }
 
+            //Schema defaultSchema = dataContext.getDefaultSchema();
+            //dataContext.getSchemaByName(schema.getName());
             return dataContext.executeQuery(from);
         } else {
 
             return dataContext.executeQuery(from.selectAll());
         }
+
     }
 
-    private Schema discoverSchema() {
+    public Schema discoverSchema() {
         if (queryContext == null || queryContext.getSchema() == null) {
             return dataContext.getDefaultSchema();
         } else {
@@ -155,36 +115,30 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         }
     }
 
-    private Table discoverTable(Schema schema) {
+    public Table discoverTable(Schema schema) {
+        Table table = null;
 
         if (queryContext != null && queryContext.getTable() != null) {
-            logger.info("QUERY CONTEXT AND TABLE NOT NULL: " + queryContext.getTable());
-            tableContext = schema.getTableByName(queryContext.getTable());
+            table = schema.getTableByName(queryContext.getTable());
         } else if (this.table != null) {
-            logger.info("DATA CONTEXT TABLE NOT NULL: " + this.table);
-            tableContext = schema.getTableByName(this.table);
+            table = schema.getTableByName(this.table);
         } else {
-            logger.info("DATA CONTEXT TABLE IS NULL PA CARALHO: " + DEFAULT_TABLE_NAME);
-            tableContext = schema.getTableByName(DEFAULT_TABLE_NAME);
-            logger.info("Table was not defined");
+            System.out.println("tabela nao definida");
+            return table;
         }
-
-        return tableContext;
+        return table;
     }
 
-    /**
-     *  Lista as colunas de um context
-     * @return
-     */
     @Override
-    public List<ConnectorColumn> getColumns() {
+    public List getColumns() {
 
         List<ConnectorColumn> connectorColumns = new ArrayList<>();
 
         Schema schema = discoverSchema();
-        Table discoverTable = discoverTable(schema);
+        Table tableByName = schema.getTableByName(queryContext.getTable());
 
-        Column[] columns = discoverTable.getColumns();
+        //Table table = dataContext.getDefaultSchema().getTableByName(queryContext.getTable());
+        Column[] columns = tableByName.getColumns();
 
         for (Column column : columns) {
             ConnectorColumn cc = new ConnectorColumn();
@@ -199,10 +153,6 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         return connectorColumns;
     }
 
-    /**
-     *  Retorna todos os Schemas do Banco
-     * @return
-     */
     @Override
     public String[] getSchemas() {
         Schema[] schemas = dataContext.getSchemas();
@@ -213,6 +163,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         return sc;
     }
 
+    //   Schema tables
     @Override
     public String[] getTables() {
         Schema schema = discoverSchema();
@@ -239,43 +190,6 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     @Override
     public Column getColumn(String columnName) {
         return getTable().getColumnByName(columnName);
-    }
-
-    public DataContext sqlCreateDataContext() {
-        DataContext dc = null;
-        List<Map<String, ?>> rowset = new ArrayList<>();
-
-        try {
-            Statement statement = getConnection().createStatement();
-            ResultSet rs = statement.executeQuery(this.sql);
-            ResultSetMetaData metaData = rs.getMetaData();
-
-            int count = metaData.getColumnCount();
-            String columns[] = new String[count];
-
-            for (int i = 1; i <= count; i++) {
-                columns[i - 1] = metaData.getColumnLabel(i);
-            }
-
-            while (rs.next()) {
-                Map<String, Object> row = new HashMap<>();
-                for (String name : columns) {
-                    row.put(name, rs.getObject(name));
-                    System.out.println(name + " -------  " + rs.getObject(name));
-                }
-                System.out.println("\n");
-                rowset.add(row);
-            }
-
-            TableDataProvider<?> provider = new MapTableDataProvider(
-                    new SimpleTableDef(DEFAULT_TABLE_NAME, columns), rowset);
-            dc = new PojoDataContext(DEFAULT_SCHEMA_NAME, provider);
-
-        } catch (SQLException ex) {
-            logger.error(ex.getMessage(), ex);
-        }
-
-        return dc;
     }
 
 }

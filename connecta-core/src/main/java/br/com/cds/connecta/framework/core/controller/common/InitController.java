@@ -35,10 +35,10 @@ public class InitController {
      * Traduz a chave com os parametros para uma mensagem mapeada no arquivo de
      * mensagens
      *
-     * @param key Chave da mensagem mapeada
-     * @param messageEnum Tipo da mensagem SUCCESS, INFO, WARN e ERROR
-     * @param args Args
-     * @return MessageModel Objeto da mensagem
+     * @param key
+     * @param messageEnum
+     * @param args
+     * @return
      */
     protected MessageModel getTranslatedMessage(String key, MessageTypeEnum messageEnum, Object... args) {
         return translate.getMsg(key, messageEnum, args);

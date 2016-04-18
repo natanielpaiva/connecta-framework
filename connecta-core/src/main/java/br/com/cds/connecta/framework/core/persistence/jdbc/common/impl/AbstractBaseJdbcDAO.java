@@ -86,8 +86,8 @@ public abstract class AbstractBaseJdbcDAO  {
 
     /**
      * Save, update e delete
-     * @param sql A String do SQL a ser executado
-     * @return O número de linhas afetadas
+     * @param sql
+     * @return 
      */
     public int executeQuery(String sql) {
         try {
@@ -100,9 +100,9 @@ public abstract class AbstractBaseJdbcDAO  {
 
     /**
      * Save, update e delete
-     * @param sql A String do SQL a ser executado
-     * @param params Parâmetros da query
-     * @return O número de linhas afetadas
+     * @param sql
+     * @param params
+     * @return 
      */
     public int executeQuery(String sql, Object...params) {
         try {

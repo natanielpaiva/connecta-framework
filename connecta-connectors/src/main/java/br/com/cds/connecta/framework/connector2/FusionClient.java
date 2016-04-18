@@ -1,4 +1,4 @@
-package br.com.cds.connecta.framework.connector2;
+    package br.com.cds.connecta.framework.connector2;
 
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import java.util.ArrayList;
@@ -15,47 +15,64 @@ import org.apache.metamodel.query.SelectItem;
  * @author diego
  */
 public class FusionClient {
-
+    
     /**
      * Retorna contexto do connector
-     *
      * @param request
      * @return
      */
-    public DataContext getDataContext(Request request) {
+    public DataContext getDataContext(Request request){
         DataContext dataContext = request.getDataContextFactory();
         return dataContext;
     }
-
+    
     /**
      * Retorna Todos os dados de um context
-     *
      * @param request
      * @return
      */
-    public List<Map<String, Object>> getAll(Request request) {
-
+    public List<Map<String, Object>> getAll(Request request){
+        //Query query = request.queryContext.getQuery();
+        
         DataSet resultAll = request.getResultAll();
-        return toList(resultAll, request.queryContext.getColumns());
+        return toList(resultAll);
     }
-
+    
     /**
      * Retorna os metadados das columans
-     *
      * @param request
      * @return
      */
-    public List<ConnectorColumn> getColumns(Request request) {
+    public List<ConnectorColumn> getColumns(Request request){
         List<ConnectorColumn> columns = request.getColumns();
         return columns;
     }
     
-    public boolean isValid(Request request) {
+    
+    public List<Map<String, Object>> getResultList(Request request){
+        DataContext dataContextFactory = request.getDataContextFactory();
+        
+        return null;
+    }
+    
+    
+    
+//    public List<Map<String, Object>> getResultList(Request request){
+//        DataSet dataContextFactory = request.getDataContextFactory();
+//        
+//        return toList(dataContextFactory);
+//    }
+    
+   
+    
+    public boolean isValid(Request request){
         return true;
     }
-
-    public static List<Map<String, Object>> toList(DataSet execute, List<ConnectorColumn> columns) throws IndexOutOfBoundsException {
-
+    
+    
+    
+    
+    public static List<Map<String, Object>> toList(DataSet execute) throws IndexOutOfBoundsException {
         List<Map<String, Object>> list = new ArrayList<>();
 
         for (Row row : execute) {
@@ -63,23 +80,9 @@ public class FusionClient {
             Map<String, Object> object = new HashMap<>(selectItems.length);
 
             for (int i = 0; i < row.getValues().length; i++) {
-
-                if (columns != null) {
-                    for (ConnectorColumn column : columns) {
-
-                        if (column.getName().equals(selectItems[i].getColumn().getName())) {
-                            String key = column.getLabel();
-                            String value = row.getValue(i) == null ? "" : row.getValue(i).toString();
-                            object.put(key, value);
-                        }
-                    }
-
-                } else {
-                    String key = selectItems[i].getColumn().getName();
-                    String value = row.getValue(i) == null ? "" : row.getValue(i).toString();
-                    object.put(key, value);
-                }
-
+                String key = selectItems[i].getColumn().getName();
+                String value = row.getValue(i) == null ? "" : row.getValue(i).toString();
+                object.put(key, value);
             }
 
             list.add(object);
@@ -87,4 +90,5 @@ public class FusionClient {
         return list;
     }
 
+   
 }

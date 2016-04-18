@@ -94,10 +94,10 @@ public class ImageUtil {
 	
 	/**
 	 * 
-	 * @param bimage Imagem Bufferizada
-	 * @param imageFormat Formato da Imagem
-	 * @return o input stream 
-	 * @throws IOException caso dê algum erro ao escrever ou ler o arquivo
+	 * @param bimage
+	 * @param imageFormat
+	 * @return
+	 * @throws IOException
 	 */
 	public static InputStream parseToInputStream(BufferedImage bimage, String imageFormat) throws IOException{
 		

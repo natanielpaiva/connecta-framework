@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author Vinicius Pires
+ * @author Vinicius Pires <vinicius.pires@cds.com.br>
  */
 @Service
 public class ConnectaSharedIndexerServiceImpl implements IConnectaSharedIndexerService {

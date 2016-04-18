@@ -7,7 +7,6 @@ import br.com.cds.connecta.framework.connector2.common.FileContextFactory;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.metamodel.data.DataSet;
-import org.apache.metamodel.query.FunctionType;
 import org.apache.metamodel.schema.Column;
 import org.apache.metamodel.schema.Table;
 
@@ -33,8 +32,7 @@ public class FileDataContextFactory extends Base implements ContextFactory {
 
         queryContext.getQuery().from(table);
 
-        //String[] requiredColumns = queryContext.getColumns();
-        String[] requiredColumns = null;
+        String[] requiredColumns = queryContext.getColumns();
 
         if (requiredColumns != null) {
             for (String requiredColumn : requiredColumns) {
@@ -49,33 +47,11 @@ public class FileDataContextFactory extends Base implements ContextFactory {
 
             }
         } else {
-            queryContext.getQuery();
+            queryContext.getQuery().selectAll();
         }
 
         DataSet executeQuery = dataContext.executeQuery(queryContext.getQuery());
 
-        
-//funcioando
-//DataSet executeQuery = dataContext.executeQuery(queryContext.getQuery().select(" AVG(csvdata.csv.funcionario)" ).groupBy("nome"));        
-//SELECT csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email, AVG(csvdata.csv.funcionario) FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
-//SELECT csvdata.csv.nome, AVG(csvdata.csv.funcionario), csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
-
-
-//SELECT AVG(csvdata.csv.funcionario), csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
-
-        
-// DataSet executeQuery = dataContext.executeQuery(queryContext.getQuery()
-//                    .select(FunctionType.AVG, getColumn("funcionario"))
-//                    .select(getColumn("nome"))
-//                    .groupBy("nome"));
-//SELECT csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email, AVG(csvdata.csv.funcionario), csvdata.csv.nome                     FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
-        
-//SELECT AVG(csvdata.csv.funcionario), csvdata.csv.nome, csvdata.csv.nome, csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
-
-//SELECT COUNT(csvdata.csv.funcionario), csvdata.csv.nome, csvdata.csv.nome, csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
-
- 
-System.out.println("-dddddddddddddddddd----------" + queryContext.getQuery().toString());
         return executeQuery;
     }
 
@@ -105,16 +81,6 @@ System.out.println("-dddddddddddddddddd----------" + queryContext.getQuery().toS
 
     public Column getColumn(String columnName) {
         return getTable().getColumnByName(columnName);
-    }
-
-    @Override
-    public String[] getSchemas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String[] getTables() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

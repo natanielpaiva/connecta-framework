@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author Julio Lemes
+ * @date Mar 19, 2015
  */
 public class SimpleCORSFilter implements Filter {
 

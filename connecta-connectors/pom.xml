@@ -41,14 +41,6 @@
     
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc6</artifactId>
             <version>11.2.0.3</version>
@@ -110,11 +102,11 @@
             <artifactId>solr-solrj</artifactId>
         </dependency>
         
-        <dependency>
+<!--        <dependency>
             <groupId>dnl.utils</groupId>
             <artifactId>j-text-utils</artifactId>
             <version>0.3.3</version>
-        </dependency>
+        </dependency>-->
         
         <dependency>
             <groupId>mysql</groupId>

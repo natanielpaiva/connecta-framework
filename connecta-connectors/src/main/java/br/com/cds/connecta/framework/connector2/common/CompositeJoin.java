@@ -21,6 +21,7 @@ public class CompositeJoin {
         this.rightColumn = rightContextFactory.getColumn(rightColumn);
     }
 
+
     public ContextFactory getLeftContextFactory() {
         return leftContextFactory;
     }

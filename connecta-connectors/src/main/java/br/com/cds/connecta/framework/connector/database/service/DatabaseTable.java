@@ -1,5 +1,7 @@
+
 package br.com.cds.connecta.framework.connector.database.service;
 
+import br.com.cds.connecta.framework.connector.database.Database;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -18,7 +20,7 @@ import java.util.Map;
  * @author diego
  */
 public class DatabaseTable {
-
+    
     /**
      *
      * @param JDBCConnection
@@ -28,6 +30,7 @@ public class DatabaseTable {
      * @return
      * @throws SQLException
      */
+    
     public List<IDatabaseTable> getTables(String JDBCConnection, String JDBCSchema,
             String JDBCUser, String JDBCPassword) throws SQLException {
 
@@ -50,19 +53,19 @@ public class DatabaseTable {
 
             while (rs.next()) {
 
-                String tableName = rs.getString("TABLE_NAME");
-                String tableType = rs.getString("TABLE_TYPE");
+                try {
+                    String tableName = rs.getString("TABLE_NAME");
+                    String tableType = rs.getString("TABLE_TYPE");
 
-                TableImpl table = new TableImpl(tableName);
-                table.setSchema(JDBCSchema);
-                table.setTableType(tableType);
+                    TableImpl table = new TableImpl(tableName);
+                    table.setSchema(JDBCSchema);
+                    table.setTableType(tableType);
 
-                //recuperando os metadados da tabela
-                String sql = "select * from ".concat(JDBCSchema.concat(".".concat(tableName)));
+                    //recuperando os metadados da tabela
+                    String sql = "select * from ".concat(JDBCSchema.concat(".".concat(tableName)));
+                    Statement stm = con.createStatement();
 
-                try (Statement stm = con.createStatement();
-                        ResultSet rsTable = stm.executeQuery(sql);) {
-
+                    ResultSet rsTable = stm.executeQuery(sql);
                     ResultSetMetaData rsmetadata = rsTable.getMetaData();
 
                     List<ColumnImp> columns = new ArrayList<ColumnImp>();
@@ -96,13 +99,16 @@ public class DatabaseTable {
                     table.getColumns().addAll(columns);
                     tables.add(table);
 
+                    rsTable.close();
                 } catch (SQLException e) {
                     System.out.println(e.getLocalizedMessage());
                 }
             }
+
             rs.close();
 
             return tables;
+
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         } finally {
@@ -112,13 +118,15 @@ public class DatabaseTable {
         }
 
     }
-
+    
+    
+    
     private String getJDBCDriverName(String jdbcConnection) {
 
-        HashMap<String, String> JDBCdrives = new HashMap<String, String>();
+        HashMap<String, String> JDBCdrives = new HashMap<String,String>();
         JDBCdrives.put("oracle", "oracle.jdbc.driver.OracleDriver");
         JDBCdrives.put("postgres", "org.postgresql.Driver");
-
+        
         for (String key : JDBCdrives.keySet()) {
 
             if (jdbcConnection.contains(key)) {
@@ -128,14 +136,16 @@ public class DatabaseTable {
 
         return null;
     }
-
-    public List<Map<String, Object>> getSqlViewColumns(String sql, String JDBCConnection, String schema, String user, String password) throws Exception {
+    
+        public List<Map<String, Object>> getSqlViewColumns(String sql,String JDBCConnection, String schema, String user, String password) throws Exception {
         List<String> out = new ArrayList<String>();
+
 
 //        String sql = "SELECT * FROM (" + " SELECT * FROM PRESENTER2.TB_SOLR_ANALYSIS " + ") F";
 //        String JDBCConnection = "jdbc:oracle:thin:@192.168.3.14:1521:cdsdev";
 //        String JDBCUser = "presenter2";
 //        String JDBCPassword = "cds312";
+
         //Abrindo a conexão com o banco de dados
         String JDBCDriver = getJDBCDriverName(JDBCConnection);
         Class.forName(JDBCDriver);
@@ -145,39 +155,46 @@ public class DatabaseTable {
         PreparedStatement stm = con.prepareStatement(sql);
         ResultSet rs = stm.executeQuery();
         List<Map<String, Object>> Obj = new ArrayList<>();
+        
 
         if (rs != null) {
             while (rs.next()) {
                 ResultSetMetaData rsmd = rs.getMetaData();
-
+                
                 Map<String, Object> object = new HashMap<>(rsmd.getColumnCount());
-
+                
                 for (int i = 1; i <= rsmd.getColumnCount(); i++) {
                     String column = rsmd.getColumnLabel(i);
                     System.out.println();
-
-                    object.put(column, rs.getObject(column));
+                    
+                   object.put(column, rs.getString(column));
                     System.out.println("**" + column + " --> " + rs.getString(column));
-
+                    
                 }
                 System.out.println("\n");
                 Obj.add(object);
-
+                
             }
-            rs.close();
+            //rs.close();
         }
-        stm.close();
+
         con.close();
 
         return Obj;
     }
-
-    public static void main(String args[]) throws SQLException {
-
-        DatabaseTable database = new DatabaseTable();
-        database.getTables("jdbc:oracle:thin:@192.168.3.14:1521:cdsbd", "PRESENTER_ANALYTICS", "portal", "cds312");
+    
+    
+    
+    
+    
+    
+    
+     public static void main(String args[]) throws SQLException  {
+         
+       DatabaseTable database = new DatabaseTable();
+       database.getTables("jdbc:oracle:thin:@192.168.3.14:1521:cdsbd", "PRESENTER_ANALYTICS", "portal", "cds312");
 //       String[] columns = {"id", "name"};
 //       database.getDados("ORACLE_SID", "192.168.3.14", "1521", "cdsdev", "portal", "cds312", columns);
-    }
-
+   }
+    
 }

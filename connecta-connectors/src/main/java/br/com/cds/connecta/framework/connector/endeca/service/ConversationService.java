@@ -17,6 +17,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+//import net.sf.json.JSONObject;
+//import br.com.connecta.endeca.service.bean.Attribute;
+//import br.com.connecta.endeca.service.bean.Row;
+//
+//import com.endeca.mdex.conversation._3.ConversationPort;
+//import com.endeca.mdex.conversation._3.Fault;
+//import com.endeca.mdex.conversation._3._0.Assignment;
+//import com.endeca.mdex.conversation._3._0.ContentElement;
+//import com.endeca.mdex.conversation._3._0.EQL;
+//import com.endeca.mdex.conversation._3._0.EQLConfig;
+//import com.endeca.mdex.conversation._3._0.Record;
+//import com.endeca.mdex.conversation._3._0.Request;
+//import com.endeca.mdex.conversation._3._0.ResultRecords;
+//import com.endeca.mdex.conversation._3._0.Results;
+//import com.endeca.mdex.conversation._3._0.State;
+
 /**
  * ConversationService is a class that call, conversation webservice from endeca
  * server, and search data from a specific domain
@@ -183,7 +199,7 @@ public class ConversationService {
 
         if (top != null) {
             //if used order by, add only top function
-            if (grouping.equals(Grouping.ORDERBY)) {
+            if (grouping != null && grouping.equals(Grouping.ORDERBY)) {
                 eql.append(String.format(" %s DESC PAGE(0, %s)", columnTop, top.getNumber()));
             } else {
                 eql.append(String.format(" ORDER BY %s DESC PAGE(0, %s)", columnTop, top.getNumber()));

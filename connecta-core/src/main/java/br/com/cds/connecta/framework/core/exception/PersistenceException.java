@@ -3,7 +3,8 @@ package br.com.cds.connecta.framework.core.exception;
 
 /**
  * 
- * @author Ryan A. Thuin
+ * @Autor Ryan A. Thuin
+
  * 
  */
 public class PersistenceException extends RuntimeException{
