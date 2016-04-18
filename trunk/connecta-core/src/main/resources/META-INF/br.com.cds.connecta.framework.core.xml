@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+    <context:component-scan base-package="br.com.cds.connecta.framework.core" />
+    
+    <context:property-placeholder location="classpath:application.properties" />
+
+    <bean id="multipartResolver"  class="br.com.cds.connecta.framework.core.context.RestfulCommonsMultipartResolver">
+        <property name="maxUploadSize" value="10485760"/> <!-- 10MB -->
+    </bean>
+    
+    <!-- ViewResolver e Configuração do Jackson -->
+    <bean id="objectMapper" class="br.com.cds.connecta.framework.core.context.HibernateAwareObjectMapper" />
+    
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper" ref="objectMapper" />
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="mediaTypes">
+            <map>
+                <entry key="html" value="text/html;charset=UTF-8"/>
+                <entry key="json" value="application/json;charset=UTF-8"/>
+                <entry key="xml"  value="application/xml;charset=UTF-8"/>
+            </map>
+        </property>
+        <property name="defaultContentType" value="application/json;charset=UTF-8"/>
+    </bean>
+
+    <!-- Internacionalização -->
+    <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="lang" />
+    </bean>
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="pt_br"/>
+    </bean>
+
+    <mvc:interceptors>
+        <ref bean="localeChangeInterceptor" />
+    </mvc:interceptors>
+    
+    <!-- MESSAGE SOURCES -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:messages/messages" />
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
+    
+    <!--TRANSAÇÃO-->
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+    
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+    
+    <bean id="sharedTransactionTemplate"
+          class="org.springframework.transaction.support.TransactionTemplate">
+        <property name="transactionManager" ref="transactionManager" />
+        <property name="isolationLevelName" value="ISOLATION_READ_UNCOMMITTED" />
+        <property name="timeout" value="30" />
+    </bean>
+    
+    <!--SECURITY-->
+    <!--<security:global-method-security secured-annotations="enabled" jsr250-annotations="enabled" />-->
+    
+    <!--SPRING REPOSITORIES-->
+    <jpa:repositories base-package="br.com.cds.connecta"
+                      entity-manager-factory-ref="entityManagerFactory"
+                      transaction-manager-ref="transactionManager"  />
+</beans>
