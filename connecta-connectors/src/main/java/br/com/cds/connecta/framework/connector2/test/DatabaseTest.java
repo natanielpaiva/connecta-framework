@@ -6,12 +6,13 @@ import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.PrintResult;
 import br.com.cds.connecta.framework.connector2.common.QueryContext;
 import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataContextFactory;
-import br.com.cds.connecta.framework.connector2.context.database.Driver;
-import br.com.cds.connecta.framework.connector2.context.database.mysql.MySqlConnection;
-import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleConnection;
+import br.com.cds.connecta.framework.connector2.context.database.ConnectorDriver;
+import br.com.cds.connecta.framework.connector2.context.database.mysql.MySQLDriver;
+import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleDriver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import org.junit.Ignore;
 
 /**
  *
@@ -30,7 +31,7 @@ public class DatabaseTest {
 
     public static void testOracleTableQuery(FusionClient fusionClient, PrintResult printResult) {
         DatabaseDataContextFactory dataContextFactory = new DatabaseDataContextFactory(
-                new OracleConnection("192.168.1.185", "1521", "cdsdev"),
+                new OracleDriver("192.168.1.185", "1521", "cdsdev"),
                 "presenter2", "cds312");
 
         //dataContextFactory.createDataContext();
@@ -181,7 +182,7 @@ public class DatabaseTest {
                 + "		ORDER BY\n"
                 + "			Projeto	,\n"
                 + "			Data",
-                new MySqlConnection("192.168.33.10", "3306", "memorando"),
+                new MySQLDriver("192.168.33.10", "3306", "memorando"),
                 "root", "root");
         QueryContext query = new QueryContext();
         //query.setColumns(new String[]{"Data", "Assunto"}).getQuery().where(mySqldatabase.getColumn("nome"), OperatorType.EQUALS_TO, "Pâmela Leal");
@@ -208,7 +209,7 @@ public class DatabaseTest {
 
     private static void testOracleManualQuery(FusionClient fusionClient, PrintResult printResult) {
         String sql = "SELECT COUNT(TP_DATASOURCE), TP_DATASOURCE FROM TB_DATASOURCE GROUP BY TP_DATASOURCE";
-        Driver driver = new OracleConnection("192.168.1.185", "1521", "cdsdev");
+        ConnectorDriver driver = new OracleDriver("192.168.1.185", "1521", "cdsdev");
         
         DatabaseDataContextFactory dataContextFactory = new DatabaseDataContextFactory(sql, driver,
                 "PRESENTER2", "cds312");

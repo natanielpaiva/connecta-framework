@@ -5,9 +5,9 @@ import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
 import br.com.cds.connecta.framework.connector2.common.QueryContext;
 import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataContextFactory;
-import br.com.cds.connecta.framework.connector2.context.database.Driver;
-import br.com.cds.connecta.framework.connector2.context.database.mysql.MySqlConnection;
-import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleConnection;
+import br.com.cds.connecta.framework.connector2.context.database.ConnectorDriver;
+import br.com.cds.connecta.framework.connector2.context.database.mysql.MySQLDriver;
+import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleDriver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -50,7 +50,7 @@ public class DatabaseTest {
     public void manualQueryMySQL() {
         String sql = getTestResourceAsString("test/sql/mysql.sql");
 
-        Driver driver = new MySqlConnection(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
+        ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(sql, driver, MYSQL_USER, MYSQL_PASS);
         QueryContext query = new QueryContext();
@@ -81,7 +81,7 @@ public class DatabaseTest {
     public void manualQueryMySQLWithListColumns() {
         String sql = getTestResourceAsString("test/sql/mysql.sql");
 
-        Driver driver = new MySqlConnection(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
+        ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(sql, driver, MYSQL_USER, MYSQL_PASS);
 
@@ -113,7 +113,6 @@ public class DatabaseTest {
         assertThat(all, hasSize(greaterThan(0)));
         assertThat(all.get(0), hasKey("Tipo Memorando"));
         assertThat(all.get(0), hasKey("código"));
-
     }
 
     /**
@@ -123,7 +122,7 @@ public class DatabaseTest {
     public void manualQueryMySQLReturnTableDefault() {
         String sql = getTestResourceAsString("test/sql/mysql.sql");
 
-        Driver driver = new MySqlConnection(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
+        ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(sql, driver, MYSQL_USER, MYSQL_PASS);
         String[] tables = contextFactory.getTables();
@@ -136,7 +135,7 @@ public class DatabaseTest {
     public void manualQueryMySQLReturnSchemaDefault() {
         String sql = getTestResourceAsString("test/sql/mysql.sql");
 
-        Driver driver = new MySqlConnection(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
+        ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(sql, driver, MYSQL_USER, MYSQL_PASS);
         String[] schemas = contextFactory.getSchemas();
@@ -153,7 +152,7 @@ public class DatabaseTest {
     public void manualQueryMySQLReturnColumns() {
         String sql = getTestResourceAsString("test/sql/mysql.sql");
 
-        Driver driver = new MySqlConnection(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
+        ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(sql, driver, MYSQL_USER, MYSQL_PASS);
         List<ConnectorColumn> columns = contextFactory.getColumns();
@@ -169,10 +168,10 @@ public class DatabaseTest {
      * Testa execução de consulta de tabela
      */
     @Test
-    public void TableMySQL() {
+    public void tableMySQL() {
         String table = "tb_tipo_transporte";
 
-        Driver driver = new MySqlConnection(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
+        ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(driver, table, MYSQL_USER, MYSQL_PASS);
         QueryContext query = new QueryContext();
@@ -193,7 +192,7 @@ public class DatabaseTest {
     public void tableMySQLWithListColumns() {
         String table = "tb_tipo_transporte";
 
-        Driver driver = new MySqlConnection(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
+        ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(driver, table, MYSQL_USER, MYSQL_PASS);
 
@@ -238,7 +237,7 @@ public class DatabaseTest {
         String table = "tb_tipo_transporte";
         String sql = getTestResourceAsString("test/sql/mysql.sql");
 
-        Driver driver = new MySqlConnection(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
+        ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(driver, table, MYSQL_USER, MYSQL_PASS);
         List<ConnectorColumn> columns = contextFactory.getColumns();
@@ -261,7 +260,7 @@ public class DatabaseTest {
      */
     @Test
     public void listTablesMySQL() {
-        Driver driver = new MySqlConnection(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
+        ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(driver, MYSQL_USER, MYSQL_PASS);
         String[] tables = contextFactory.getTables();
@@ -275,7 +274,7 @@ public class DatabaseTest {
     public void manualQueryOracle() {
         String sql = getTestResourceAsString("test/sql/oracle.sql");
 
-        Driver driver = new OracleConnection(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
+        ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(sql, driver, ORACLE_USER, ORACLE_PASS);
         QueryContext query = new QueryContext();
@@ -298,7 +297,7 @@ public class DatabaseTest {
     public void manualQueryOracleWithListColumns() {
         String sql = getTestResourceAsString("test/sql/oracle.sql");
 
-        Driver driver = new OracleConnection(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
+        ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(sql, driver, ORACLE_USER, ORACLE_PASS);
 //        QueryContext query = new QueryContext();
@@ -331,7 +330,6 @@ public class DatabaseTest {
         assertThat(all, hasSize(greaterThan(0)));
         assertThat(all.get(0), hasKey("ID Datasouce"));
         assertThat(all.get(0), hasKey("Name"));
-
     }
 
     /**
@@ -341,7 +339,7 @@ public class DatabaseTest {
     public void manualQueryOracleReturnTableDefault() {
         String sql = getTestResourceAsString("test/sql/oracle.sql");
 
-        Driver driver = new OracleConnection(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
+        ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(sql, driver, ORACLE_USER, ORACLE_PASS);
         String[] tables = contextFactory.getTables();
@@ -354,7 +352,7 @@ public class DatabaseTest {
     @Test
     public void manualQueryOracleReturnSchemaDefault() {
         String sql = getTestResourceAsString("test/sql/oracle.sql");
-        Driver driver = new OracleConnection(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
+        ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
         ContextFactory contextFactory = new DatabaseDataContextFactory(sql, driver, ORACLE_USER, ORACLE_PASS);
 
         String[] schemas = contextFactory.getSchemas();
@@ -370,7 +368,7 @@ public class DatabaseTest {
     @Test
     public void manualQueryOracleReturnColumns() {
         String sql = getTestResourceAsString("test/sql/oracle.sql");
-        Driver driver = new OracleConnection(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
+        ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
         ContextFactory contextFactory = new DatabaseDataContextFactory(sql, driver, ORACLE_USER, ORACLE_PASS);
 
         List<ConnectorColumn> columns = contextFactory.getColumns();
@@ -388,7 +386,7 @@ public class DatabaseTest {
     @Test
     public void TableOracle() {
         String table = "TB_DATASOURCE";
-        Driver driver = new OracleConnection(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
+        ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
         ContextFactory contextFactory = new DatabaseDataContextFactory(driver, table, ORACLE_USER, ORACLE_PASS);
 
         QueryContext query = new QueryContext();
@@ -411,7 +409,7 @@ public class DatabaseTest {
     @Test
     public void tableOracleWithListColumns() {
         String table = "TB_DATASOURCE";
-        Driver driver = new OracleConnection(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
+        ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
         ContextFactory contextFactory = new DatabaseDataContextFactory(driver, table, ORACLE_USER, ORACLE_PASS);
 
         List<ConnectorColumn> connectorColumns = new ArrayList<>();
@@ -454,7 +452,7 @@ public class DatabaseTest {
     @Test
     public void tableOracleReturnColumns() {
         String table = "TB_DATASOURCE";
-        Driver driver = new OracleConnection(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
+        ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
         ContextFactory contextFactory = new DatabaseDataContextFactory(driver, table, ORACLE_USER, ORACLE_PASS);
 
         List<ConnectorColumn> columns = contextFactory.getColumns();
@@ -471,7 +469,6 @@ public class DatabaseTest {
         assertThat(columns.get(2).getLabel(), hasToString("DS_DATASOURCE"));
         assertThat(columns.get(2).getFormula(), hasToString("DS_DATASOURCE"));
         
-       
     }
 
     /**
@@ -480,7 +477,7 @@ public class DatabaseTest {
     @Test
     public void listTablesOracle() {
         
-        Driver driver = new OracleConnection(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
+        ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
         ContextFactory contextFactory = new DatabaseDataContextFactory(driver, ORACLE_USER, ORACLE_PASS);
 
         String[] tables = contextFactory.getTables();

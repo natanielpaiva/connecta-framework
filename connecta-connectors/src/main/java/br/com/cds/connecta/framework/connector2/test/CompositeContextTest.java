@@ -7,8 +7,8 @@ import br.com.cds.connecta.framework.connector2.common.CompositeJoin;
 import br.com.cds.connecta.framework.connector2.common.PrintResult;
 import br.com.cds.connecta.framework.connector2.common.QueryContext;
 import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataContextFactory;
-import br.com.cds.connecta.framework.connector2.context.database.mysql.MySqlConnection;
-import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleConnection;
+import br.com.cds.connecta.framework.connector2.context.database.mysql.MySQLDriver;
+import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleDriver;
 import br.com.cds.connecta.framework.connector2.context.file.FileDataContextFactory;
 import br.com.cds.connecta.framework.connector2.context.file.csv.CSVDataContextFactory;
 import br.com.cds.connecta.framework.connector2.context.file.json.JsonDataContextFactory;
@@ -79,12 +79,12 @@ public class CompositeContextTest {
         //---------------------------------------
         
          DatabaseDataContextFactory oracleDatabase = new DatabaseDataContextFactory(
-                new OracleConnection("192.168.1.185", "1521", "cdsdev"),"TB_ANALYSIS" ,"presenter2", "cds312");
+                new OracleDriver("192.168.1.185", "1521", "cdsdev"),"TB_ANALYSIS" ,"presenter2", "cds312");
          
        // ----------------------------------
         
          DatabaseDataContextFactory mySqlDatabase = new DatabaseDataContextFactory(
-                new MySqlConnection("192.168.33.10", "3306", "memorando"),"tb_usuario" ,"root", "root");
+                new MySQLDriver("192.168.33.10", "3306", "memorando"),"tb_usuario" ,"root", "root");
          
         
         
