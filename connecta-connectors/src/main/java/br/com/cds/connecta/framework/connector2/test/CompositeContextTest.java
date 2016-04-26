@@ -5,7 +5,7 @@ import br.com.cds.connecta.framework.connector2.Request;
 import br.com.cds.connecta.framework.connector2.common.CompositeDataContextFactory;
 import br.com.cds.connecta.framework.connector2.common.CompositeJoin;
 import br.com.cds.connecta.framework.connector2.common.PrintResult;
-import br.com.cds.connecta.framework.connector2.common.QueryContext;
+import br.com.cds.connecta.framework.connector2.common.QueryBuilder;
 import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataContextFactory;
 import br.com.cds.connecta.framework.connector2.context.database.mysql.MySQLDriver;
 import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleDriver;
@@ -43,8 +43,8 @@ public class CompositeContextTest {
         FileDataContextFactory csvDataContext = new FileDataContextFactory(csvDataContextFactory);
 
         Request requestCsv = new Request(csvDataContext,
-                new QueryContext().setTable(TESTFOLDER));
-        printResult.printMap2(fusionClient.getAll(requestCsv));
+                new QueryBuilder().setTable(TESTFOLDER));
+        printResult.printMap(fusionClient.getAll(requestCsv));
 
         //-------------------------
         File xlmFile = fileTest.getFile(TESTFOLDER + "xmldata.xml");
@@ -60,7 +60,7 @@ public class CompositeContextTest {
 
         FileDataContextFactory xmlContext = new FileDataContextFactory(xmlDataContextFactory);
 
-        QueryContext xmlQuery = new QueryContext();
+        QueryBuilder xmlQuery = new QueryBuilder();
 
         //Request requestXml = new Request(xmlContext, xmlQuery.setColumns(new String[]{"/nome", "@id"}).setPagination(1, 3));
         //printResult.printMap2(fusionClient.getAll(requestXml));
@@ -98,7 +98,7 @@ public class CompositeContextTest {
         
         CompositeDataContextFactory compositeContextTest = new CompositeDataContextFactory(lista);
 
-        QueryContext queryContextComposite = new QueryContext();
+        QueryBuilder queryContextComposite = new QueryBuilder();
         //queryContextComposite.setPagination(1, 4);
 
 //        Collection<DataContext> delegates = null;
@@ -109,7 +109,7 @@ public class CompositeContextTest {
         List<Map<String, Object>> all = fusionClient.getAll(requestComposite);
         long end = new Date().getTime();
         
-        printResult.printMap2(all);
+        printResult.printMap(all);
         
         long elapsed = System.currentTimeMillis() - start;
         System.out.println(String.format("TOTAL TIME: %sms", elapsed));

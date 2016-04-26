@@ -31,7 +31,7 @@ public class FileDataContextFactory extends Base implements ContextFactory {
             System.out.println(columnName);
         }
 
-        queryContext.getQuery().from(table);
+        queryContext.build().from(table);
 
         //String[] requiredColumns = queryContext.getColumns();
         String[] requiredColumns = null;
@@ -42,17 +42,17 @@ public class FileDataContextFactory extends Base implements ContextFactory {
                 Column columnByName = table.getColumnByName(requiredColumn);
 
                 try {
-                    queryContext.getQuery().select(columnByName);
+                    queryContext.build().select(columnByName);
                 } catch (java.lang.IllegalArgumentException e) {
                     System.out.println("Columa nao encontrada: " + columnByName);
                 }
 
             }
         } else {
-            queryContext.getQuery();
+            queryContext.build();
         }
 
-        DataSet executeQuery = dataContext.executeQuery(queryContext.getQuery());
+        DataSet executeQuery = dataContext.executeQuery(queryContext.build());
 
         
 //funcioando
@@ -75,7 +75,7 @@ public class FileDataContextFactory extends Base implements ContextFactory {
 //SELECT COUNT(csvdata.csv.funcionario), csvdata.csv.nome, csvdata.csv.nome, csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
 
  
-System.out.println("-dddddddddddddddddd----------" + queryContext.getQuery().toString());
+System.out.println("-dddddddddddddddddd----------" + queryContext.build().toString());
         return executeQuery;
     }
 

@@ -4,7 +4,7 @@ import br.com.cds.connecta.framework.connector2.FusionClient;
 import br.com.cds.connecta.framework.connector2.Request;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.PrintResult;
-import br.com.cds.connecta.framework.connector2.common.QueryContext;
+import br.com.cds.connecta.framework.connector2.common.QueryBuilder;
 import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataContextFactory;
 import br.com.cds.connecta.framework.connector2.context.database.ConnectorDriver;
 import br.com.cds.connecta.framework.connector2.context.database.mysql.MySQLDriver;
@@ -60,7 +60,7 @@ public class DatabaseTest {
         columnsColumn.add(connectorColumn2);
         
         
-        QueryContext oracleQuery = new QueryContext();
+        QueryBuilder oracleQuery = new QueryBuilder();
         oracleQuery.setSchema("PRESENTER2")
                 .setTable("TB_ANALYSIS")
                 .setPagination(1, 10);
@@ -70,7 +70,7 @@ public class DatabaseTest {
 
         Request DataBaseOracleRequest = new Request(dataContextFactory, oracleQuery);
         List<Map<String, Object>> all = fusionClient.getAll(DataBaseOracleRequest);
-        printResult.printMap2(all);
+        printResult.printMap(all);
 
         //List<ConnectorColumn> columns = fusionClient.getColumns(DataBaseOracleRequest);
 
@@ -184,13 +184,13 @@ public class DatabaseTest {
                 + "			Data",
                 new MySQLDriver("192.168.33.10", "3306", "memorando"),
                 "root", "root");
-        QueryContext query = new QueryContext();
+        QueryBuilder query = new QueryBuilder();
         //query.setColumns(new String[]{"Data", "Assunto"}).getQuery().where(mySqldatabase.getColumn("nome"), OperatorType.EQUALS_TO, "Pâmela Leal");
         //query.setColumns(new String[]{"Data", "Assunto"});
         query.setPagination(1, 20);
         Request dataBaseMySqlRequest = new Request(mySqldatabase, query);
         List<Map<String, Object>> all1 = fusionClient.getAll(dataBaseMySqlRequest);
-        printResult.printMap2(all1);
+        printResult.printMap(all1);
 //        
         List<ConnectorColumn> mysqlColumns = fusionClient.getColumns(dataBaseMySqlRequest);
 //        printResult.printColumns(mysqlColumns);
@@ -233,12 +233,12 @@ public class DatabaseTest {
 
         columnsColumn.add(connectorColumn1);
         columnsColumn.add(connectorColumn2);
-        QueryContext query = new QueryContext();
+        QueryBuilder query = new QueryBuilder();
                 //.setConnectorColumns(columnsColumn);
         
         Request request = new Request(dataContextFactory, query);
         List<Map<String, Object>> all = fusionClient.getAll(request);
-        printResult.printMap2(all);
+        printResult.printMap(all);
     }
 
 }

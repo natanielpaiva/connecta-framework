@@ -18,7 +18,7 @@ public interface ContextFactory {
 
     List<ConnectorColumn> getColumns();
 
-    void setQueryContext(QueryContext queryContext);
+    void setQueryContext(QueryBuilder queryContext);
     
     Table getTable();
     

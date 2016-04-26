@@ -1,6 +1,7 @@
 package br.com.cds.connecta.framework.connector2;
 
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
+import br.com.cds.connecta.framework.connector2.common.PrintResult;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -9,6 +10,7 @@ import org.apache.metamodel.DataContext;
 import org.apache.metamodel.data.DataSet;
 import org.apache.metamodel.data.Row;
 import org.apache.metamodel.query.SelectItem;
+import org.apache.metamodel.schema.Column;
 
 /**
  *
@@ -36,11 +38,30 @@ public class FusionClient {
     public List<Map<String, Object>> getAll(Request request) {
 
         DataSet resultAll = request.getResultAll();
-        return toList(resultAll, request.queryContext.getColumns());
+        return toList(resultAll, request.getQueryContext().getColumns());
+    }
+    
+    public List<Object> possibleValuesFor(Request request, Column column) {
+        request.getQueryContext()
+            .setColumns(new ArrayList<ConnectorColumn>(0))
+            .addGroupBy(column);
+        
+        DataSet resultAll = request.getResultAll();
+        List<Map<String, Object>> list = toList(resultAll, null);
+        
+        PrintResult.printMap(list);
+        
+        List<Object> values = new ArrayList<>();
+        
+        for (Map<String, Object> map : list) {
+            values.add(map.get(column.getName()));
+        }
+        
+        return values;
     }
 
     /**
-     * Retorna os metadados das columans
+     * Retorna os metadados das colunas
      *
      * @param request
      * @return

@@ -3,7 +3,7 @@ package br.com.cds.connecta.framework.connector2;
 import static br.com.cds.connecta.framework.connector2.TestUtil.*;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
-import br.com.cds.connecta.framework.connector2.common.QueryContext;
+import br.com.cds.connecta.framework.connector2.common.QueryBuilder;
 import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataContextFactory;
 import br.com.cds.connecta.framework.connector2.context.database.ConnectorDriver;
 import br.com.cds.connecta.framework.connector2.context.database.mysql.MySQLDriver;
@@ -53,7 +53,7 @@ public class DatabaseTest {
         ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(sql, driver, MYSQL_USER, MYSQL_PASS);
-        QueryContext query = new QueryContext();
+        QueryBuilder query = new QueryBuilder();
 
         Request request = new Request(contextFactory, query);
 
@@ -102,7 +102,7 @@ public class DatabaseTest {
         connectorColumns.add(column1);
         connectorColumns.add(column2);
 
-        QueryContext query = new QueryContext().setListColumns(connectorColumns);
+        QueryBuilder query = new QueryBuilder().setColumns(connectorColumns);
 
         Request request = new Request(contextFactory, query);
 
@@ -174,7 +174,7 @@ public class DatabaseTest {
         ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(driver, table, MYSQL_USER, MYSQL_PASS);
-        QueryContext query = new QueryContext();
+        QueryBuilder query = new QueryBuilder();
 
         Request request = new Request(contextFactory, query);
 
@@ -215,7 +215,7 @@ public class DatabaseTest {
         connectorColumns.add(column1);
         connectorColumns.add(column2);
 
-        QueryContext query = new QueryContext().setListColumns(connectorColumns);
+        QueryBuilder query = new QueryBuilder().setColumns(connectorColumns);
 
         Request request = new Request(contextFactory, query);
 
@@ -226,7 +226,6 @@ public class DatabaseTest {
         assertThat(all, hasSize(greaterThan(0)));
         assertThat(all.get(0), hasKey("ID Transporte"));
         assertThat(all.get(0), hasKey("Nome dos Tipos"));
-
     }
 
     /**
@@ -277,7 +276,7 @@ public class DatabaseTest {
         ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
 
         ContextFactory contextFactory = new DatabaseDataContextFactory(sql, driver, ORACLE_USER, ORACLE_PASS);
-        QueryContext query = new QueryContext();
+        QueryBuilder query = new QueryBuilder();
 
         Request request = new Request(contextFactory, query);
 
@@ -319,7 +318,7 @@ public class DatabaseTest {
         connectorColumns.add(column1);
         connectorColumns.add(column2);
 
-        QueryContext query = new QueryContext().setListColumns(connectorColumns);
+        QueryBuilder query = new QueryBuilder().setColumns(connectorColumns);
 
         Request request = new Request(contextFactory, query);
 
@@ -389,7 +388,7 @@ public class DatabaseTest {
         ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
         ContextFactory contextFactory = new DatabaseDataContextFactory(driver, table, ORACLE_USER, ORACLE_PASS);
 
-        QueryContext query = new QueryContext();
+        QueryBuilder query = new QueryBuilder();
 
         Request request = new Request(contextFactory, query);
 
@@ -431,7 +430,7 @@ public class DatabaseTest {
         connectorColumns.add(column1);
         connectorColumns.add(column2);
 
-        QueryContext query = new QueryContext().setListColumns(connectorColumns);
+        QueryBuilder query = new QueryBuilder().setColumns(connectorColumns);
 
         Request request = new Request(contextFactory, query);
 
@@ -476,12 +475,11 @@ public class DatabaseTest {
      */
     @Test
     public void listTablesOracle() {
-        
         ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
         ContextFactory contextFactory = new DatabaseDataContextFactory(driver, ORACLE_USER, ORACLE_PASS);
 
         String[] tables = contextFactory.getTables();
-        assertThat(tables.length, is(76));
+        assertThat(tables.length, is(greaterThan(70)));
     }
 
 }

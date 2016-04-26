@@ -10,17 +10,17 @@ public class Base {
 
     protected DataContext dataContext = null;
 
-    protected QueryContext queryContext = null;
+    protected QueryBuilder queryContext = null;
     
     public DataContext createDataContext() {
         return dataContext;
     }
     
-    public QueryContext getQueryContext() {
+    public QueryBuilder getQueryContext() {
         return queryContext;
     }
 
-    public void setQueryContext(QueryContext queryContext) {
+    public void setQueryContext(QueryBuilder queryContext) {
         this.queryContext = queryContext;
     }
     

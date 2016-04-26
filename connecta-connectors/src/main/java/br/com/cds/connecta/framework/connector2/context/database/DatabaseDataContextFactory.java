@@ -117,23 +117,21 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     public DataSet getResultAll() {
         Schema schema = discoverSchema();
 
-        Table discorveredTable = discoverTable(schema);
-        discorveredTable.getColumns();
+        Table discoveredTable = discoverTable(schema);
+        discoveredTable.getColumns(); // chamada pra reconhecer as colunas
         
         List<ConnectorColumn> listColumns = queryContext.getColumns();
         
-        //Query from = queryContext.getQuery().from(table).select(table.getColumns());
-        Query from = queryContext.getQuery().from(discorveredTable);
+        Query from = queryContext.build().from(discoveredTable);
         
         if (listColumns != null) {
             for (ConnectorColumn column : listColumns) {
-                Column columnByName = discorveredTable.getColumnByName(column.getName());
-                queryContext.getQuery().select(columnByName);
+                Column columnByName = discoveredTable.getColumnByName(column.getName());
+                queryContext.build().select(columnByName);
             }
 
             return dataContext.executeQuery(from);
         } else {
-
             return dataContext.executeQuery(from.selectAll());
         }
     }
@@ -218,7 +216,11 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     public Table getTable() {
         Schema schema = discoverSchema();
         if (queryContext == null || queryContext.getTable() == null) {
-            return schema.getTableByName(table);
+            if (table==null) {
+                return discoverTable(schema);
+            } else {
+                return schema.getTableByName(table);
+            }
         } else {
             return schema.getTableByName(queryContext.getTable());
         }

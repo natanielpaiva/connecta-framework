@@ -1,6 +1,6 @@
 package br.com.cds.connecta.framework.connector2.context.file.csv;
 
-import br.com.cds.connecta.framework.connector2.common.QueryContext;
+import br.com.cds.connecta.framework.connector2.common.QueryBuilder;
 import br.com.cds.connecta.framework.connector2.common.FileContextFactory;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -18,7 +18,7 @@ public class CSVDataContextFactory implements FileContextFactory{
 
     DataContext dataContext;
     
-    QueryContext queryContext;
+    QueryBuilder queryContext;
 
     String csv;
     

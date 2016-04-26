@@ -12,34 +12,34 @@ import java.util.Set;
  */
 public class PrintResult {
 
-    public void printMap(List<Map<String, Object>> result) {
-        System.out.println("\n");
-        Set<String> columns = result.get(0).keySet();
-        String parametros = "";
-
-        for (int i = 0; i < columns.size(); i++) {
-            parametros += "%-30s";
-            System.out.print("+----------------------------");
-        }
-
-        System.out.println("\r");
-        System.out.printf(parametros, columns.toArray());
-        System.out.println("\r");;
-        for (Map<String, Object> result1 : result) {
-
-            String value = "";
-            for (String column : columns) {
-                String format = String.format("%.20s", "|" + result1.get(column));
-
-                value += value.format("%-30s", format);
-            }
-
-            System.out.println(value);
-        }
-    }
+//    public static void printMap(List<Map<String, Object>> result) {
+//        System.out.println("\n");
+//        Set<String> columns = result.get(0).keySet();
+//        String parametros = "";
+//
+//        for (int i = 0; i < columns.size(); i++) {
+//            parametros += "%-30s";
+//            System.out.print("+----------------------------");
+//        }
+//
+//        System.out.println("\r");
+//        System.out.printf(parametros, columns.toArray());
+//        System.out.println("\r");;
+//        for (Map<String, Object> result1 : result) {
+//
+//            String value = "";
+//            for (String column : columns) {
+//                String format = String.format("%.20s", "|" + result1.get(column));
+//
+//                value += value.format("%-30s", format);
+//            }
+//
+//            System.out.println(value);
+//        }
+//    }
 
         
-    public void printMap2(List<Map<String, Object>> result){
+    public static void printMap(List<Map<String, Object>> result){
         System.out.println("---------Result--------------");
         
         Set<String> columns = result.get(0).keySet();
@@ -68,7 +68,7 @@ public class PrintResult {
         dd.printTable();
     }
     
-    public void printColumns(List<ConnectorColumn> connectorColumns) {
+    public static void printColumns(List<ConnectorColumn> connectorColumns) {
         System.out.println("---------ConnectorColumns--------------");
         String[] columnNames = {"Name", "Label", "Formula", "Type"};
 
@@ -80,18 +80,15 @@ public class PrintResult {
             data[i][1] = cc.getLabel();
             data[i][2] = cc.getFormula();
             data[i][3] = cc.getType();
-
         }
-
+        
         TextTable dd = new TextTable(columnNames, data);
         dd.printTable();
-
     }
 
-    public void printArrayString(String[] list) {
+    public static void printArrayString(String[] list) {
         System.out.println("--------- list--------------");
         String[] columnNames = {"Name"};
-
         
         Object[][] data = new Object[list.length][1];
         for (int i = 0; i < list.length; i++) {
@@ -100,7 +97,6 @@ public class PrintResult {
 
         TextTable dd = new TextTable(columnNames, data);
         dd.printTable();
-
     }
     
 }

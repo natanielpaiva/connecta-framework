@@ -5,7 +5,7 @@ import br.com.cds.connecta.framework.connector2.common.PrintResult;
 import br.com.cds.connecta.framework.connector2.FusionClient;
 import br.com.cds.connecta.framework.connector2.Request;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
-import br.com.cds.connecta.framework.connector2.common.QueryContext;
+import br.com.cds.connecta.framework.connector2.common.QueryBuilder;
 import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataContextFactory;
 import br.com.cds.connecta.framework.connector2.context.database.mysql.MySQLDriver;
 import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleDriver;
@@ -44,8 +44,8 @@ public class TestNewConnector {
         
         String[] csvColumns = {"nome"}; 
         
-        QueryContext query = new QueryContext();
-        query.getQuery().select("nome");
+        QueryBuilder query = new QueryBuilder();
+        query.build().select("nome");
         //Request requestCsv = new Request(new CSVDataContextFactory(csv), query);
 
         
