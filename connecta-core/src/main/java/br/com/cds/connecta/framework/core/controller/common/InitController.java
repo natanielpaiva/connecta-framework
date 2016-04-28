@@ -13,6 +13,7 @@ import br.com.cds.connecta.framework.core.bean.message.Message;
 import br.com.cds.connecta.framework.core.bean.message.MessageModel;
 import br.com.cds.connecta.framework.core.bean.message.TranslateMessage;
 import br.com.cds.connecta.framework.core.domain.MessageTypeEnum;
+import br.com.cds.connecta.framework.core.exception.AlreadyExistsException;
 import br.com.cds.connecta.framework.core.exception.BusinessException;
 import br.com.cds.connecta.framework.core.exception.ResourceNotFoundException;
 import br.com.cds.connecta.framework.core.exception.SystemException;
@@ -44,18 +45,28 @@ public class InitController {
         return translate.getMsg(key, messageEnum, args);
     }
     
-    @ExceptionHandler({ResourceNotFoundException.class})
+    @ExceptionHandler({ ResourceNotFoundException.class })
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ResponseEntity<MessageModel> handleException(ResourceNotFoundException e) {
-        String translatedResourceName = translate.getTextMsg(e.getResourceName(), null);
-        
-        MessageModel message = getTranslatedMessage(e.getExceptionEnum().name(),
-            MessageTypeEnum.ERROR,
-            translatedResourceName
-        );
-
-        return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+    	String translatedResourceName = translate.getTextMsg(e.getResourceName(), null);
+    	
+    	MessageModel message = getTranslatedMessage(e.getExceptionEnum().name(), MessageTypeEnum.ERROR,
+    			translatedResourceName);
+    	
+    	return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
     }
+    
+	@ExceptionHandler({ AlreadyExistsException.class })
+	@ResponseStatus(HttpStatus.CONFLICT)
+	public ResponseEntity<MessageModel> handleException(AlreadyExistsException e) {
+		String translatedResourceName = translate.getTextMsg(e.getResourceName(), null);
+		String translatedFieldName = translate.getTextMsg(e.getFieldName(), null);
+
+		MessageModel message = getTranslatedMessage(e.getExceptionEnum().name(), MessageTypeEnum.ERROR,
+				translatedResourceName,translatedFieldName);
+
+		return new ResponseEntity<>(message, HttpStatus.CONFLICT);
+	}
 
     @ExceptionHandler({BusinessException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
