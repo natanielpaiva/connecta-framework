@@ -1,5 +1,6 @@
 package br.com.cds.connecta.framework.connector2.common;
 
+import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

@@ -1,7 +1,7 @@
 package br.com.cds.connecta.framework.connector2.context.file.xml;
 
 import br.com.cds.connecta.framework.connector2.common.FileContextFactory;
-import br.com.cds.connecta.framework.connector2.common.QueryBuilder;
+import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
 import java.io.File;
 import org.apache.metamodel.DataContext;
 import org.apache.metamodel.xml.XmlSaxDataContext;

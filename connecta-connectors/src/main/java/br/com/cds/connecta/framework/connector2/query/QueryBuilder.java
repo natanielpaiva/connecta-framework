@@ -1,7 +1,9 @@
-package br.com.cds.connecta.framework.connector2.common;
+package br.com.cds.connecta.framework.connector2.query;
 
+import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import java.util.List;
 import org.apache.log4j.Logger;
+import org.apache.metamodel.query.FilterItem;
 import org.apache.metamodel.query.FunctionType;
 import org.apache.metamodel.query.OperatorType;
 import org.apache.metamodel.query.Query;
@@ -60,8 +62,8 @@ public class QueryBuilder {
         return this;
     }
 
-    public QueryBuilder addWhere(Column column, OperatorType operator, Object condition) {
-        this.query.where(column, operator, condition);
+    public QueryBuilder addFilter(Column column, QueryFilterOperator filterOperator, QueryFilterValue value) {
+        filterOperator.transformQuery(query, column, value);
         return this;
     }
 
@@ -86,5 +88,5 @@ public class QueryBuilder {
         logger.info("QUERY BUILT: "+query);
         return query;
     }
-
+    
 }

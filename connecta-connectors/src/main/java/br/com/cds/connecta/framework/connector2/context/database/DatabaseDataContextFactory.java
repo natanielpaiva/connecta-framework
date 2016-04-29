@@ -32,20 +32,19 @@ import org.apache.metamodel.util.SimpleTableDef;
  */
 public class DatabaseDataContextFactory extends Base implements ContextFactory {
 
+    private final String DEFAULT_SCHEMA_NAME = "DEFAULT_SCHEMA_NAME";
+    private final String DEFAULT_TABLE_NAME = "DEFAULT_TABLE_NAME";
     private final Logger logger = Logger.getLogger(DatabaseDataContextFactory.class);
 
-//    private Class<? extends Driver> jdbcDriver;
-    private String jdbcUrl;
+    private final String jdbcUrl;
 
     private String sql;
     private String table;
-    private String user;
-    private String password;
+    private final String user;
+    private final String password;
     
     private Table tableContext;
     
-    private final String DEFAULT_SCHEMA_NAME = "DEFAULT_SCHEMA_NAME";
-    private final String DEFAULT_TABLE_NAME = "DEFAULT_TABLE_NAME";
 
     /**
      *  

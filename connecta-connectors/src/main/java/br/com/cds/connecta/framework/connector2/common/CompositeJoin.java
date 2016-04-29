@@ -1,5 +1,6 @@
 package br.com.cds.connecta.framework.connector2.common;
 
+import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
 import org.apache.metamodel.schema.Column;
 
 /**

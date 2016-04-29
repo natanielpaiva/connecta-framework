@@ -2,15 +2,21 @@ package br.com.cds.connecta.framework.connector2;
 
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
 import br.com.cds.connecta.framework.connector2.common.PrintResult;
-import br.com.cds.connecta.framework.connector2.common.QueryBuilder;
+import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
 import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataContextFactory;
 import br.com.cds.connecta.framework.connector2.context.database.mysql.MySQLDriver;
 import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleDriver;
+import br.com.cds.connecta.framework.connector2.query.QueryFilterOperator;
+import br.com.cds.connecta.framework.connector2.query.QueryFilterValue;
+import br.com.cds.connecta.framework.connector2.query.QueryFilterValueBetween;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import org.apache.log4j.Logger;
-import org.apache.metamodel.query.OperatorType;
 import org.apache.metamodel.schema.Column;
+import org.hamcrest.Matcher;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import org.junit.Ignore;
@@ -25,20 +31,14 @@ public class DatabaseFilterTest {
 
     private final Logger logger = Logger.getLogger(DatabaseFilterTest.class);
 
-    private static final String MYSQL_HOST = "192.168.33.10";
-    private static final String MYSQL_PORT = "3306";
-    private static final String MYSQL_DB = "memorando";
     private static final String MYSQL_USER = "root";
     private static final String MYSQL_PASS = "root";
 
-    private static final String ORACLE_HOST = "192.168.3.14";
-    private static final String ORACLE_PORT = "1521";
-    private static final String ORACLE_SID = "cdsdev";
     private static final String ORACLE_USER = "presenter2";
     private static final String ORACLE_PASS = "cds312";
 
-    private final MySQLDriver mysqlDriver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
-    private final OracleDriver oracleDriver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
+    private final MySQLDriver mysqlDriver = new MySQLDriver("192.168.33.10", "3306", "memorando");
+    private final OracleDriver oracleDriver = new OracleDriver("192.168.3.14", "1521", "cdsdev");
 
     private final FusionClient client = new FusionClient();
 
@@ -54,7 +54,7 @@ public class DatabaseFilterTest {
         Request request = new Request(contextFactory, queryContext);
 
         List<Object> all = client.possibleValuesFor(request, contextFactory.getColumn(columnName));
-        
+
         assertThat(all, hasSize(greaterThan(0)));
 
         for (Object possibleValue : all) {
@@ -79,7 +79,7 @@ public class DatabaseFilterTest {
         Column column = contextFactory.getColumn(columnName);
 
         QueryBuilder queryContext = new QueryBuilder()
-                .addWhere(column, OperatorType.EQUALS_TO, value);
+                .addFilter(column, QueryFilterOperator.EQUAL, new QueryFilterValue(value));
 
         Request request = new Request(contextFactory, queryContext);
 
@@ -103,7 +103,7 @@ public class DatabaseFilterTest {
         Request request = new Request(contextFactory, queryContext);
 
         List<Object> all = client.possibleValuesFor(request, contextFactory.getColumn(columnName));
-        
+
         assertThat(all, hasSize(greaterThan(0)));
 
         for (Object possibleValue : all) {
@@ -128,17 +128,17 @@ public class DatabaseFilterTest {
         Column column = contextFactory.getColumn(columnName);
 
         QueryBuilder queryContext = new QueryBuilder()
-                .addWhere(column, OperatorType.EQUALS_TO, value);
+                .addFilter(column, QueryFilterOperator.EQUAL, new QueryFilterValue(value));
 
         Request request = new Request(contextFactory, queryContext);
 
         List<Object> all = client.possibleValuesFor(request, contextFactory.getColumn(columnPossibleValuesName));
-        
+
         assertThat(all, hasSize(greaterThan(0)));
 
         assertThat(all, containsInAnyOrder((Object) "NTC", (Object) "Prospecção Comercial"));
     }
-    
+
     @Test
     public void listPossibleValuesForFilterWithoutPreviousFiltersTableOracle() {
         String table = "TB_VIEWER";
@@ -153,7 +153,7 @@ public class DatabaseFilterTest {
         List<Object> all = client.possibleValuesFor(
                 request,
                 contextFactory.getColumn(columnName));
-        
+
         assertThat(all, hasSize(greaterThan(0)));
 
         for (Object possibleValue : all) {
@@ -177,20 +177,20 @@ public class DatabaseFilterTest {
         Column column = contextFactory.getColumn(columnName);
 
         QueryBuilder queryContext = new QueryBuilder()
-                .addWhere(column, OperatorType.EQUALS_TO, value);
+                .addFilter(column, QueryFilterOperator.EQUAL, new QueryFilterValue(value));
 
         Request request = new Request(contextFactory, queryContext);
 
         List<Object> all = client.possibleValuesFor(request, contextFactory.getColumn(columnPossibleValuesName));
-        
+
         assertThat(all, hasSize(greaterThan(0)));
 
         for (Object possibleValue : all) {
             assertThat((String) possibleValue, anyOf(
-                is("PRESENTER2"),
-                is("PRESENTER_ANALYTICS"),
-                is("poc_caixa"),
-                is("root")
+                    is("PRESENTER2"),
+                    is("PRESENTER_ANALYTICS"),
+                    is("poc_caixa"),
+                    is("root")
             ));
         }
     }
@@ -206,15 +206,15 @@ public class DatabaseFilterTest {
         Request request = new Request(contextFactory, queryContext);
 
         List<Object> all = client.possibleValuesFor(request, contextFactory.getColumn(columnName));
-        
+
         assertThat(all, hasSize(greaterThan(0)));
 
         for (Object possibleValue : all) {
             logger.info("VALUE: " + possibleValue);
             assertThat((String) possibleValue, anyOf(
-                is("DATABASE"),
-                is("WEBSERVICE"),
-                is("HDFS")
+                    is("DATABASE"),
+                    is("WEBSERVICE"),
+                    is("HDFS")
             ));
         }
     }
@@ -230,18 +230,18 @@ public class DatabaseFilterTest {
         Column column = contextFactory.getColumn(columnName);
 
         QueryBuilder queryContext = new QueryBuilder()
-                .addWhere(column, OperatorType.EQUALS_TO, value);
+                .addFilter(column, QueryFilterOperator.EQUAL, new QueryFilterValue(value));
 
         Request request = new Request(contextFactory, queryContext);
 
         List<Object> all = client.possibleValuesFor(request, contextFactory.getColumn(columnPossibleValuesName));
-        
+
         assertThat(all, hasSize(greaterThan(0)));
 
         for (Object possibleValue : all) {
             logger.info("VALUE: " + possibleValue);
             assertThat((String) possibleValue, anyOf(
-                is("4")
+                    is("4")
             ));
         }
     }
@@ -249,12 +249,20 @@ public class DatabaseFilterTest {
     @Test
     public void filterOneColumnDatabaseTableMySQL() {
         String table = "tb_projeto";
-        String columnName = "cod_projeto_primavera";
-        String value = "CDS.Comercial";
 
         ContextFactory contextFactory = makeMySQLTableContextFactory(table);
 
-        testOneColumnFilter(contextFactory, columnName, value);
+        testOneColumnFilterEqual(contextFactory, "cod_projeto_primavera", "CDS.Comercial");
+        testOneColumnFilterNotEqual(contextFactory, "cod_projeto_primavera", "CDS.Comercial");
+        testOneColumnFilterGreaterThan(contextFactory, "id_projeto", 100);
+        testOneColumnFilterLessThan(contextFactory, "id_projeto", 100);
+        testOneColumnFilterGreaterThanOrEqualTo(contextFactory, "id_projeto", 99);
+        testOneColumnFilterLessThanOrEqualTo(contextFactory, "id_projeto", 99);
+        testOneColumnFilterBetween(contextFactory, "id_projeto", 99, 240);
+        testOneColumnFilterIn(contextFactory, "id_projeto", new String[]{"99", "240"});
+        testOneColumnFilterContains(contextFactory, "cod_projeto_primavera", "S.Com");
+        testOneColumnFilterStartsWith(contextFactory, "cod_projeto_primavera", "CDS");
+        testOneColumnFilterEndsWith(contextFactory, "cod_projeto_primavera", "ercial");
     }
 
     @Test
@@ -267,40 +275,75 @@ public class DatabaseFilterTest {
 
         ContextFactory contextFactory = makeMySQLTableContextFactory(table);
 
-        testTwoColumnsFilter(contextFactory, column1, value1, column2, value2);
+        List<Map<String, Object>> all;
+
+        all = getResultTwoColumnsFilter(contextFactory,
+                column1, QueryFilterOperator.EQUAL, new QueryFilterValue(value1),
+                column2, QueryFilterOperator.EQUAL, new QueryFilterValue(value2));
+
+        for (Map<String, Object> map : all) {
+            assertThat(map, hasKey(column1));
+            assertThat((String) map.get(column1), is(value1));
+            assertThat(map, hasKey(column2));
+            assertThat((String) map.get(column2), is(value2));
+        }
     }
 
     @Test
     public void filterOneColumnDatabaseSQLMySQL() {
-        String columnName = "tipo";
-        String value = "Reembolso";
-
         ContextFactory contextFactory = makeMySQLSQLContextFactory();
 
-        testOneColumnFilter(contextFactory, columnName, value);
+        testOneColumnFilterEqual(contextFactory, "tipo", "Reembolso");
+        testOneColumnFilterNotEqual(contextFactory, "tipo", "Reembolso");
+        testOneColumnFilterGreaterThan(contextFactory, "cod", 6650);
+        testOneColumnFilterLessThan(contextFactory, "cod", 6650);
+        testOneColumnFilterGreaterThanOrEqualTo(contextFactory, "cod", 6657);
+        testOneColumnFilterLessThanOrEqualTo(contextFactory, "cod", 6657);
+        testOneColumnFilterBetween(contextFactory, "cod", 6633, 6670);
+        testOneColumnFilterIn(contextFactory, "tipo", new String[]{"Reembolso", "Despesas"});
+        testOneColumnFilterContains(contextFactory, "tipo", "bol");
+        testOneColumnFilterStartsWith(contextFactory, "tipo", "Reem");
+        testOneColumnFilterEndsWith(contextFactory, "tipo", "bolso");
     }
 
     @Test
     public void filterTwoColumnsDatabaseSQLMySQL() {
-        String columnName1 = "tipo";
+        String column1 = "tipo";
         String value1 = "Reembolso";
-        String columnName2 = "projeto";
+        String column2 = "projeto";
         String value2 = "NTC";
 
         ContextFactory contextFactory = makeMySQLSQLContextFactory();
-        
-        testTwoColumnsFilter(contextFactory, columnName1, value1, columnName2, value2);
+
+        List<Map<String, Object>> all;
+
+        all = getResultTwoColumnsFilter(contextFactory,
+                column1, QueryFilterOperator.EQUAL, new QueryFilterValue(value1),
+                column2, QueryFilterOperator.EQUAL, new QueryFilterValue(value2));
+
+        for (Map<String, Object> map : all) {
+            assertThat(map, hasKey(column1));
+            assertThat((String) map.get(column1), is(value1));
+            assertThat(map, hasKey(column2));
+            assertThat((String) map.get(column2), is(value2));
+        }
     }
 
     @Test
     public void filterOneColumnDatabaseTableOracle() {
-        String table = "TB_VIEWER";
-        String columnName = "TP_VIEWER";
-        String value = "ANALYSIS";
+        ContextFactory contextFactory = makeOracleTableContextFactory("TB_VIEWER");
 
-        ContextFactory contextFactory = makeOracleTableContextFactory(table);
-
-        testOneColumnFilter(contextFactory, columnName, value);
+        testOneColumnFilterEqual(contextFactory, "TP_VIEWER", "ANALYSIS");
+        testOneColumnFilterNotEqual(contextFactory, "TP_VIEWER", "ANALYSIS");
+        testOneColumnFilterGreaterThan(contextFactory, "PK_VIEWER", 700);
+        testOneColumnFilterLessThan(contextFactory, "PK_VIEWER", 700);
+        testOneColumnFilterGreaterThanOrEqualTo(contextFactory, "PK_VIEWER", 390);
+        testOneColumnFilterLessThanOrEqualTo(contextFactory, "PK_VIEWER", 390);
+        testOneColumnFilterBetween(contextFactory, "PK_VIEWER", 390, 700);
+        testOneColumnFilterIn(contextFactory, "PK_VIEWER", new String[]{"390", "554"});
+        testOneColumnFilterContains(contextFactory, "TP_VIEWER", "ALY");
+        testOneColumnFilterStartsWith(contextFactory, "TP_VIEWER", "ANA");
+        testOneColumnFilterEndsWith(contextFactory, "TP_VIEWER", "SIS");
     }
 
     @Test
@@ -313,41 +356,70 @@ public class DatabaseFilterTest {
 
         ContextFactory contextFactory = makeOracleTableContextFactory(table);
 
-        testTwoColumnsFilter(contextFactory, column1, value1, column2, value2);
+        List<Map<String, Object>> all;
+
+        all = getResultTwoColumnsFilter(contextFactory,
+                column1, QueryFilterOperator.EQUAL, new QueryFilterValue(value1),
+                column2, QueryFilterOperator.EQUAL, new QueryFilterValue(value2));
+
+        for (Map<String, Object> map : all) {
+            assertThat(map, hasKey(column1));
+            assertThat((String) map.get(column1), is(value1));
+            assertThat(map, hasKey(column2));
+            assertThat((String) map.get(column2), is(value2));
+        }
     }
 
     @Test
     public void filterOneColumnDatabaseSQLOracle() {
-        String columnName = "TP";
-        String value = "DATABASE";
-
         ContextFactory contextFactory = makeOracleSQLContextFactory();
 
-        testOneColumnFilter(contextFactory, columnName, value);
+        testOneColumnFilterEqual(contextFactory, "TP", "DATABASE");
+        testOneColumnFilterNotEqual(contextFactory, "TP", "DATABASE");
+        testOneColumnFilterGreaterThan(contextFactory, "QT", 3);
+        testOneColumnFilterLessThan(contextFactory, "QT", 3);
+        testOneColumnFilterGreaterThanOrEqualTo(contextFactory, "QT", 2);
+        testOneColumnFilterLessThanOrEqualTo(contextFactory, "QT", 2);
+        testOneColumnFilterBetween(contextFactory, "QT", 2, 4);
+        testOneColumnFilterIn(contextFactory, "TP", new String[]{"DATABASE", "WEBSERVICE"});
+        testOneColumnFilterContains(contextFactory, "TP", "ABA");
+        testOneColumnFilterStartsWith(contextFactory, "TP", "DATA");
+        testOneColumnFilterEndsWith(contextFactory, "TP", "BASE");
     }
 
     @Test
     public void filterTwoColumnsDatabaseSQLOracle() {
-        String columnName1 = "TP";
+        String column1 = "TP";
         String value1 = "DATABASE";
-        String columnName2 = "QT";
+        String column2 = "QT";
         String value2 = "4";
 
         ContextFactory contextFactory = makeOracleSQLContextFactory();
-        
-        testTwoColumnsFilter(contextFactory, columnName1, value1, columnName2, value2);
+
+        List<Map<String, Object>> all;
+
+        all = getResultTwoColumnsFilter(contextFactory,
+                column1, QueryFilterOperator.EQUAL, new QueryFilterValue(value1),
+                column2, QueryFilterOperator.EQUAL, new QueryFilterValue(value2));
+
+        for (Map<String, Object> map : all) {
+            assertThat(map, hasKey(column1));
+            assertThat((String) map.get(column1), is(value1));
+            assertThat(map, hasKey(column2));
+            assertThat((String) map.get(column2), is(value2));
+        }
     }
-    
+
     private DatabaseDataContextFactory makeMySQLTableContextFactory(String table) {
         return new DatabaseDataContextFactory(mysqlDriver, table, MYSQL_USER, MYSQL_PASS);
     }
-    
+
     private DatabaseDataContextFactory makeMySQLSQLContextFactory() {
         return new DatabaseDataContextFactory(
                 TestUtil.getTestResourceAsString("test/sql/mysql-filter.sql"),
                 mysqlDriver, MYSQL_USER, MYSQL_PASS);
     }
-    
+
     private DatabaseDataContextFactory makeOracleTableContextFactory(String table) {
         return new DatabaseDataContextFactory(oracleDriver, table, ORACLE_USER, ORACLE_PASS);
     }
@@ -357,51 +429,152 @@ public class DatabaseFilterTest {
                 TestUtil.getTestResourceAsString("test/sql/oracle-filter.sql"),
                 oracleDriver, ORACLE_USER, ORACLE_PASS);
     }
-    
-    private void testOneColumnFilter(ContextFactory contextFactory, String columnName, String value) {
+
+    private List<Map<String, Object>> getResultOneColumnFilter(ContextFactory contextFactory, String columnName, QueryFilterOperator operator, QueryFilterValue value) {
         Column column = contextFactory.getColumn(columnName);
-        
-        QueryBuilder queryContext = new QueryBuilder()
-                .addWhere(column, OperatorType.EQUALS_TO, value);
-
-        Request request = new Request(contextFactory, queryContext);
-
+        QueryBuilder builder = new QueryBuilder()
+                .addFilter(column, operator, value);
+        Request request = new Request(contextFactory, builder);
         List<Map<String, Object>> all = client.getAll(request);
-
         PrintResult.printMap(all);
-        
         assertThat(all, hasSize(greaterThan(0)));
+        return all;
+    }
+
+    private List<Map<String, Object>> getResultTwoColumnsFilter(ContextFactory contextFactory, String column1, QueryFilterOperator operator1, QueryFilterValue value1, String column2, QueryFilterOperator operator2, QueryFilterValue value2) {
+        QueryBuilder queryContext = new QueryBuilder()
+                .addFilter(contextFactory.getColumn(column1),
+                        operator1,
+                        value1)
+                .addFilter(contextFactory.getColumn(column2),
+                        operator2,
+                        value2);
+        Request request = new Request(contextFactory, queryContext);
+        List<Map<String, Object>> all = client.getAll(request);
+        PrintResult.printMap(all);
+        assertThat(all, hasSize(greaterThan(0)));
+        return all;
+    }
+
+    private void testOneColumnFilterEqual(ContextFactory contextFactory, String columnName, String value) {
+        List<Map<String, Object>> all = getResultOneColumnFilter(contextFactory, columnName, QueryFilterOperator.EQUAL, new QueryFilterValue(value));
 
         for (Map<String, Object> map : all) {
             assertThat(map, hasKey(columnName));
             assertThat((String) map.get(columnName), is(value));
         }
     }
-    
-    private void testTwoColumnsFilter(ContextFactory contextFactory, String column1, String value1, String column2, String value2) {
-        QueryBuilder queryContext = new QueryBuilder()
-            .addWhere(
-                contextFactory.getColumn(column1),
-                OperatorType.EQUALS_TO,
-                value1)
-            .addWhere(
-                contextFactory.getColumn(column2),
-                OperatorType.EQUALS_TO,
-                value2);
 
-        Request request = new Request(contextFactory, queryContext);
-
-        List<Map<String, Object>> all = client.getAll(request);
-
-        PrintResult.printMap(all);
-        
-        assertThat(all, hasSize(greaterThan(0)));
+    private void testOneColumnFilterContains(ContextFactory contextFactory, String columnName, String value) {
+        List<Map<String, Object>> all = getResultOneColumnFilter(contextFactory, columnName, QueryFilterOperator.CONTAINS, new QueryFilterValue(value));
 
         for (Map<String, Object> map : all) {
-            assertThat(map, hasKey(column1));
-            assertThat((String) map.get(column1), is(value1));
-            assertThat(map, hasKey(column2));
-            assertThat((String) map.get(column2), is(value2));
+            assertThat(map, hasKey(columnName));
+            assertThat((String) map.get(columnName), containsString(value));
         }
     }
+
+    private void testOneColumnFilterStartsWith(ContextFactory contextFactory, String columnName, String value) {
+        List<Map<String, Object>> all = getResultOneColumnFilter(contextFactory, columnName, QueryFilterOperator.STARTS_WITH, new QueryFilterValue(value));
+
+        for (Map<String, Object> map : all) {
+            assertThat(map, hasKey(columnName));
+            assertThat((String) map.get(columnName), startsWith(value));
+        }
+    }
+
+    private void testOneColumnFilterEndsWith(ContextFactory contextFactory, String columnName, String value) {
+        List<Map<String, Object>> all = getResultOneColumnFilter(contextFactory, columnName, QueryFilterOperator.ENDS_WITH, new QueryFilterValue(value));
+
+        for (Map<String, Object> map : all) {
+            assertThat(map, hasKey(columnName));
+            assertThat((String) map.get(columnName), endsWith(value));
+        }
+    }
+
+    private void testOneColumnFilterGreaterThan(ContextFactory contextFactory, String columnName, int value) {
+        List<Map<String, Object>> all = getResultOneColumnFilter(contextFactory, columnName, QueryFilterOperator.GREATER_THAN, new QueryFilterValue(value));
+
+        for (Map<String, Object> map : all) {
+            assertThat(map, hasKey(columnName));
+            int integer = Integer.parseInt((String) map.get(columnName));
+            assertThat(integer, greaterThan(value));
+        }
+    }
+
+    private void testOneColumnFilterLessThan(ContextFactory contextFactory, String columnName, int value) {
+        List<Map<String, Object>> all = getResultOneColumnFilter(contextFactory, columnName, QueryFilterOperator.LESS_THAN, new QueryFilterValue(value));
+
+        for (Map<String, Object> map : all) {
+            assertThat(map, hasKey(columnName));
+            int integer = Integer.parseInt((String) map.get(columnName));
+            assertThat(integer, lessThan(value));
+        }
+    }
+
+    private void testOneColumnFilterGreaterThanOrEqualTo(ContextFactory contextFactory, String columnName, int value) {
+        List<Map<String, Object>> all = getResultOneColumnFilter(contextFactory, columnName, QueryFilterOperator.GREATER_THAN_EQUAL, new QueryFilterValue(value));
+
+        for (Map<String, Object> map : all) {
+            assertThat(map, hasKey(columnName));
+            int integer = Integer.parseInt((String) map.get(columnName));
+            assertThat(integer, greaterThanOrEqualTo(value));
+        }
+    }
+
+    private void testOneColumnFilterLessThanOrEqualTo(ContextFactory contextFactory, String columnName, int value) {
+        List<Map<String, Object>> all = getResultOneColumnFilter(contextFactory, columnName, QueryFilterOperator.LESS_THAN_EQUAL, new QueryFilterValue(value));
+
+        for (Map<String, Object> map : all) {
+            assertThat(map, hasKey(columnName));
+            int integer = Integer.parseInt((String) map.get(columnName));
+            assertThat(integer, lessThanOrEqualTo(value));
+        }
+    }
+
+    private void testOneColumnFilterNotEqual(ContextFactory contextFactory, String columnName, String value) {
+        List<Map<String, Object>> all = getResultOneColumnFilter(contextFactory, columnName, QueryFilterOperator.NOT_EQUAL, new QueryFilterValue(value));
+
+        for (Map<String, Object> map : all) {
+            assertThat(map, hasKey(columnName));
+            assertThat((String) map.get(columnName), not(is(value)));
+        }
+    }
+    
+    private void testOneColumnFilterBetween(ContextFactory contextFactory, String columnName, int start, int end) {
+        List<Map<String, Object>> all = getResultOneColumnFilter(
+            contextFactory, columnName, QueryFilterOperator.BETWEEN,
+            new QueryFilterValue(
+                    new QueryFilterValueBetween(start, end)
+            )
+        );
+
+        for (Map<String, Object> map : all) {
+            assertThat(map, hasKey(columnName));
+            int integer = Integer.parseInt((String) map.get(columnName));
+            assertThat(integer, allOf(
+                greaterThanOrEqualTo(start), lessThanOrEqualTo(end)
+            ));
+        }
+    }
+    
+    private void testOneColumnFilterIn(ContextFactory contextFactory, String columnName, Object[] values) {
+        List<String> toStringValues = new ArrayList<>(values.length);
+        Collection<Matcher<Object>> in = new ArrayList<>(values.length);
+        for (Object value : values) {
+            toStringValues.add(value.toString());
+            in.add( is( value ) );
+        }
+        
+        List<Map<String, Object>> all = getResultOneColumnFilter(contextFactory, columnName, QueryFilterOperator.IN, new QueryFilterValue(Arrays.asList(values)));
+        
+        for (Map<String, Object> map : all) {
+            assertThat(map, hasKey(columnName));
+            assertThat(
+                (Object)map.get(columnName),
+                anyOf( (Iterable<Matcher<Object>>) in)
+            );
+        }
+    }
+
 }
