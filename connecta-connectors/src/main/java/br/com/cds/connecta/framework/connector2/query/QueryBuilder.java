@@ -3,9 +3,7 @@ package br.com.cds.connecta.framework.connector2.query;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import java.util.List;
 import org.apache.log4j.Logger;
-import org.apache.metamodel.query.FilterItem;
 import org.apache.metamodel.query.FunctionType;
-import org.apache.metamodel.query.OperatorType;
 import org.apache.metamodel.query.Query;
 import org.apache.metamodel.schema.Column;
 
@@ -22,10 +20,6 @@ public class QueryBuilder {
     private String schema;
     private List<ConnectorColumn> columns;
     
-
-//    private String[] columns;
-//    private String foreignKey, primaryKey; 
-//    private ContextFactory leftContextFactory, rightContextFactory;
     public QueryBuilder setColumns(List<ConnectorColumn> columns) {
         this.columns = columns;
         return this;
