@@ -9,6 +9,7 @@ import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleDr
 import br.com.cds.connecta.framework.connector2.query.QueryFilterOperator;
 import br.com.cds.connecta.framework.connector2.query.QueryFilterValue;
 import br.com.cds.connecta.framework.connector2.query.QueryFilterValueBetween;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -59,10 +60,10 @@ public class DatabaseFilterTest {
 
         for (Object possibleValue : all) {
             logger.info("VALUE: " + possibleValue);
-            assertThat((String) possibleValue, anyOf(
-                    is("91"),
-                    is("99"),
-                    is("224")
+            assertThat((Number) possibleValue, anyOf(
+                    is((Number) 91L),
+                    is((Number) 99L),
+                    is((Number) 224L)
             ));
         }
     }
@@ -88,7 +89,7 @@ public class DatabaseFilterTest {
         assertThat(all, hasSize(greaterThan(0)));
 
         for (Object possibleValue : all) {
-            assertThat((String) possibleValue, anyOf(is("91"), is("99")));
+            assertThat((Number)possibleValue, anyOf(is((Number)91L), is((Number)99L)));
         }
     }
 
@@ -240,8 +241,8 @@ public class DatabaseFilterTest {
 
         for (Object possibleValue : all) {
             logger.info("VALUE: " + possibleValue);
-            assertThat((String) possibleValue, anyOf(
-                    is("4")
+            assertThat((BigDecimal) possibleValue, anyOf(
+                is(new BigDecimal(3))
             ));
         }
     }
@@ -259,7 +260,7 @@ public class DatabaseFilterTest {
         testOneColumnFilterGreaterThanOrEqualTo(contextFactory, "id_projeto", 99);
         testOneColumnFilterLessThanOrEqualTo(contextFactory, "id_projeto", 99);
         testOneColumnFilterBetween(contextFactory, "id_projeto", 99, 240);
-        testOneColumnFilterIn(contextFactory, "id_projeto", new String[]{"99", "240"});
+        testOneColumnFilterIn(contextFactory, "id_projeto", new Integer[]{99, 240});
         testOneColumnFilterContains(contextFactory, "cod_projeto_primavera", "S.Com");
         testOneColumnFilterStartsWith(contextFactory, "cod_projeto_primavera", "CDS");
         testOneColumnFilterEndsWith(contextFactory, "cod_projeto_primavera", "ercial");
@@ -271,7 +272,7 @@ public class DatabaseFilterTest {
         String column1 = "cod_projeto_primavera";
         String column2 = "id_usuario_gerente";
         String value1 = "CDS.Comercial";
-        String value2 = "99";
+        int value2 = 99;
 
         ContextFactory contextFactory = makeMySQLTableContextFactory(table);
 
@@ -285,7 +286,7 @@ public class DatabaseFilterTest {
             assertThat(map, hasKey(column1));
             assertThat((String) map.get(column1), is(value1));
             assertThat(map, hasKey(column2));
-            assertThat((String) map.get(column2), is(value2));
+            assertThat(((Number)map.get(column2)).intValue(), is(value2));
         }
     }
 
@@ -340,7 +341,7 @@ public class DatabaseFilterTest {
         testOneColumnFilterGreaterThanOrEqualTo(contextFactory, "PK_VIEWER", 390);
         testOneColumnFilterLessThanOrEqualTo(contextFactory, "PK_VIEWER", 390);
         testOneColumnFilterBetween(contextFactory, "PK_VIEWER", 390, 700);
-        testOneColumnFilterIn(contextFactory, "PK_VIEWER", new String[]{"390", "554"});
+        testOneColumnFilterIn(contextFactory, "PK_VIEWER", new Integer[]{390, 554});
         testOneColumnFilterContains(contextFactory, "TP_VIEWER", "ALY");
         testOneColumnFilterStartsWith(contextFactory, "TP_VIEWER", "ANA");
         testOneColumnFilterEndsWith(contextFactory, "TP_VIEWER", "SIS");
@@ -376,11 +377,11 @@ public class DatabaseFilterTest {
 
         testOneColumnFilterEqual(contextFactory, "TP", "DATABASE");
         testOneColumnFilterNotEqual(contextFactory, "TP", "DATABASE");
-        testOneColumnFilterGreaterThan(contextFactory, "QT", 3);
-        testOneColumnFilterLessThan(contextFactory, "QT", 3);
+        testOneColumnFilterGreaterThan(contextFactory, "QT", 2);
+        testOneColumnFilterLessThan(contextFactory, "QT", 2);
         testOneColumnFilterGreaterThanOrEqualTo(contextFactory, "QT", 2);
         testOneColumnFilterLessThanOrEqualTo(contextFactory, "QT", 2);
-        testOneColumnFilterBetween(contextFactory, "QT", 2, 4);
+        testOneColumnFilterBetween(contextFactory, "QT", 1, 3);
         testOneColumnFilterIn(contextFactory, "TP", new String[]{"DATABASE", "WEBSERVICE"});
         testOneColumnFilterContains(contextFactory, "TP", "ABA");
         testOneColumnFilterStartsWith(contextFactory, "TP", "DATA");
@@ -392,7 +393,7 @@ public class DatabaseFilterTest {
         String column1 = "TP";
         String value1 = "DATABASE";
         String column2 = "QT";
-        String value2 = "4";
+        int value2 = 3;
 
         ContextFactory contextFactory = makeOracleSQLContextFactory();
 
@@ -406,7 +407,7 @@ public class DatabaseFilterTest {
             assertThat(map, hasKey(column1));
             assertThat((String) map.get(column1), is(value1));
             assertThat(map, hasKey(column2));
-            assertThat((String) map.get(column2), is(value2));
+            assertThat(((Number) map.get(column2)).intValue(), is(value2));
         }
     }
 
@@ -497,8 +498,7 @@ public class DatabaseFilterTest {
 
         for (Map<String, Object> map : all) {
             assertThat(map, hasKey(columnName));
-            int integer = Integer.parseInt((String) map.get(columnName));
-            assertThat(integer, greaterThan(value));
+            assertThat(((Number)map.get(columnName)).intValue(), greaterThan(value));
         }
     }
 
@@ -507,8 +507,7 @@ public class DatabaseFilterTest {
 
         for (Map<String, Object> map : all) {
             assertThat(map, hasKey(columnName));
-            int integer = Integer.parseInt((String) map.get(columnName));
-            assertThat(integer, lessThan(value));
+            assertThat(((Number)map.get(columnName)).intValue(), lessThan(value));
         }
     }
 
@@ -517,8 +516,7 @@ public class DatabaseFilterTest {
 
         for (Map<String, Object> map : all) {
             assertThat(map, hasKey(columnName));
-            int integer = Integer.parseInt((String) map.get(columnName));
-            assertThat(integer, greaterThanOrEqualTo(value));
+            assertThat(((Number)map.get(columnName)).intValue(), greaterThanOrEqualTo(value));
         }
     }
 
@@ -527,8 +525,7 @@ public class DatabaseFilterTest {
 
         for (Map<String, Object> map : all) {
             assertThat(map, hasKey(columnName));
-            int integer = Integer.parseInt((String) map.get(columnName));
-            assertThat(integer, lessThanOrEqualTo(value));
+            assertThat(((Number)map.get(columnName)).intValue(), lessThanOrEqualTo(value));
         }
     }
 
@@ -551,7 +548,7 @@ public class DatabaseFilterTest {
 
         for (Map<String, Object> map : all) {
             assertThat(map, hasKey(columnName));
-            int integer = Integer.parseInt((String) map.get(columnName));
+            int integer = Integer.parseInt(map.get(columnName).toString());
             assertThat(integer, allOf(
                 greaterThanOrEqualTo(start), lessThanOrEqualTo(end)
             ));
@@ -559,19 +556,24 @@ public class DatabaseFilterTest {
     }
     
     private void testOneColumnFilterIn(ContextFactory contextFactory, String columnName, Object[] values) {
-        List<String> toStringValues = new ArrayList<>(values.length);
         Collection<Matcher<Object>> in = new ArrayList<>(values.length);
         for (Object value : values) {
-            toStringValues.add(value.toString());
             in.add( is( value ) );
         }
         
         List<Map<String, Object>> all = getResultOneColumnFilter(contextFactory, columnName, QueryFilterOperator.IN, new QueryFilterValue(Arrays.asList(values)));
         
         for (Map<String, Object> map : all) {
+            Object expected;
+            if (map.get(columnName) instanceof Number) {
+                expected = ((Number)map.get(columnName)).intValue();
+            } else {
+                expected = map.get(columnName);
+            }
+            
             assertThat(map, hasKey(columnName));
             assertThat(
-                (Object)map.get(columnName),
+                expected,
                 anyOf( (Iterable<Matcher<Object>>) in)
             );
         }

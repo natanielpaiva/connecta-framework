@@ -54,7 +54,6 @@ public class TestNewConnector {
         //List<ConnectorColumn> columns = fusionClient.getColumns(requestCsv);
         
         
-       PrintResult printResult = new PrintResult();
         //printResult.printMap2(all);
        //printResult.printColumns(columns);
         

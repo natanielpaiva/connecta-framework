@@ -26,7 +26,6 @@ public class FileTest {
     public static final String TESTFOLDER = "/testdata/";
     
     public static void main(String args[]) throws URISyntaxException, MalformedURLException{
-        PrintResult printResult = new PrintResult();
         FusionClient fusionClient = new FusionClient();
          FileTest fileTest = new FileTest();
         
@@ -47,7 +46,7 @@ public class FileTest {
 //                    .select(getColumn("nome"))
 //                    .groupBy("nome"));
 
-        printResult.printMap(fusionClient.getAll(requestCsv));
+        PrintResult.printMap(fusionClient.getAll(requestCsv));
        
 //SELECT csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email, AVG(csvdata.csv.funcionario), csvdata.csv.nome FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
         

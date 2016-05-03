@@ -16,6 +16,8 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.apache.metamodel.DataContext;
 import org.apache.metamodel.DataContextFactory;
+import org.apache.metamodel.convert.Converters;
+import org.apache.metamodel.convert.TypeConverter;
 import org.apache.metamodel.data.DataSet;
 import org.apache.metamodel.pojo.MapTableDataProvider;
 import org.apache.metamodel.pojo.PojoDataContext;
@@ -45,7 +47,14 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     
     private Table tableContext;
     
-
+    private DatabaseDataContextFactory(String sql, String table, String user, String password, ConnectorDriver connectorDriver) {
+        this.sql = sql;
+        this.table = table;
+        this.user = user;
+        this.password = password;
+        this.jdbcUrl = connectorDriver.jdbcUrl();
+    }
+    
     /**
      *  
      * @param sql
@@ -54,13 +63,8 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
      * @param password
      */
     public DatabaseDataContextFactory(String sql, ConnectorDriver connectorDriver, String user, String password) {
-        this.sql = sql;
-        this.user = user;
-        this.password = password;
-//        this.jdbcDriver = connectorDriver.jdbcDriver();
-        this.jdbcUrl = connectorDriver.jdbcUrl();
-
-        dataContext = sqlCreateDataContext();
+        this(sql, null, user, password, connectorDriver);
+        sqlCreateDataContext();
     }
 
     /**
@@ -71,13 +75,8 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
      * @param password
      */
     public DatabaseDataContextFactory(ConnectorDriver db, String table, String user, String password) {
-        this.table = table;
-        this.user = user;
-        this.password = password;
-//        this.jdbcDriver = db.jdbcDriver();
-        this.jdbcUrl = db.jdbcUrl();
-
-        dataContext = tableCreateDataContext();
+        this(null, table, user, password, db);
+        tableCreateDataContext();
     }
 
     /**
@@ -87,11 +86,8 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
      * @param password
      */
     public DatabaseDataContextFactory(ConnectorDriver db, String user, String password) {
-        this.user = user;
-        this.password = password;
-        this.jdbcUrl = db.jdbcUrl();
-
-        this.dataContext = tableCreateDataContext();
+        this(null, null, user, password, db);
+        tableCreateDataContext();
     }
 
     @Override
@@ -223,7 +219,6 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         } else {
             return schema.getTableByName(queryContext.getTable());
         }
-
     }
 
     @Override
@@ -231,8 +226,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         return getTable().getColumnByName(columnName);
     }
 
-    public DataContext sqlCreateDataContext() {
-        DataContext dc = null;
+    private void sqlCreateDataContext() {
         List<Map<String, ?>> rowset = new ArrayList<>();
 
         try {
@@ -259,17 +253,16 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
 
             TableDataProvider<?> provider = new MapTableDataProvider(
                     new SimpleTableDef(DEFAULT_TABLE_NAME, columns), rowset);
-            dc = new PojoDataContext(DEFAULT_SCHEMA_NAME, provider);
+            dataContext = new PojoDataContext(DEFAULT_SCHEMA_NAME, provider);
 
         } catch (SQLException ex) {
             logger.error(ex.getMessage(), ex);
         }
-
-        return dc;
     }
     
-    public DataContext tableCreateDataContext() {
+    private DataContext tableCreateDataContext() {
         dataContext = DataContextFactory.createJdbcDataContext(getConnection());
+        
         return dataContext;
     }
 

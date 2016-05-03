@@ -443,7 +443,6 @@ public class DatabaseTest {
         assertThat(all.get(0), hasKey("NM_DATASOURCE"));
 
     }
-//
 
     /**
      * Verifica a lista de columns de uma consulta Oracle

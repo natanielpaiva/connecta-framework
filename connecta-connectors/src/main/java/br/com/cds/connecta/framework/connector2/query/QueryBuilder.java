@@ -55,7 +55,7 @@ public class QueryBuilder {
         this.query.setFirstRow(start).setMaxRows(size);
         return this;
     }
-
+    
     public QueryBuilder addFilter(Column column, QueryFilterOperator filterOperator, QueryFilterValue value) {
         filterOperator.transformQuery(query, column, value);
         return this;

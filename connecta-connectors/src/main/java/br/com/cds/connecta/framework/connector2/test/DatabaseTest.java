@@ -12,7 +12,6 @@ import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleDr
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import org.junit.Ignore;
 
 /**
  *
@@ -22,23 +21,20 @@ public class DatabaseTest {
 
     public static void main(String args[]) {
         FusionClient fusionClient = new FusionClient();
-        PrintResult printResult = new PrintResult();
-
 //        testMysqlManualQuery(fusionClient, printResult);
-        testOracleTableQuery(fusionClient, printResult);
-      // testOracleManualQuery(fusionClient, printResult);
+        testOracleTableQuery(fusionClient);
+        // testOracleManualQuery(fusionClient, printResult);
     }
 
-    public static void testOracleTableQuery(FusionClient fusionClient, PrintResult printResult) {
+    public static void testOracleTableQuery(FusionClient fusionClient) {
         DatabaseDataContextFactory dataContextFactory = new DatabaseDataContextFactory(
                 new OracleDriver("192.168.1.185", "1521", "cdsdev"),
                 "presenter2", "cds312");
 
         //dataContextFactory.createDataContext();
         String[] schema1 = dataContextFactory.getSchemas();
-        printResult.printArrayString(schema1);
-        
-      
+        PrintResult.printArrayString(schema1);
+
         List<ConnectorColumn> columnsColumn = new ArrayList<>();
         ConnectorColumn connectorColumn1 = new ConnectorColumn();
 
@@ -46,36 +42,31 @@ public class DatabaseTest {
         connectorColumn1.setName("DS_ANALYSIS");
         connectorColumn1.setLabel("DS_ANALYSIS");
         connectorColumn1.setFormula("DS_ANALYSIS");
-        
-        
+
         ConnectorColumn connectorColumn2 = new ConnectorColumn();
 
         connectorColumn2.setId((long) 14452);
         connectorColumn2.setName("TP_ANALYSIS");
         connectorColumn2.setLabel("TP_ANALYSIS");
         connectorColumn2.setFormula("TP_ANALYSIS");
-        
 
         columnsColumn.add(connectorColumn1);
         columnsColumn.add(connectorColumn2);
-        
-        
+
         QueryBuilder oracleQuery = new QueryBuilder();
         oracleQuery.setSchema("PRESENTER2")
                 .setTable("TB_ANALYSIS")
                 .setPagination(1, 10);
                 //.setConnectorColumns(columnsColumn);
-                //.setColumns(new String[]{"DS_ANALYSIS", "TP_ANALYSIS"});
-                //.setColumns(columnsColumn);
+        //.setColumns(new String[]{"DS_ANALYSIS", "TP_ANALYSIS"});
+        //.setColumns(columnsColumn);
 
         Request DataBaseOracleRequest = new Request(dataContextFactory, oracleQuery);
         List<Map<String, Object>> all = fusionClient.getAll(DataBaseOracleRequest);
-        printResult.printMap(all);
+        PrintResult.printMap(all);
 
         //List<ConnectorColumn> columns = fusionClient.getColumns(DataBaseOracleRequest);
-
         //printResult.printColumns(columns);
-
         //dataContextFactory.createDataContext();
         //printResult.printArrayString(dataContextFactory.getSchemas());
         //printResult.printArrayString(dataContextFactory.getTables());
@@ -207,23 +198,21 @@ public class DatabaseTest {
 //        
     }
 
-    private static void testOracleManualQuery(FusionClient fusionClient, PrintResult printResult) {
+    private static void testOracleManualQuery(FusionClient fusionClient) {
         String sql = "SELECT COUNT(TP_DATASOURCE), TP_DATASOURCE FROM TB_DATASOURCE GROUP BY TP_DATASOURCE";
         ConnectorDriver driver = new OracleDriver("192.168.1.185", "1521", "cdsdev");
-        
+
         DatabaseDataContextFactory dataContextFactory = new DatabaseDataContextFactory(sql, driver,
                 "PRESENTER2", "cds312");
-        
-        
-        
-          List<ConnectorColumn> columnsColumn = new ArrayList<>();
+
+        List<ConnectorColumn> columnsColumn = new ArrayList<>();
         ConnectorColumn connectorColumn1 = new ConnectorColumn();
 
         connectorColumn1.setId((long) 14452);
         connectorColumn1.setName("TP_DATASOURCE");
         connectorColumn1.setLabel("TP_DATASOURCEssss");
         connectorColumn1.setFormula("TP_DATASOURCE");
-        
+
         ConnectorColumn connectorColumn2 = new ConnectorColumn();
 
         connectorColumn2.setId((long) 14452);
@@ -235,10 +224,10 @@ public class DatabaseTest {
         columnsColumn.add(connectorColumn2);
         QueryBuilder query = new QueryBuilder();
                 //.setConnectorColumns(columnsColumn);
-        
+
         Request request = new Request(dataContextFactory, query);
         List<Map<String, Object>> all = fusionClient.getAll(request);
-        printResult.printMap(all);
+        PrintResult.printMap(all);
     }
 
 }

@@ -89,16 +89,21 @@ public class FusionClient {
                     for (ConnectorColumn column : columns) {
 
                         if (column.getName().equals(selectItems[i].getColumn().getName())) {
-                            String key = column.getLabel();
-                            String value = row.getValue(i) == null ? "" : row.getValue(i).toString();
-                            object.put(key, value);
+//                            String key = column.getLabel();
+//                            String value = row.getValue(i) == null ? "" : row.getValue(i).toString();
+//                            object.put(key, value);
+                            object.put(
+                                column.getLabel(),
+                                row.getValue(i)
+                            );
                         }
                     }
 
                 } else {
-                    String key = selectItems[i].getColumn().getName();
-                    String value = row.getValue(i) == null ? "" : row.getValue(i).toString();
-                    object.put(key, value);
+                    object.put(
+                        selectItems[i].getColumn().getName(),
+                        row.getValue(i)
+                    );
                 }
 
             }
