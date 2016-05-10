@@ -556,7 +556,7 @@ public class DatabaseFilterTest {
     }
     
     private void testOneColumnFilterIn(ContextFactory contextFactory, String columnName, Object[] values) {
-        Collection<Matcher<Object>> in = new ArrayList<>(values.length);
+        Collection<Matcher<? super Object>> in = new ArrayList<>(values.length);
         for (Object value : values) {
             in.add( is( value ) );
         }
@@ -574,7 +574,7 @@ public class DatabaseFilterTest {
             assertThat(map, hasKey(columnName));
             assertThat(
                 expected,
-                anyOf( (Iterable<Matcher<Object>>) in)
+                anyOf( (Iterable<Matcher<? super Object>>) in)
             );
         }
     }

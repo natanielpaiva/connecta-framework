@@ -16,8 +16,6 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.apache.metamodel.DataContext;
 import org.apache.metamodel.DataContextFactory;
-import org.apache.metamodel.convert.Converters;
-import org.apache.metamodel.convert.TypeConverter;
 import org.apache.metamodel.data.DataSet;
 import org.apache.metamodel.pojo.MapTableDataProvider;
 import org.apache.metamodel.pojo.PojoDataContext;
@@ -245,9 +243,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
                 Map<String, Object> row = new HashMap<>();
                 for (String name : columns) {
                     row.put(name, rs.getObject(name));
-                    System.out.println(name + " -------  " + rs.getObject(name));
                 }
-                System.out.println("\n");
                 rowset.add(row);
             }
 

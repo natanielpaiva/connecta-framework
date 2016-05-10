@@ -2,6 +2,7 @@ package br.com.cds.connecta.framework.connector2;
 
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.PrintResult;
+import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,23 +41,23 @@ public class FusionClient {
         DataSet resultAll = request.getResultAll();
         return toList(resultAll, request.getQueryContext().getColumns());
     }
-    
+
     public List<Object> possibleValuesFor(Request request, Column column) {
         request.getQueryContext()
-            .setColumns(new ArrayList<ConnectorColumn>(0))
-            .addGroupBy(column);
-        
+                .setColumns(new ArrayList<ConnectorColumn>(0))
+                .addGroupBy(column);
+
         DataSet resultAll = request.getResultAll();
         List<Map<String, Object>> list = toList(resultAll, null);
-        
+
         PrintResult.printMap(list);
-        
+
         List<Object> values = new ArrayList<>();
-        
+
         for (Map<String, Object> map : list) {
             values.add(map.get(column.getName()));
         }
-        
+
         return values;
     }
 
@@ -70,46 +71,49 @@ public class FusionClient {
         List<ConnectorColumn> columns = request.getColumns();
         return columns;
     }
-    
+
+    /**
+     * FIXME implementar
+     *
+     * @param request
+     * @return
+     */
     public boolean isValid(Request request) {
         return true;
     }
 
-    public static List<Map<String, Object>> toList(DataSet execute, List<ConnectorColumn> columns) throws IndexOutOfBoundsException {
-
+    public static List<Map<String, Object>> toList(DataSet execute, List<ConnectorColumn> columns) {
         List<Map<String, Object>> list = new ArrayList<>();
 
-        for (Row row : execute) {
+        for (Row row : execute) {   // Linhas
             SelectItem[] selectItems = row.getSelectItems();
             Map<String, Object> object = new HashMap<>(selectItems.length);
 
-            for (int i = 0; i < row.getValues().length; i++) {
+            for (int i = 0; i < selectItems.length; i++) {  // Colunas
+                String columnLabel = null;
+                Object value = row.getValue(i);
 
-                if (columns != null) {
-                    for (ConnectorColumn column : columns) {
-
-                        if (column.getName().equals(selectItems[i].getColumn().getName())) {
-//                            String key = column.getLabel();
-//                            String value = row.getValue(i) == null ? "" : row.getValue(i).toString();
-//                            object.put(key, value);
-                            object.put(
-                                column.getLabel(),
-                                row.getValue(i)
-                            );
-                        }
-                    }
-
-                } else {
-                    object.put(
-                        selectItems[i].getColumn().getName(),
-                        row.getValue(i)
-                    );
+                if (value instanceof Blob) {
+                    value = "(BINARY)";
                 }
 
-            }
+                // Caso não tenha colunas informadas, pega da definição do select
+                if (columns == null) {
+                    columnLabel = selectItems[i].getColumn().getName();
+                } else {
+                    for (ConnectorColumn column : columns) {
+                        if (column.getName().equals(selectItems[i].getColumn().getName())) {
+                            columnLabel = column.getLabel();
+                        }
+                    }
+                }
 
+                object.put(columnLabel, value);
+            }
+            
             list.add(object);
         }
+
         return list;
     }
 

@@ -17,7 +17,6 @@ public class Request {
     private ContextFactory dataContextFactory;
     private QueryBuilder queryContext;
 
-
     public Request(ContextFactory dataContextFactory) {
         this.dataContextFactory = dataContextFactory;
     }
@@ -50,6 +49,5 @@ public class Request {
 
         return dataContextFactory.getColumns();
     }
-
-
+    
 }
