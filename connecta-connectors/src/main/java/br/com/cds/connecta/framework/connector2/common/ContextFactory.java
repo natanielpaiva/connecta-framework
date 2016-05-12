@@ -1,5 +1,6 @@
 package br.com.cds.connecta.framework.connector2.common;
 
+import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
 import java.util.List;
 import org.apache.metamodel.DataContext;
 import org.apache.metamodel.data.DataSet;
@@ -18,7 +19,7 @@ public interface ContextFactory {
 
     List<ConnectorColumn> getColumns();
 
-    void setQueryContext(QueryContext queryContext);
+    void setQueryContext(QueryBuilder queryContext);
     
     Table getTable();
     

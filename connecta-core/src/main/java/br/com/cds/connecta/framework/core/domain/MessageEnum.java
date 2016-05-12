@@ -11,6 +11,7 @@ public enum MessageEnum {
     UNAUTHORIZED,
     FORBIDDEN,
     NOT_FOUND,
+    CONFLICT,
     
     // Success messages
     OPERATION_SUCESS;

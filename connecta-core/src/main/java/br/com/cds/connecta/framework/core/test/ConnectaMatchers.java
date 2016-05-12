@@ -226,7 +226,7 @@ public class ConnectaMatchers {
         /**
          * The matcher.
          */
-        private Matcher<?> matcher;
+        private final Matcher<?> matcher;
 
         /**
          * Instantiates a new todos os itens.
@@ -276,7 +276,7 @@ public class ConnectaMatchers {
         /**
          * The matcher.
          */
-        private Matcher<?> matcher;
+        private final Matcher<?> matcher;
 
         /**
          * Instantiates a new pelo menos um item.
