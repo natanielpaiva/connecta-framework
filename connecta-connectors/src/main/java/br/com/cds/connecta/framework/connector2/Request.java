@@ -14,7 +14,7 @@ import org.apache.metamodel.data.DataSet;
  */
 public class Request {
 
-    private ContextFactory dataContextFactory;
+    private final ContextFactory dataContextFactory;
     private QueryBuilder queryContext;
 
     public Request(ContextFactory dataContextFactory) {
@@ -26,7 +26,11 @@ public class Request {
         this.dataContextFactory = dataContextFactory;
     }
 
-    public DataContext getDataContextFactory() {
+    public ContextFactory getDataContextFactory() {
+        return dataContextFactory;
+    }
+    
+    public DataContext getDataContext() {
         DataContext dataContext = dataContextFactory.createDataContext();
         dataContextFactory.setQueryContext(queryContext);
         return dataContext;

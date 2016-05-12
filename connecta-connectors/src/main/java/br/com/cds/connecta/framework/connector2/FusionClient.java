@@ -27,7 +27,7 @@ public class FusionClient {
      * @return
      */
     public DataContext getDataContext(Request request) {
-        DataContext dataContext = request.getDataContextFactory();
+        DataContext dataContext = request.getDataContext();
         return dataContext;
     }
 
@@ -38,11 +38,17 @@ public class FusionClient {
      * @return
      */
     public List<Map<String, Object>> getAll(Request request) {
-
         DataSet resultAll = request.getResultAll();
+        
         return toList(resultAll, request.getQueryContext().getColumns());
     }
 
+    public List<Object> possibleValuesFor(Request request, String columnName) {
+        Column column = request.getDataContextFactory().getColumn(columnName);
+        
+        return possibleValuesFor(request, column);
+    }
+    
     public List<Object> possibleValuesFor(Request request, Column column) {
         request.getQueryContext()
                 .setColumns(new ArrayList<ConnectorColumn>(0))

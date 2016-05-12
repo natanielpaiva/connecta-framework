@@ -224,6 +224,10 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         return getTable().getColumnByName(columnName);
     }
 
+    /**
+     * TODO Criar o PojoDataContext já com os tipos de dados detectados na consulta
+     * 
+     */
     private void sqlCreateDataContext() {
         List<Map<String, ?>> rowset = new ArrayList<>();
 
