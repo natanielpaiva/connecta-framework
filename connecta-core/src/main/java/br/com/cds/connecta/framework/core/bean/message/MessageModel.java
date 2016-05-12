@@ -1,13 +1,9 @@
 package br.com.cds.connecta.framework.core.bean.message;
 
-
-import br.com.cds.connecta.framework.core.bean.common.AbstractBaseBean;
 import br.com.cds.connecta.framework.core.domain.MessageEnum;
 import br.com.cds.connecta.framework.core.domain.MessageTypeEnum;
 
-public class MessageModel extends AbstractBaseBean {
-
-    private static final long serialVersionUID = 1L;
+public class MessageModel {
 
     private String code;
     private String message;
@@ -17,14 +13,14 @@ public class MessageModel extends AbstractBaseBean {
     }
 
     public MessageModel(String code, String message, MessageTypeEnum tipo) {
-        super();
+//        super();
         this.code = code;
         this.message = message;
         this.type = tipo;
     }
     
     public MessageModel(MessageEnum code, String message, MessageTypeEnum tipo) {
-        super();
+//        super();
         this.code = code.name();
         this.message = message;
         this.type = tipo;

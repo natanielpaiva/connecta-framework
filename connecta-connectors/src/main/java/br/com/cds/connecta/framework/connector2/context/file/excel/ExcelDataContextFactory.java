@@ -9,13 +9,13 @@ import org.apache.metamodel.excel.ExcelDataContext;
  *
  * @author diego
  */
-public class XlsDataContextFactory implements FileContextFactory {
+public class ExcelDataContextFactory implements FileContextFactory {
 
     DataContext dataContext;
 
     File file;
 
-    public XlsDataContextFactory(File file) {
+    public ExcelDataContextFactory(File file) {
         this.file = file;
     }
     

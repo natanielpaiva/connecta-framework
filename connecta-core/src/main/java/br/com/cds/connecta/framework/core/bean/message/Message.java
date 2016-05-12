@@ -1,13 +1,10 @@
 package br.com.cds.connecta.framework.core.bean.message;
 
-import br.com.cds.connecta.framework.core.bean.common.AbstractBaseBean;
-
 /**
  * Classe para transpote de informações de erro ou alerta.
  */
-public class Message extends AbstractBaseBean {
+public class Message {
 
-    private static final long serialVersionUID = -6848439765340083022L;
     private String key;
     private String message;
     private Object[] params;

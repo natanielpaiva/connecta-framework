@@ -1,9 +1,11 @@
 package br.com.cds.connecta.framework.connector2;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URISyntaxException;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 
@@ -37,5 +39,11 @@ public class TestUtil {
             logger.error("Arquivo não encontrado: " + fileName, ex);
         }
         return fileInputStream;
+    }
+    
+    public static File getFile(String filename)  {
+        File file = new File(TEST_RESOURCE_FOLDER.concat(filename));
+
+        return file;
     }
 }

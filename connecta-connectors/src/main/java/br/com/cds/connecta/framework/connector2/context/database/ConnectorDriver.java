@@ -5,9 +5,8 @@ package br.com.cds.connecta.framework.connector2.context.database;
  *
  * @author diego
  */
-public interface Driver {
+public interface ConnectorDriver {
     
-    public String jdbcUrl();
-    public String jdbcDrive();
+    String jdbcUrl();
     
 }
