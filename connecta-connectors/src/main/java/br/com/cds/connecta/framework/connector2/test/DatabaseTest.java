@@ -4,11 +4,11 @@ import br.com.cds.connecta.framework.connector2.FusionClient;
 import br.com.cds.connecta.framework.connector2.Request;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.PrintResult;
-import br.com.cds.connecta.framework.connector2.common.QueryContext;
+import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
 import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataContextFactory;
-import br.com.cds.connecta.framework.connector2.context.database.Driver;
-import br.com.cds.connecta.framework.connector2.context.database.mysql.MySqlConnection;
-import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleConnection;
+import br.com.cds.connecta.framework.connector2.context.database.ConnectorDriver;
+import br.com.cds.connecta.framework.connector2.context.database.mysql.MySQLDriver;
+import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleDriver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -21,23 +21,20 @@ public class DatabaseTest {
 
     public static void main(String args[]) {
         FusionClient fusionClient = new FusionClient();
-        PrintResult printResult = new PrintResult();
-
 //        testMysqlManualQuery(fusionClient, printResult);
-        testOracleTableQuery(fusionClient, printResult);
-      // testOracleManualQuery(fusionClient, printResult);
+        testOracleTableQuery(fusionClient);
+        // testOracleManualQuery(fusionClient, printResult);
     }
 
-    public static void testOracleTableQuery(FusionClient fusionClient, PrintResult printResult) {
+    public static void testOracleTableQuery(FusionClient fusionClient) {
         DatabaseDataContextFactory dataContextFactory = new DatabaseDataContextFactory(
-                new OracleConnection("192.168.1.185", "1521", "cdsdev"),
+                new OracleDriver("192.168.1.185", "1521", "cdsdev"),
                 "presenter2", "cds312");
 
         //dataContextFactory.createDataContext();
         String[] schema1 = dataContextFactory.getSchemas();
-        printResult.printArrayString(schema1);
-        
-      
+        PrintResult.printArrayString(schema1);
+
         List<ConnectorColumn> columnsColumn = new ArrayList<>();
         ConnectorColumn connectorColumn1 = new ConnectorColumn();
 
@@ -45,36 +42,31 @@ public class DatabaseTest {
         connectorColumn1.setName("DS_ANALYSIS");
         connectorColumn1.setLabel("DS_ANALYSIS");
         connectorColumn1.setFormula("DS_ANALYSIS");
-        
-        
+
         ConnectorColumn connectorColumn2 = new ConnectorColumn();
 
         connectorColumn2.setId((long) 14452);
         connectorColumn2.setName("TP_ANALYSIS");
         connectorColumn2.setLabel("TP_ANALYSIS");
         connectorColumn2.setFormula("TP_ANALYSIS");
-        
 
         columnsColumn.add(connectorColumn1);
         columnsColumn.add(connectorColumn2);
-        
-        
-        QueryContext oracleQuery = new QueryContext();
+
+        QueryBuilder oracleQuery = new QueryBuilder();
         oracleQuery.setSchema("PRESENTER2")
                 .setTable("TB_ANALYSIS")
                 .setPagination(1, 10);
                 //.setConnectorColumns(columnsColumn);
-                //.setColumns(new String[]{"DS_ANALYSIS", "TP_ANALYSIS"});
-                //.setColumns(columnsColumn);
+        //.setColumns(new String[]{"DS_ANALYSIS", "TP_ANALYSIS"});
+        //.setColumns(columnsColumn);
 
         Request DataBaseOracleRequest = new Request(dataContextFactory, oracleQuery);
         List<Map<String, Object>> all = fusionClient.getAll(DataBaseOracleRequest);
-        printResult.printMap2(all);
+        PrintResult.printMap(all);
 
         //List<ConnectorColumn> columns = fusionClient.getColumns(DataBaseOracleRequest);
-
         //printResult.printColumns(columns);
-
         //dataContextFactory.createDataContext();
         //printResult.printArrayString(dataContextFactory.getSchemas());
         //printResult.printArrayString(dataContextFactory.getTables());
@@ -181,15 +173,15 @@ public class DatabaseTest {
                 + "		ORDER BY\n"
                 + "			Projeto	,\n"
                 + "			Data",
-                new MySqlConnection("192.168.33.10", "3306", "memorando"),
+                new MySQLDriver("192.168.33.10", "3306", "memorando"),
                 "root", "root");
-        QueryContext query = new QueryContext();
+        QueryBuilder query = new QueryBuilder();
         //query.setColumns(new String[]{"Data", "Assunto"}).getQuery().where(mySqldatabase.getColumn("nome"), OperatorType.EQUALS_TO, "Pâmela Leal");
         //query.setColumns(new String[]{"Data", "Assunto"});
         query.setPagination(1, 20);
         Request dataBaseMySqlRequest = new Request(mySqldatabase, query);
         List<Map<String, Object>> all1 = fusionClient.getAll(dataBaseMySqlRequest);
-        printResult.printMap2(all1);
+        printResult.printMap(all1);
 //        
         List<ConnectorColumn> mysqlColumns = fusionClient.getColumns(dataBaseMySqlRequest);
 //        printResult.printColumns(mysqlColumns);
@@ -206,23 +198,21 @@ public class DatabaseTest {
 //        
     }
 
-    private static void testOracleManualQuery(FusionClient fusionClient, PrintResult printResult) {
+    private static void testOracleManualQuery(FusionClient fusionClient) {
         String sql = "SELECT COUNT(TP_DATASOURCE), TP_DATASOURCE FROM TB_DATASOURCE GROUP BY TP_DATASOURCE";
-        Driver driver = new OracleConnection("192.168.1.185", "1521", "cdsdev");
-        
+        ConnectorDriver driver = new OracleDriver("192.168.1.185", "1521", "cdsdev");
+
         DatabaseDataContextFactory dataContextFactory = new DatabaseDataContextFactory(sql, driver,
                 "PRESENTER2", "cds312");
-        
-        
-        
-          List<ConnectorColumn> columnsColumn = new ArrayList<>();
+
+        List<ConnectorColumn> columnsColumn = new ArrayList<>();
         ConnectorColumn connectorColumn1 = new ConnectorColumn();
 
         connectorColumn1.setId((long) 14452);
         connectorColumn1.setName("TP_DATASOURCE");
         connectorColumn1.setLabel("TP_DATASOURCEssss");
         connectorColumn1.setFormula("TP_DATASOURCE");
-        
+
         ConnectorColumn connectorColumn2 = new ConnectorColumn();
 
         connectorColumn2.setId((long) 14452);
@@ -232,12 +222,12 @@ public class DatabaseTest {
 
         columnsColumn.add(connectorColumn1);
         columnsColumn.add(connectorColumn2);
-        QueryContext query = new QueryContext();
+        QueryBuilder query = new QueryBuilder();
                 //.setConnectorColumns(columnsColumn);
-        
+
         Request request = new Request(dataContextFactory, query);
         List<Map<String, Object>> all = fusionClient.getAll(request);
-        printResult.printMap2(all);
+        PrintResult.printMap(all);
     }
 
 }

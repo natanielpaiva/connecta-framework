@@ -1,5 +1,6 @@
 package br.com.cds.connecta.framework.connector2.common;
 
+import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -20,7 +21,7 @@ public class CompositeDataContextFactory implements ContextFactory {
 
     DataContext dataContext;
 
-    QueryContext queryContext;
+    QueryBuilder queryContext;
 
     ContextFactory leftContextFactory, rightContextFactory;
 
@@ -57,7 +58,7 @@ public class CompositeDataContextFactory implements ContextFactory {
        Collection<Table> tb= new ArrayList() ;
         for (CompositeJoin cj : compositeJoins) {
            
-            queryContext.getQuery()
+            queryContext.build()
                     
                     .where(cj.getLeftColumn(), 
                             OperatorType.EQUALS_TO,  
@@ -81,7 +82,7 @@ public class CompositeDataContextFactory implements ContextFactory {
         for (Table tb1 : tb) {
             
             System.out.println("------------- " + tb1.getName());
-            queryContext.getQuery().from(tb1);
+            queryContext.build().from(tb1);
         }
 
     }
@@ -109,7 +110,7 @@ public class CompositeDataContextFactory implements ContextFactory {
     public DataSet getResultAll() {
         contructJoin();
 
-        DataSet executeQuery = dataContext.executeQuery(queryContext.getQuery().selectAll());
+        DataSet executeQuery = dataContext.executeQuery(queryContext.build().selectAll());
 
         return executeQuery;
     }
@@ -120,7 +121,7 @@ public class CompositeDataContextFactory implements ContextFactory {
     }
 
     @Override
-    public void setQueryContext(QueryContext queryContext) {
+    public void setQueryContext(QueryBuilder queryContext) {
         this.queryContext = queryContext;
     }
 

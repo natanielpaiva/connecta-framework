@@ -4,12 +4,25 @@ import br.com.cds.connecta.framework.connector2.common.Base;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
 import br.com.cds.connecta.framework.connector2.common.FileContextFactory;
+import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataContextFactory;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import org.apache.log4j.Logger;
+import org.apache.metamodel.DataContext;
+import org.apache.metamodel.MetaModelException;
+import org.apache.metamodel.convert.Converters;
+import org.apache.metamodel.convert.TypeConverter;
 import org.apache.metamodel.data.DataSet;
-import org.apache.metamodel.query.FunctionType;
+import org.apache.metamodel.data.Row;
+import org.apache.metamodel.pojo.ArrayTableDataProvider;
+import org.apache.metamodel.pojo.PojoDataContext;
+import org.apache.metamodel.pojo.TableDataProvider;
+import org.apache.metamodel.query.Query;
 import org.apache.metamodel.schema.Column;
+import org.apache.metamodel.schema.ColumnType;
 import org.apache.metamodel.schema.Table;
+import org.apache.metamodel.util.SimpleTableDef;
 
 /**
  *
@@ -17,66 +30,33 @@ import org.apache.metamodel.schema.Table;
  */
 public class FileDataContextFactory extends Base implements ContextFactory {
 
+    private final Logger logger = Logger.getLogger(FileDataContextFactory.class);
+    
     public FileDataContextFactory(FileContextFactory fileContextFactory) {
-        dataContext = fileContextFactory.createDataContext();
+        
+        dataContext = converterDataContextToPojoDataContext(fileContextFactory.createDataContext());
     }
 
     @Override
     public DataSet getResultAll() {
 
         Table table = getTable();
+        table.getColumns(); // chamada pra reconhecer as colunas
 
-        String[] columnNames = table.getColumnNames();
-        for (String columnName : columnNames) {
-            System.out.println(columnName);
-        }
+        List<ConnectorColumn> listColumns = queryContext.getColumns();
 
-        queryContext.getQuery().from(table);
+        Query from = queryContext.build().from(table);
 
-        //String[] requiredColumns = queryContext.getColumns();
-        String[] requiredColumns = null;
-
-        if (requiredColumns != null) {
-            for (String requiredColumn : requiredColumns) {
-
-                Column columnByName = table.getColumnByName(requiredColumn);
-
-                try {
-                    queryContext.getQuery().select(columnByName);
-                } catch (java.lang.IllegalArgumentException e) {
-                    System.out.println("Columa nao encontrada: " + columnByName);
-                }
-
+        if (listColumns != null) {
+            for (ConnectorColumn column : listColumns) {
+                Column columnByName = table.getColumnByName(column.getName());
+                queryContext.build().select(columnByName);
             }
+            return dataContext.executeQuery(from);
         } else {
-            queryContext.getQuery();
+            return dataContext.executeQuery(from.selectAll());
         }
 
-        DataSet executeQuery = dataContext.executeQuery(queryContext.getQuery());
-
-        
-//funcioando
-//DataSet executeQuery = dataContext.executeQuery(queryContext.getQuery().select(" AVG(csvdata.csv.funcionario)" ).groupBy("nome"));        
-//SELECT csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email, AVG(csvdata.csv.funcionario) FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
-//SELECT csvdata.csv.nome, AVG(csvdata.csv.funcionario), csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
-
-
-//SELECT AVG(csvdata.csv.funcionario), csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
-
-        
-// DataSet executeQuery = dataContext.executeQuery(queryContext.getQuery()
-//                    .select(FunctionType.AVG, getColumn("funcionario"))
-//                    .select(getColumn("nome"))
-//                    .groupBy("nome"));
-//SELECT csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email, AVG(csvdata.csv.funcionario), csvdata.csv.nome                     FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
-        
-//SELECT AVG(csvdata.csv.funcionario), csvdata.csv.nome, csvdata.csv.nome, csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
-
-//SELECT COUNT(csvdata.csv.funcionario), csvdata.csv.nome, csvdata.csv.nome, csvdata.csv.funcionario, csvdata.csv.nome, csvdata.csv.departamento, csvdata.csv.email FROM testdata.csvdata.csv GROUP BY csvdata.csv.nome
-
- 
-System.out.println("-dddddddddddddddddd----------" + queryContext.getQuery().toString());
-        return executeQuery;
     }
 
     @Override
@@ -116,5 +96,84 @@ System.out.println("-dddddddddddddddddd----------" + queryContext.getQuery().toS
     public String[] getTables() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public DataContext createDataContext() {
+        return dataContext;
+    }
+    
+      public final DataContext converterDataContextToPojoDataContext(DataContext dc) {
+        
+        DataSet execute = getDataSet(dc);
+
+        ColumnType[] columnsTypes = createColumnsDefalt(dc);
+        
+        Map<Column, TypeConverter<?, ?>> map = discoverPossibleConverters(dc);
+
+        for (Map.Entry<Column, TypeConverter<?, ?>> entrySet : map.entrySet()) {
+            Column key = entrySet.getKey();
+
+            TypeConverter<? extends Object, ? extends Object> value = entrySet.getValue();
+            
+            if (value.getClass().toString().contains("Boolean")) {
+                columnsTypes[key.getColumnNumber()] = ColumnType.BOOLEAN;
+            } else if (value.getClass().toString().contains("Integer")) {
+                columnsTypes[key.getColumnNumber()] = ColumnType.INTEGER;
+            }else if (value.getClass().toString().contains("Date")) {
+                columnsTypes[key.getColumnNumber()] = ColumnType.DATE;
+            }else if (value.getClass().toString().contains("Double")) {
+                columnsTypes[key.getColumnNumber()] = ColumnType.DOUBLE;
+            }
+            
+        }
+      
+        String[] columnNames = dc.getDefaultSchema().getTables()[0].getColumnNames();
+        SimpleTableDef std = new SimpleTableDef("DEFAULT_TABLE_NAME", columnNames, columnsTypes);
+        List<Object[]> list = new ArrayList<>();
+        
+        
+        for (Row ex : execute) {
+            Object[] obj = new Object[columnNames.length];
+            for(int i = 0; i < columnNames.length; i++){
+
+                if(columnsTypes[i].equals(ColumnType.INTEGER)){
+                    obj[i] = Integer.valueOf(ex.getValues()[i].toString());
+                }else if(columnsTypes[i].equals(ColumnType.BOOLEAN)){
+                    obj[i] = ex.getValues()[i].toString();
+                }else if(columnsTypes[i].equals(ColumnType.DATE)){
+                    obj[i] = String.valueOf(ex.getValues()[i].toString());
+                }else if(columnsTypes[i].equals(ColumnType.DOUBLE)){
+                    obj[i] = Double.valueOf(ex.getValues()[i].toString());    
+                }else {
+                    obj[i] = ex.getValues()[i];
+                }
+            }
+            list.add(obj);
+        }
+        
+        TableDataProvider<?> tableDataProvider = new ArrayTableDataProvider(std, list);
+        dataContext = new PojoDataContext("DEFAULT_SCHEMA_NAME", tableDataProvider);
+        return dataContext;
+    }
+
+    private ColumnType[] createColumnsDefalt(DataContext dc) throws MetaModelException {
+        ColumnType[] columnsTypes = new ColumnType[dc.getDefaultSchema().getTables()[0].getColumnCount()];
+        for (int i = 0; i < columnsTypes.length; i++) {
+            columnsTypes[i] = ColumnType.STRING;
+        }
+        return columnsTypes;
+    }
+
+    private Map<Column, TypeConverter<?, ?>> discoverPossibleConverters(DataContext dc) {
+        Map<Column, TypeConverter<?, ?>> map = Converters.autoDetectConverters(dc, dc.getDefaultSchema().getTables()[0].getColumns(), 100);
+        return map;
+    }
+
+    private DataSet getDataSet(DataContext dc) {
+        DataSet execute = dc.query().from(dc.getDefaultSchema().getTable(0)).selectAll().execute();
+        return execute;
+    }
+    
+    
 
 }

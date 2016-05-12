@@ -1,5 +1,6 @@
 package br.com.cds.connecta.framework.connector2.common;
 
+import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
 import org.apache.metamodel.schema.Column;
 
 /**
@@ -8,7 +9,7 @@ import org.apache.metamodel.schema.Column;
  */
 public class CompositeJoin {
 
-    QueryContext queryContext;
+    QueryBuilder queryContext;
 
     ContextFactory leftContextFactory, rightContextFactory;
     
@@ -46,11 +47,11 @@ public class CompositeJoin {
     }
     
 
-    public QueryContext getQueryContext() {
+    public QueryBuilder getQueryContext() {
         return queryContext;
     }
 
-    public void setQueryContext(QueryContext queryContext) {
+    public void setQueryContext(QueryBuilder queryContext) {
         this.queryContext = queryContext;
     }
 }

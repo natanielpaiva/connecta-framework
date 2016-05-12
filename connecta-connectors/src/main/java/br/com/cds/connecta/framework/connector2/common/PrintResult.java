@@ -1,4 +1,3 @@
-
 package br.com.cds.connecta.framework.connector2.common;
 
 import dnl.utils.text.table.TextTable;
@@ -12,36 +11,17 @@ import java.util.Set;
  */
 public class PrintResult {
 
-    public void printMap(List<Map<String, Object>> result) {
-        System.out.println("\n");
-        Set<String> columns = result.get(0).keySet();
-        String parametros = "";
-
-        for (int i = 0; i < columns.size(); i++) {
-            parametros += "%-30s";
-            System.out.print("+----------------------------");
-        }
-
-        System.out.println("\r");
-        System.out.printf(parametros, columns.toArray());
-        System.out.println("\r");;
-        for (Map<String, Object> result1 : result) {
-
-            String value = "";
-            for (String column : columns) {
-                String format = String.format("%.20s", "|" + result1.get(column));
-
-                value += value.format("%-30s", format);
-            }
-
-            System.out.println(value);
-        }
+    private PrintResult() {
     }
 
-        
-    public void printMap2(List<Map<String, Object>> result){
+    public static void printMap(List<Map<String, Object>> result) {
         System.out.println("---------Result--------------");
-        
+
+        // Previne NullPointer e ArrayIndexOutOfBounds
+        if (result == null || result.isEmpty()) {
+            return;
+        }
+
         Set<String> columns = result.get(0).keySet();
         String[] columnsName = new String[columns.size()];
 
@@ -50,25 +30,29 @@ public class PrintResult {
             columnsName[c] = column;
             c++;
         }
-        
+
         Object[][] data = new Object[result.size()][columns.size()];
-        
+
         for (int i = 0; i < result.size(); i++) {
-            
-            Map<String, Object> get = result.get(i);
+
+            Map<String, Object> map = result.get(i);
 
             for (int j = 0; j < columnsName.length; j++) {
-                        
-                 data[i][j]=get.get(columnsName[j]).toString();
+                if( map.get( columnsName[j] ) != null) {
+                    data[i][j] = map.get(columnsName[j]).toString();
+                } else {
+                    data[i][j] = "null";
+                }
             }
-            
+
         }
-//        
+
         TextTable dd = new TextTable(columnsName, data);
+        dd.setAddRowNumbering(true);
         dd.printTable();
     }
-    
-    public void printColumns(List<ConnectorColumn> connectorColumns) {
+
+    public static void printColumns(List<ConnectorColumn> connectorColumns) {
         System.out.println("---------ConnectorColumns--------------");
         String[] columnNames = {"Name", "Label", "Formula", "Type"};
 
@@ -80,19 +64,16 @@ public class PrintResult {
             data[i][1] = cc.getLabel();
             data[i][2] = cc.getFormula();
             data[i][3] = cc.getType();
-
         }
 
         TextTable dd = new TextTable(columnNames, data);
         dd.printTable();
-
     }
 
-    public void printArrayString(String[] list) {
+    public static void printArrayString(String[] list) {
         System.out.println("--------- list--------------");
         String[] columnNames = {"Name"};
 
-        
         Object[][] data = new Object[list.length][1];
         for (int i = 0; i < list.length; i++) {
             data[i][0] = list[i];
@@ -100,7 +81,6 @@ public class PrintResult {
 
         TextTable dd = new TextTable(columnNames, data);
         dd.printTable();
-
     }
-    
+
 }

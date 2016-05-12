@@ -12,41 +12,41 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author diego
  */
 public class DatabaseTable {
+    
+    private static final Logger logger = Logger.getLogger(DatabaseTable.class);
 
     /**
      *
-     * @param JDBCConnection
-     * @param JDBCSchema
-     * @param JDBCUser
-     * @param JDBCPassword
+     * @param jdbcConnection
+     * @param jdbcSchema
+     * @param jdbcUser
+     * @param jdbcPassword
      * @return
      * @throws SQLException
      */
-    public List<IDatabaseTable> getTables(String JDBCConnection, String JDBCSchema,
-            String JDBCUser, String JDBCPassword) throws SQLException {
+    public List<IDatabaseTable> getTables(String jdbcConnection, String jdbcSchema,
+            String jdbcUser, String jdbcPassword) throws SQLException {
 
         Connection con = null;
 
         try {
-            String JDBCDriver = getJDBCDriverName(JDBCConnection);
-            //String JDBCDriver = "oracle.jdbc.driver.OracleDriver";
-
-            Class.forName(JDBCDriver);
-            con = DriverManager.getConnection(JDBCConnection, JDBCUser, JDBCPassword);
+            logger.info(jdbcConnection+" | "+jdbcUser+" | "+jdbcPassword);
+            con = DriverManager.getConnection(jdbcConnection, jdbcUser, jdbcPassword);
 
             DatabaseMetaData metadata = con.getMetaData();
             String[] types = {"TABLE", "VIEW"};
 
             //recuperando os metadados sobre as tabelas
-            ResultSet rs = metadata.getTables(null, JDBCSchema, "%", types);
+            ResultSet rs = metadata.getTables(null, jdbcSchema, "%", types);
 
-            List<IDatabaseTable> tables = new ArrayList<IDatabaseTable>();
+            List<IDatabaseTable> tables = new ArrayList<>();
 
             while (rs.next()) {
 
@@ -54,11 +54,11 @@ public class DatabaseTable {
                 String tableType = rs.getString("TABLE_TYPE");
 
                 TableImpl table = new TableImpl(tableName);
-                table.setSchema(JDBCSchema);
+                table.setSchema(jdbcSchema);
                 table.setTableType(tableType);
 
                 //recuperando os metadados da tabela
-                String sql = "select * from ".concat(JDBCSchema.concat(".".concat(tableName)));
+                String sql = "select * from ".concat(jdbcSchema.concat(".".concat(tableName)));
 
                 try (Statement stm = con.createStatement();
                         ResultSet rsTable = stm.executeQuery(sql);) {
@@ -74,7 +74,7 @@ public class DatabaseTable {
                         column.setDataPrecision(rsmetadata.getPrecision(i));
 
                         //recuperando os dados das chaves estrangeiras
-                        ResultSet rsColumns = metadata.getImportedKeys(null, JDBCSchema, tableName);
+                        ResultSet rsColumns = metadata.getImportedKeys(null, jdbcSchema, tableName);
 
                         while (rsColumns.next()) {
                             String parentTableName = rsColumns.getString(3);
@@ -103,8 +103,6 @@ public class DatabaseTable {
             rs.close();
 
             return tables;
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         } finally {
             if (con != null) {
                 con.close();

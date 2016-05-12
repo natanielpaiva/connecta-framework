@@ -4,7 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -51,7 +51,7 @@ public class Csv {
         for (Row row : dataSet) {
             Object[] values = row.getValues();
 
-            Map<String, Object> object = new HashMap<>(columns.length);
+            Map<String, Object> object = new LinkedHashMap<>(columns.length);
             for (int i = 0; i < values.length; i++) {
 
                 String value;
@@ -100,7 +100,7 @@ public class Csv {
         for (Row row : dataSet) {
             Object[] values = row.getValues();
             
-            Map<String, Object> object = new HashMap<>(connectorColumn.size());
+            Map<String, Object> object = new LinkedHashMap<>(connectorColumn.size());
             for (int i = 0; i < values.length; i++) {
 
                 String value;
