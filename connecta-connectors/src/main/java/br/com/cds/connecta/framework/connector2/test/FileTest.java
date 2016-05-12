@@ -7,7 +7,7 @@ import br.com.cds.connecta.framework.connector2.common.PrintResult;
 import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
 import br.com.cds.connecta.framework.connector2.context.file.FileDataContextFactory;
 import br.com.cds.connecta.framework.connector2.context.file.csv.CSVDataContextFactory;
-import br.com.cds.connecta.framework.connector2.context.file.excel.XlsDataContextFactory;
+import br.com.cds.connecta.framework.connector2.context.file.excel.ExcelDataContextFactory;
 import br.com.cds.connecta.framework.connector2.context.file.json.JsonDataContextFactory;
 import br.com.cds.connecta.framework.connector2.context.file.xml.XMLDataContextFactory;
 import java.io.File;

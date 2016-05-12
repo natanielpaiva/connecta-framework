@@ -13,6 +13,7 @@ public class Base {
 
     protected QueryBuilder queryContext = null;
     
+    //verificar a possibilidade de pagar esse método
     public DataContext createDataContext() {
         return dataContext;
     }

@@ -1,0 +1,5564 @@
+Regiao,UF,Cidade,vendas,Flag
+Norte,AC,Acrelândia,6,false
+Norte,AC,Assis Brasil,70,false
+Norte,AC,Brasiléia,69,false
+Norte,AC,Bujari,68,false
+Norte,AC,Capixaba,68,false
+Norte,AC,Cruzeiro do Sul,73,false
+Norte,AC,Epitaciolândia,69,false
+Norte,AC,Feijó,70,false
+Norte,AC,Jordão,72,false
+Norte,AC,Mâncio Lima,73,false
+Norte,AC,Manoel Urbano,69,false
+Norte,AC,Marechal Thaumaturgo,73,false
+Norte,AC,Plácido de Castro,67,false
+Norte,AC,Porto Acre,2,false
+Norte,AC,Porto Walter,73,false
+Norte,AC,Rio Branco,68,true
+Norte,AC,Rodrigues Alves,73,false
+Norte,AC,Santa Rosa do Purus,70,false
+Norte,AC,Sena Madureira,69,false
+Norte,AC,Senador Guiomard,68,false
+Norte,AC,Tarauacá,71,false
+Norte,AC,Xapuri,69,false
+Nordeste,AL,Água Branca,38,false
+Nordeste,AL,Anadia,36,false
+Nordeste,AL,Arapiraca,37,false
+Nordeste,AL,Atalaia,36,false
+Nordeste,AL,Barra de Santo Antônio,36,false
+Nordeste,AL,Barra de São Miguel,36,false
+Nordeste,AL,Batalha,3,false
+Nordeste,AL,Belém,36,false
+Nordeste,AL,Belo Monte,37,false
+Nordeste,AL,Boca da Mata,36,false
+Nordeste,AL,Branquinha,36,false
+Nordeste,AL,Cacimbinhas,37,false
+Nordeste,AL,Cajueiro,36,false
+Nordeste,AL,Campestre,36,false
+Nordeste,AL,Campo Alegre,36,false
+Nordeste,AL,Campo Grande,37,false
+Nordeste,AL,Canapi,38,false
+Nordeste,AL,Capela,36,false
+Nordeste,AL,Carneiros,37,false
+Nordeste,AL,Chã Preta,36,false
+Nordeste,AL,Coité do Nóia,37,false
+Nordeste,AL,Colônia Leopoldina,36,false
+Nordeste,AL,Coqueiro Seco,36,false
+Nordeste,AL,Coruripe,36,false
+Nordeste,AL,Craíbas,37,false
+Nordeste,AL,Delmiro Gouveia,38,false
+Nordeste,AL,Dois Riachos,37,false
+Nordeste,AL,Estrela de Alagoas,37,false
+Nordeste,AL,Feira Grande,37,false
+Nordeste,AL,Feliz Deserto,36,false
+Nordeste,AL,Flexeiras,36,false
+Nordeste,AL,Girau do Ponciano,37,false
+Nordeste,AL,Ibateguara,36,false
+Nordeste,AL,Igaci,37,false
+Nordeste,AL,Igreja Nova,1,false
+Nordeste,AL,Inhapi,38,false
+Nordeste,AL,Jacaré dos Homens,37,false
+Nordeste,AL,Jacuípe,1,false
+Nordeste,AL,Japaratinga,35,false
+Nordeste,AL,Jaramataia,37,false
+Nordeste,AL,Jequiá da Praia,36,false
+Nordeste,AL,Joaquim Gomes,36,false
+Nordeste,AL,Jundiá,1,false
+Nordeste,AL,Junqueiro,36,false
+Nordeste,AL,Lagoa da Canoa,37,false
+Nordeste,AL,Limoeiro de Anadia,37,false
+Nordeste,AL,Maceió,36,true
+Nordeste,AL,Major Isidoro,37,false
+Nordeste,AL,Mar Vermelho,36,false
+Nordeste,AL,Maragogi,35,false
+Nordeste,AL,Maravilha,1,false
+Nordeste,AL,Marechal Deodoro,36,false
+Nordeste,AL,Maribondo,36,false
+Nordeste,AL,Mata Grande,38,false
+Nordeste,AL,Matriz de Camaragibe,36,false
+Nordeste,AL,Messias,5,false
+Nordeste,AL,Minador do Negrão,37,false
+Nordeste,AL,Monteirópolis,37,false
+Nordeste,AL,Murici,36,false
+Nordeste,AL,Novo Lino,36,false
+Nordeste,AL,Olho d'Água das Flores,1,false
+Nordeste,AL,Olho d'Água do Casado,1,false
+Nordeste,AL,Olho d'Água Grande,1,false
+Nordeste,AL,Olivença,1,false
+Nordeste,AL,Ouro Branco,1,false
+Nordeste,AL,Palestina,1,false
+Nordeste,AL,Palmeira dos Índios,37,false
+Nordeste,AL,Pão de Açúcar,37,false
+Nordeste,AL,Pariconha,38,false
+Nordeste,AL,Paripueira,1,false
+Nordeste,AL,Passo de Camaragibe,35,false
+Nordeste,AL,Paulo Jacinto,1,false
+Nordeste,AL,Penedo,1,false
+Nordeste,AL,Piaçabuçu,36,false
+Nordeste,AL,Pilar,1,false
+Nordeste,AL,Pindoba,36,false
+Nordeste,AL,Piranhas,1,false
+Nordeste,AL,Poço das Trincheiras,37,false
+Nordeste,AL,Porto Calvo,35,false
+Nordeste,AL,Porto de Pedras,35,false
+Nordeste,AL,Porto Real do Colégio,37,false
+Nordeste,AL,Quebrangulo,36,false
+Nordeste,AL,Rio Largo,36,false
+Nordeste,AL,Roteiro,36,false
+Nordeste,AL,Santa Luzia do Norte,1,false
+Nordeste,AL,Santana do Ipanema,37,false
+Nordeste,AL,Santana do Mundaú,36,false
+Nordeste,AL,São Brás,37,false
+Nordeste,AL,São José da Laje,36,false
+Nordeste,AL,São José da Tapera,37,false
+Nordeste,AL,São Luís do Quitunde,36,false
+Nordeste,AL,São Miguel dos Campos,36,false
+Nordeste,AL,São Miguel dos Milagres,35,false
+Nordeste,AL,São Sebastião,1,false
+Nordeste,AL,Satuba,6,false
+Nordeste,AL,Senador Rui Palmeira,37,false
+Nordeste,AL,Tanque d'Arca,1,false
+Nordeste,AL,Taquarana,36,false
+Nordeste,AL,Teotônio Vilela,36,false
+Nordeste,AL,Traipu,37,false
+Nordeste,AL,União dos Palmares,36,false
+Nordeste,AL,Viçosa,1,false
+Norte,AM,Alvarães,65,false
+Norte,AM,Amaturá,68,false
+Norte,AM,Anamã,61,false
+Norte,AM,Anori,62,false
+Norte,AM,Apuí,1,false
+Norte,AM,Atalaia do Norte,70,false
+Norte,AM,Autazes,7,false
+Norte,AM,Barcelos,1,false
+Norte,AM,Barreirinha,57,false
+Norte,AM,Benjamin Constant,1,false
+Norte,AM,Beruri,61,false
+Norte,AM,Boa Vista do Ramos,58,false
+Norte,AM,Boca do Acre,1,false
+Norte,AM,Borba,60,false
+Norte,AM,Caapiranga,61,false
+Norte,AM,Canutama,64,false
+Norte,AM,Carauari,67,false
+Norte,AM,Careiro,60,false
+Norte,AM,Careiro da Várzea,60,false
+Norte,AM,Coari,63,false
+Norte,AM,Codajás,62,false
+Norte,AM,Eirunepé,70,false
+Norte,AM,Envira,70,false
+Norte,AM,Fonte Boa,66,false
+Norte,AM,Guajará,73,false
+Norte,AM,Humaitá,1,false
+Norte,AM,Ipixuna,1,false
+Norte,AM,Iranduba,60,false
+Norte,AM,Itacoatiara,1,false
+Norte,AM,Itamarati,1,false
+Norte,AM,Itapiranga,1,false
+Norte,AM,Japurá,1,false
+Norte,AM,Juruá,66,false
+Norte,AM,Jutaí,1,false
+Norte,AM,Lábrea,65,false
+Norte,AM,Manacapuru,61,false
+Norte,AM,Manaquiri,60,false
+Norte,AM,Manaus,60,true
+Norte,AM,Manicoré,61,false
+Norte,AM,Maraã,66,false
+Norte,AM,Maués,58,false
+Norte,AM,Nhamundá,57,false
+Norte,AM,Nova Olinda do Norte,59,false
+Norte,AM,Novo Airão,61,false
+Norte,AM,Novo Aripuanã,60,false
+Norte,AM,Parintins,57,false
+Norte,AM,Pauini,67,false
+Norte,AM,Presidente Figueiredo,60,false
+Norte,AM,Rio Preto da Eva,60,false
+Norte,AM,Santa Isabel do Rio Negro,65,false
+Norte,AM,Santo Antônio do Içá,1,false
+Norte,AM,São Gabriel da Cachoeira,67,false
+Norte,AM,São Paulo de Olivença,69,false
+Norte,AM,São Sebastião do Uatumã,58,false
+Norte,AM,Silves,58,false
+Norte,AM,Tabatinga,1,false
+Norte,AM,Tapauá,63,false
+Norte,AM,Tefé,1,false
+Norte,AM,Tonantins,68,false
+Norte,AM,Uarini,65,false
+Norte,AM,Urucará,58,false
+Norte,AM,Urucurituba,58,false
+Norte,AP,Amapá,1,false
+Norte,AP,Calçoene,5,false
+Norte,AP,Cutias,2,false
+Norte,AP,Ferreira Gomes,51,false
+Norte,AP,Itaubal,1,false
+Norte,AP,Laranjal do Jari,1,false
+Norte,AP,Macapá,51,true
+Norte,AP,Mazagão,51,false
+Norte,AP,Oiapoque,85,false
+Norte,AP,Pedra Branca do Amapari,52,false
+Norte,AP,Porto Grande,53,false
+Norte,AP,Pracuúba,1,false
+Norte,AP,Santana,51,false
+Norte,AP,Serra do Navio,52,false
+Norte,AP,Tartarugalzinho,1,false
+Nordeste,AP,Vitória do Jari,1,false
+Nordeste,BA,Abaíra,42,false
+Nordeste,BA,Abaré,39,false
+Nordeste,BA,Acajutiba,38,false
+Nordeste,BA,Adustina,8,false
+Nordeste,BA,Água Fria,1,false
+Nordeste,BA,Aiquara,40,false
+Nordeste,BA,Alagoinhas,1,false
+Nordeste,BA,Alcobaça,39,false
+Nordeste,BA,Almadina,40,false
+Nordeste,BA,Amargosa,40,false
+Nordeste,BA,Amélia Rodrigues,39,false
+Nordeste,BA,América Dourada,41,false
+Nordeste,BA,Anagé,41,false
+Nordeste,BA,Andaraí,1,false
+Nordeste,BA,Andorinha,40,false
+Nordeste,BA,Angical,1,false
+Nordeste,BA,Anguera,39,false
+Nordeste,BA,Antas,9,false
+Nordeste,BA,Antônio Cardoso,39,false
+Nordeste,BA,Antônio Gonçalves,40,false
+Nordeste,BA,Aporá,38,false
+Nordeste,BA,Apuarema,40,false
+Nordeste,BA,Araças,1,false
+Nordeste,BA,Aracatu,41,false
+Nordeste,BA,Araci,39,false
+Nordeste,BA,Aramari,38,false
+Nordeste,BA,Arataca,39,false
+Nordeste,BA,Aratuípe,39,false
+Nordeste,BA,Aurelino Leal,1,false
+Nordeste,BA,Baianópolis,1,false
+Nordeste,BA,Baixa Grande,1,false
+Nordeste,BA,Banzaê,39,false
+Nordeste,BA,Barra,1,false
+Nordeste,BA,Barra da Estiva,41,false
+Nordeste,BA,Barra do Choça,41,false
+Nordeste,BA,Barra do Mendes,42,false
+Nordeste,BA,Barra do Rocha,40,false
+Nordeste,BA,Barreiras,45,false
+Nordeste,BA,Barro Alto,1,false
+Nordeste,BA,Barro Preto,1,false
+Nordeste,BA,Barrocas,39,false
+Nordeste,BA,Belmonte,1,false
+Nordeste,BA,Belo Campo,1,false
+Nordeste,BA,Biritinga,39,false
+Nordeste,BA,Boa Nova,40,false
+Nordeste,BA,Boa Vista do Tupim,41,false
+Nordeste,BA,Bom Jesus da Lapa,43,false
+Nordeste,BA,Bom Jesus da Serra,41,false
+Nordeste,BA,Boninal,42,false
+Nordeste,BA,Bonito,1,false
+Nordeste,BA,Boquira,43,false
+Nordeste,BA,Botuporã,43,false
+Nordeste,BA,Brejões,40,false
+Nordeste,BA,Brejolândia,44,false
+Nordeste,BA,Brotas de Macaúbas,43,false
+Nordeste,BA,Brumado,42,false
+Nordeste,BA,Buerarema,39,false
+Nordeste,BA,Buritirama,44,false
+Nordeste,BA,Caatiba,40,false
+Nordeste,BA,Cabaceiras do Paraguaçu,39,false
+Nordeste,BA,Cachoeira,1,false
+Nordeste,BA,Caculé,42,false
+Nordeste,BA,Caém,40,false
+Nordeste,BA,Caetanos,41,false
+Nordeste,BA,Caetité,42,false
+Nordeste,BA,Cafarnaum,41,false
+Nordeste,BA,Cairu,39,false
+Nordeste,BA,Caldeirão Grande,40,false
+Nordeste,BA,Camacan,39,false
+Nordeste,BA,Camaçari,38,false
+Nordeste,BA,Camamu,39,false
+Nordeste,BA,Campo Alegre de Lourdes,43,false
+Nordeste,BA,Campo Formoso,1,false
+Nordeste,BA,Canápolis,1,false
+Nordeste,BA,Canarana,1,false
+Nordeste,BA,Canavieiras,39,false
+Nordeste,BA,Candeal,39,false
+Nordeste,BA,Candeias,1,false
+Nordeste,BA,Candiba,43,false
+Nordeste,BA,Cândido Sales,41,false
+Nordeste,BA,Cansanção,39,false
+Nordeste,BA,Canudos,39,false
+Nordeste,BA,Capela do Alto Alegre,40,false
+Nordeste,BA,Capim Grosso,40,false
+Nordeste,BA,Caraíbas,1,false
+Nordeste,BA,Caravelas,39,false
+Nordeste,BA,Cardeal da Silva,38,false
+Nordeste,BA,Carinhanha,44,false
+Nordeste,BA,Casa Nova,41,false
+Nordeste,BA,Castro Alves,39,false
+Nordeste,BA,Catolândia,45,false
+Nordeste,BA,Catu,38,false
+Nordeste,BA,Caturama,42,false
+Nordeste,BA,Central,42,false
+Nordeste,BA,Chorrochó,39,false
+Nordeste,BA,Cícero Dantas,38,false
+Nordeste,BA,Cipó,39,false
+Nordeste,BA,Coaraci,40,false
+Nordeste,BA,Cocos,45,false
+Nordeste,BA,Conceição da Feira,39,false
+Nordeste,BA,Conceição do Almeida,39,false
+Nordeste,BA,Conceição do Coité,39,false
+Nordeste,BA,Conceição do Jacuípe,39,false
+Nordeste,BA,Conde,1,false
+Nordeste,BA,Condeúba,42,false
+Nordeste,BA,Contendas do Sincorá,41,false
+Nordeste,BA,Coração de Maria,39,false
+Nordeste,BA,Cordeiros,42,false
+Nordeste,BA,Coribe,44,false
+Nordeste,BA,Coronel João Sá,38,false
+Nordeste,BA,Correntina,45,false
+Nordeste,BA,Cotegipe,44,false
+Nordeste,BA,Cravolândia,40,false
+Nordeste,BA,Crisópolis,38,false
+Nordeste,BA,Cristópolis,44,false
+Nordeste,BA,Cruz das Almas,39,false
+Nordeste,BA,Curaçá,40,false
+Nordeste,BA,Dário Meira,40,false
+Nordeste,BA,Dias d'Ávila,1,false
+Nordeste,BA,Dom Basílio,42,false
+Nordeste,BA,Dom Macedo Costa,39,false
+Nordeste,BA,Elísio Medrado,40,false
+Nordeste,BA,Encruzilhada,1,false
+Nordeste,BA,Entre Rios,1,false
+Nordeste,BA,Érico Cardoso,42,false
+Nordeste,BA,Esplanada,1,false
+Nordeste,BA,Euclides da Cunha,39,false
+Nordeste,BA,Eunápolis,40,false
+Nordeste,BA,Fátima,1,false
+Nordeste,BA,Feira da Mata,44,false
+Nordeste,BA,Feira de Santana,39,true
+Nordeste,BA,Filadélfia,40,false
+Nordeste,BA,Firmino Alves,40,false
+Nordeste,BA,Floresta Azul,40,false
+Nordeste,BA,Formosa do Rio Preto,45,false
+Nordeste,BA,Gandu,39,false
+Nordeste,BA,Gavião,1,false
+Nordeste,BA,Gentio do Ouro,43,false
+Nordeste,BA,Glória,1,false
+Nordeste,BA,Gongogi,39,false
+Nordeste,BA,Governador Mangabeira,39,false
+Nordeste,BA,Guajeru,42,false
+Nordeste,BA,Guanambi,43,false
+Nordeste,BA,Guaratinga,40,false
+Nordeste,BA,Heliópolis,38,false
+Nordeste,BA,Iaçu,40,false
+Nordeste,BA,Ibiassucê,42,false
+Nordeste,BA,Ibicaraí,40,false
+Nordeste,BA,Ibicoara,41,false
+Nordeste,BA,Ibicuí,1,false
+Nordeste,BA,Ibipeba,42,false
+Nordeste,BA,Ibipitanga,42,false
+Nordeste,BA,Ibiquera,41,false
+Nordeste,BA,Ibirapitanga,39,false
+Nordeste,BA,Ibirapuã,40,false
+Nordeste,BA,Ibirataia,40,false
+Nordeste,BA,Ibitiara,42,false
+Nordeste,BA,Ibititá,42,false
+Nordeste,BA,Ibotirama,43,false
+Nordeste,BA,Ichu,39,false
+Nordeste,BA,Igaporã,43,false
+Nordeste,BA,Igrapiúna,39,false
+Nordeste,BA,Iguaí,40,false
+Nordeste,BA,Ilhéus,39,false
+Nordeste,BA,Inhambupe,38,false
+Nordeste,BA,Ipecaetá,39,false
+Nordeste,BA,Ipiaú,40,false
+Nordeste,BA,Ipirá,40,false
+Nordeste,BA,Ipupiara,43,false
+Nordeste,BA,Irajuba,40,false
+Nordeste,BA,Iramaia,41,false
+Nordeste,BA,Iraquara,42,false
+Nordeste,BA,Irará,39,false
+Nordeste,BA,Irecê,42,false
+Nordeste,BA,Itabela,40,false
+Nordeste,BA,Itaberaba,40,false
+Nordeste,BA,Itabuna,39,false
+Nordeste,BA,Itacaré,39,false
+Nordeste,BA,Itaeté,41,false
+Nordeste,BA,Itagi,40,false
+Nordeste,BA,Itagibá,40,false
+Nordeste,BA,Itagimirim,40,false
+Nordeste,BA,Itaguaçu da Bahia,42,false
+Nordeste,BA,Itaju do Colônia,40,false
+Nordeste,BA,Itajuípe,39,false
+Nordeste,BA,Itamaraju,40,false
+Nordeste,BA,Itamari,40,false
+Nordeste,BA,Itambé,1,false
+Nordeste,BA,Itanagra,38,false
+Nordeste,BA,Itanhém,40,false
+Nordeste,BA,Itaparica,1,false
+Nordeste,BA,Itapé,39,false
+Nordeste,BA,Itapebi,40,false
+Nordeste,BA,Itapetinga,40,false
+Nordeste,BA,Itapicuru,38,false
+Nordeste,BA,Itapitanga,40,false
+Nordeste,BA,Itaquara,40,false
+Nordeste,BA,Itarantim,40,false
+Nordeste,BA,Itatim,40,false
+Nordeste,BA,Itiruçu,40,false
+Nordeste,BA,Itiúba,40,false
+Nordeste,BA,Itororó,40,false
+Nordeste,BA,Ituaçu,41,false
+Nordeste,BA,Ituberá,39,false
+Nordeste,BA,Iuiú,44,false
+Nordeste,BA,Jaborandi,1,false
+Nordeste,BA,Jacaraci,42,false
+Nordeste,BA,Jacobina,41,false
+Nordeste,BA,Jaguaquara,40,false
+Nordeste,BA,Jaguarari,40,false
+Nordeste,BA,Jaguaripe,39,false
+Nordeste,BA,Jandaíra,1,false
+Nordeste,BA,Jequié,40,false
+Nordeste,BA,Jeremoabo,38,false
+Nordeste,BA,Jiquiriçá,40,false
+Nordeste,BA,Jitaúna,40,false
+Nordeste,BA,João Dourado,42,false
+Nordeste,BA,Juazeiro,40,false
+Nordeste,BA,Jucuruçu,40,false
+Nordeste,BA,Jussara,1,false
+Nordeste,BA,Jussari,39,false
+Nordeste,BA,Jussiape,42,false
+Nordeste,BA,Lafaiete Coutinho,40,false
+Nordeste,BA,Lagoa Real,42,false
+Nordeste,BA,Laje,39,false
+Nordeste,BA,Lajedão,40,false
+Nordeste,BA,Lajedinho,41,false
+Nordeste,BA,Lajedo do Tabocal,40,false
+Nordeste,BA,Lamarão,1,false
+Nordeste,BA,Lapão,42,false
+Nordeste,BA,Lauro de Freitas,38,false
+Nordeste,BA,Lençóis,41,false
+Nordeste,BA,Licínio de Almeida,43,false
+Nordeste,BA,Livramento de Nossa Senhora,42,false
+Nordeste,BA,Luís Eduardo Magalhães,1,false
+Nordeste,BA,Macajuba,40,false
+Nordeste,BA,Macarani,40,false
+Nordeste,BA,Macaúbas,43,false
+Nordeste,BA,Macururé,39,false
+Nordeste,BA,Madre de Deus,1,false
+Nordeste,BA,Maetinga,41,false
+Nordeste,BA,Maiquinique,40,false
+Nordeste,BA,Mairi,40,false
+Nordeste,BA,Malhada,1,false
+Nordeste,BA,Malhada de Pedras,42,false
+Nordeste,BA,Manoel Vitorino,40,false
+Nordeste,BA,Mansidão,44,false
+Nordeste,BA,Maracás,40,false
+Nordeste,BA,Maragogipe,39,false
+Nordeste,BA,Maraú,39,false
+Nordeste,BA,Marcionílio Souza,41,false
+Nordeste,BA,Mascote,39,false
+Nordeste,BA,Mata de São João,38,false
+Nordeste,BA,Matina,43,false
+Nordeste,BA,Medeiros Neto,40,false
+Nordeste,BA,Miguel Calmon,41,false
+Nordeste,BA,Milagres,1,false
+Nordeste,BA,Mirangaba,41,false
+Nordeste,BA,Mirante,41,false
+Nordeste,BA,Monte Santo,39,false
+Nordeste,BA,Morpará,43,false
+Nordeste,BA,Morro do Chapéu,1,false
+Nordeste,BA,Mortugaba,42,false
+Nordeste,BA,Mucugê,41,false
+Nordeste,BA,Mucuri,1,false
+Nordeste,BA,Mulungu do Morro,42,false
+Nordeste,BA,Mundo Novo,1,false
+Nordeste,BA,Muniz Ferreira,39,false
+Nordeste,BA,Muquém de São Francisco,44,false
+Nordeste,BA,Muritiba,39,false
+Nordeste,BA,Mutuípe,40,false
+Nordeste,BA,Nazaré,1,false
+Nordeste,BA,Nilo Peçanha,39,false
+Nordeste,BA,Nordestina,1,false
+Nordeste,BA,Nova Canaã,40,false
+Nordeste,BA,Nova Fátima,1,false
+Nordeste,BA,Nova Ibiá,40,false
+Nordeste,BA,Nova Itarana,40,false
+Nordeste,BA,Nova Redenção,41,false
+Nordeste,BA,Nova Soure,38,false
+Nordeste,BA,Nova Viçosa,39,false
+Nordeste,BA,Novo Horizonte,1,false
+Nordeste,BA,Novo Triunfo,38,false
+Nordeste,BA,Olindina,38,false
+Nordeste,BA,Oliveira dos Brejinhos,43,false
+Nordeste,BA,Ouriçangas,39,false
+Nordeste,BA,Ourolândia,41,false
+Nordeste,BA,Palmas de Monte Alto,43,false
+Nordeste,BA,Palmeiras,1,false
+Nordeste,BA,Paramirim,42,false
+Nordeste,BA,Paratinga,43,false
+Nordeste,BA,Paripiranga,38,false
+Nordeste,BA,Pau Brasil,40,false
+Nordeste,BA,Paulo Afonso,38,false
+Nordeste,BA,Pé de Serra,40,false
+Nordeste,BA,Pedrão,39,false
+Nordeste,BA,Pedro Alexandre,38,false
+Nordeste,BA,Piatã,42,false
+Nordeste,BA,Pilão Arcado,42,false
+Nordeste,BA,Pindaí,43,false
+Nordeste,BA,Pindobaçu,40,false
+Nordeste,BA,Pintadas,40,false
+Nordeste,BA,Piraí do Norte,39,false
+Nordeste,BA,Piripá,42,false
+Nordeste,BA,Piritiba,41,false
+Nordeste,BA,Planaltino,40,false
+Nordeste,BA,Planalto,1,false
+Nordeste,BA,Poções,40,false
+Nordeste,BA,Pojuca,38,false
+Nordeste,BA,Ponto Novo,40,false
+Nordeste,BA,Porto Seguro,39,false
+Nordeste,BA,Potiraguá,40,false
+Nordeste,BA,Prado,1,false
+Nordeste,BA,Presidente Dutra,1,false
+Nordeste,BA,Presidente Jânio Quadros,42,false
+Nordeste,BA,Presidente Tancredo Neves,39,false
+Nordeste,BA,Queimadas,1,false
+Nordeste,BA,Quijingue,39,false
+Nordeste,BA,Quixabeira,40,false
+Nordeste,BA,Rafael Jambeiro,40,false
+Nordeste,BA,Remanso,42,false
+Nordeste,BA,Retirolândia,39,false
+Nordeste,BA,Riachão das Neves,45,false
+Nordeste,BA,Riachão do Jacuípe,39,false
+Nordeste,BA,Riacho de Santana,1,false
+Nordeste,BA,Ribeira do Amparo,38,false
+Nordeste,BA,Ribeira do Pombal,39,false
+Nordeste,BA,Ribeirão do Largo,41,false
+Nordeste,BA,Rio de Contas,42,false
+Nordeste,BA,Rio do Antônio,42,false
+Nordeste,BA,Rio do Pires,42,false
+Nordeste,BA,Rio Real,38,false
+Nordeste,BA,Rodelas,39,false
+Nordeste,BA,Ruy Barbosa,1,false
+Nordeste,BA,Salinas da Margarida,1,false
+Nordeste,BA,Salvador,38,true
+Nordeste,BA,Santa Bárbara,1,false
+Nordeste,BA,Santa Brígida,38,false
+Nordeste,BA,Santa Cruz Cabrália,39,false
+Nordeste,BA,Santa Cruz da Vitória,40,false
+Nordeste,BA,Santa Inês,1,false
+Nordeste,BA,Santa Luzia,1,false
+Nordeste,BA,Santa Maria da Vitória,44,false
+Nordeste,BA,Santa Rita de Cássia,45,false
+Nordeste,BA,Santa Teresinha,1,false
+Nordeste,BA,Santaluz,39,false
+Nordeste,BA,Santana,51,false
+Nordeste,BA,Santanópolis,39,false
+Nordeste,BA,Santo Amaro,39,false
+Nordeste,BA,Santo Antônio de Jesus,39,false
+Nordeste,BA,Santo Estêvão,39,false
+Nordeste,BA,São Desidério,45,false
+Nordeste,BA,São Domingos,1,false
+Nordeste,BA,São Felipe,1,false
+Nordeste,BA,São Félix,39,false
+Nordeste,BA,São Félix do Coribe,44,false
+Nordeste,BA,São Francisco do Conde,39,false
+Nordeste,BA,São Gabriel,1,false
+Nordeste,BA,São Gonçalo dos Campos,39,false
+Nordeste,BA,São José da Vitória,39,false
+Nordeste,BA,São José do Jacuípe,40,false
+Nordeste,BA,São Miguel das Matas,39,false
+Nordeste,BA,São Sebastião do Passé,38,false
+Nordeste,BA,Sapeaçu,39,false
+Nordeste,BA,Sátiro Dias,39,false
+Nordeste,BA,Saubara,39,false
+Nordeste,BA,Saúde,1,false
+Nordeste,BA,Seabra,42,false
+Nordeste,BA,Sebastião Laranjeiras,43,false
+Nordeste,BA,Senhor do Bonfim,40,false
+Nordeste,BA,Sento Sé,42,false
+Nordeste,BA,Serra do Ramalho,44,false
+Nordeste,BA,Serra Dourada,1,false
+Nordeste,BA,Serra Preta,39,false
+Nordeste,BA,Serrinha,1,false
+Nordeste,BA,Serrolândia,1,false
+Nordeste,BA,Simões Filho,1,false
+Nordeste,BA,Sítio do Mato,43,false
+Nordeste,BA,Sítio do Quinto,38,false
+Nordeste,BA,Sobradinho,1,false
+Nordeste,BA,Souto Soares,42,false
+Nordeste,BA,Tabocas do Brejo Velho,44,false
+Nordeste,BA,Tanhaçu,41,false
+Nordeste,BA,Tanque Novo,42,false
+Nordeste,BA,Tanquinho,39,false
+Nordeste,BA,Taperoá,1,false
+Nordeste,BA,Tapiramutá,41,false
+Nordeste,BA,Teixeira de Freitas,40,false
+Nordeste,BA,Teodoro Sampaio,1,false
+Nordeste,BA,Teofilândia,39,false
+Nordeste,BA,Teolândia,39,false
+Nordeste,BA,Terra Nova,1,false
+Nordeste,BA,Tremedal,41,false
+Nordeste,BA,Tucano,39,false
+Nordeste,BA,Uauá,39,false
+Nordeste,BA,Ubaíra,40,false
+Nordeste,BA,Ubaitaba,39,false
+Nordeste,BA,Ubatã,40,false
+Nordeste,BA,Uibaí,42,false
+Nordeste,BA,Umburanas,1,false
+Nordeste,BA,Una,39,false
+Nordeste,BA,Urandi,43,false
+Nordeste,BA,Uruçuca,39,false
+Nordeste,BA,Utinga,41,false
+Nordeste,BA,Valença,1,false
+Nordeste,BA,Valente,39,false
+Nordeste,BA,Várzea da Roça,40,false
+Nordeste,BA,Várzea do Poço,40,false
+Nordeste,BA,Várzea Nova,41,false
+Nordeste,BA,Varzedo,39,false
+Nordeste,BA,Vera Cruz,1,false
+Nordeste,BA,Vereda,40,false
+Nordeste,BA,Vitória da Conquista,41,false
+Nordeste,BA,Wagner,41,false
+Nordeste,BA,Wanderley,44,false
+Nordeste,BA,Wenceslau Guimarães,39,false
+Nordeste,BA,XiqueXique,43,false
+Nordeste,CE,Abaiara,39,false
+Nordeste,CE,Acarape,39,false
+Nordeste,CE,Acaraú,40,false
+Nordeste,CE,Acopiara,39,false
+Nordeste,CE,Aiuaba,40,false
+Nordeste,CE,Alcântaras,41,false
+Nordeste,CE,Altaneira,40,false
+Nordeste,CE,Alto Santo,38,false
+Nordeste,CE,Amontada,40,false
+Nordeste,CE,Antonina do Norte,40,false
+Nordeste,CE,Apuiarés,39,false
+Nordeste,CE,Aquiraz,38,false
+Nordeste,CE,Aracati,38,false
+Nordeste,CE,Aracoiaba,39,false
+Nordeste,CE,Ararendá,41,false
+Nordeste,CE,Araripe,40,false
+Nordeste,CE,Aratuba,39,false
+Nordeste,CE,Arneiroz,40,false
+Nordeste,CE,Assaré,40,false
+Nordeste,CE,Aurora,1,false
+Nordeste,CE,Baixio,1,false
+Nordeste,CE,Banabuiú,39,false
+Nordeste,CE,Barbalha,39,false
+Nordeste,CE,Barreira,39,false
+Nordeste,CE,Barro,39,false
+Nordeste,CE,Barroquinha,41,false
+Nordeste,CE,Baturité,39,false
+Nordeste,CE,Beberibe,38,false
+Nordeste,CE,Bela Cruz,40,false
+Nordeste,CE,Boa Viagem,1,false
+Nordeste,CE,Brejo Santo,39,false
+Nordeste,CE,Camocim,41,false
+Nordeste,CE,Campos Sales,40,false
+Nordeste,CE,Canindé,39,false
+Nordeste,CE,Capistrano,1,false
+Nordeste,CE,Caridade,39,false
+Nordeste,CE,Cariré,40,false
+Nordeste,CE,Caririaçu,39,false
+Nordeste,CE,Cariús,39,false
+Nordeste,CE,Carnaubal,41,false
+Nordeste,CE,Cascavel,1,false
+Nordeste,CE,Catarina,40,false
+Nordeste,CE,Catunda,40,false
+Nordeste,CE,Caucaia,39,false
+Nordeste,CE,Cedro,1,false
+Nordeste,CE,Chaval,41,false
+Nordeste,CE,Choró,39,false
+Nordeste,CE,Chorozinho,38,false
+Nordeste,CE,Coreaú,41,false
+Nordeste,CE,Crateús,41,false
+Nordeste,CE,Crato,39,false
+Nordeste,CE,Croatá,1,false
+Nordeste,CE,Cruz,1,false
+Nordeste,CE,Deputado Irapuan Pinheiro,39,false
+Nordeste,CE,Ererê,38,false
+Nordeste,CE,Eusébio,38,false
+Nordeste,CE,Farias Brito,1,false
+Nordeste,CE,Forquilha,40,false
+Nordeste,CE,Fortaleza,39,true
+Nordeste,CE,Fortim,38,false
+Nordeste,CE,Frecheirinha,41,false
+Nordeste,CE,General Sampaio,39,false
+Nordeste,CE,Graça,41,false
+Nordeste,CE,Granja,41,false
+Nordeste,CE,Granjeiro,39,false
+Nordeste,CE,Groaíras,40,false
+Nordeste,CE,Guaiúba,39,false
+Nordeste,CE,Guaraciaba do Norte,41,false
+Nordeste,CE,Guaramiranga,39,false
+Nordeste,CE,Hidrolândia,1,false
+Nordeste,CE,Horizonte,1,false
+Nordeste,CE,Ibaretama,39,false
+Nordeste,CE,Ibiapina,41,false
+Nordeste,CE,Ibicuitinga,39,false
+Nordeste,CE,Icapuí,37,false
+Nordeste,CE,Icó,1,false
+Nordeste,CE,Iguatu,1,false
+Nordeste,CE,Independência,1,false
+Nordeste,CE,Ipaporanga,41,false
+Nordeste,CE,Ipaumirim,39,false
+Nordeste,CE,Ipu,41,false
+Nordeste,CE,Ipueiras,1,false
+Nordeste,CE,Iracema,1,false
+Nordeste,CE,Irauçuba,40,false
+Nordeste,CE,Itaiçaba,38,false
+Nordeste,CE,Itaitinga,39,false
+Nordeste,CE,Itapagé,1,false
+Nordeste,CE,Itapipoca,40,false
+Nordeste,CE,Itapiúna,39,false
+Nordeste,CE,Itarema,40,false
+Nordeste,CE,Itatira,40,false
+Nordeste,CE,Jaguaretama,39,false
+Nordeste,CE,Jaguaribara,39,false
+Nordeste,CE,Jaguaribe,39,false
+Nordeste,CE,Jaguaruana,38,false
+Nordeste,CE,Jardim,1,false
+Nordeste,CE,Jati,39,false
+Nordeste,CE,Jijoca de Jericoacoara,41,false
+Nordeste,CE,Juazeiro do Norte,18,false
+Nordeste,CE,Jucás,40,false
+Nordeste,CE,Lavras da Mangabeira,39,false
+Nordeste,CE,Limoeiro do Norte,38,false
+Nordeste,CE,Madalena,40,false
+Nordeste,CE,Maracanaú,39,false
+Nordeste,CE,Maranguape,39,false
+Nordeste,CE,Marco,40,false
+Nordeste,CE,Martinópole,41,false
+Nordeste,CE,Massapê,40,false
+Nordeste,CE,Mauriti,39,false
+Nordeste,CE,Meruoca,40,false
+Nordeste,CE,Milagres,1,false
+Nordeste,CE,Milhã,39,false
+Nordeste,CE,Miraíma,40,false
+Nordeste,CE,Missão Velha,39,false
+Nordeste,CE,Mombaça,40,false
+Nordeste,CE,Monsenhor Tabosa,40,false
+Nordeste,CE,Morada Nova,38,false
+Nordeste,CE,Moraújo,41,false
+Nordeste,CE,Morrinhos,1,false
+Nordeste,CE,Mucambo,1,false
+Nordeste,CE,Mulungu,1,false
+Nordeste,CE,Nova Olinda,1,false
+Nordeste,CE,Nova Russas,41,false
+Nordeste,CE,Novo Oriente,41,false
+Nordeste,CE,Ocara,39,false
+Nordeste,CE,Orós,1,false
+Nordeste,CE,Pacajus,38,false
+Nordeste,CE,Pacatuba,1,false
+Nordeste,CE,Pacoti,39,false
+Nordeste,CE,Pacujá,41,false
+Nordeste,CE,Palhano,38,false
+Nordeste,CE,Palmácia,39,false
+Nordeste,CE,Paracuru,39,false
+Nordeste,CE,Paraipaba,39,false
+Nordeste,CE,Parambu,41,false
+Nordeste,CE,Paramoti,39,false
+Nordeste,CE,Pedra Branca,1,false
+Nordeste,CE,Penaforte,39,false
+Nordeste,CE,Pentecoste,39,false
+Nordeste,CE,Pereiro,38,false
+Nordeste,CE,Pindoretama,38,false
+Nordeste,CE,Piquet Carneiro,39,false
+Nordeste,CE,Pires Ferreira,41,false
+Nordeste,CE,Poranga,1,false
+Nordeste,CE,Porteiras,39,false
+Nordeste,CE,Potengi,40,false
+Nordeste,CE,Potiretama,38,false
+Nordeste,CE,Quiterianópolis,41,false
+Nordeste,CE,Quixadá,39,false
+Nordeste,CE,Quixelô,39,false
+Nordeste,CE,Quixeramobim,39,false
+Nordeste,CE,Quixeré,38,false
+Nordeste,CE,Redenção,1,false
+Nordeste,CE,Reriutaba,41,false
+Nordeste,CE,Russas,38,false
+Nordeste,CE,Saboeiro,40,false
+Nordeste,CE,Salitre,40,false
+Nordeste,CE,Santa Quitéria,1,false
+Nordeste,CE,Santana do Acaraú,40,false
+Nordeste,CE,Santana do Cariri,40,false
+Nordeste,CE,São Benedito,1,false
+Nordeste,CE,São Gonçalo do Amarante,1,false
+Nordeste,CE,São João do Jaguaribe,38,false
+Nordeste,CE,São Luís do Curu,1,false
+Nordeste,CE,Senador Pompeu,39,false
+Nordeste,CE,Senador Sá,40,false
+Nordeste,CE,Sobral,40,false
+Nordeste,CE,Solonópole,39,false
+Nordeste,CE,Tabuleiro do Norte,38,false
+Nordeste,CE,Tamboril,1,false
+Nordeste,CE,Tarrafas,40,false
+Nordeste,CE,Tauá,40,false
+Nordeste,CE,Tejuçuoca,40,false
+Nordeste,CE,Tianguá,41,false
+Nordeste,CE,Trairi,1,false
+Nordeste,CE,Tururu,39,false
+Nordeste,CE,Ubajara,41,false
+Nordeste,CE,Umari,1,false
+Nordeste,CE,Umirim,39,false
+Nordeste,CE,Uruburetama,40,false
+Nordeste,CE,Uruoca,41,false
+Nordeste,CE,Varjota,1,false
+Nordeste,CE,Várzea Alegre,39,false
+Nordeste,CE,Viçosa do Ceará,41,false
+Centro Oeste,DF,Brasília,48,true
+Sudeste,ES,Afonso Cláudio,41,false
+Sudeste,ES,Água Doce do Norte,41,false
+Sudeste,ES,Águia Branca,41,false
+Sudeste,ES,Alegre,42,false
+Sudeste,ES,Alfredo Chaves,41,false
+Sudeste,ES,Alto Rio Novo,41,false
+Sudeste,ES,Anchieta,41,false
+Sudeste,ES,Apiacá,42,false
+Sudeste,ES,Aracruz,40,false
+Sudeste,ES,Atilio Vivacqua,41,false
+Sudeste,ES,Baixo Guandu,41,false
+Sudeste,ES,Barra de São Francisco,41,false
+Sudeste,ES,Boa Esperança,40,false
+Sudeste,ES,Bom Jesus do Norte,42,false
+Sudeste,ES,Brejetuba,41,false
+Sudeste,ES,Cachoeiro de Itapemirim,41,true
+Sudeste,ES,Cariacica,40,false
+Sudeste,ES,Castelo,41,false
+Sudeste,ES,Colatina,41,false
+Sudeste,ES,Conceição da Barra,40,false
+Sudeste,ES,Conceição do Castelo,41,false
+Sudeste,ES,Divino de São Lourenço,42,false
+Sudeste,ES,Domingos Martins,41,false
+Sudeste,ES,Dores do Rio Preto,42,false
+Sudeste,ES,Ecoporanga,41,false
+Sudeste,ES,Fundão,40,false
+Sudeste,ES,Governador Lindenberg,41,false
+Sudeste,ES,Guaçuí,42,false
+Sudeste,ES,Guarapari,40,false
+Sudeste,ES,Ibatiba,42,false
+Sudeste,ES,Ibiraçu,40,false
+Sudeste,ES,Ibitirama,42,false
+Sudeste,ES,Iconha,41,false
+Sudeste,ES,Irupi,42,false
+Sudeste,ES,Itaguaçu,41,false
+Sudeste,ES,Itapemirim,41,false
+Sudeste,ES,Itarana,41,false
+Sudeste,ES,Iúna,42,false
+Sudeste,ES,Jaguaré,40,false
+Sudeste,ES,Jerônimo Monteiro,41,false
+Sudeste,ES,João Neiva,40,false
+Sudeste,ES,Laranja da Terra,41,false
+Sudeste,ES,Linhares,40,true
+Sudeste,ES,Mantenópolis,41,false
+Sudeste,ES,Marataízes,41,false
+Sudeste,ES,Marechal Floriano,41,false
+Sudeste,ES,Marilândia,41,false
+Sudeste,ES,Mimoso do Sul,41,false
+Sudeste,ES,Montanha,40,false
+Sudeste,ES,Mucurici,41,false
+Sudeste,ES,Muniz Freire,41,false
+Sudeste,ES,Muqui,41,false
+Sudeste,ES,Nova Venécia,40,false
+Sudeste,ES,Pancas,41,false
+Sudeste,ES,Pedro Canário,40,false
+Sudeste,ES,Pinheiros,40,false
+Sudeste,ES,Piúma,41,false
+Sudeste,ES,Ponto Belo,41,false
+Sudeste,ES,Presidente Kennedy,41,false
+Sudeste,ES,Rio Bananal,40,false
+Sudeste,ES,Rio Novo do Sul,41,false
+Sudeste,ES,Santa Leopoldina,41,false
+Sudeste,ES,Santa Maria de Jetibá,41,false
+Sudeste,ES,Santa Teresa,41,false
+Sudeste,ES,São Domingos do Norte,41,false
+Sudeste,ES,São Gabriel da Palha,41,false
+Sudeste,ES,São José do Calçado,42,false
+Sudeste,ES,São Mateus,40,true
+Sudeste,ES,São Roque do Canaã,41,false
+Sudeste,ES,Serra,40,false
+Sudeste,ES,Sooretama,40,false
+Sudeste,ES,Vargem Alta,41,false
+Sudeste,ES,Venda Nova do Imigrante,41,false
+Sudeste,ES,Viana,41,false
+Sudeste,ES,Vila Pavão,41,false
+Sudeste,ES,Vila Valério,40,false
+Sudeste,ES,Vila Velha,40,false
+Sudeste,ES,Vitória,40,true
+Centro Oeste,GO,Abadia de Goiás,49,false
+Centro Oeste,GO,Abadiânia,49,false
+Centro Oeste,GO,Acreúna,50,false
+Centro Oeste,GO,Adelândia,50,false
+Centro Oeste,GO,Água Fria de Goiás,48,false
+Centro Oeste,GO,Água Limpa,49,false
+Centro Oeste,GO,Águas Lindas de Goiás,48,false
+Centro Oeste,GO,Alexânia,49,false
+Centro Oeste,GO,Aloândia,49,false
+Centro Oeste,GO,Alto Horizonte,49,false
+Centro Oeste,GO,Alto Paraíso de Goiás,48,false
+Centro Oeste,GO,Alvorada do Norte,46,false
+Centro Oeste,GO,Amaralina,49,false
+Centro Oeste,GO,Americano do Brasil,50,false
+Centro Oeste,GO,Amorinópolis,51,false
+Centro Oeste,GO,Anápolis,49,false
+Centro Oeste,GO,Anhanguera,48,false
+Centro Oeste,GO,Anicuns,50,false
+Centro Oeste,GO,Aparecida de Goiânia,49,false
+Centro Oeste,GO,Aparecida do Rio Doce,51,false
+Centro Oeste,GO,Aporé,52,false
+Centro Oeste,GO,Araçu,50,false
+Centro Oeste,GO,Aragarças,52,false
+Centro Oeste,GO,Aragoiânia,49,false
+Centro Oeste,GO,Araguapaz,51,false
+Centro Oeste,GO,Arenópolis,52,false
+Centro Oeste,GO,Aruanã,51,false
+Centro Oeste,GO,Aurilândia,50,false
+Centro Oeste,GO,Avelinópolis,50,false
+Centro Oeste,GO,Baliza,53,false
+Centro Oeste,GO,Barro Alto,49,false
+Centro Oeste,GO,Bela Vista de Goiás,49,false
+Centro Oeste,GO,Bom Jardim de Goiás,52,false
+Centro Oeste,GO,Bom Jesus de Goiás,50,false
+Centro Oeste,GO,Bonfinópolis,49,false
+Centro Oeste,GO,Bonópolis,50,false
+Centro Oeste,GO,Brazabrantes,49,false
+Centro Oeste,GO,Britânia,51,false
+Centro Oeste,GO,Buriti Alegre,49,false
+Centro Oeste,GO,Buriti de Goiás,50,false
+Centro Oeste,GO,Buritinópolis,46,false
+Centro Oeste,GO,Cabeceiras,47,false
+Centro Oeste,GO,Cachoeira Alta,51,false
+Centro Oeste,GO,Cachoeira de Goiás,51,false
+Centro Oeste,GO,Cachoeira Dourada,49,false
+Centro Oeste,GO,Caçu,51,false
+Centro Oeste,GO,Caiapônia,52,false
+Centro Oeste,GO,Caldas Novas,49,false
+Centro Oeste,GO,Caldazinha,49,false
+Centro Oeste,GO,Campestre de Goiás,50,false
+Centro Oeste,GO,Campinaçu,49,false
+Centro Oeste,GO,Campinorte,49,false
+Centro Oeste,GO,Campo Alegre de Goiás,48,false
+Centro Oeste,GO,Campo Limpo de Goiás,49,false
+Centro Oeste,GO,Campos Belos,47,false
+Centro Oeste,GO,Campos Verdes,50,false
+Centro Oeste,GO,Carmo do Rio Verde,50,false
+Centro Oeste,GO,Castelândia,50,false
+Centro Oeste,GO,Catalão,48,false
+Centro Oeste,GO,Caturaí,49,false
+Centro Oeste,GO,Cavalcante,47,false
+Centro Oeste,GO,Ceres,50,false
+Centro Oeste,GO,Cezarina,50,false
+Centro Oeste,GO,Chapadão do Céu,53,false
+Centro Oeste,GO,Cidade Ocidental,48,false
+Centro Oeste,GO,Cocalzinho de Goiás,49,false
+Centro Oeste,GO,Colinas do Sul,48,false
+Centro Oeste,GO,Córrego do Ouro,51,false
+Centro Oeste,GO,Corumbá de Goiás,49,false
+Centro Oeste,GO,Corumbaíba,49,false
+Centro Oeste,GO,Cristalina,48,false
+Centro Oeste,GO,Cristianópolis,49,false
+Centro Oeste,GO,Crixás,50,false
+Centro Oeste,GO,Cromínia,49,false
+Centro Oeste,GO,Cumari,48,false
+Centro Oeste,GO,Damianópolis,46,false
+Centro Oeste,GO,Damolândia,49,false
+Centro Oeste,GO,Davinópolis,48,false
+Centro Oeste,GO,Diorama,51,false
+Centro Oeste,GO,Divinópolis de Goiás,46,false
+Centro Oeste,GO,Doverlândia,52,false
+Centro Oeste,GO,Edealina,50,false
+Centro Oeste,GO,Edéia,50,false
+Centro Oeste,GO,Estrela do Norte,49,false
+Centro Oeste,GO,Faina,50,false
+Centro Oeste,GO,Fazenda Nova,51,false
+Centro Oeste,GO,Firminópolis,50,false
+Centro Oeste,GO,Flores de Goiás,47,false
+Centro Oeste,GO,Formosa,47,false
+Centro Oeste,GO,Formoso,49,false
+Centro Oeste,GO,Gameleira de Goiás,49,false
+Centro Oeste,GO,Goianápolis,49,false
+Centro Oeste,GO,Goiandira,48,false
+Centro Oeste,GO,Goianésia,49,false
+Centro Oeste,GO,Goiânia,49,true
+Centro Oeste,GO,Goianira,49,false
+Centro Oeste,GO,Goiás,50,false
+Centro Oeste,GO,Goiatuba,49,false
+Centro Oeste,GO,Gouvelândia,50,false
+Centro Oeste,GO,Guapó,50,false
+Centro Oeste,GO,Guaraíta,50,false
+Centro Oeste,GO,Guarani de Goiás,46,false
+Centro Oeste,GO,Guarinos,50,false
+Centro Oeste,GO,Heitoraí,50,false
+Centro Oeste,GO,Hidrolândia,49,false
+Centro Oeste,GO,Hidrolina,49,false
+Centro Oeste,GO,Iaciara,47,false
+Centro Oeste,GO,Inaciolândia,50,false
+Centro Oeste,GO,Indiara,50,false
+Centro Oeste,GO,Inhumas,50,false
+Centro Oeste,GO,Ipameri,48,false
+Centro Oeste,GO,Ipiranga de Goiás,50,false
+Centro Oeste,GO,Iporá,51,false
+Centro Oeste,GO,Israelândia,51,false
+Centro Oeste,GO,Itaberaí,50,false
+Centro Oeste,GO,Itaguari,50,false
+Centro Oeste,GO,Itaguaru,50,false
+Centro Oeste,GO,Itajá,52,false
+Centro Oeste,GO,Itapaci,50,false
+Centro Oeste,GO,Itapirapuã,51,false
+Centro Oeste,GO,Itapuranga,50,false
+Centro Oeste,GO,Itarumã,51,false
+Centro Oeste,GO,Itauçu,50,false
+Centro Oeste,GO,Itumbiara,49,false
+Centro Oeste,GO,Ivolândia,51,false
+Centro Oeste,GO,Jandaia,50,false
+Centro Oeste,GO,Jaraguá,49,false
+Centro Oeste,GO,Jataí,52,false
+Centro Oeste,GO,Jaupaci,51,false
+Centro Oeste,GO,Jesúpolis,49,false
+Centro Oeste,GO,Joviânia,50,false
+Centro Oeste,GO,Jussara,51,false
+Centro Oeste,GO,Lagoa Santa,51,false
+Centro Oeste,GO,Leopoldo de Bulhões,49,false
+Centro Oeste,GO,Luziânia,48,false
+Centro Oeste,GO,Mairipotaba,49,false
+Centro Oeste,GO,Mambaí,46,false
+Centro Oeste,GO,Mara Rosa,49,false
+Centro Oeste,GO,Marzagão,49,false
+Centro Oeste,GO,Matrinchã,51,false
+Centro Oeste,GO,Maurilândia,50,false
+Centro Oeste,GO,Mimoso de Goiás,48,false
+Centro Oeste,GO,Minaçu,48,false
+Centro Oeste,GO,Mineiros,53,false
+Centro Oeste,GO,Moiporá,51,false
+Centro Oeste,GO,Monte Alegre de Goiás,47,false
+Centro Oeste,GO,Montes Claros de Goiás,51,false
+Centro Oeste,GO,Montividiu,51,false
+Centro Oeste,GO,Montividiu do Norte,49,false
+Centro Oeste,GO,Morrinhos,49,false
+Centro Oeste,GO,Morro Agudo de Goiás,50,false
+Centro Oeste,GO,Mossâmedes,50,false
+Centro Oeste,GO,Mozarlândia,51,false
+Centro Oeste,GO,Mundo Novo,50,false
+Centro Oeste,GO,Mutunópolis,49,false
+Centro Oeste,GO,Nazário,50,false
+Centro Oeste,GO,Nerópolis,49,false
+Centro Oeste,GO,Niquelândia,48,false
+Centro Oeste,GO,Nova América,50,false
+Centro Oeste,GO,Nova Aurora,48,false
+Centro Oeste,GO,Nova Crixás,50,false
+Centro Oeste,GO,Nova Glória,50,false
+Centro Oeste,GO,Nova Iguaçu de Goiás,49,false
+Centro Oeste,GO,Nova Roma,47,false
+Centro Oeste,GO,Nova Veneza,49,false
+Centro Oeste,GO,Novo Brasil,51,false
+Centro Oeste,GO,Novo Gama,48,false
+Centro Oeste,GO,Novo Planalto,50,false
+Centro Oeste,GO,Orizona,48,false
+Centro Oeste,GO,Ouro Verde de Goiás,49,false
+Centro Oeste,GO,Ouvidor,48,false
+Centro Oeste,GO,Padre Bernardo,48,false
+Centro Oeste,GO,Palestina de Goiás,52,false
+Centro Oeste,GO,Palmeiras de Goiás,50,false
+Centro Oeste,GO,Palmelo,48,false
+Centro Oeste,GO,Palminópolis,50,false
+Centro Oeste,GO,Panamá,49,false
+Centro Oeste,GO,Paranaiguara,51,false
+Centro Oeste,GO,Paraúna,50,false
+Centro Oeste,GO,Perolândia,52,false
+Centro Oeste,GO,Petrolina de Goiás,49,false
+Centro Oeste,GO,Pilar de Goiás,50,false
+Centro Oeste,GO,Piracanjuba,49,false
+Centro Oeste,GO,Piranhas,52,false
+Centro Oeste,GO,Pirenópolis,49,false
+Centro Oeste,GO,Pires do Rio,48,false
+Centro Oeste,GO,Planaltina,48,false
+Centro Oeste,GO,Pontalina,49,false
+Centro Oeste,GO,Porangatu,49,false
+Centro Oeste,GO,Porteirão,50,false
+Centro Oeste,GO,Portelândia,53,false
+Centro Oeste,GO,Posse,46,false
+Centro Oeste,GO,Professor Jamil,49,false
+Centro Oeste,GO,Quirinópolis,50,false
+Centro Oeste,GO,Rialma,50,false
+Centro Oeste,GO,Rianápolis,50,false
+Centro Oeste,GO,Rio Quente,49,false
+Centro Oeste,GO,Rio Verde,51,false
+Centro Oeste,GO,Rubiataba,50,false
+Centro Oeste,GO,Sanclerlândia,50,false
+Centro Oeste,GO,Santa Bárbara de Goiás,50,false
+Centro Oeste,GO,Santa Cruz de Goiás,48,false
+Centro Oeste,GO,Santa Fé de Goiás,51,false
+Centro Oeste,GO,Santa Helena de Goiás,51,false
+Centro Oeste,GO,Santa Isabel,49,false
+Centro Oeste,GO,Santa Rita do Araguaia,53,false
+Centro Oeste,GO,Santa Rita do Novo Destino,49,false
+Centro Oeste,GO,Santa Rosa de Goiás,49,false
+Centro Oeste,GO,Santa Tereza de Goiás,49,false
+Centro Oeste,GO,Santa Terezinha de Goiás,50,false
+Centro Oeste,GO,Santo Antônio da Barra,51,false
+Centro Oeste,GO,Santo Antônio de Goiás,49,false
+Centro Oeste,GO,Santo Antônio do Descoberto,48,false
+Centro Oeste,GO,São Domingos,46,false
+Centro Oeste,GO,São Francisco de Goiás,49,false
+Centro Oeste,GO,São João da Paraúna,50,false
+Centro Oeste,GO,São João d'Aliança,1,false
+Centro Oeste,GO,São Luís de Montes Belos,50,false
+Centro Oeste,GO,São Luíz do Norte,49,false
+Centro Oeste,GO,São Miguel do Araguaia,50,false
+Centro Oeste,GO,São Miguel do Passa Quatro,49,false
+Centro Oeste,GO,São Patrício,50,false
+Centro Oeste,GO,São Simão,51,false
+Centro Oeste,GO,Senador Canedo,49,false
+Centro Oeste,GO,Serranópolis,52,false
+Centro Oeste,GO,Silvânia,49,false
+Centro Oeste,GO,Simolândia,1,false
+Centro Oeste,GO,Sítio d'Abadia,1,false
+Centro Oeste,GO,Taquaral de Goiás,50,false
+Centro Oeste,GO,Teresina de Goiás,47,false
+Centro Oeste,GO,Terezópolis de Goiás,49,false
+Centro Oeste,GO,Três Ranchos,48,false
+Centro Oeste,GO,Trindade,49,false
+Centro Oeste,GO,Trombas,49,false
+Centro Oeste,GO,Turvânia,50,false
+Centro Oeste,GO,Turvelândia,50,false
+Centro Oeste,GO,Uirapuru,50,false
+Centro Oeste,GO,Uruaçu,49,false
+Centro Oeste,GO,Uruana,50,false
+Centro Oeste,GO,Urutaí,48,false
+Centro Oeste,GO,Valparaíso de Goiás,48,false
+Centro Oeste,GO,Varjão,50,false
+Centro Oeste,GO,Vianópolis,49,false
+Centro Oeste,GO,Vicentinópolis,50,false
+Centro Oeste,GO,Vila Boa,47,false
+Centro Oeste,GO,Vila Propício,49,false
+Nordeste,MA,Açailândia,47,false
+Nordeste,MA,Afonso Cunha,43,false
+Nordeste,MA,Água Doce do Maranhão,42,false
+Nordeste,MA,Alcântara,44,false
+Nordeste,MA,Aldeias Altas,43,false
+Nordeste,MA,Altamira do Maranhão,45,false
+Nordeste,MA,Alto Alegre do Maranhão,44,false
+Nordeste,MA,Alto Alegre do Pindaré,46,false
+Nordeste,MA,Alto Parnaíba,46,false
+Nordeste,MA,Amapá do Maranhão,46,false
+Nordeste,MA,Amarante do Maranhão,47,false
+Nordeste,MA,Anajatuba,45,false
+Nordeste,MA,Anapurus,43,false
+Nordeste,MA,ApicumAçu,45,false
+Nordeste,MA,Araguanã,1,false
+Nordeste,MA,Araioses,42,false
+Nordeste,MA,Arame,46,false
+Nordeste,MA,Arari,45,false
+Nordeste,MA,Axixá,44,false
+Nordeste,MA,Bacabal,45,false
+Nordeste,MA,Bacabeira,44,false
+Nordeste,MA,Bacuri,45,false
+Nordeste,MA,Bacurituba,45,false
+Nordeste,MA,Balsas,46,false
+Nordeste,MA,Barão de Grajaú,43,false
+Nordeste,MA,Barra do Corda,45,false
+Nordeste,MA,Barreirinhas,43,false
+Nordeste,MA,Bela Vista do Maranhão,45,false
+Nordeste,MA,Belágua,44,false
+Nordeste,MA,Benedito Leite,45,false
+Nordeste,MA,Bequimão,45,false
+Nordeste,MA,Bernardo do Mearim,45,false
+Nordeste,MA,Boa Vista do Gurupi,46,false
+Nordeste,MA,Bom Jardim,1,false
+Nordeste,MA,Bom Jesus das Selvas,47,false
+Nordeste,MA,Bom Lugar,45,false
+Nordeste,MA,Brejo,43,false
+Nordeste,MA,Brejo de Areia,46,false
+Nordeste,MA,Buriti,1,false
+Nordeste,MA,Buriti Bravo,44,false
+Nordeste,MA,Buriticupu,46,false
+Nordeste,MA,Buritirana,1,false
+Nordeste,MA,Cachoeira Grande,44,false
+Nordeste,MA,Cajapió,45,false
+Nordeste,MA,Cajari,45,false
+Nordeste,MA,Campestre do Maranhão,47,false
+Nordeste,MA,Cândido Mendes,46,false
+Nordeste,MA,Cantanhede,44,false
+Nordeste,MA,Capinzal do Norte,44,false
+Nordeste,MA,Carolina,47,false
+Nordeste,MA,Carutapera,46,false
+Nordeste,MA,Caxias,43,false
+Nordeste,MA,Cedral,1,false
+Nordeste,MA,Central do Maranhão,45,false
+Nordeste,MA,Centro do Guilherme,46,false
+Nordeste,MA,Centro Novo do Maranhão,46,false
+Nordeste,MA,Chapadinha,43,false
+Nordeste,MA,Cidelândia,48,false
+Nordeste,MA,Codó,44,false
+Nordeste,MA,Coelho Neto,43,false
+Nordeste,MA,Colinas,1,false
+Nordeste,MA,Conceição do LagoAçu,45,false
+Nordeste,MA,Coroatá,44,false
+Nordeste,MA,Cururupu,45,false
+Nordeste,MA,Davinópolis,48,false
+Nordeste,MA,Dom Pedro,44,false
+Nordeste,MA,Duque Bacelar,43,false
+Nordeste,MA,Esperantinópolis,45,false
+Nordeste,MA,Estreito,52,false
+Nordeste,MA,Feira Nova do Maranhão,47,false
+Nordeste,MA,Fernando Falcão,45,false
+Nordeste,MA,Formosa da Serra Negra,46,false
+Nordeste,MA,Fortaleza dos Nogueiras,46,false
+Nordeste,MA,Fortuna,44,false
+Nordeste,MA,Godofredo Viana,46,false
+Nordeste,MA,Gonçalves Dias,44,false
+Nordeste,MA,Governador Archer,44,false
+Nordeste,MA,Governador Edison Lobão,47,false
+Nordeste,MA,Governador Eugênio Barros,44,false
+Nordeste,MA,Governador Luiz Rocha,44,false
+Nordeste,MA,Governador Newton Bello,46,false
+Nordeste,MA,Governador Nunes Freire,46,false
+Nordeste,MA,Graça Aranha,1,false
+Nordeste,MA,Grajaú,1,false
+Nordeste,MA,Guimarães,45,false
+Nordeste,MA,Humberto de Campos,43,false
+Nordeste,MA,Icatu,1,false
+Nordeste,MA,Igarapé do Meio,45,false
+Nordeste,MA,Igarapé Grande,45,false
+Nordeste,MA,Imperatriz,47,false
+Nordeste,MA,Itaipava do Grajaú,46,false
+Nordeste,MA,Itapecuru Mirim,44,false
+Nordeste,MA,Itinga do Maranhão,48,false
+Nordeste,MA,Jatobá,1,false
+Nordeste,MA,Jenipapo dos Vieiras,46,false
+Nordeste,MA,João Lisboa,47,false
+Nordeste,MA,Joselândia,1,false
+Nordeste,MA,Junco do Maranhão,46,false
+Nordeste,MA,Lago da Pedra,45,false
+Nordeste,MA,Lago do Junco,45,false
+Nordeste,MA,Lago dos Rodrigues,45,false
+Nordeste,MA,Lago Verde,1,false
+Nordeste,MA,Lagoa do Mato,1,false
+Nordeste,MA,Lagoa Grande do Maranhão,45,false
+Nordeste,MA,Lajeado Novo,47,false
+Nordeste,MA,Lima Campos,1,false
+Nordeste,MA,Loreto,1,false
+Nordeste,MA,Luís Domingues,46,false
+Nordeste,MA,Magalhães de Almeida,42,false
+Nordeste,MA,Maracaçumé,46,false
+Nordeste,MA,Marajá do Sena,45,false
+Nordeste,MA,Maranhãozinho,46,false
+Nordeste,MA,Mata Roma,43,false
+Nordeste,MA,Matinha,45,false
+Nordeste,MA,Matões,43,false
+Nordeste,MA,Matões do Norte,45,false
+Nordeste,MA,Milagres do Maranhão,43,false
+Nordeste,MA,Mirador,1,false
+Nordeste,MA,Miranda do Norte,45,false
+Nordeste,MA,Mirinzal,1,false
+Nordeste,MA,Monção,45,false
+Nordeste,MA,Montes Altos,47,false
+Nordeste,MA,Morros,44,false
+Nordeste,MA,Nina Rodrigues,44,false
+Nordeste,MA,Nova Colinas,46,false
+Nordeste,MA,Nova Iorque,44,false
+Nordeste,MA,Nova Olinda do Maranhão,46,false
+Nordeste,MA,Olho d'Água das Cunhãs,1,false
+Nordeste,MA,Olinda Nova do Maranhão,45,false
+Nordeste,MA,Paço do Lumiar,44,false
+Nordeste,MA,Palmeirândia,45,false
+Nordeste,MA,Paraibano,44,false
+Nordeste,MA,Parnarama,43,false
+Nordeste,MA,Passagem Franca,44,false
+Nordeste,MA,Pastos Bons,44,false
+Nordeste,MA,Paulino Neves,43,false
+Nordeste,MA,Paulo Ramos,45,false
+Nordeste,MA,Pedreiras,1,false
+Nordeste,MA,Pedro do Rosário,45,false
+Nordeste,MA,Penalva,45,false
+Nordeste,MA,Peri Mirim,45,false
+Nordeste,MA,Peritoró,44,false
+Nordeste,MA,PindaréMirim,45,false
+Nordeste,MA,Pinheiro,1,false
+Nordeste,MA,Pio XII,45,false
+Nordeste,MA,Pirapemas,44,false
+Nordeste,MA,Poção de Pedras,45,false
+Nordeste,MA,Porto Franco,47,false
+Nordeste,MA,Porto Rico do Maranhão,45,false
+Nordeste,MA,Presidente Dutra,1,false
+Nordeste,MA,Presidente Juscelino,1,false
+Nordeste,MA,Presidente Médici,1,false
+Nordeste,MA,Presidente Sarney,45,false
+Nordeste,MA,Presidente Vargas,44,false
+Nordeste,MA,Primeira Cruz,43,false
+Nordeste,MA,Raposa,44,false
+Nordeste,MA,Riachão,1,false
+Nordeste,MA,Ribamar Fiquene,47,false
+Nordeste,MA,Rosário,1,false
+Nordeste,MA,Sambaíba,1,false
+Nordeste,MA,Santa Filomena do Maranhão,45,false
+Nordeste,MA,Santa Helena,1,false
+Nordeste,MA,Santa Inês,1,false
+Nordeste,MA,Santa Luzia,1,false
+Nordeste,MA,Santa Luzia do Paruá,46,false
+Nordeste,MA,Santa Quitéria do Maranhão,43,false
+Nordeste,MA,Santa Rita,1,false
+Nordeste,MA,Santana do Maranhão,42,false
+Nordeste,MA,Santo Amaro do Maranhão,43,false
+Nordeste,MA,Santo Antônio dos Lopes,44,false
+Nordeste,MA,São Benedito do Rio Preto,44,false
+Nordeste,MA,São Bento,1,false
+Nordeste,MA,São Bernardo,1,false
+Nordeste,MA,São Domingos do Azeitão,45,false
+Nordeste,MA,São Domingos do Maranhão,44,false
+Nordeste,MA,São Félix de Balsas,45,false
+Nordeste,MA,São Francisco do Brejão,47,false
+Nordeste,MA,São Francisco do Maranhão,43,false
+Nordeste,MA,São João Batista,1,false
+Nordeste,MA,São João do Carú,46,false
+Nordeste,MA,São João do Paraíso,1,false
+Nordeste,MA,São João do Soter,44,false
+Nordeste,MA,São João dos Patos,44,false
+Nordeste,MA,São José de Ribamar,44,false
+Nordeste,MA,São José dos Basílios,45,false
+Nordeste,MA,São Luís,44,true
+Nordeste,MA,São Luís Gonzaga do Maranhão,45,false
+Nordeste,MA,São Mateus do Maranhão,44,false
+Nordeste,MA,São Pedro da Água Branca,48,false
+Nordeste,MA,São Pedro dos Crentes,47,false
+Nordeste,MA,São Raimundo das Mangabeiras,45,false
+Nordeste,MA,São Raimundo do Doca Bezerra,45,false
+Nordeste,MA,São Roberto,1,false
+Nordeste,MA,São Vicente Ferrer,1,false
+Nordeste,MA,Satubinha,45,false
+Nordeste,MA,Senador Alexandre Costa,44,false
+Nordeste,MA,Senador La Rocque,47,false
+Nordeste,MA,Serrano do Maranhão,45,false
+Nordeste,MA,Sítio Novo,1,false
+Nordeste,MA,Sucupira do Norte,44,false
+Nordeste,MA,Sucupira do Riachão,44,false
+Nordeste,MA,Tasso Fragoso,46,false
+Nordeste,MA,Timbiras,44,false
+Nordeste,MA,Timon,43,false
+Nordeste,MA,Trizidela do Vale,45,false
+Nordeste,MA,Tufilândia,46,false
+Nordeste,MA,Tuntum,45,false
+Nordeste,MA,Turiaçu,45,false
+Nordeste,MA,Turilândia,45,false
+Nordeste,MA,Tutóia,42,false
+Nordeste,MA,Urbano Santos,43,false
+Nordeste,MA,Vargem Grande,44,false
+Nordeste,MA,Viana,40,false
+Nordeste,MA,Vila Nova dos Martírios,48,false
+Nordeste,MA,Vitória do Mearim,45,false
+Nordeste,MA,Vitorino Freire,45,false
+Nordeste,MA,Zé Doca,46,false
+Centro Oeste,MG,Abadia dos Dourados,47,false
+Centro Oeste,MG,Abaeté,45,false
+Centro Oeste,MG,Abre Campo,42,false
+Centro Oeste,MG,Acaiaca,43,false
+Centro Oeste,MG,Açucena,43,false
+Centro Oeste,MG,Água Boa,1,false
+Centro Oeste,MG,Água Comprida,48,false
+Centro Oeste,MG,Aguanil,45,false
+Centro Oeste,MG,Águas Formosas,41,false
+Centro Oeste,MG,Águas Vermelhas,41,false
+Centro Oeste,MG,Aimorés,41,false
+Centro Oeste,MG,Aiuruoca,45,false
+Centro Oeste,MG,Alagoa,45,false
+Centro Oeste,MG,Albertina,47,false
+Centro Oeste,MG,Além Paraíba,1,false
+Centro Oeste,MG,Alfenas,1,false
+Centro Oeste,MG,Alfredo Vasconcelos,44,false
+Centro Oeste,MG,Almenara,1,false
+Centro Oeste,MG,Alpercata,1,false
+Centro Oeste,MG,Alpinópolis,46,false
+Centro Oeste,MG,Alterosa,46,false
+Centro Oeste,MG,Alto Caparaó,42,false
+Centro Oeste,MG,Alto Jequitibá,42,false
+Centro Oeste,MG,Alto Rio Doce,43,false
+Centro Oeste,MG,Alvarenga,42,false
+Centro Oeste,MG,Alvinópolis,43,false
+Centro Oeste,MG,Alvorada de Minas,5,false
+Centro Oeste,MG,Amparo do Serra,43,false
+Centro Oeste,MG,Andradas,1,false
+Centro Oeste,MG,Andrelândia,44,false
+Centro Oeste,MG,Angelândia,42,false
+Centro Oeste,MG,Antônio Carlos,1,false
+Centro Oeste,MG,Antônio Dias,43,false
+Centro Oeste,MG,Antônio Prado de Minas,42,false
+Centro Oeste,MG,Araçaí,44,false
+Centro Oeste,MG,Aracitaba,43,false
+Centro Oeste,MG,Araçuaí,42,false
+Centro Oeste,MG,Araguari,48,false
+Centro Oeste,MG,Arantina,44,false
+Centro Oeste,MG,Araponga,43,false
+Centro Oeste,MG,Araporã,49,false
+Centro Oeste,MG,Arapuá,1,false
+Centro Oeste,MG,Araújos,45,false
+Centro Oeste,MG,Araxá,47,false
+Centro Oeste,MG,Arceburgo,47,false
+Centro Oeste,MG,Arcos,46,false
+Centro Oeste,MG,Areado,1,false
+Centro Oeste,MG,Argirita,43,false
+Centro Oeste,MG,Aricanduva,1,false
+Centro Oeste,MG,Arinos,46,false
+Centro Oeste,MG,Astolfo Dutra,43,false
+Centro Oeste,MG,Ataléia,41,false
+Centro Oeste,MG,Augusto de Lima,44,false
+Centro Oeste,MG,Baependi,45,false
+Centro Oeste,MG,Baldim,44,false
+Centro Oeste,MG,Bambuí,46,false
+Centro Oeste,MG,Bandeira,1,false
+Centro Oeste,MG,Bandeira do Sul,46,false
+Centro Oeste,MG,Barão de Cocais,43,false
+Centro Oeste,MG,Barão de Monte Alto,42,false
+Centro Oeste,MG,Barbacena,44,false
+Centro Oeste,MG,Barra Longa,43,false
+Centro Oeste,MG,Barroso,44,false
+Centro Oeste,MG,Bela Vista de Minas,43,false
+Centro Oeste,MG,Belmiro Braga,43,false
+Centro Oeste,MG,Belo Horizonte,44,true
+Centro Oeste,MG,Belo Oriente,42,false
+Centro Oeste,MG,Belo Vale,44,false
+Centro Oeste,MG,Berilo,42,false
+Centro Oeste,MG,Berizal,42,false
+Centro Oeste,MG,Bertópolis,41,false
+Centro Oeste,MG,Betim,44,false
+Centro Oeste,MG,Bias Fortes,44,false
+Centro Oeste,MG,Bicas,43,false
+Centro Oeste,MG,Biquinhas,46,false
+Centro Oeste,MG,Boa Esperança,1,false
+Centro Oeste,MG,Bocaina de Minas,44,false
+Centro Oeste,MG,Bocaiúva,15,false
+Centro Oeste,MG,Bom Despacho,1,false
+Centro Oeste,MG,Bom Jardim de Minas,44,false
+Centro Oeste,MG,Bom Jesus da Penha,47,false
+Centro Oeste,MG,Bom Jesus do Amparo,43,false
+Centro Oeste,MG,Bom Jesus do Galho,42,false
+Centro Oeste,MG,Bom Repouso,45,false
+Centro Oeste,MG,Bom Sucesso,1,false
+Centro Oeste,MG,Bonfim,1,false
+Centro Oeste,MG,Bonfinópolis de Minas,46,false
+Centro Oeste,MG,Bonito de Minas,45,false
+Centro Oeste,MG,Borda da Mata,46,false
+Centro Oeste,MG,Botelhos,46,false
+Centro Oeste,MG,Botumirim,43,false
+Centro Oeste,MG,Brás Pires,43,false
+Centro Oeste,MG,Brasilândia de Minas,46,false
+Centro Oeste,MG,Brasília de Minas,44,false
+Centro Oeste,MG,Brasópolis,46,false
+Centro Oeste,MG,Braúnas,43,false
+Centro Oeste,MG,Brumadinho,44,false
+Centro Oeste,MG,Bueno Brandão,46,false
+Centro Oeste,MG,Buenópolis,44,false
+Centro Oeste,MG,Bugre,1,false
+Centro Oeste,MG,Buritis,1,false
+Centro Oeste,MG,Buritizeiro,45,false
+Centro Oeste,MG,Cabeceira Grande,47,false
+Centro Oeste,MG,Cabo Verde,46,false
+Centro Oeste,MG,Cachoeira da Prata,44,false
+Centro Oeste,MG,Cachoeira de Minas,46,false
+Centro Oeste,MG,Cachoeira de Pajeú,41,false
+Centro Oeste,MG,Cachoeira Dourada,49,false
+Centro Oeste,MG,Caetanópolis,44,false
+Centro Oeste,MG,Caeté,44,false
+Centro Oeste,MG,Caiana,42,false
+Centro Oeste,MG,Cajuri,43,false
+Centro Oeste,MG,Caldas,46,false
+Centro Oeste,MG,Camacho,45,false
+Centro Oeste,MG,Camanducaia,46,false
+Centro Oeste,MG,Cambuí,46,false
+Centro Oeste,MG,Cambuquira,45,false
+Centro Oeste,MG,Campanário,1,false
+Centro Oeste,MG,Campanha,45,false
+Centro Oeste,MG,Campestre,1,false
+Centro Oeste,MG,Campina Verde,49,false
+Centro Oeste,MG,Campo Azul,45,false
+Centro Oeste,MG,Campo Belo,45,false
+Centro Oeste,MG,Campo do Meio,1,false
+Centro Oeste,MG,Campo Florido,49,false
+Centro Oeste,MG,Campos Altos,46,false
+Centro Oeste,MG,Campos Gerais,1,false
+Centro Oeste,MG,Cana Verde,45,false
+Centro Oeste,MG,Canaã,1,false
+Centro Oeste,MG,Canápolis,1,false
+Centro Oeste,MG,Candeias,1,false
+Centro Oeste,MG,Cantagalo,1,false
+Centro Oeste,MG,Caparaó,42,false
+Centro Oeste,MG,Capela Nova,44,false
+Centro Oeste,MG,Capelinha,1,false
+Centro Oeste,MG,Capetinga,47,false
+Centro Oeste,MG,Capim Branco,44,false
+Centro Oeste,MG,Capinópolis,50,false
+Centro Oeste,MG,Capitão Andrade,42,false
+Centro Oeste,MG,Capitão Enéas,1,false
+Centro Oeste,MG,Capitólio,46,false
+Centro Oeste,MG,Caputira,42,false
+Centro Oeste,MG,Caraí,42,false
+Centro Oeste,MG,Caranaíba,1,false
+Centro Oeste,MG,Carandaí,5,false
+Centro Oeste,MG,Carangola,42,false
+Centro Oeste,MG,Caratinga,42,false
+Centro Oeste,MG,Carbonita,43,false
+Centro Oeste,MG,Careaçu,46,false
+Centro Oeste,MG,Carlos Chagas,41,false
+Centro Oeste,MG,Carmésia,43,false
+Centro Oeste,MG,Carmo da Cachoeira,45,false
+Centro Oeste,MG,Carmo da Mata,45,false
+Centro Oeste,MG,Carmo de Minas,45,false
+Centro Oeste,MG,Carmo do Cajuru,45,false
+Centro Oeste,MG,Carmo do Paranaíba,46,false
+Centro Oeste,MG,Carmo do Rio Claro,46,false
+Centro Oeste,MG,Carmópolis de Minas,35,false
+Centro Oeste,MG,Carneirinho,51,false
+Centro Oeste,MG,Carrancas,45,false
+Centro Oeste,MG,Carvalhópolis,46,false
+Centro Oeste,MG,Carvalhos,44,false
+Centro Oeste,MG,Casa Grande,44,false
+Centro Oeste,MG,Cascalho Rico,48,false
+Centro Oeste,MG,Cássia,47,false
+Centro Oeste,MG,Cataguases,43,false
+Centro Oeste,MG,Catas Altas,43,false
+Centro Oeste,MG,Catas Altas da Noruega,43,false
+Centro Oeste,MG,Catuji,42,false
+Centro Oeste,MG,Catuti,43,false
+Centro Oeste,MG,Caxambu,45,false
+Centro Oeste,MG,Cedro do Abaeté,46,false
+Centro Oeste,MG,Central de Minas,41,false
+Centro Oeste,MG,Centralina,49,false
+Centro Oeste,MG,Chácara,43,false
+Centro Oeste,MG,Chalé,42,false
+Centro Oeste,MG,Chapada do Norte,43,false
+Centro Oeste,MG,Chapada Gaúcha,1,false
+Centro Oeste,MG,Chiador,43,false
+Centro Oeste,MG,Cipotânea,43,false
+Centro Oeste,MG,Claraval,47,false
+Centro Oeste,MG,Claro dos Poções,44,false
+Centro Oeste,MG,Cláudio,45,false
+Centro Oeste,MG,Coimbra,1,false
+Centro Oeste,MG,Coluna,43,false
+Centro Oeste,MG,Comendador Gomes,49,false
+Centro Oeste,MG,Comercinho,42,false
+Centro Oeste,MG,Conceição da Aparecida,46,false
+Centro Oeste,MG,Conceição da Barra de Minas,44,false
+Centro Oeste,MG,Conceição das Alagoas,48,false
+Centro Oeste,MG,Conceição das Pedras,45,false
+Centro Oeste,MG,Conceição de Ipanema,42,false
+Centro Oeste,MG,Conceição do Mato Dentro,43,false
+Centro Oeste,MG,Conceição do Pará,45,false
+Centro Oeste,MG,Conceição do Rio Verde,45,false
+Centro Oeste,MG,Conceição dos Ouros,46,false
+Centro Oeste,MG,Cônego Marinho,44,false
+Centro Oeste,MG,Confins,44,false
+Centro Oeste,MG,Congonhal,46,false
+Centro Oeste,MG,Congonhas,1,false
+Centro Oeste,MG,Congonhas do Norte,44,false
+Centro Oeste,MG,Conquista,48,false
+Centro Oeste,MG,Conselheiro Lafaiete,44,false
+Centro Oeste,MG,Conselheiro Pena,41,false
+Centro Oeste,MG,Consolação,46,false
+Centro Oeste,MG,Contagem,44,false
+Centro Oeste,MG,Coqueiral,1,false
+Centro Oeste,MG,Coração de Jesus,44,false
+Centro Oeste,MG,Cordisburgo,44,false
+Centro Oeste,MG,Cordislândia,46,false
+Centro Oeste,MG,Corinto,44,false
+Centro Oeste,MG,Coroaci,42,false
+Centro Oeste,MG,Coromandel,47,false
+Centro Oeste,MG,Coronel Fabriciano,43,false
+Centro Oeste,MG,Coronel Murta,42,false
+Centro Oeste,MG,Coronel Pacheco,1,false
+Centro Oeste,MG,Coronel Xavier Chaves,44,false
+Centro Oeste,MG,Córrego Danta,46,false
+Centro Oeste,MG,Córrego do Bom Jesus,46,false
+Centro Oeste,MG,Córrego Fundo,1,false
+Centro Oeste,MG,Córrego Novo,42,false
+Centro Oeste,MG,Couto de Magalhães de Minas,43,false
+Centro Oeste,MG,Crisólita,41,false
+Centro Oeste,MG,Cristais,1,false
+Centro Oeste,MG,Cristália,1,false
+Centro Oeste,MG,Cristiano Otoni,44,false
+Centro Oeste,MG,Cristina,45,false
+Centro Oeste,MG,Crucilândia,44,false
+Centro Oeste,MG,Cruzeiro da Fortaleza,47,false
+Centro Oeste,MG,Cruzília,45,false
+Centro Oeste,MG,Cuparaque,41,false
+Centro Oeste,MG,Curral de Dentro,42,false
+Centro Oeste,MG,Curvelo,44,false
+Centro Oeste,MG,Datas,44,false
+Centro Oeste,MG,Delfim Moreira,45,false
+Centro Oeste,MG,Delfinópolis,47,false
+Centro Oeste,MG,Delta,48,false
+Centro Oeste,MG,Descoberto,1,false
+Centro Oeste,MG,Desterro de Entre Rios,44,false
+Centro Oeste,MG,Desterro do Melo,44,false
+Centro Oeste,MG,Diamantina,1,false
+Centro Oeste,MG,Diogo de Vasconcelos,43,false
+Centro Oeste,MG,Dionísio,43,false
+Centro Oeste,MG,Divinésia,43,false
+Centro Oeste,MG,Divino,42,false
+Centro Oeste,MG,Divino das Laranjeiras,41,false
+Centro Oeste,MG,Divinolândia de Minas,43,false
+Centro Oeste,MG,Divinópolis,1,false
+Centro Oeste,MG,Divisa Alegre,41,false
+Centro Oeste,MG,Divisa Nova,46,false
+Centro Oeste,MG,Divisópolis,5,false
+Centro Oeste,MG,Dom Bosco,1,false
+Centro Oeste,MG,Dom Cavati,42,false
+Centro Oeste,MG,Dom Joaquim,1,false
+Centro Oeste,MG,Dom Silvério,43,false
+Centro Oeste,MG,Dom Viçoso,45,false
+Centro Oeste,MG,Dona Eusébia,1,false
+Centro Oeste,MG,Dores de Campos,44,false
+Centro Oeste,MG,Dores de Guanhães,43,false
+Centro Oeste,MG,Dores do Indaiá,1,false
+Centro Oeste,MG,Dores do Turvo,43,false
+Centro Oeste,MG,Doresópolis,46,false
+Centro Oeste,MG,Douradoquara,48,false
+Centro Oeste,MG,Durandé,42,false
+Centro Oeste,MG,Elói Mendes,46,false
+Centro Oeste,MG,Engenheiro Caldas,42,false
+Centro Oeste,MG,Engenheiro Navarro,44,false
+Centro Oeste,MG,Entre Folhas,42,false
+Centro Oeste,MG,Entre Rios de Minas,1,false
+Centro Oeste,MG,Ervália,43,false
+Centro Oeste,MG,Esmeraldas,44,false
+Centro Oeste,MG,Espera Feliz,42,false
+Centro Oeste,MG,Espinosa,43,false
+Centro Oeste,MG,Espírito Santo do Dourado,46,false
+Centro Oeste,MG,Estiva,46,false
+Centro Oeste,MG,Estrela Dalva,1,false
+Centro Oeste,MG,Estrela do Indaiá,46,false
+Centro Oeste,MG,Estrela do Sul,48,false
+Centro Oeste,MG,Eugenópolis,42,false
+Centro Oeste,MG,Ewbank da Câmara,44,false
+Centro Oeste,MG,Extrema,46,false
+Centro Oeste,MG,Fama,46,false
+Centro Oeste,MG,Faria Lemos,1,false
+Centro Oeste,MG,Felício dos Santos,43,false
+Centro Oeste,MG,Felisburgo,41,false
+Centro Oeste,MG,Felixlândia,45,false
+Centro Oeste,MG,Fernandes Tourinho,42,false
+Centro Oeste,MG,Ferros,43,false
+Centro Oeste,MG,Fervedouro,1,false
+Centro Oeste,MG,Florestal,44,false
+Centro Oeste,MG,Formiga,45,false
+Centro Oeste,MG,Formoso,49,false
+Centro Oeste,MG,Fortaleza de Minas,47,false
+Centro Oeste,MG,Fortuna de Minas,44,false
+Centro Oeste,MG,Francisco Badaró,42,false
+Centro Oeste,MG,Francisco Dumont,44,false
+Centro Oeste,MG,Francisco Sá,43,false
+Centro Oeste,MG,Franciscópolis,1,false
+Centro Oeste,MG,Frei Gaspar,41,false
+Centro Oeste,MG,Frei Inocêncio,42,false
+Centro Oeste,MG,Frei Lagonegro,43,false
+Centro Oeste,MG,Fronteira,49,false
+Centro Oeste,MG,Fronteira dos Vales,41,false
+Centro Oeste,MG,Fruta de Leite,43,false
+Centro Oeste,MG,Frutal,49,false
+Centro Oeste,MG,Funilândia,44,false
+Centro Oeste,MG,Galiléia,42,false
+Centro Oeste,MG,Gameleiras,43,false
+Centro Oeste,MG,Glaucilândia,44,false
+Centro Oeste,MG,Goiabeira,41,false
+Centro Oeste,MG,Goianá,43,false
+Centro Oeste,MG,Gonçalves,46,false
+Centro Oeste,MG,Gonzaga,1,false
+Centro Oeste,MG,Gouveia,44,false
+Centro Oeste,MG,Governador Valadares,45,false
+Centro Oeste,MG,Grão Mogol,43,false
+Centro Oeste,MG,Grupiara,48,false
+Centro Oeste,MG,Guanhães,43,false
+Centro Oeste,MG,Guapé,46,false
+Centro Oeste,MG,Guaraciaba,1,false
+Centro Oeste,MG,Guaraciama,44,false
+Centro Oeste,MG,Guaranésia,47,false
+Centro Oeste,MG,Guarani,1,false
+Centro Oeste,MG,Guarará,43,false
+Centro Oeste,MG,GuardaMor,47,false
+Centro Oeste,MG,Guaxupé,47,false
+Centro Oeste,MG,Guidoval,43,false
+Centro Oeste,MG,Guimarânia,47,false
+Centro Oeste,MG,Guiricema,43,false
+Centro Oeste,MG,Gurinhatã,50,false
+Centro Oeste,MG,Heliodora,46,false
+Centro Oeste,MG,Iapu,42,false
+Centro Oeste,MG,Ibertioga,44,false
+Centro Oeste,MG,Ibiá,47,false
+Centro Oeste,MG,Ibiaí,45,false
+Centro Oeste,MG,Ibiracatu,44,false
+Centro Oeste,MG,Ibiraci,47,false
+Centro Oeste,MG,Ibirité,44,false
+Centro Oeste,MG,Ibitiúra de Minas,1,false
+Centro Oeste,MG,Ibituruna,45,false
+Centro Oeste,MG,Icaraí de Minas,1,false
+Centro Oeste,MG,Igarapé,44,false
+Centro Oeste,MG,Igaratinga,45,false
+Centro Oeste,MG,Iguatama,46,false
+Centro Oeste,MG,Ijaci,45,false
+Centro Oeste,MG,Ilicínea,46,false
+Centro Oeste,MG,Imbé de Minas,42,false
+Centro Oeste,MG,Inconfidentes,46,false
+Centro Oeste,MG,Indaiabira,42,false
+Centro Oeste,MG,Indianópolis,1,false
+Centro Oeste,MG,Ingaí,45,false
+Centro Oeste,MG,Inhapim,42,false
+Centro Oeste,MG,Inhaúma,44,false
+Centro Oeste,MG,Inimutaba,44,false
+Centro Oeste,MG,Ipaba,42,false
+Centro Oeste,MG,Ipanema,42,false
+Centro Oeste,MG,Ipatinga,43,false
+Centro Oeste,MG,Ipiaçu,50,false
+Centro Oeste,MG,Ipuiúna,1,false
+Centro Oeste,MG,Iraí de Minas,47,false
+Centro Oeste,MG,Itabira,43,false
+Centro Oeste,MG,Itabirinha,1,false
+Centro Oeste,MG,Itabirito,44,false
+Centro Oeste,MG,Itacambira,43,false
+Centro Oeste,MG,Itacarambi,44,false
+Centro Oeste,MG,Itaguara,44,false
+Centro Oeste,MG,Itaipé,42,false
+Centro Oeste,MG,Itajubá,1,false
+Centro Oeste,MG,Itamarandiba,43,false
+Centro Oeste,MG,Itamarati de Minas,43,false
+Centro Oeste,MG,Itambacuri,42,false
+Centro Oeste,MG,Itambé do Mato Dentro,43,false
+Centro Oeste,MG,Itamogi,1,false
+Centro Oeste,MG,Itamonte,45,false
+Centro Oeste,MG,Itanhandu,45,false
+Centro Oeste,MG,Itanhomi,42,false
+Centro Oeste,MG,Itaobim,42,false
+Centro Oeste,MG,Itapagipe,49,false
+Centro Oeste,MG,Itapecerica,45,false
+Centro Oeste,MG,Itapeva,1,false
+Centro Oeste,MG,Itatiaiuçu,44,false
+Centro Oeste,MG,Itaú de Minas,47,false
+Centro Oeste,MG,Itaúna,1,false
+Centro Oeste,MG,Itaverava,44,false
+Centro Oeste,MG,Itinga,42,false
+Centro Oeste,MG,Itueta,41,false
+Centro Oeste,MG,Ituiutaba,49,false
+Centro Oeste,MG,Itumirim,45,false
+Centro Oeste,MG,Iturama,50,false
+Centro Oeste,MG,Itutinga,45,false
+Centro Oeste,MG,Jaboticatubas,44,false
+Centro Oeste,MG,Jacinto,40,false
+Centro Oeste,MG,Jacuí,1,false
+Centro Oeste,MG,Jacutinga,1,false
+Centro Oeste,MG,Jaguaraçu,43,false
+Centro Oeste,MG,Jaíba,1,false
+Centro Oeste,MG,Jampruca,42,false
+Centro Oeste,MG,Janaúba,43,false
+Centro Oeste,MG,Januária,44,false
+Centro Oeste,MG,Japaraíba,46,false
+Centro Oeste,MG,Japonvar,44,false
+Centro Oeste,MG,Jeceaba,44,false
+Centro Oeste,MG,Jenipapo de Minas,42,false
+Centro Oeste,MG,Jequeri,43,false
+Centro Oeste,MG,Jequitaí,44,false
+Centro Oeste,MG,Jequitibá,44,false
+Centro Oeste,MG,Jequitinhonha,41,false
+Centro Oeste,MG,Jesuânia,45,false
+Centro Oeste,MG,Joaíma,1,false
+Centro Oeste,MG,Joanésia,43,false
+Centro Oeste,MG,João Monlevade,43,false
+Centro Oeste,MG,João Pinheiro,1,false
+Centro Oeste,MG,Joaquim Felício,44,false
+Centro Oeste,MG,Jordânia,40,false
+Centro Oeste,MG,José Gonçalves de Minas,1,false
+Centro Oeste,MG,José Raydan,42,false
+Centro Oeste,MG,Josenópolis,1,false
+Centro Oeste,MG,Juatuba,44,false
+Centro Oeste,MG,Juiz de Fora,43,true
+Centro Oeste,MG,Juramento,44,false
+Centro Oeste,MG,Juruaia,47,false
+Centro Oeste,MG,Juvenília,44,false
+Centro Oeste,MG,Ladainha,42,false
+Centro Oeste,MG,Lagamar,47,false
+Centro Oeste,MG,Lagoa da Prata,46,false
+Centro Oeste,MG,Lagoa dos Patos,45,false
+Centro Oeste,MG,Lagoa Dourada,44,false
+Centro Oeste,MG,Lagoa Formosa,46,false
+Centro Oeste,MG,Lagoa Grande,1,false
+Centro Oeste,MG,Lagoa Santa,51,false
+Centro Oeste,MG,Lajinha,1,false
+Centro Oeste,MG,Lambari,1,false
+Centro Oeste,MG,Lamim,43,false
+Centro Oeste,MG,Laranjal,1,false
+Centro Oeste,MG,Lassance,45,false
+Centro Oeste,MG,Lavras,45,false
+Centro Oeste,MG,Leandro Ferreira,45,false
+Centro Oeste,MG,Leme do Prado,43,false
+Centro Oeste,MG,Leopoldina,43,false
+Centro Oeste,MG,Liberdade,1,false
+Centro Oeste,MG,Lima Duarte,44,false
+Centro Oeste,MG,Limeira do Oeste,51,false
+Centro Oeste,MG,Lontra,44,false
+Centro Oeste,MG,Luisburgo,42,false
+Centro Oeste,MG,Luislândia,45,false
+Centro Oeste,MG,Luminárias,45,false
+Centro Oeste,MG,Luz,46,false
+Centro Oeste,MG,Machacalis,1,false
+Centro Oeste,MG,Machado,46,false
+Centro Oeste,MG,Madre de Deus de Minas,44,false
+Centro Oeste,MG,Malacacheta,42,false
+Centro Oeste,MG,Mamonas,43,false
+Centro Oeste,MG,Manga,44,false
+Centro Oeste,MG,Manhuaçu,42,false
+Centro Oeste,MG,Manhumirim,42,false
+Centro Oeste,MG,Mantena,41,false
+Centro Oeste,MG,Mar de Espanha,43,false
+Centro Oeste,MG,Maravilhas,45,false
+Centro Oeste,MG,Maria da Fé,45,false
+Centro Oeste,MG,Mariana,43,false
+Centro Oeste,MG,Marilac,42,false
+Centro Oeste,MG,Mário Campos,44,false
+Centro Oeste,MG,Maripá de Minas,43,false
+Centro Oeste,MG,Marliéria,43,false
+Centro Oeste,MG,Marmelópolis,45,false
+Centro Oeste,MG,Martinho Campos,45,false
+Centro Oeste,MG,Martins Soares,42,false
+Centro Oeste,MG,Mata Verde,1,false
+Centro Oeste,MG,Materlândia,43,false
+Centro Oeste,MG,Mateus Leme,44,false
+Centro Oeste,MG,Mathias Lobato,42,false
+Centro Oeste,MG,Matias Barbosa,43,false
+Centro Oeste,MG,Matias Cardoso,44,false
+Centro Oeste,MG,Matipó,42,false
+Centro Oeste,MG,Mato Verde,43,false
+Centro Oeste,MG,Matozinhos,44,false
+Centro Oeste,MG,Matutina,46,false
+Centro Oeste,MG,Medeiros,46,false
+Centro Oeste,MG,Medina,75,false
+Centro Oeste,MG,Mendes Pimentel,41,false
+Centro Oeste,MG,Mercês,43,false
+Centro Oeste,MG,Mesquita,1,false
+Centro Oeste,MG,Minas Novas,43,false
+Centro Oeste,MG,Minduri,45,false
+Centro Oeste,MG,Mirabela,44,false
+Centro Oeste,MG,Miradouro,42,false
+Centro Oeste,MG,Miraí,43,false
+Centro Oeste,MG,Miravânia,1,false
+Centro Oeste,MG,Moeda,44,false
+Centro Oeste,MG,Moema,1,false
+Centro Oeste,MG,Monjolos,44,false
+Centro Oeste,MG,Monsenhor Paulo,46,false
+Centro Oeste,MG,Montalvânia,44,false
+Centro Oeste,MG,Monte Alegre de Minas,49,false
+Centro Oeste,MG,Monte Azul,43,false
+Centro Oeste,MG,Monte Belo,1,false
+Centro Oeste,MG,Monte Carmelo,47,false
+Centro Oeste,MG,Monte Formoso,41,false
+Centro Oeste,MG,Monte Santo de Minas,47,false
+Centro Oeste,MG,Monte Sião,47,false
+Centro Oeste,MG,Montes Claros,44,false
+Centro Oeste,MG,Montezuma,42,false
+Centro Oeste,MG,Morada Nova de Minas,1,false
+Centro Oeste,MG,Morro da Garça,45,false
+Centro Oeste,MG,Morro do Pilar,43,false
+Centro Oeste,MG,Munhoz,46,false
+Centro Oeste,MG,Muriaé,42,false
+Centro Oeste,MG,Mutum,41,false
+Centro Oeste,MG,Muzambinho,47,false
+Centro Oeste,MG,Nacip Raydan,42,false
+Centro Oeste,MG,Nanuque,40,false
+Centro Oeste,MG,Naque,42,false
+Centro Oeste,MG,Natalândia,46,false
+Centro Oeste,MG,Natércia,46,false
+Centro Oeste,MG,Nazareno,45,false
+Centro Oeste,MG,Nepomuceno,45,false
+Centro Oeste,MG,Ninheira,42,false
+Centro Oeste,MG,Nova Belém,1,false
+Centro Oeste,MG,Nova Era,43,false
+Centro Oeste,MG,Nova Lima,44,false
+Centro Oeste,MG,Nova Módica,42,false
+Centro Oeste,MG,Nova Ponte,48,false
+Centro Oeste,MG,Nova Porteirinha,43,false
+Centro Oeste,MG,Nova Resende,46,false
+Centro Oeste,MG,Nova Serrana,45,false
+Centro Oeste,MG,Nova União,1,false
+Centro Oeste,MG,Novo Cruzeiro,42,false
+Centro Oeste,MG,Novo Oriente de Minas,1,false
+Centro Oeste,MG,Novorizonte,42,false
+Centro Oeste,MG,Olaria,1,false
+Centro Oeste,MG,Olhosd'Água,1,false
+Centro Oeste,MG,Olímpio Noronha,45,false
+Centro Oeste,MG,Oliveira,45,false
+Centro Oeste,MG,Oliveira Fortes,43,false
+Centro Oeste,MG,Onça de Pitangui,45,false
+Centro Oeste,MG,Oratórios,1,false
+Centro Oeste,MG,Orizânia,1,false
+Centro Oeste,MG,Ouro Branco,1,false
+Centro Oeste,MG,Ouro Fino,46,false
+Centro Oeste,MG,Ouro Preto,1,false
+Centro Oeste,MG,Ouro Verde de Minas,41,false
+Centro Oeste,MG,Padre Carvalho,15,false
+Centro Oeste,MG,Padre Paraíso,41,false
+Centro Oeste,MG,Pai Pedro,65,false
+Centro Oeste,MG,Paineiras,46,false
+Centro Oeste,MG,Pains,1,false
+Centro Oeste,MG,Paiva,43,false
+Centro Oeste,MG,Palma,1,false
+Centro Oeste,MG,Palmópolis,1,false
+Centro Oeste,MG,Papagaios,45,false
+Centro Oeste,MG,Pará de Minas,45,false
+Centro Oeste,MG,Paracatu,47,false
+Centro Oeste,MG,Paraguaçu,46,false
+Centro Oeste,MG,Paraisópolis,46,false
+Centro Oeste,MG,Paraopeba,44,false
+Centro Oeste,MG,Passa Quatro,1,false
+Centro Oeste,MG,Passa Tempo,1,false
+Centro Oeste,MG,Passabém,43,false
+Centro Oeste,MG,PassaVinte,44,false
+Centro Oeste,MG,Passos,47,false
+Centro Oeste,MG,Patis,44,false
+Centro Oeste,MG,Patos de Minas,47,false
+Centro Oeste,MG,Patrocínio,47,false
+Centro Oeste,MG,Patrocínio do Muriaé,42,false
+Centro Oeste,MG,Paula Cândido,43,false
+Centro Oeste,MG,Paulistas,43,false
+Centro Oeste,MG,Pavão,1,false
+Centro Oeste,MG,Peçanha,43,false
+Centro Oeste,MG,Pedra Azul,41,false
+Centro Oeste,MG,Pedra Bonita,42,false
+Centro Oeste,MG,Pedra do Anta,43,false
+Centro Oeste,MG,Pedra do Indaiá,45,false
+Centro Oeste,MG,Pedra Dourada,42,false
+Centro Oeste,MG,Pedralva,45,false
+Centro Oeste,MG,Pedras de Maria da Cruz,44,false
+Centro Oeste,MG,Pedrinópolis,47,false
+Centro Oeste,MG,Pedro Leopoldo,44,false
+Centro Oeste,MG,Pedro Teixeira,44,false
+Centro Oeste,MG,Pequeri,43,false
+Centro Oeste,MG,Pequi,45,false
+Centro Oeste,MG,Perdigão,1,false
+Centro Oeste,MG,Perdizes,1,false
+Centro Oeste,MG,Perdões,45,false
+Centro Oeste,MG,Periquito,26,false
+Centro Oeste,MG,Pescador,42,false
+Centro Oeste,MG,Piau,43,false
+Centro Oeste,MG,Piedade de Caratinga,42,false
+Centro Oeste,MG,Piedade de Ponte Nova,43,false
+Centro Oeste,MG,Piedade do Rio Grande,44,false
+Centro Oeste,MG,Piedade dos Gerais,44,false
+Centro Oeste,MG,Pimenta,46,false
+Centro Oeste,MG,Pingod'Água,1,false
+Centro Oeste,MG,Pintópolis,45,false
+Centro Oeste,MG,Piracema,1,false
+Centro Oeste,MG,Pirajuba,49,false
+Centro Oeste,MG,Piranga,43,false
+Centro Oeste,MG,Piranguçu,45,false
+Centro Oeste,MG,Piranguinho,46,false
+Centro Oeste,MG,Pirapetinga,1,false
+Centro Oeste,MG,Pirapora,1,false
+Centro Oeste,MG,Piraúba,43,false
+Centro Oeste,MG,Pitangui,45,false
+Centro Oeste,MG,Piumhi,1,false
+Centro Oeste,MG,Planura,49,false
+Centro Oeste,MG,Poço Fundo,1,false
+Centro Oeste,MG,Poços de Caldas,47,false
+Centro Oeste,MG,Pocrane,42,false
+Centro Oeste,MG,Pompéu,45,false
+Centro Oeste,MG,Ponte Nova,43,false
+Centro Oeste,MG,Ponto Chique,45,false
+Centro Oeste,MG,Ponto dos Volantes,42,false
+Centro Oeste,MG,Porteirinha,43,false
+Centro Oeste,MG,Porto Firme,43,false
+Centro Oeste,MG,Poté,42,false
+Centro Oeste,MG,Pouso Alegre,46,false
+Centro Oeste,MG,Pouso Alto,45,false
+Centro Oeste,MG,Prados,44,false
+Centro Oeste,MG,Prata,1,false
+Centro Oeste,MG,Pratápolis,47,false
+Centro Oeste,MG,Pratinha,46,false
+Centro Oeste,MG,Presidente Bernardes,1,false
+Centro Oeste,MG,Presidente Juscelino,1,false
+Centro Oeste,MG,Presidente Kubitschek,44,false
+Centro Oeste,MG,Presidente Olegário,46,false
+Centro Oeste,MG,Prudente de Morais,44,false
+Centro Oeste,MG,Quartel Geral,46,false
+Centro Oeste,MG,Queluzito,1,false
+Centro Oeste,MG,Raposos,44,false
+Centro Oeste,MG,Raul Soares,42,false
+Centro Oeste,MG,Recreio,42,false
+Centro Oeste,MG,Reduto,42,false
+Centro Oeste,MG,Resende Costa,44,false
+Centro Oeste,MG,Resplendor,41,false
+Centro Oeste,MG,Ressaquinha,44,false
+Centro Oeste,MG,Riachinho,1,false
+Centro Oeste,MG,Riacho dos Machados,43,false
+Centro Oeste,MG,Ribeirão das Neves,1,false
+Centro Oeste,MG,Ribeirão Vermelho,45,false
+Centro Oeste,MG,Rio Acima,44,false
+Centro Oeste,MG,Rio Casca,43,false
+Centro Oeste,MG,Rio do Prado,41,false
+Centro Oeste,MG,Rio Doce,43,false
+Centro Oeste,MG,Rio Espera,43,false
+Centro Oeste,MG,Rio Manso,44,false
+Centro Oeste,MG,Rio Novo,1,false
+Centro Oeste,MG,Rio Paranaíba,46,false
+Centro Oeste,MG,Rio Pardo de Minas,43,false
+Centro Oeste,MG,Rio Piracicaba,43,false
+Centro Oeste,MG,Rio Pomba,43,false
+Centro Oeste,MG,Rio Preto,1,false
+Centro Oeste,MG,Rio Vermelho,1,false
+Centro Oeste,MG,Ritápolis,44,false
+Centro Oeste,MG,Rochedo de Minas,43,false
+Centro Oeste,MG,Rodeiro,65,false
+Centro Oeste,MG,Romaria,48,false
+Centro Oeste,MG,Rosário da Limeira,1,false
+Centro Oeste,MG,Rubelita,42,false
+Centro Oeste,MG,Rubim,41,false
+Centro Oeste,MG,Sabará,44,false
+Centro Oeste,MG,Sabinópolis,43,false
+Centro Oeste,MG,Sacramento,1,false
+Centro Oeste,MG,Salinas,42,false
+Centro Oeste,MG,Salto da Divisa,1,false
+Centro Oeste,MG,Santa Bárbara,1,false
+Centro Oeste,MG,Santa Bárbara do Leste,42,false
+Centro Oeste,MG,Santa Bárbara do Monte Verde,44,false
+Centro Oeste,MG,Santa Bárbara do Tugúrio,44,false
+Centro Oeste,MG,Santa Cruz de Minas,1,false
+Centro Oeste,MG,Santa Cruz de Salinas,42,false
+Centro Oeste,MG,Santa Cruz do Escalvado,43,false
+Centro Oeste,MG,Santa Efigênia de Minas,42,false
+Centro Oeste,MG,Santa Fé de Minas,45,false
+Centro Oeste,MG,Santa Helena de Minas,1,false
+Centro Oeste,MG,Santa Juliana,25,false
+Centro Oeste,MG,Santa Luzia,44,false
+Centro Oeste,MG,Santa Margarida,1,false
+Centro Oeste,MG,Santa Maria de Itabira,43,false
+Centro Oeste,MG,Santa Maria do Salto,40,false
+Centro Oeste,MG,Santa Maria do Suaçuí,42,false
+Centro Oeste,MG,Santa Rita de Caldas,46,false
+Centro Oeste,MG,Santa Rita de Ibitipoca,1,false
+Centro Oeste,MG,Santa Rita de Jacutinga,1,false
+Centro Oeste,MG,Santa Rita de Minas,42,false
+Centro Oeste,MG,Santa Rita do Itueto,41,false
+Centro Oeste,MG,Santa Rita do Sapucaí,46,false
+Centro Oeste,MG,Santa Rosa da Serra,46,false
+Centro Oeste,MG,Santa Vitória,50,false
+Centro Oeste,MG,Santana da Vargem,46,false
+Centro Oeste,MG,Santana de Cataguases,43,false
+Centro Oeste,MG,Santana de Pirapama,44,false
+Centro Oeste,MG,Santana do Deserto,43,false
+Centro Oeste,MG,Santana do Garambéu,44,false
+Centro Oeste,MG,Santana do Jacaré,45,false
+Centro Oeste,MG,Santana do Manhuaçu,42,false
+Centro Oeste,MG,Santana do Paraíso,43,false
+Centro Oeste,MG,Santana do Riacho,44,false
+Centro Oeste,MG,Santana dos Montes,44,false
+Centro Oeste,MG,Santo Antônio do Amparo,45,false
+Centro Oeste,MG,Santo Antônio do Aventureiro,1,false
+Centro Oeste,MG,Santo Antônio do Grama,43,false
+Centro Oeste,MG,Santo Antônio do Itambé,43,false
+Centro Oeste,MG,Santo Antônio do Jacinto,40,false
+Centro Oeste,MG,Santo Antônio do Monte,45,false
+Centro Oeste,MG,Santo Antônio do Retiro,43,false
+Centro Oeste,MG,Santo Antônio do Rio Abaixo,43,false
+Centro Oeste,MG,Santo Hipólito,44,false
+Centro Oeste,MG,Santos Dumont,1,false
+Centro Oeste,MG,São Bento Abade,45,false
+Centro Oeste,MG,São Brás do Suaçuí,44,false
+Centro Oeste,MG,São Domingos das Dores,42,false
+Centro Oeste,MG,São Domingos do Prata,43,false
+Centro Oeste,MG,São Félix de Minas,41,false
+Centro Oeste,MG,São Francisco,1,false
+Centro Oeste,MG,São Francisco de Paula,1,false
+Centro Oeste,MG,São Francisco de Sales,1,false
+Centro Oeste,MG,São Francisco do Glória,42,false
+Centro Oeste,MG,São Geraldo,1,false
+Centro Oeste,MG,São Geraldo da Piedade,42,false
+Centro Oeste,MG,São Geraldo do Baixio,41,false
+Centro Oeste,MG,São Gonçalo do Abaeté,46,false
+Centro Oeste,MG,São Gonçalo do Pará,45,false
+Centro Oeste,MG,São Gonçalo do Rio Abaixo,43,false
+Centro Oeste,MG,São Gonçalo do Rio Preto,43,false
+Centro Oeste,MG,São Gonçalo do Sapucaí,95,false
+Centro Oeste,MG,São Gotardo,46,false
+Centro Oeste,MG,São João Batista do Glória,47,false
+Centro Oeste,MG,São João da Lagoa,44,false
+Centro Oeste,MG,São João da Mata,46,false
+Centro Oeste,MG,São João da Ponte,44,false
+Centro Oeste,MG,São João das Missões,44,false
+Centro Oeste,MG,São João del Rei,1,false
+Centro Oeste,MG,São João do Manhuaçu,42,false
+Centro Oeste,MG,São João do Manteninha,41,false
+Centro Oeste,MG,São João do Oriente,42,false
+Centro Oeste,MG,São João do Pacuí,45,false
+Centro Oeste,MG,São João do Paraíso,1,false
+Centro Oeste,MG,São João Evangelista,43,false
+Centro Oeste,MG,São João Nepomuceno,43,false
+Centro Oeste,MG,São Joaquim de Bicas,44,false
+Centro Oeste,MG,São José da Barra,46,false
+Centro Oeste,MG,São José da Lapa,44,false
+Centro Oeste,MG,São José da Safira,1,false
+Centro Oeste,MG,São José da Varginha,45,false
+Centro Oeste,MG,São José do Alegre,50,false
+Centro Oeste,MG,São José do Divino,1,false
+Centro Oeste,MG,São José do Goiabal,43,false
+Centro Oeste,MG,São José do Jacuri,43,false
+Centro Oeste,MG,São José do Mantimento,42,false
+Centro Oeste,MG,São Lourenço,1,false
+Centro Oeste,MG,São Miguel do Anta,43,false
+Centro Oeste,MG,São Pedro da União,47,false
+Centro Oeste,MG,São Pedro do Suaçuí,43,false
+Centro Oeste,MG,São Pedro dos Ferros,43,false
+Centro Oeste,MG,São Romão,1,false
+Centro Oeste,MG,São Roque de Minas,46,false
+Centro Oeste,MG,São Sebastião da Bela Vista,46,false
+Centro Oeste,MG,São Sebastião da Vargem Alegre,1,false
+Centro Oeste,MG,São Sebastião do Anta,42,false
+Centro Oeste,MG,São Sebastião do Maranhão,43,false
+Centro Oeste,MG,São Sebastião do Oeste,45,false
+Centro Oeste,MG,São Sebastião do Paraíso,47,false
+Centro Oeste,MG,São Sebastião do Rio Preto,43,false
+Centro Oeste,MG,São Sebastião do Rio Verde,45,false
+Centro Oeste,MG,São Thomé das Letras,1,false
+Centro Oeste,MG,São Tiago,1,false
+Centro Oeste,MG,São Tomás de Aquino,47,false
+Centro Oeste,MG,São Vicente de Minas,44,false
+Centro Oeste,MG,SapucaíMirim,1,false
+Centro Oeste,MG,Sardoá,42,false
+Centro Oeste,MG,Sarzedo,44,false
+Centro Oeste,MG,SemPeixe,1,false
+Centro Oeste,MG,Senador Amaral,46,false
+Centro Oeste,MG,Senador Cortes,43,false
+Centro Oeste,MG,Senador Firmino,43,false
+Centro Oeste,MG,Senador José Bento,46,false
+Centro Oeste,MG,Senador Modestino Gonçalves,25,false
+Centro Oeste,MG,Senhora de Oliveira,43,false
+Centro Oeste,MG,Senhora do Porto,43,false
+Centro Oeste,MG,Senhora dos Remédios,44,false
+Centro Oeste,MG,Sericita,42,false
+Centro Oeste,MG,Seritinga,45,false
+Centro Oeste,MG,Serra Azul de Minas,43,false
+Centro Oeste,MG,Serra da Saudade,46,false
+Centro Oeste,MG,Serra do Salitre,47,false
+Centro Oeste,MG,Serra dos Aimorés,40,false
+Centro Oeste,MG,Serrania,46,false
+Centro Oeste,MG,Serranópolis de Minas,1,false
+Centro Oeste,MG,Serranos,45,false
+Centro Oeste,MG,Serro,43,false
+Centro Oeste,MG,Sete Lagoas,47,false
+Centro Oeste,MG,Setubinha,42,false
+Centro Oeste,MG,Silveirânia,43,false
+Centro Oeste,MG,Silvianópolis,46,false
+Centro Oeste,MG,Simão Pereira,1,false
+Centro Oeste,MG,Simonésia,1,false
+Centro Oeste,MG,Sobrália,42,false
+Centro Oeste,MG,Soledade de Minas,45,false
+Centro Oeste,MG,Tabuleiro,43,false
+Centro Oeste,MG,Taiobeiras,42,false
+Centro Oeste,MG,Taparuba,42,false
+Centro Oeste,MG,Tapira,1,false
+Centro Oeste,MG,Tapiraí,1,false
+Centro Oeste,MG,Taquaraçu de Minas,44,false
+Centro Oeste,MG,Tarumirim,42,false
+Centro Oeste,MG,Teixeiras,43,false
+Centro Oeste,MG,Teófilo Otoni,42,false
+Centro Oeste,MG,Timóteo,43,false
+Centro Oeste,MG,Tiradentes,1,false
+Centro Oeste,MG,Tiros,46,false
+Centro Oeste,MG,Tocantins,1,false
+Centro Oeste,MG,Tocos do Moji,46,false
+Centro Oeste,MG,Toledo,1,false
+Centro Oeste,MG,Tombos,42,false
+Centro Oeste,MG,Três Corações,45,false
+Centro Oeste,MG,Três Marias,1,false
+Centro Oeste,MG,Três Pontas,46,false
+Centro Oeste,MG,Tumiritinga,42,false
+Centro Oeste,MG,Tupaciguara,49,false
+Centro Oeste,MG,Turmalina,1,false
+Centro Oeste,MG,Turvolândia,46,false
+Centro Oeste,MG,Ubá,43,false
+Centro Oeste,MG,Ubaí,45,false
+Centro Oeste,MG,Ubaporanga,42,false
+Centro Oeste,MG,Uberaba,48,false
+Centro Oeste,MG,Uberlândia,48,true
+Centro Oeste,MG,Umburatiba,41,false
+Centro Oeste,MG,Unaí,47,true
+Centro Oeste,MG,União de Minas,35,false
+Centro Oeste,MG,Uruana de Minas,46,false
+Centro Oeste,MG,Urucânia,43,false
+Centro Oeste,MG,Urucuia,46,false
+Centro Oeste,MG,Vargem Alegre,1,false
+Centro Oeste,MG,Vargem Bonita,1,false
+Centro Oeste,MG,Vargem Grande do Rio Pardo,42,false
+Centro Oeste,MG,Varginha,45,false
+Centro Oeste,MG,Varjão de Minas,1,false
+Centro Oeste,MG,Várzea da Palma,45,false
+Centro Oeste,MG,Varzelândia,44,false
+Centro Oeste,MG,Vazante,1,false
+Centro Oeste,MG,Verdelândia,1,false
+Centro Oeste,MG,Veredinha,1,false
+Centro Oeste,MG,Veríssimo,48,false
+Centro Oeste,MG,Vermelho Novo,1,false
+Centro Oeste,MG,Vespasiano,44,false
+Centro Oeste,MG,Viçosa,1,false
+Centro Oeste,MG,Vieiras,42,false
+Centro Oeste,MG,Virgem da Lapa,42,false
+Centro Oeste,MG,Virgínia,45,false
+Centro Oeste,MG,Virginópolis,43,false
+Centro Oeste,MG,Virgolândia,42,false
+Centro Oeste,MG,Visconde do Rio Branco,43,false
+Centro Oeste,MG,Volta Grande,1,false
+Centro Oeste,MG,Wenceslau Braz,50,false
+Centro Oeste,MS,Água Clara,53,false
+Centro Oeste,MS,Alcinópolis,54,false
+Centro Oeste,MS,Amambai,1,false
+Centro Oeste,MS,Anastácio,56,false
+Centro Oeste,MS,Anaurilândia,53,false
+Centro Oeste,MS,Angélica,54,false
+Centro Oeste,MS,Antônio João,56,false
+Centro Oeste,MS,Aparecida do Taboado,51,false
+Centro Oeste,MS,Aquidauana,56,false
+Centro Oeste,MS,Aral Moreira,56,false
+Centro Oeste,MS,Bandeirantes,1,false
+Centro Oeste,MS,Bataguassu,52,false
+Centro Oeste,MS,Batayporã,53,false
+Centro Oeste,MS,Bela Vista,1,false
+Centro Oeste,MS,Bodoquena,57,false
+Centro Oeste,MS,Bonito,1,false
+Centro Oeste,MS,Brasilândia,52,false
+Centro Oeste,MS,Caarapó,55,false
+Centro Oeste,MS,Camapuã,54,false
+Centro Oeste,MS,Campo Grande,55,true
+Centro Oeste,MS,Caracol,1,false
+Centro Oeste,MS,Cassilândia,52,false
+Centro Oeste,MS,Chapadão do Sul,53,false
+Centro Oeste,MS,Corguinho,55,false
+Centro Oeste,MS,Coronel Sapucaia,56,false
+Centro Oeste,MS,Corumbá,58,false
+Centro Oeste,MS,Costa Rica,53,false
+Centro Oeste,MS,Coxim,55,false
+Centro Oeste,MS,Deodápolis,54,false
+Centro Oeste,MS,Dois Irmãos do Buriti,55,false
+Centro Oeste,MS,Douradina,1,false
+Centro Oeste,MS,Dourados,55,false
+Centro Oeste,MS,Eldorado,1,false
+Centro Oeste,MS,Fátima do Sul,55,false
+Centro Oeste,MS,Figueirão,54,false
+Centro Oeste,MS,Glória de Dourados,54,false
+Centro Oeste,MS,Guia Lopes da Laguna,56,false
+Centro Oeste,MS,Iguatemi,1,false
+Centro Oeste,MS,Inocência,52,false
+Centro Oeste,MS,Itaporã,1,false
+Centro Oeste,MS,Itaquiraí,54,false
+Centro Oeste,MS,Ivinhema,54,false
+Centro Oeste,MS,Japorã,54,false
+Centro Oeste,MS,Jaraguari,54,false
+Centro Oeste,MS,Jardim,1,false
+Centro Oeste,MS,Jateí,54,false
+Centro Oeste,MS,Juti,55,false
+Centro Oeste,MS,Ladário,58,false
+Centro Oeste,MS,Laguna Carapã,55,false
+Centro Oeste,MS,Maracaju,55,false
+Centro Oeste,MS,Miranda,1,false
+Centro Oeste,MS,Mundo Novo,50,false
+Centro Oeste,MS,Naviraí,54,false
+Centro Oeste,MS,Nioaque,56,false
+Centro Oeste,MS,Nova Alvorada do Sul,54,false
+Centro Oeste,MS,Nova Andradina,53,false
+Centro Oeste,MS,Novo Horizonte do Sul,54,false
+Centro Oeste,MS,Paranaíba,51,false
+Centro Oeste,MS,Paranhos,55,false
+Centro Oeste,MS,Pedro Gomes,55,false
+Centro Oeste,MS,Ponta Porã,56,false
+Centro Oeste,MS,Porto Murtinho,58,false
+Centro Oeste,MS,Ribas do Rio Pardo,54,false
+Centro Oeste,MS,Rio Brilhante,55,false
+Centro Oeste,MS,Rio Negro,1,false
+Centro Oeste,MS,Rio Verde de Mato Grosso,55,false
+Centro Oeste,MS,Rochedo,55,false
+Centro Oeste,MS,Santa Rita do Pardo,53,false
+Centro Oeste,MS,São Gabriel do Oeste,55,false
+Centro Oeste,MS,Selvíria,51,false
+Centro Oeste,MS,Sete Quedas,55,false
+Centro Oeste,MS,Sidrolândia,55,false
+Centro Oeste,MS,Sonora,55,false
+Centro Oeste,MS,Tacuru,55,false
+Centro Oeste,MS,Taquarussu,53,false
+Centro Oeste,MS,Terenos,55,false
+Centro Oeste,MS,Três Lagoas,1,false
+Centro Oeste,MS,Vicentina,54,false
+Centro Oeste,MT,Acorizal,56,false
+Centro Oeste,MT,Água Boa,1,false
+Centro Oeste,MT,Alta Floresta,56,false
+Centro Oeste,MT,Alto Araguaia,53,false
+Centro Oeste,MT,Alto Boa Vista,51,false
+Centro Oeste,MT,Alto Garças,54,false
+Centro Oeste,MT,Alto Paraguai,56,false
+Centro Oeste,MT,Alto Taquari,53,false
+Centro Oeste,MT,Apiacás,57,false
+Centro Oeste,MT,Araguaiana,52,false
+Centro Oeste,MT,Araguainha,53,false
+Centro Oeste,MT,Araputanga,58,false
+Centro Oeste,MT,Arenápolis,57,false
+Centro Oeste,MT,Aripuanã,59,false
+Centro Oeste,MT,Barão de Melgaço,56,false
+Centro Oeste,MT,Barra do Bugres,57,false
+Centro Oeste,MT,Barra do Garças,52,false
+Centro Oeste,MT,Bom Jesus do Araguaia,1,false
+Centro Oeste,MT,Brasnorte,58,false
+Centro Oeste,MT,Cáceres,58,false
+Centro Oeste,MT,Campinápolis,53,false
+Centro Oeste,MT,Campo Novo do Parecis,58,false
+Centro Oeste,MT,Campo Verde,55,false
+Centro Oeste,MT,Campos de Júlio,59,false
+Centro Oeste,MT,Canabrava do Norte,52,false
+Centro Oeste,MT,Canarana,1,false
+Centro Oeste,MT,Carlinda,56,false
+Centro Oeste,MT,Castanheira,59,false
+Centro Oeste,MT,Chapada dos Guimarães,56,false
+Centro Oeste,MT,Cláudia,55,false
+Centro Oeste,MT,Cocalinho,51,false
+Centro Oeste,MT,Colíder,55,false
+Centro Oeste,MT,Colniza,1,false
+Centro Oeste,MT,Comodoro,1,false
+Centro Oeste,MT,Confresa,52,false
+Centro Oeste,MT,Conquista D'Oeste,1,false
+Centro Oeste,MT,Cotriguaçu,58,false
+Centro Oeste,MT,Cuiabá,56,true
+Centro Oeste,MT,Curvelândia,58,false
+Centro Oeste,MT,Denise,57,false
+Centro Oeste,MT,Diamantino,56,false
+Centro Oeste,MT,Dom Aquino,55,false
+Centro Oeste,MT,Feliz Natal,55,false
+Centro Oeste,MT,Figueirópolis D'Oeste,1,false
+Centro Oeste,MT,Gaúcha do Norte,53,false
+Centro Oeste,MT,General Carneiro,1,false
+Centro Oeste,MT,Glória D'Oeste,1,false
+Centro Oeste,MT,Guarantã do Norte,55,false
+Centro Oeste,MT,Guiratinga,54,false
+Centro Oeste,MT,Indiavaí,59,false
+Centro Oeste,MT,Ipiranga do Norte,1,false
+Centro Oeste,MT,Itanhangá,43,false
+Centro Oeste,MT,Itaúba,55,false
+Centro Oeste,MT,Itiquira,54,false
+Centro Oeste,MT,Jaciara,55,false
+Centro Oeste,MT,Jangada,1,false
+Centro Oeste,MT,Jauru,1,false
+Centro Oeste,MT,Juara,58,false
+Centro Oeste,MT,Juína,59,false
+Centro Oeste,MT,Juruena,58,false
+Centro Oeste,MT,Juscimeira,55,false
+Centro Oeste,MT,Lambari D'Oeste,1,false
+Centro Oeste,MT,Lucas do Rio Verde,56,false
+Centro Oeste,MT,Luciara,1,false
+Centro Oeste,MT,Marcelândia,54,false
+Centro Oeste,MT,Matupá,55,false
+Centro Oeste,MT,Mirassol D'Oeste,1,false
+Centro Oeste,MT,Nobres,56,false
+Centro Oeste,MT,Nortelândia,57,false
+Centro Oeste,MT,Nossa Senhora do Livramento,56,false
+Centro Oeste,MT,Nova Bandeirantes,58,false
+Centro Oeste,MT,Nova Brasilândia,55,false
+Centro Oeste,MT,Nova Canaã do Norte,56,false
+Centro Oeste,MT,Nova Guarita,1,false
+Centro Oeste,MT,Nova Lacerda,60,false
+Centro Oeste,MT,Nova Marilândia,57,false
+Centro Oeste,MT,Nova Maringá,57,false
+Centro Oeste,MT,Nova Monte Verde,58,false
+Centro Oeste,MT,Nova Mutum,56,false
+Centro Oeste,MT,Nova Nazaré,1,false
+Centro Oeste,MT,Nova Olímpia,1,false
+Centro Oeste,MT,Nova Santa Helena,1,false
+Centro Oeste,MT,Nova Ubiratã,55,false
+Centro Oeste,MT,Nova Xavantina,52,false
+Centro Oeste,MT,Novo Horizonte do Norte,57,false
+Centro Oeste,MT,Novo Mundo,1,false
+Centro Oeste,MT,Novo Santo Antônio,42,false
+Centro Oeste,MT,Novo São Joaquim,53,false
+Centro Oeste,MT,Paranaíta,56,false
+Centro Oeste,MT,Paranatinga,54,false
+Centro Oeste,MT,Pedra Preta,1,false
+Centro Oeste,MT,Peixoto de Azevedo,55,false
+Centro Oeste,MT,Planalto da Serra,55,false
+Centro Oeste,MT,Poconé,57,false
+Centro Oeste,MT,Pontal do Araguaia,52,false
+Centro Oeste,MT,Ponte Branca,53,false
+Centro Oeste,MT,Pontes e Lacerda,1,false
+Centro Oeste,MT,Porto Alegre do Norte,52,false
+Centro Oeste,MT,Porto dos Gaúchos,57,false
+Centro Oeste,MT,Porto Esperidião,58,false
+Centro Oeste,MT,Porto Estrela,57,false
+Centro Oeste,MT,Poxoréo,54,false
+Centro Oeste,MT,Primavera do Leste,54,false
+Centro Oeste,MT,Querência,52,false
+Centro Oeste,MT,Reserva do Cabaçal,58,false
+Centro Oeste,MT,Ribeirão Cascalheira,52,false
+Centro Oeste,MT,Ribeirãozinho,53,false
+Centro Oeste,MT,Rio Branco,68,false
+Centro Oeste,MT,Rondolândia,1,false
+Centro Oeste,MT,Rondonópolis,55,false
+Centro Oeste,MT,Rosário Oeste,56,false
+Centro Oeste,MT,Salto do Céu,1,false
+Centro Oeste,MT,Santa Carmem,55,false
+Centro Oeste,MT,Santa Cruz do Xingu,52,false
+Centro Oeste,MT,Santa Rita do Trivelato,1,false
+Centro Oeste,MT,Santa Terezinha,1,false
+Centro Oeste,MT,Santo Afonso,57,false
+Centro Oeste,MT,Santo Antônio do Leste,1,false
+Centro Oeste,MT,Santo Antônio do Leverger,56,false
+Centro Oeste,MT,São Félix do Araguaia,51,false
+Centro Oeste,MT,São José do Povo,54,false
+Centro Oeste,MT,São José do Rio Claro,57,false
+Centro Oeste,MT,São José do Xingu,53,false
+Centro Oeste,MT,São José dos Quatro Marcos,58,false
+Centro Oeste,MT,São Pedro da Cipa,55,false
+Centro Oeste,MT,Sapezal,1,false
+Centro Oeste,MT,Serra Nova Dourada,1,false
+Centro Oeste,MT,Sinop,56,false
+Centro Oeste,MT,Sorriso,56,false
+Centro Oeste,MT,Tabaporã,57,false
+Centro Oeste,MT,Tangará da Serra,57,false
+Centro Oeste,MT,Tapurah,57,false
+Centro Oeste,MT,Terra Nova do Norte,55,false
+Centro Oeste,MT,Tesouro,54,false
+Centro Oeste,MT,Torixoréu,53,false
+Centro Oeste,MT,União do Sul,54,false
+Centro Oeste,MT,Vale de São Domingos,1,false
+Centro Oeste,MT,Várzea Grande,1,false
+Centro Oeste,MT,Vera,55,false
+Centro Oeste,MT,Vila Bela da Santíssima Trindade,60,false
+Centro Oeste,MT,Vila Rica,1,false
+Norte,PA,Abaetetuba,79,false
+Norte,PA,Abel Figueiredo,48,false
+Norte,PA,Acará,48,false
+Norte,PA,Afuá,50,false
+Norte,PA,Água Azul do Norte,50,false
+Norte,PA,Alenquer,55,false
+Norte,PA,Almeirim,53,false
+Norte,PA,Altamira,52,false
+Norte,PA,Anajás,50,false
+Norte,PA,Ananindeua,48,true
+Norte,PA,Anapu,51,false
+Norte,PA,Augusto Corrêa,47,false
+Norte,PA,Aurora do Pará,48,false
+Norte,PA,Aveiro,55,false
+Norte,PA,Bagre,50,false
+Norte,PA,Baião,50,false
+Norte,PA,Bannach,50,false
+Norte,PA,Barcarena,49,false
+Norte,PA,Belém,0,true
+Norte,PA,Belterra,55,false
+Norte,PA,Benevides,48,false
+Norte,PA,Bom Jesus do Tocantins,1,false
+Norte,PA,Bonito,1,false
+Norte,PA,Bragança,47,false
+Norte,PA,Brasil Novo,53,false
+Norte,PA,Brejo Grande do Araguaia,48,false
+Norte,PA,Breu Branco,50,false
+Norte,PA,Breves,50,false
+Norte,PA,Bujaru,48,false
+Norte,PA,Cachoeira do Arari,49,false
+Norte,PA,Cachoeira do Piriá,47,false
+Norte,PA,Cametá,1,false
+Norte,PA,Canaã dos Carajás,1,false
+Norte,PA,Capanema,1,false
+Norte,PA,Capitão Poço,47,false
+Norte,PA,Castanhal,48,false
+Norte,PA,Chaves,50,false
+Norte,PA,Colares,48,false
+Norte,PA,Conceição do Araguaia,1,false
+Norte,PA,Concórdia do Pará,48,false
+Norte,PA,Cumaru do Norte,51,false
+Norte,PA,Curionópolis,50,false
+Norte,PA,Curralinho,50,false
+Norte,PA,Curuá,55,false
+Norte,PA,Curuçá,58,false
+Norte,PA,Dom Eliseu,48,false
+Norte,PA,Eldorado dos Carajás,49,false
+Norte,PA,Faro,57,false
+Norte,PA,Floresta do Araguaia,50,false
+Norte,PA,Garrafão do Norte,47,false
+Norte,PA,Goianésia do Pará,49,false
+Norte,PA,Gurupá,52,false
+Norte,PA,IgarapéAçu,48,false
+Norte,PA,IgarapéMiri,49,false
+Norte,PA,Inhangapi,48,false
+Norte,PA,Ipixuna do Pará,47,false
+Norte,PA,Irituia,47,false
+Norte,PA,Itaituba,56,false
+Norte,PA,Itupiranga,1,false
+Norte,PA,Jacareacanga,58,false
+Norte,PA,Jacundá,49,false
+Norte,PA,Juruti,56,false
+Norte,PA,Limoeiro do Ajuru,49,false
+Norte,PA,Mãe do Rio,48,false
+Norte,PA,Magalhães Barata,48,false
+Norte,PA,Marabá,1,false
+Norte,PA,Maracanã,1,false
+Norte,PA,Marapanim,48,false
+Norte,PA,Marituba,48,false
+Norte,PA,Medicilândia,53,false
+Norte,PA,Melgaço,1,false
+Norte,PA,Mocajuba,50,false
+Norte,PA,Moju,49,false
+Norte,PA,Monte Alegre,1,false
+Norte,PA,Muaná,49,false
+Norte,PA,Nova Esperança do Piriá,47,false
+Norte,PA,Nova Ipixuna,49,false
+Norte,PA,Nova Timboteua,47,false
+Norte,PA,Novo Progresso,1,false
+Norte,PA,Novo Repartimento,50,false
+Norte,PA,Óbidos,56,false
+Norte,PA,Oeiras do Pará,50,false
+Norte,PA,Oriximiná,56,false
+Norte,PA,Ourém,1,false
+Norte,PA,Ourilândia do Norte,51,false
+Norte,PA,Pacajá,51,false
+Norte,PA,Palestina do Pará,48,false
+Norte,PA,Paragominas,47,false
+Norte,PA,Parauapebas,50,false
+Norte,PA,Pau D'Arco,1,false
+Norte,PA,PeixeBoi,47,false
+Norte,PA,Piçarra,49,false
+Norte,PA,Placas,54,false
+Norte,PA,Ponta de Pedras,1,false
+Norte,PA,Portel,51,false
+Norte,PA,Porto de Moz,52,false
+Norte,PA,Prainha,53,false
+Norte,PA,Primavera,1,false
+Norte,PA,Quatipuru,47,false
+Norte,PA,Redenção,1,false
+Norte,PA,Rio Maria,50,false
+Norte,PA,Rondon do Pará,48,false
+Norte,PA,Rurópolis,55,false
+Norte,PA,Salinópolis,47,false
+Norte,PA,Salvaterra,49,false
+Norte,PA,Santa Bárbara do Pará,48,false
+Norte,PA,Santa Cruz do Arari,49,false
+Norte,PA,Santa Isabel do Pará,1,false
+Norte,PA,Santa Luzia do Pará,47,false
+Norte,PA,Santa Maria das Barreiras,50,false
+Norte,PA,Santa Maria do Pará,48,false
+Norte,PA,Santana do Araguaia,50,false
+Norte,PA,Santarém,1,false
+Norte,PA,Santarém Novo,1,false
+Norte,PA,Santo Antônio do Tauá,48,false
+Norte,PA,São Caetano de Odivelas,48,false
+Norte,PA,São Domingos do Araguaia,49,false
+Norte,PA,São Domingos do Capim,48,false
+Norte,PA,São Félix do Xingu,52,false
+Norte,PA,São Francisco do Pará,48,false
+Norte,PA,São Geraldo do Araguaia,49,false
+Norte,PA,São João da Ponta,48,false
+Norte,PA,São João de Pirabas,47,false
+Norte,PA,São João do Araguaia,49,false
+Norte,PA,São Miguel do Guamá,47,false
+Norte,PA,São Sebastião da Boa Vista,50,false
+Norte,PA,Sapucaia,1,false
+Norte,PA,Senador José Porfírio,52,false
+Norte,PA,Soure,49,false
+Norte,PA,Tailândia,49,false
+Norte,PA,Terra Alta,48,false
+Norte,PA,Terra Santa,56,false
+Norte,PA,ToméAçu,48,false
+Norte,PA,Tracuateua,47,false
+Norte,PA,Trairão,56,false
+Norte,PA,Tucumã,51,false
+Norte,PA,Tucuruí,50,false
+Norte,PA,Ulianópolis,47,false
+Norte,PA,Uruará,54,false
+Norte,PA,Vigia,48,false
+Norte,PA,Viseu,46,false
+Norte,PA,Vitória do Xingu,52,false
+Norte,PA,Xinguara,50,false
+Nordeste,PB,Água Branca,38,false
+Nordeste,PB,Aguiar,38,false
+Nordeste,PB,Alagoa Grande,36,false
+Nordeste,PB,Alagoa Nova,36,false
+Nordeste,PB,Alagoinha,36,false
+Nordeste,PB,Alcantil,36,false
+Nordeste,PB,Algodão de Jandaíra,36,false
+Nordeste,PB,Alhandra,35,false
+Nordeste,PB,Amparo,37,false
+Nordeste,PB,Aparecida,38,false
+Nordeste,PB,Araçagi,35,false
+Nordeste,PB,Arara,36,false
+Nordeste,PB,Araruna,36,false
+Nordeste,PB,Areia,36,false
+Nordeste,PB,Areia de Baraúnas,37,false
+Nordeste,PB,Areial,36,false
+Nordeste,PB,Aroeiras,36,false
+Nordeste,PB,Assunção,37,false
+Nordeste,PB,Baía da Traição,35,false
+Nordeste,PB,Bananeiras,1,false
+Nordeste,PB,Baraúna,1,false
+Nordeste,PB,Barra de Santa Rosa,36,false
+Nordeste,PB,Barra de Santana,36,false
+Nordeste,PB,Barra de São Miguel,1,false
+Nordeste,PB,Bayeux,35,false
+Nordeste,PB,Belém,1,false
+Nordeste,PB,Belém do Brejo do Cruz,38,false
+Nordeste,PB,Bernardino Batista,39,false
+Nordeste,PB,Boa Ventura,38,false
+Nordeste,PB,Boa Vista,1,false
+Nordeste,PB,Bom Jesus,1,false
+Nordeste,PB,Bom Sucesso,1,false
+Nordeste,PB,Bonito de Santa Fé,39,false
+Nordeste,PB,Boqueirão,1,false
+Nordeste,PB,Borborema,1,false
+Nordeste,PB,Brejo do Cruz,37,false
+Nordeste,PB,Brejo dos Santos,38,false
+Nordeste,PB,Caaporã,35,false
+Nordeste,PB,Cabaceiras,36,false
+Nordeste,PB,Cabedelo,35,false
+Nordeste,PB,Cachoeira dos Índios,39,false
+Nordeste,PB,Cacimba de Areia,37,false
+Nordeste,PB,Cacimba de Dentro,36,false
+Nordeste,PB,Cacimbas,37,false
+Nordeste,PB,Caiçara,1,false
+Nordeste,PB,Cajazeiras,0,true
+Nordeste,PB,Cajazeirinhas,38,false
+Nordeste,PB,Caldas Brandão,35,false
+Nordeste,PB,Camalaú,37,false
+Nordeste,PB,Campina Grande,36,true
+Nordeste,PB,Capim,35,false
+Nordeste,PB,Caraúbas,1,false
+Nordeste,PB,Carrapateira,38,false
+Nordeste,PB,Casserengue,36,false
+Nordeste,PB,Catingueira,38,false
+Nordeste,PB,Catolé do Rocha,38,false
+Nordeste,PB,Caturité,36,false
+Nordeste,PB,Conceição,1,false
+Nordeste,PB,Condado,1,false
+Nordeste,PB,Conde,1,false
+Nordeste,PB,Congo,37,false
+Nordeste,PB,Coremas,38,false
+Nordeste,PB,Coxixola,37,false
+Nordeste,PB,Cruz do Espírito Santo,35,false
+Nordeste,PB,Cubati,36,false
+Nordeste,PB,Cuité,36,false
+Nordeste,PB,Cuité de Mamanguape,35,false
+Nordeste,PB,Cuitegi,36,false
+Nordeste,PB,Curral de Cima,35,false
+Nordeste,PB,Curral Velho,38,false
+Nordeste,PB,Damião,36,false
+Nordeste,PB,Desterro,37,false
+Nordeste,PB,Diamante,1,false
+Nordeste,PB,Dona Inês,36,false
+Nordeste,PB,Duas Estradas,35,false
+Nordeste,PB,Emas,38,false
+Nordeste,PB,Esperança,1,false
+Nordeste,PB,Fagundes,36,false
+Nordeste,PB,Frei Martinho,36,false
+Nordeste,PB,Gado Bravo,36,false
+Nordeste,PB,Guarabira,35,true
+Nordeste,PB,Gurinhém,35,false
+Nordeste,PB,Gurjão,36,false
+Nordeste,PB,Ibiara,38,false
+Nordeste,PB,Igaracy,38,false
+Nordeste,PB,Imaculada,38,false
+Nordeste,PB,Ingá,1,false
+Nordeste,PB,Itabaiana,1,false
+Nordeste,PB,Itaporanga,0,true
+Nordeste,PB,Itapororoca,35,false
+Nordeste,PB,Itatuba,36,false
+Nordeste,PB,Jacaraú,35,false
+Nordeste,PB,Jericó,38,false
+Nordeste,PB,João Pessoa,35,true
+Nordeste,PB,Juarez Távora,36,false
+Nordeste,PB,Juazeirinho,37,false
+Nordeste,PB,Junco do Seridó,37,false
+Nordeste,PB,Juripiranga,35,false
+Nordeste,PB,Juru,38,false
+Nordeste,PB,Lagoa,38,false
+Nordeste,PB,Lagoa de Dentro,35,false
+Nordeste,PB,Lagoa Seca,36,false
+Nordeste,PB,Lastro,38,false
+Nordeste,PB,Livramento,1,false
+Nordeste,PB,Logradouro,1,false
+Nordeste,PB,Lucena,35,false
+Nordeste,PB,Mãe d'Água,1,false
+Nordeste,PB,Malta,38,false
+Nordeste,PB,Mamanguape,35,false
+Nordeste,PB,Manaíra,38,false
+Nordeste,PB,Marcação,35,false
+Nordeste,PB,Mari,35,false
+Nordeste,PB,Marizópolis,38,false
+Nordeste,PB,Massaranduba,1,false
+Nordeste,PB,Mataraca,35,false
+Nordeste,PB,Matinhas,36,false
+Nordeste,PB,Mato Grosso,1,false
+Nordeste,PB,Maturéia,37,false
+Nordeste,PB,Mogeiro,35,false
+Nordeste,PB,Montadas,36,false
+Nordeste,PB,Monte Horebe,39,false
+Nordeste,PB,Monteiro,37,true
+Nordeste,PB,Mulungu,1,false
+Nordeste,PB,Natuba,36,false
+Nordeste,PB,Nazarezinho,38,false
+Nordeste,PB,Nova Floresta,1,false
+Nordeste,PB,Nova Olinda,1,false
+Nordeste,PB,Nova Palmeira,36,false
+Nordeste,PB,Olho d'Água,1,false
+Nordeste,PB,Olivedos,36,false
+Nordeste,PB,Ouro Velho,37,false
+Nordeste,PB,Parari,37,false
+Nordeste,PB,Passagem,1,false
+Nordeste,PB,Patos,37,true
+Nordeste,PB,Paulista,1,false
+Nordeste,PB,Pedra Branca,1,false
+Nordeste,PB,Pedra Lavrada,36,false
+Nordeste,PB,Pedras de Fogo,35,false
+Nordeste,PB,Pedro Régis,35,false
+Nordeste,PB,Piancó,38,false
+Nordeste,PB,Picuí,36,false
+Nordeste,PB,Pilar,1,false
+Nordeste,PB,Pilões,1,false
+Nordeste,PB,Pilõezinhos,36,false
+Nordeste,PB,Pirpirituba,35,false
+Nordeste,PB,Pitimbu,35,false
+Nordeste,PB,Pocinhos,36,false
+Nordeste,PB,Poço Dantas,38,false
+Nordeste,PB,Poço de José de Moura,39,false
+Nordeste,PB,Pombal,38,false
+Nordeste,PB,Prata,1,false
+Nordeste,PB,Princesa Isabel,38,false
+Nordeste,PB,Puxinanã,36,false
+Nordeste,PB,Queimadas,1,false
+Nordeste,PB,Quixabá,37,false
+Nordeste,PB,Remígio,36,false
+Nordeste,PB,Riachão,1,false
+Nordeste,PB,Riachão do Bacamarte,36,false
+Nordeste,PB,Riachão do Poço,35,false
+Nordeste,PB,Riacho de Santo Antônio,36,false
+Nordeste,PB,Riacho dos Cavalos,38,false
+Nordeste,PB,Rio Tinto,35,false
+Nordeste,PB,Salgadinho,1,false
+Nordeste,PB,Salgado de São Félix,35,false
+Nordeste,PB,Santa Cecília,1,false
+Nordeste,PB,Santa Cruz,1,false
+Nordeste,PB,Santa Helena,1,false
+Nordeste,PB,Santa Inês,1,false
+Nordeste,PB,Santa Luzia,1,false
+Nordeste,PB,Santa Rita,35,false
+Nordeste,PB,Santa Teresinha,1,false
+Nordeste,PB,Santana de Mangueira,38,false
+Nordeste,PB,Santana dos Garrotes,38,false
+Nordeste,PB,Santarém,1,false
+Nordeste,PB,Santo André,1,false
+Nordeste,PB,São Bentinho,38,false
+Nordeste,PB,São Bento,1,false
+Nordeste,PB,São Domingos,46,false
+Nordeste,PB,São Domingos do Cariri,36,false
+Nordeste,PB,São Francisco,1,false
+Nordeste,PB,São João do Cariri,37,false
+Nordeste,PB,São João do Rio do Peixe,38,false
+Nordeste,PB,São João do Tigre,37,false
+Nordeste,PB,São José da Lagoa Tapada,38,false
+Nordeste,PB,São José de Caiana,38,false
+Nordeste,PB,São José de Espinharas,37,false
+Nordeste,PB,São José de Piranhas,39,false
+Nordeste,PB,São José de Princesa,38,false
+Nordeste,PB,São José do Bonfim,37,false
+Nordeste,PB,São José do Brejo do Cruz,37,false
+Nordeste,PB,São José do Sabugi,37,false
+Nordeste,PB,São José dos Cordeiros,37,false
+Nordeste,PB,São José dos Ramos,35,false
+Nordeste,PB,São Mamede,37,false
+Nordeste,PB,São Miguel de Taipu,35,false
+Nordeste,PB,São Sebastião de Lagoa de Roça,36,false
+Nordeste,PB,São Sebastião do Umbuzeiro,37,false
+Nordeste,PB,Sapé,1,false
+Nordeste,PB,Seridó,1,false
+Nordeste,PB,Serra Branca,1,false
+Nordeste,PB,Serra da Raiz,35,false
+Nordeste,PB,Serra Grande,1,false
+Nordeste,PB,Serra Redonda,36,false
+Nordeste,PB,Serraria,36,false
+Nordeste,PB,Sertãozinho,1,false
+Nordeste,PB,Sobrado,1,false
+Nordeste,PB,Solânea,36,false
+Nordeste,PB,Soledade,1,false
+Nordeste,PB,Sossêgo,36,false
+Nordeste,PB,Sousa,38,true
+Nordeste,PB,Sumé,37,false
+Nordeste,PB,Tacima,36,false
+Nordeste,PB,Taperoá,1,false
+Nordeste,PB,Tavares,1,false
+Nordeste,PB,Teixeira,37,false
+Nordeste,PB,Tenório,37,false
+Nordeste,PB,Triunfo,1,false
+Nordeste,PB,Uiraúna,38,false
+Nordeste,PB,Umbuzeiro,57,false
+Nordeste,PB,Várzea,1,false
+Nordeste,PB,Vieirópolis,38,false
+Nordeste,PB,Vista Serrana,38,false
+Nordeste,PB,Zabelê,37,false
+Nordeste,PE,Abreu e Lima,35,false
+Nordeste,PE,Afogados da Ingazeira,38,false
+Nordeste,PE,Afrânio,41,false
+Nordeste,PE,Agrestina,36,false
+Nordeste,PE,Água Preta,36,false
+Nordeste,PE,Águas Belas,1,false
+Nordeste,PE,Alagoinha,1,false
+Nordeste,PE,Aliança,35,false
+Nordeste,PE,Altinho,36,false
+Nordeste,PE,Amaraji,35,false
+Nordeste,PE,Angelim,36,false
+Nordeste,PE,Araçoiaba,35,false
+Nordeste,PE,Araripina,40,false
+Nordeste,PE,Arcoverde,37,false
+Nordeste,PE,Barra de Guabiraba,36,false
+Nordeste,PE,Barreiros,1,false
+Nordeste,PE,Belém de Maria,36,false
+Nordeste,PE,Belém do São Francisco,1,false
+Nordeste,PE,Belo Jardim,36,false
+Nordeste,PE,Betânia,1,false
+Nordeste,PE,Bezerros,1,false
+Nordeste,PE,Bodocó,40,false
+Nordeste,PE,Bom Conselho,37,false
+Nordeste,PE,Bom Jardim,1,false
+Nordeste,PE,Bonito,1,false
+Nordeste,PE,Brejão,37,false
+Nordeste,PE,Brejinho,1,false
+Nordeste,PE,Brejo da Madre de Deus,36,false
+Nordeste,PE,Buenos Aires,35,false
+Nordeste,PE,Buíque,37,false
+Nordeste,PE,Cabo de Santo Agostinho,35,false
+Nordeste,PE,Cabrobó,39,false
+Nordeste,PE,Cachoeirinha,1,false
+Nordeste,PE,Caetés,37,false
+Nordeste,PE,Calçado,36,false
+Nordeste,PE,Calumbi,38,false
+Nordeste,PE,Camaragibe,35,false
+Nordeste,PE,Camocim de São Félix,36,false
+Nordeste,PE,Camutanga,35,false
+Nordeste,PE,Canhotinho,36,false
+Nordeste,PE,Capoeiras,37,false
+Nordeste,PE,Carnaíba,38,false
+Nordeste,PE,Carnaubeira da Penha,39,false
+Nordeste,PE,Carpina,35,false
+Nordeste,PE,Caruaru,36,false
+Nordeste,PE,Casinhas,36,false
+Nordeste,PE,Catende,36,false
+Nordeste,PE,Cedro,1,false
+Nordeste,PE,Chã de Alegria,35,false
+Nordeste,PE,Chã Grande,35,false
+Nordeste,PE,Condado,1,false
+Nordeste,PE,Correntes,36,false
+Nordeste,PE,Cortês,36,false
+Nordeste,PE,Cumaru,36,false
+Nordeste,PE,Cupira,36,false
+Nordeste,PE,Custódia,38,false
+Nordeste,PE,Dormentes,41,false
+Nordeste,PE,Escada,1,false
+Nordeste,PE,Exu,40,false
+Nordeste,PE,Feira Nova,1,false
+Nordeste,PE,Fernando de Noronha,32,false
+Nordeste,PE,Ferreiros,35,false
+Nordeste,PE,Flores,1,false
+Nordeste,PE,Floresta,1,false
+Nordeste,PE,Frei Miguelinho,36,false
+Nordeste,PE,Gameleira,1,false
+Nordeste,PE,Garanhuns,36,false
+Nordeste,PE,Glória do Goitá,35,false
+Nordeste,PE,Goiana,35,false
+Nordeste,PE,Granito,40,false
+Nordeste,PE,Gravatá,36,false
+Nordeste,PE,Iati,37,false
+Nordeste,PE,Ibimirim,38,false
+Nordeste,PE,Ibirajuba,36,false
+Nordeste,PE,Igarassu,35,false
+Nordeste,PE,Iguaraci,38,false
+Nordeste,PE,Ilha de Itamaracá,35,false
+Nordeste,PE,Inajá,1,false
+Nordeste,PE,Ingazeira,37,false
+Nordeste,PE,Ipojuca,1,false
+Nordeste,PE,Ipubi,40,false
+Nordeste,PE,Itacuruba,1,false
+Nordeste,PE,Itaíba,1,false
+Nordeste,PE,Itambé,1,false
+Nordeste,PE,Itapetim,37,false
+Nordeste,PE,Itapissuma,35,false
+Nordeste,PE,Itaquitinga,35,false
+Nordeste,PE,Jaboatão dos Guararapes,1,false
+Nordeste,PE,Jaqueira,36,false
+Nordeste,PE,Jataúba,36,false
+Nordeste,PE,Jatobá,1,false
+Nordeste,PE,João Alfredo,36,false
+Nordeste,PE,Joaquim Nabuco,36,false
+Nordeste,PE,Jucati,36,false
+Nordeste,PE,Jupi,36,false
+Nordeste,PE,Jurema,1,false
+Nordeste,PE,LAGOA DE ITAENGA,1,false
+Nordeste,PE,Lagoa do Carro,35,false
+Nordeste,PE,Lagoa do Ouro,36,false
+Nordeste,PE,Lagoa dos Gatos,36,false
+Nordeste,PE,Lagoa Grande,1,false
+Nordeste,PE,Lajedo,36,false
+Nordeste,PE,Limoeiro,1,false
+Nordeste,PE,Macaparana,35,false
+Nordeste,PE,Machados,36,false
+Nordeste,PE,Manari,38,false
+Nordeste,PE,Maraial,36,false
+Nordeste,PE,Mirandiba,39,false
+Nordeste,PE,Moreilândia,40,false
+Nordeste,PE,Moreno,1,false
+Nordeste,PE,Nazaré da Mata,35,false
+Nordeste,PE,Olinda,35,false
+Nordeste,PE,Orobó,36,false
+Nordeste,PE,Orocó,40,false
+Nordeste,PE,Ouricuri,40,false
+Nordeste,PE,Palmares,1,false
+Nordeste,PE,Palmeirina,36,false
+Nordeste,PE,Panelas,36,false
+Nordeste,PE,Paranatama,37,false
+Nordeste,PE,Parnamirim,1,false
+Nordeste,PE,Passira,36,false
+Nordeste,PE,Paudalho,35,false
+Nordeste,PE,Paulista,35,false
+Nordeste,PE,Pedra,37,false
+Nordeste,PE,Pesqueira,37,false
+Nordeste,PE,Petrolândia,1,false
+Nordeste,PE,Petrolina,40,false
+Nordeste,PE,Poção,37,false
+Nordeste,PE,Pombos,35,false
+Nordeste,PE,Primavera,1,false
+Nordeste,PE,Quipapá,36,false
+Nordeste,PE,Quixaba,1,false
+Nordeste,PE,Recife,35,true
+Nordeste,PE,Riacho das Almas,36,false
+Nordeste,PE,Ribeirão,35,false
+Nordeste,PE,Rio Formoso,35,false
+Nordeste,PE,Sairé,36,false
+Nordeste,PE,Salgadinho,1,false
+Nordeste,PE,Salgueiro,39,false
+Nordeste,PE,Saloá,37,false
+Nordeste,PE,Sanharó,37,false
+Nordeste,PE,Santa Cruz,1,false
+Nordeste,PE,Santa Cruz da Baixa Verde,38,false
+Nordeste,PE,Santa Cruz do Capibaribe,36,false
+Nordeste,PE,Santa Filomena,1,false
+Nordeste,PE,Santa Maria da Boa Vista,40,false
+Nordeste,PE,Santa Maria do Cambucá,36,false
+Nordeste,PE,Santa Terezinha,1,false
+Nordeste,PE,São Benedito do Sul,36,false
+Nordeste,PE,São Bento do Una,36,false
+Nordeste,PE,São Caitano,1,false
+Nordeste,PE,São João,1,false
+Nordeste,PE,São Joaquim do Monte,36,false
+Nordeste,PE,São José da Coroa Grande,35,false
+Nordeste,PE,São José do Belmonte,39,false
+Nordeste,PE,São José do Egito,37,false
+Nordeste,PE,São Lourenço da Mata,1,false
+Nordeste,PE,São Vicente Ferrer,1,false
+Nordeste,PE,Serra Talhada,38,false
+Nordeste,PE,Serrita,39,false
+Nordeste,PE,Sertânia,37,false
+Nordeste,PE,Sirinhaém,35,false
+Nordeste,PE,Solidão,38,false
+Nordeste,PE,Surubim,36,false
+Nordeste,PE,Tabira,38,false
+Nordeste,PE,Tacaimbó,36,false
+Nordeste,PE,Tacaratu,38,false
+Nordeste,PE,Tamandaré,1,false
+Nordeste,PE,Taquaritinga do Norte,36,false
+Nordeste,PE,Terezinha,37,false
+Nordeste,PE,Terra Nova,1,false
+Nordeste,PE,Timbaúba,35,false
+Nordeste,PE,Toritama,36,false
+Nordeste,PE,Tracunhaém,35,false
+Nordeste,PE,Trindade,49,false
+Nordeste,PE,Triunfo,1,false
+Nordeste,PE,Tupanatinga,37,false
+Nordeste,PE,Tuparetama,37,false
+Nordeste,PE,Venturosa,37,false
+Nordeste,PE,Verdejante,39,false
+Nordeste,PE,Vertente do Lério,36,false
+Nordeste,PE,Vertentes,1,false
+Nordeste,PE,Vicência,35,false
+Nordeste,PE,Vitória de Santo Antão,35,false
+Nordeste,PE,Xexéu,36,false
+Nordeste,PI,Acauã,41,false
+Nordeste,PI,Agricolândia,43,false
+Nordeste,PI,Água Branca,1,false
+Nordeste,PI,Alagoinha do Piauí,41,false
+Nordeste,PI,Alegrete do Piauí,41,false
+Nordeste,PI,Alto Longá,42,false
+Nordeste,PI,Altos,1,false
+Nordeste,PI,Alvorada do Gurguéia,44,false
+Nordeste,PI,Amarante,43,false
+Nordeste,PI,Angical do Piauí,43,false
+Nordeste,PI,Anísio de Abreu,43,false
+Nordeste,PI,Antônio Almeida,44,false
+Nordeste,PI,Aroazes,42,false
+Nordeste,PI,Aroeiras do Itaim,1,false
+Nordeste,PI,Arraial,43,false
+Nordeste,PI,Assunção do Piauí,41,false
+Nordeste,PI,Avelino Lopes,44,false
+Nordeste,PI,Baixa Grande do Ribeiro,45,false
+Nordeste,PI,Barra D'Alcântara,1,false
+Nordeste,PI,Barras,42,false
+Nordeste,PI,Barreiras do Piauí,45,false
+Nordeste,PI,Barro Duro,1,false
+Nordeste,PI,Batalha,1,false
+Nordeste,PI,Bela Vista do Piauí,42,false
+Nordeste,PI,Belém do Piauí,41,false
+Nordeste,PI,Beneditinos,42,false
+Nordeste,PI,Bertolínia,44,false
+Nordeste,PI,Betânia do Piauí,41,false
+Nordeste,PI,Boa Hora,42,false
+Nordeste,PI,Bocaina,1,false
+Nordeste,PI,Bom Jesus,1,false
+Nordeste,PI,Bom Princípio do Piauí,42,false
+Nordeste,PI,Bonfim do Piauí,43,false
+Nordeste,PI,Boqueirão do Piauí,42,false
+Nordeste,PI,Brasileira,42,false
+Nordeste,PI,Brejo do Piauí,43,false
+Nordeste,PI,Buriti dos Lopes,42,false
+Nordeste,PI,Buriti dos Montes,41,false
+Nordeste,PI,Cabeceiras do Piauí,42,false
+Nordeste,PI,Cajazeiras do Piauí,42,false
+Nordeste,PI,Cajueiro da Praia,41,false
+Nordeste,PI,Caldeirão Grande do Piauí,41,false
+Nordeste,PI,Campinas do Piauí,42,false
+Nordeste,PI,Campo Alegre do Fidalgo,42,false
+Nordeste,PI,Campo Grande do Piauí,41,false
+Nordeste,PI,Campo Largo do Piauí,43,false
+Nordeste,PI,Campo Maior,42,false
+Nordeste,PI,Canavieira,44,false
+Nordeste,PI,Canto do Buriti,43,false
+Nordeste,PI,Capitão de Campos,42,false
+Nordeste,PI,Capitão Gervásio Oliveira,42,false
+Nordeste,PI,Caracol,1,false
+Nordeste,PI,Caraúbas do Piauí,42,false
+Nordeste,PI,Caridade do Piauí,41,false
+Nordeste,PI,Castelo do Piauí,42,false
+Nordeste,PI,Caxingó,42,false
+Nordeste,PI,Cocal,42,false
+Nordeste,PI,Cocal de Telha,42,false
+Nordeste,PI,Cocal dos Alves,41,false
+Nordeste,PI,Coivaras,42,false
+Nordeste,PI,Colônia do Gurguéia,44,false
+Nordeste,PI,Colônia do Piauí,42,false
+Nordeste,PI,Conceição do Canindé,42,false
+Nordeste,PI,Coronel José Dias,43,false
+Nordeste,PI,Corrente,45,false
+Nordeste,PI,Cristalândia do Piauí,45,false
+Nordeste,PI,Cristino Castro,44,false
+Nordeste,PI,Curimatá,44,false
+Nordeste,PI,Currais,44,false
+Nordeste,PI,Curral Novo do Piauí,41,false
+Nordeste,PI,Curralinhos,43,false
+Nordeste,PI,Demerval Lobão,43,false
+Nordeste,PI,Dirceu Arcoverde,42,false
+Nordeste,PI,Dom Expedito Lopes,42,false
+Nordeste,PI,Dom Inocêncio,42,false
+Nordeste,PI,Domingos Mourão,41,false
+Nordeste,PI,Elesbão Veloso,42,false
+Nordeste,PI,Eliseu Martins,44,false
+Nordeste,PI,Esperantina,1,false
+Nordeste,PI,Fartura do Piauí,43,false
+Nordeste,PI,Flores do Piauí,43,false
+Nordeste,PI,Floresta do Piauí,42,false
+Nordeste,PI,Floriano,1,false
+Nordeste,PI,Francinópolis,42,false
+Nordeste,PI,Francisco Ayres,43,false
+Nordeste,PI,Francisco Macedo,41,false
+Nordeste,PI,Francisco Santos,41,false
+Nordeste,PI,Fronteiras,41,false
+Nordeste,PI,Geminiano,41,false
+Nordeste,PI,Gilbués,45,false
+Nordeste,PI,Guadalupe,44,false
+Nordeste,PI,Guaribas,44,false
+Nordeste,PI,Hugo Napoleão,43,false
+Nordeste,PI,Ilha Grande,42,false
+Nordeste,PI,Inhuma,42,false
+Nordeste,PI,Ipiranga do Piauí,42,false
+Nordeste,PI,Isaías Coelho,42,false
+Nordeste,PI,Itainópolis,41,false
+Nordeste,PI,Itaueira,43,false
+Nordeste,PI,Jacobina do Piauí,41,false
+Nordeste,PI,Jaicós,41,false
+Nordeste,PI,Jardim do Mulato,43,false
+Nordeste,PI,Jatobá do Piauí,42,false
+Nordeste,PI,Jerumenha,44,false
+Nordeste,PI,João Costa,42,false
+Nordeste,PI,Joaquim Pires,42,false
+Nordeste,PI,Joca Marques,42,false
+Nordeste,PI,José de Freitas,1,false
+Nordeste,PI,Juazeiro do Piauí,42,false
+Nordeste,PI,Júlio Borges,44,false
+Nordeste,PI,Jurema,1,false
+Nordeste,PI,Lagoa Alegre,43,false
+Nordeste,PI,Lagoa de São Francisco,42,false
+Nordeste,PI,Lagoa do Barro do Piauí,42,false
+Nordeste,PI,Lagoa do Piauí,43,false
+Nordeste,PI,Lagoa do Sítio,42,false
+Nordeste,PI,Lagoinha do Piauí,43,false
+Nordeste,PI,Landri Sales,44,false
+Nordeste,PI,Luís Correia,42,false
+Nordeste,PI,Luzilândia,42,false
+Nordeste,PI,Madeiro,42,false
+Nordeste,PI,Manoel Emídio,44,false
+Nordeste,PI,Marcolândia,41,false
+Nordeste,PI,Marcos Parente,44,false
+Nordeste,PI,Massapê do Piauí,41,false
+Nordeste,PI,Matias Olímpio,43,false
+Nordeste,PI,Miguel Alves,43,false
+Nordeste,PI,Miguel Leão,43,false
+Nordeste,PI,Milton Brandão,41,false
+Nordeste,PI,Monsenhor Gil,43,false
+Nordeste,PI,Monsenhor Hipólito,41,false
+Nordeste,PI,Monte Alegre do Piauí,45,false
+Nordeste,PI,Morro Cabeça no Tempo,44,false
+Nordeste,PI,Morro do Chapéu do Piauí,42,false
+Nordeste,PI,Murici dos Portelas,42,false
+Nordeste,PI,Nazaré do Piauí,43,false
+Nordeste,PI,Nazária,43,false
+Nordeste,PI,Nossa Senhora de Nazaré,42,false
+Nordeste,PI,Nossa Senhora dos Remédios,43,false
+Nordeste,PI,Nova Santa Rita,1,false
+Nordeste,PI,Novo Oriente do Piauí,42,false
+Nordeste,PI,Novo Santo Antônio,42,false
+Nordeste,PI,Oeiras,42,false
+Nordeste,PI,Olho D'Água do Piauí,1,false
+Nordeste,PI,Padre Marcos,41,false
+Nordeste,PI,Paes Landim,42,false
+Nordeste,PI,Pajeú do Piauí,43,false
+Nordeste,PI,Palmeira do Piauí,44,false
+Nordeste,PI,Palmeirais,43,false
+Nordeste,PI,Paquetá,1,false
+Nordeste,PI,Parnaguá,45,false
+Nordeste,PI,Parnaíba,42,false
+Nordeste,PI,Passagem Franca do Piauí,42,false
+Nordeste,PI,Patos do Piauí,41,false
+Nordeste,PI,Pau D'Arco do Piauí,1,false
+Nordeste,PI,Paulistana,41,false
+Nordeste,PI,Pavussu,43,false
+Nordeste,PI,Pedro II,41,false
+Nordeste,PI,Pedro Laurentino,42,false
+Nordeste,PI,Picos,1,false
+Nordeste,PI,Pimenteiras,41,false
+Nordeste,PI,Pio IX,41,false
+Nordeste,PI,Piracuruca,42,false
+Nordeste,PI,Piripiri,42,false
+Nordeste,PI,Porto,43,false
+Nordeste,PI,Porto Alegre do Piauí,44,false
+Nordeste,PI,Prata do Piauí,42,false
+Nordeste,PI,Queimada Nova,1,false
+Nordeste,PI,Redenção do Gurguéia,45,false
+Nordeste,PI,Regeneração,43,false
+Nordeste,PI,Riacho Frio,45,false
+Nordeste,PI,Ribeira do Piauí,43,false
+Nordeste,PI,Ribeiro Gonçalves,45,false
+Nordeste,PI,Rio Grande do Piauí,43,false
+Nordeste,PI,Santa Cruz do Piauí,42,false
+Nordeste,PI,Santa Cruz dos Milagres,42,false
+Nordeste,PI,Santa Filomena,1,false
+Nordeste,PI,Santa Luz,44,false
+Nordeste,PI,Santa Rosa do Piauí,42,false
+Nordeste,PI,Santana do Piauí,42,false
+Nordeste,PI,Santo Antônio de Lisboa,1,false
+Nordeste,PI,Santo Antônio dos Milagres,43,false
+Nordeste,PI,Santo Inácio do Piauí,42,false
+Nordeste,PI,São Braz do Piauí,43,false
+Nordeste,PI,São Félix do Piauí,42,false
+Nordeste,PI,São Francisco de Assis do Piauí,42,false
+Nordeste,PI,São Francisco do Piauí,43,false
+Nordeste,PI,São Gonçalo do Gurguéia,45,false
+Nordeste,PI,São Gonçalo do Piauí,43,false
+Nordeste,PI,São João da Canabrava,41,false
+Nordeste,PI,São João da Fronteira,41,false
+Nordeste,PI,São João da Serra,1,false
+Nordeste,PI,São João da Varjota,42,false
+Nordeste,PI,São João do Arraial,42,false
+Nordeste,PI,São João do Piauí,42,false
+Nordeste,PI,São José do Divino,1,false
+Nordeste,PI,São José do Peixe,43,false
+Nordeste,PI,São José do Piauí,41,false
+Nordeste,PI,São Julião,41,false
+Nordeste,PI,São Lourenço do Piauí,43,false
+Nordeste,PI,São Luis do Piauí,41,false
+Nordeste,PI,São Miguel da Baixa Grande,42,false
+Nordeste,PI,São Miguel do Fidalgo,42,false
+Nordeste,PI,São Miguel do Tapuio,41,false
+Nordeste,PI,São Pedro do Piauí,43,false
+Nordeste,PI,São Raimundo Nonato,43,false
+Nordeste,PI,Sebastião Barros,45,false
+Nordeste,PI,Sebastião Leal,44,false
+Nordeste,PI,Sigefredo Pacheco,42,false
+Nordeste,PI,Simões,1,false
+Nordeste,PI,Simplício Mendes,1,false
+Nordeste,PI,Socorro do Piauí,42,false
+Nordeste,PI,Sussuapara,41,false
+Nordeste,PI,Tamboril do Piauí,43,false
+Nordeste,PI,Tanque do Piauí,42,false
+Nordeste,PI,Teresina,43,true
+Nordeste,PI,União,1,false
+Nordeste,PI,Uruçuí,45,false
+Nordeste,PI,Valença do Piauí,42,false
+Nordeste,PI,Várzea Branca,43,false
+Nordeste,PI,Várzea Grande,1,false
+Nordeste,PI,Vera Mendes,41,false
+Nordeste,PI,Vila Nova do Piauí,41,false
+Nordeste,PI,Wall Ferraz,42,false
+Sul,PR,Abatiá,50,false
+Sul,PR,Adrianópolis,1,false
+Sul,PR,Agudos do Sul,49,false
+Sul,PR,Almirante Tamandaré,1,false
+Sul,PR,Altamira do Paraná,53,false
+Sul,PR,Alto Paraíso,1,false
+Sul,PR,Alto Paraná,52,false
+Sul,PR,Alto Piquiri,53,false
+Sul,PR,Altônia,54,false
+Sul,PR,Alvorada do Sul,51,false
+Sul,PR,Amaporã,53,false
+Sul,PR,Ampére,53,false
+Sul,PR,Anahy,53,false
+Sul,PR,Andirá,50,false
+Sul,PR,Ângulo,52,false
+Sul,PR,Antonina,49,false
+Sul,PR,Antônio Olinto,50,false
+Sul,PR,Apucarana,51,false
+Sul,PR,Arapongas,51,false
+Sul,PR,Arapoti,50,false
+Sul,PR,Arapuã,52,false
+Sul,PR,Araruna,1,false
+Sul,PR,Araucária,49,false
+Sul,PR,Ariranha do Ivaí,52,false
+Sul,PR,Assaí,51,false
+Sul,PR,Assis Chateaubriand,54,false
+Sul,PR,Astorga,52,false
+Sul,PR,Atalaia,1,false
+Sul,PR,Balsa Nova,50,false
+Sul,PR,Bandeirantes,1,false
+Sul,PR,Barbosa Ferraz,52,false
+Sul,PR,Barra do Jacaré,50,false
+Sul,PR,Barracão,51,false
+Sul,PR,Bela Vista da Caroba,54,false
+Sul,PR,Bela Vista do Paraíso,51,false
+Sul,PR,Bituruna,52,false
+Sul,PR,Boa Esperança,1,false
+Sul,PR,Boa Esperança do Iguaçu,53,false
+Sul,PR,Boa Ventura de São Roque,52,false
+Sul,PR,Boa Vista da Aparecida,53,false
+Sul,PR,Bocaiúva do Sul,49,false
+Sul,PR,Bom Jesus do Sul,54,false
+Sul,PR,Bom Sucesso,1,false
+Sul,PR,Bom Sucesso do Sul,53,false
+Sul,PR,Borrazópolis,52,false
+Sul,PR,Braganey,53,false
+Sul,PR,Brasilândia do Sul,54,false
+Sul,PR,Cafeara,52,false
+Sul,PR,Cafelândia,1,false
+Sul,PR,Cafezal do Sul,54,false
+Sul,PR,Califórnia,51,false
+Sul,PR,Cambará,50,false
+Sul,PR,Cambé,51,false
+Sul,PR,Cambira,52,false
+Sul,PR,Campina da Lagoa,53,false
+Sul,PR,Campina do Simão,52,false
+Sul,PR,Campina Grande do Sul,49,false
+Sul,PR,Campo Bonito,53,false
+Sul,PR,Campo do Tenente,50,false
+Sul,PR,Campo Largo,50,false
+Sul,PR,Campo Magro,49,false
+Sul,PR,Campo Mourão,52,false
+Sul,PR,Cândido de Abreu,51,false
+Sul,PR,Candói,52,false
+Sul,PR,Cantagalo,52,false
+Sul,PR,Capanema,54,false
+Sul,PR,Capitão Leônidas Marques,54,false
+Sul,PR,Carambeí,50,false
+Sul,PR,Carlópolis,50,false
+Sul,PR,Cascavel,53,false
+Sul,PR,Castro,50,false
+Sul,PR,Catanduvas,1,false
+Sul,PR,Centenário do Sul,52,false
+Sul,PR,Cerro Azul,1,false
+Sul,PR,Céu Azul,54,false
+Sul,PR,Chopinzinho,53,false
+Sul,PR,Cianorte,53,false
+Sul,PR,Cidade Gaúcha,53,false
+Sul,PR,Clevelândia,52,false
+Sul,PR,Colombo,49,false
+Sul,PR,Colorado,1,false
+Sul,PR,Congonhinhas,51,false
+Sul,PR,Conselheiro Mairinck,50,false
+Sul,PR,Contenda,1,false
+Sul,PR,Corbélia,53,false
+Sul,PR,Cornélio Procópio,51,false
+Sul,PR,Coronel Domingos Soares,52,false
+Sul,PR,Coronel Vivida,53,false
+Sul,PR,Corumbataí do Sul,52,false
+Sul,PR,Cruz Machado,51,false
+Sul,PR,Cruzeiro do Iguaçu,53,false
+Sul,PR,Cruzeiro do Oeste,53,false
+Sul,PR,Cruzeiro do Sul,73,false
+Sul,PR,Cruzmaltina,51,false
+Sul,PR,Curitiba,49,true
+Sul,PR,Curiúva,50,false
+Sul,PR,Diamante do Norte,53,false
+Sul,PR,Diamante do Sul,53,false
+Sul,PR,Diamante D'Oeste,1,false
+Sul,PR,Dois Vizinhos,53,false
+Sul,PR,Douradina,1,false
+Sul,PR,Doutor Camargo,52,false
+Sul,PR,Doutor Ulysses,49,false
+Sul,PR,Enéas Marques,53,false
+Sul,PR,Engenheiro Beltrão,52,false
+Sul,PR,Entre Rios do Oeste,54,false
+Sul,PR,Esperança Nova,54,false
+Sul,PR,Espigão Alto do Iguaçu,53,false
+Sul,PR,Farol,53,false
+Sul,PR,Faxinal,1,false
+Sul,PR,Fazenda Rio Grande,49,false
+Sul,PR,Fênix,52,false
+Sul,PR,Fernandes Pinheiro,51,false
+Sul,PR,Figueira,1,false
+Sul,PR,Flor da Serra do Sul,53,false
+Sul,PR,Floraí,52,false
+Sul,PR,Floresta,1,false
+Sul,PR,Florestópolis,51,false
+Sul,PR,Flórida,52,false
+Sul,PR,Formosa do Oeste,53,false
+Sul,PR,Foz do Iguaçu,55,false
+Sul,PR,Foz do Jordão,52,false
+Sul,PR,Francisco Alves,54,false
+Sul,PR,Francisco Beltrão,53,false
+Sul,PR,General Carneiro,1,false
+Sul,PR,Godoy Moreira,52,false
+Sul,PR,Goioerê,53,false
+Sul,PR,Goioxim,52,false
+Sul,PR,Grandes Rios,52,false
+Sul,PR,Guaíra,1,false
+Sul,PR,Guairaçá,53,false
+Sul,PR,Guamiranga,51,false
+Sul,PR,Guapirama,50,false
+Sul,PR,Guaporema,53,false
+Sul,PR,Guaraci,1,false
+Sul,PR,Guaraniaçu,53,false
+Sul,PR,Guarapuava,51,false
+Sul,PR,Guaraqueçaba,48,false
+Sul,PR,Guaratuba,49,false
+Sul,PR,Honório Serpa,52,false
+Sul,PR,Ibaiti,50,false
+Sul,PR,Ibema,53,false
+Sul,PR,Ibiporã,51,false
+Sul,PR,Icaraíma,54,false
+Sul,PR,Iguaraçu,52,false
+Sul,PR,Iguatu,1,false
+Sul,PR,Imbaú,51,false
+Sul,PR,Imbituva,51,false
+Sul,PR,Inácio Martins,51,false
+Sul,PR,Inajá,1,false
+Sul,PR,Indianópolis,1,false
+Sul,PR,Ipiranga,1,false
+Sul,PR,Iporã,54,false
+Sul,PR,Iracema do Oeste,53,false
+Sul,PR,Irati,1,false
+Sul,PR,Iretama,52,false
+Sul,PR,Itaguajé,52,false
+Sul,PR,Itaipulândia,54,false
+Sul,PR,Itambaracá,50,false
+Sul,PR,Itambé,1,false
+Sul,PR,Itapejara d'Oeste,1,false
+Sul,PR,Itaperuçu,49,false
+Sul,PR,Itaúna do Sul,53,false
+Sul,PR,Ivaí,1,false
+Sul,PR,Ivaiporã,52,false
+Sul,PR,Ivaté,53,false
+Sul,PR,Ivatuba,52,false
+Sul,PR,Jaboti,50,false
+Sul,PR,Jacarezinho,50,false
+Sul,PR,Jaguapitã,52,false
+Sul,PR,Jaguariaíva,50,false
+Sul,PR,Jandaia do Sul,52,false
+Sul,PR,Janiópolis,53,false
+Sul,PR,Japira,50,false
+Sul,PR,Japurá,1,false
+Sul,PR,Jardim Alegre,1,false
+Sul,PR,Jardim Olinda,52,false
+Sul,PR,Jataizinho,51,false
+Sul,PR,Jesuítas,53,false
+Sul,PR,Joaquim Távora,50,false
+Sul,PR,Jundiaí do Sul,50,false
+Sul,PR,Juranda,53,false
+Sul,PR,Jussara,51,false
+Sul,PR,Kaloré,52,false
+Sul,PR,Lapa,1,false
+Sul,PR,Laranjal,1,false
+Sul,PR,Laranjeiras do Sul,52,false
+Sul,PR,Leópolis,51,false
+Sul,PR,Lidianópolis,52,false
+Sul,PR,Lindoeste,54,false
+Sul,PR,Loanda,53,false
+Sul,PR,Lobato,1,false
+Sul,PR,Londrina,51,true
+Sul,PR,Luiziana,52,false
+Sul,PR,Lunardelli,52,false
+Sul,PR,Lupionópolis,52,false
+Sul,PR,Mallet,51,false
+Sul,PR,Mamborê,53,false
+Sul,PR,Mandaguaçu,52,false
+Sul,PR,Mandaguari,52,false
+Sul,PR,Mandirituba,49,false
+Sul,PR,Manfrinópolis,53,false
+Sul,PR,Mangueirinha,52,false
+Sul,PR,Manoel Ribas,52,false
+Sul,PR,Marechal Cândido Rondon,54,false
+Sul,PR,Maria Helena,53,false
+Sul,PR,Marialva,52,false
+Sul,PR,Marilândia do Sul,51,false
+Sul,PR,Marilena,53,false
+Sul,PR,Mariluz,53,false
+Sul,PR,Maringá,1,false
+Sul,PR,Mariópolis,53,false
+Sul,PR,Maripá,54,false
+Sul,PR,Marmeleiro,1,false
+Sul,PR,Marquinho,52,false
+Sul,PR,Marumbi,52,false
+Sul,PR,Matelândia,54,false
+Sul,PR,Matinhos,49,false
+Sul,PR,Mato Rico,52,false
+Sul,PR,Mauá da Serra,51,false
+Sul,PR,Medianeira,1,false
+Sul,PR,Mercedes,54,false
+Sul,PR,Mirador,1,false
+Sul,PR,Miraselva,51,false
+Sul,PR,Missal,54,false
+Sul,PR,Moreira Sales,53,false
+Sul,PR,Morretes,49,false
+Sul,PR,Munhoz de Melo,52,false
+Sul,PR,Nossa Senhora das Graças,52,false
+Sul,PR,Nova Aliança do Ivaí,53,false
+Sul,PR,Nova América da Colina,51,false
+Sul,PR,Nova Aurora,48,false
+Sul,PR,Nova Cantu,53,false
+Sul,PR,Nova Esperança,1,false
+Sul,PR,Nova Esperança do Sudoeste,53,false
+Sul,PR,Nova Fátima,1,false
+Sul,PR,Nova Laranjeiras,53,false
+Sul,PR,Nova Londrina,53,false
+Sul,PR,Nova Olímpia,1,false
+Sul,PR,Nova Prata do Iguaçu,53,false
+Sul,PR,Nova Santa Bárbara,51,false
+Sul,PR,Nova Santa Rosa,54,false
+Sul,PR,Nova Tebas,52,false
+Sul,PR,Novo Itacolomi,52,false
+Sul,PR,Ortigueira,51,false
+Sul,PR,Ourizona,52,false
+Sul,PR,Ouro Verde do Oeste,54,false
+Sul,PR,Paiçandu,52,false
+Sul,PR,Palmas,1,false
+Sul,PR,Palmeira,1,false
+Sul,PR,Palmital,1,false
+Sul,PR,Palotina,54,false
+Sul,PR,Paraíso do Norte,53,false
+Sul,PR,Paranacity,52,false
+Sul,PR,Paranaguá,49,false
+Sul,PR,Paranapoema,52,false
+Sul,PR,Paranavaí,52,false
+Sul,PR,Pato Bragado,54,false
+Sul,PR,Pato Branco,53,false
+Sul,PR,Paula Freitas,51,false
+Sul,PR,Paulo Frontin,51,false
+Sul,PR,Peabiru,52,false
+Sul,PR,Perobal,53,false
+Sul,PR,Pérola,54,false
+Sul,PR,Pérola d'Oeste,1,false
+Sul,PR,Piên,49,false
+Sul,PR,Pinhais,49,false
+Sul,PR,Pinhal de São Bento,53,false
+Sul,PR,Pinhalão,50,false
+Sul,PR,Pinhão,1,false
+Sul,PR,Piraí do Sul,50,false
+Sul,PR,Piraquara,49,false
+Sul,PR,Pitanga,1,false
+Sul,PR,Pitangueiras,1,false
+Sul,PR,Planaltina do Paraná,53,false
+Sul,PR,Planalto,1,false
+Sul,PR,Ponta Grossa,50,false
+Sul,PR,Pontal do Paraná,49,false
+Sul,PR,Porecatu,51,false
+Sul,PR,Porto Amazonas,50,false
+Sul,PR,Porto Barreiro,52,false
+Sul,PR,Porto Rico,53,false
+Sul,PR,Porto Vitória,51,false
+Sul,PR,Prado Ferreira,51,false
+Sul,PR,Pranchita,54,false
+Sul,PR,Presidente Castelo Branco,52,false
+Sul,PR,Primeiro de Maio,51,false
+Sul,PR,Prudentópolis,51,false
+Sul,PR,Quarto Centenário,53,false
+Sul,PR,Quatiguá,50,false
+Sul,PR,Quatro Barras,1,false
+Sul,PR,Quatro Pontes,54,false
+Sul,PR,Quedas do Iguaçu,53,false
+Sul,PR,Querência do Norte,53,false
+Sul,PR,Quinta do Sol,52,false
+Sul,PR,Quitandinha,49,false
+Sul,PR,Ramilândia,54,false
+Sul,PR,Rancho Alegre,51,false
+Sul,PR,Rancho Alegre D'Oeste,1,false
+Sul,PR,Realeza,1,false
+Sul,PR,Rebouças,51,false
+Sul,PR,Renascença,1,false
+Sul,PR,Reserva,51,false
+Sul,PR,Reserva do Iguaçu,52,false
+Sul,PR,Ribeirão Claro,50,false
+Sul,PR,Ribeirão do Pinhal,50,false
+Sul,PR,Rio Azul,1,false
+Sul,PR,Rio Bom,51,false
+Sul,PR,Rio Bonito do Iguaçu,53,false
+Sul,PR,Rio Branco do Ivaí,51,false
+Sul,PR,Rio Branco do Sul,49,false
+Sul,PR,Rio Negro,1,false
+Sul,PR,Rolândia,51,false
+Sul,PR,Roncador,52,false
+Sul,PR,Rondon,53,false
+Sul,PR,Rosário do Ivaí,51,false
+Sul,PR,Sabáudia,52,false
+Sul,PR,Salgado Filho,1,false
+Sul,PR,Salto do Itararé,50,false
+Sul,PR,Salto do Lontra,53,false
+Sul,PR,Santa Amélia,50,false
+Sul,PR,Santa Cecília do Pavão,51,false
+Sul,PR,Santa Cruz de Monte Castelo,53,false
+Sul,PR,Santa Fé,1,false
+Sul,PR,Santa Helena,1,false
+Sul,PR,Santa Inês,1,false
+Sul,PR,Santa Isabel do Ivaí,53,false
+Sul,PR,Santa Izabel do Oeste,53,false
+Sul,PR,Santa Lúcia,1,false
+Sul,PR,Santa Maria do Oeste,52,false
+Sul,PR,Santa Mariana,51,false
+Sul,PR,Santa Mônica,1,false
+Sul,PR,Santa Tereza do Oeste,54,false
+Sul,PR,Santa Terezinha de Itaipu,54,false
+Sul,PR,Santana do Itararé,50,false
+Sul,PR,Santo Antônio da Platina,50,false
+Sul,PR,Santo Antônio do Caiuá,52,false
+Sul,PR,Santo Antônio do Paraíso,51,false
+Sul,PR,Santo Antônio do Sudoeste,1,false
+Sul,PR,Santo Inácio,1,false
+Sul,PR,São Carlos do Ivaí,52,false
+Sul,PR,São Jerônimo da Serra,51,false
+Sul,PR,São João,1,false
+Sul,PR,São João do Caiuá,52,false
+Sul,PR,São João do Ivaí,52,false
+Sul,PR,São João do Triunfo,50,false
+Sul,PR,São Jorge do Ivaí,52,false
+Sul,PR,São Jorge do Patrocínio,54,false
+Sul,PR,São Jorge d'Oeste,1,false
+Sul,PR,São José da Boa Vista,50,false
+Sul,PR,São José das Palmeiras,54,false
+Sul,PR,São José dos Pinhais,49,false
+Sul,PR,São Manoel do Paraná,53,false
+Sul,PR,São Mateus do Sul,50,false
+Sul,PR,São Miguel do Iguaçu,54,false
+Sul,PR,São Pedro do Iguaçu,54,false
+Sul,PR,São Pedro do Ivaí,52,false
+Sul,PR,São Pedro do Paraná,53,false
+Sul,PR,São Sebastião da Amoreira,51,false
+Sul,PR,São Tomé,1,false
+Sul,PR,Sapopema,51,false
+Sul,PR,Sarandi,1,false
+Sul,PR,Saudade do Iguaçu,53,false
+Sul,PR,Sengés,1,false
+Sul,PR,Serranópolis do Iguaçu,54,false
+Sul,PR,Sertaneja,51,false
+Sul,PR,Sertanópolis,51,false
+Sul,PR,Siqueira Campos,1,false
+Sul,PR,Sulina,53,false
+Sul,PR,Tamarana,51,false
+Sul,PR,Tamboara,52,false
+Sul,PR,Tapejara,1,false
+Sul,PR,Tapira,1,false
+Sul,PR,Teixeira Soares,50,false
+Sul,PR,Telêmaco Borba,51,false
+Sul,PR,Terra Boa,52,false
+Sul,PR,Terra Rica,53,false
+Sul,PR,Terra Roxa,1,false
+Sul,PR,Tibagi,50,false
+Sul,PR,Tijucas do Sul,49,false
+Sul,PR,Toledo,54,false
+Sul,PR,Tomazina,50,false
+Sul,PR,Três Barras do Paraná,53,false
+Sul,PR,Tunas do Paraná,49,false
+Sul,PR,Tuneiras do Oeste,53,false
+Sul,PR,Tupãssi,54,false
+Sul,PR,Turvo,1,false
+Sul,PR,Ubiratã,53,false
+Sul,PR,Umuarama,53,false
+Sul,PR,União da Vitória,51,false
+Sul,PR,Uniflor,52,false
+Sul,PR,Uraí,51,false
+Sul,PR,Ventania,50,false
+Sul,PR,Vera Cruz do Oeste,54,false
+Sul,PR,Verê,53,false
+Sul,PR,Virmond,52,false
+Sul,PR,Vitorino,1,false
+Sul,PR,Wenceslau Braz,50,false
+Sul,PR,Xambrê,53,false
+Sudeste,RJ,Angra dos Reis,44,false
+Sudeste,RJ,Aperibé,42,false
+Sudeste,RJ,Araruama,42,false
+Sudeste,RJ,Areal,43,false
+Sudeste,RJ,Armação dos Búzios,42,false
+Sudeste,RJ,Arraial do Cabo,42,false
+Sudeste,RJ,Barra do Piraí,44,false
+Sudeste,RJ,Barra Mansa,44,false
+Sudeste,RJ,Belford Roxo,43,false
+Sudeste,RJ,Bom Jardim,42,false
+Sudeste,RJ,Bom Jesus do Itabapoana,42,false
+Sudeste,RJ,Cabo Frio,42,false
+Sudeste,RJ,Cachoeiras de Macacu,43,false
+Sudeste,RJ,Cambuci,42,false
+Sudeste,RJ,Campos dos Goytacazes,41,false
+Sudeste,RJ,Cantagalo,42,false
+Sudeste,RJ,Carapebus,42,false
+Sudeste,RJ,Cardoso Moreira,42,false
+Sudeste,RJ,Carmo,43,false
+Sudeste,RJ,Casimiro de Abreu,42,false
+Sudeste,RJ,Comendador Levy Gasparian,43,false
+Sudeste,RJ,Conceição de Macabu,42,false
+Sudeste,RJ,Cordeiro,42,false
+Sudeste,RJ,Duas Barras,43,false
+Sudeste,RJ,Duque de Caxias,43,false
+Sudeste,RJ,Engenheiro Paulo de Frontin,44,false
+Sudeste,RJ,Guapimirim,43,false
+Sudeste,RJ,Iguaba Grande,42,false
+Sudeste,RJ,Itaboraí,43,false
+Sudeste,RJ,Itaguaí,44,false
+Sudeste,RJ,Italva,42,false
+Sudeste,RJ,Itaocara,42,false
+Sudeste,RJ,Itaperuna,42,false
+Sudeste,RJ,Itatiaia,45,false
+Sudeste,RJ,Japeri,44,false
+Sudeste,RJ,Laje do Muriaé,42,false
+Sudeste,RJ,Macaé,42,false
+Sudeste,RJ,Macuco,42,false
+Sudeste,RJ,Magé,43,false
+Sudeste,RJ,Mangaratiba,44,false
+Sudeste,RJ,Maricá,43,false
+Sudeste,RJ,Mendes,44,false
+Sudeste,RJ,Mesquita,43,false
+Sudeste,RJ,Miguel Pereira,43,false
+Sudeste,RJ,Miracema,42,false
+Sudeste,RJ,Natividade,42,false
+Sudeste,RJ,Nilópolis,43,false
+Sudeste,RJ,Niterói,43,true
+Sudeste,RJ,Nova Friburgo,43,false
+Sudeste,RJ,Nova Iguaçu,43,false
+Sudeste,RJ,Paracambi,44,false
+Sudeste,RJ,Paraíba do Sul,43,false
+Sudeste,RJ,Paraty,45,false
+Sudeste,RJ,Paty do Alferes,43,false
+Sudeste,RJ,Petrópolis,43,false
+Sudeste,RJ,Pinheiral,44,false
+Sudeste,RJ,Piraí,44,false
+Sudeste,RJ,Porciúncula,42,false
+Sudeste,RJ,Porto Real,44,false
+Sudeste,RJ,Quatis,44,false
+Sudeste,RJ,Queimados,44,false
+Sudeste,RJ,Quissamã,41,false
+Sudeste,RJ,Resende,44,false
+Sudeste,RJ,Rio Bonito,43,false
+Sudeste,RJ,Rio Claro,44,false
+Sudeste,RJ,Rio das Flores,44,false
+Sudeste,RJ,Rio das Ostras,42,false
+Sudeste,RJ,Rio de Janeiro,43,true
+Sudeste,RJ,Santa Maria Madalena,42,false
+Sudeste,RJ,Santo Antônio de Pádua,42,false
+Sudeste,RJ,São Fidélis,42,false
+Sudeste,RJ,São Francisco de Itabapoana,41,false
+Sudeste,RJ,São Gonçalo,43,false
+Sudeste,RJ,São João da Barra,41,true
+Sudeste,RJ,São João de Meriti,43,false
+Sudeste,RJ,São José de Ubá,42,false
+Sudeste,RJ,São José do Vale do Rio Preto,43,false
+Sudeste,RJ,São Pedro da Aldeia,42,false
+Sudeste,RJ,São Sebastião do Alto,42,false
+Sudeste,RJ,Sapucaia,43,false
+Sudeste,RJ,Saquarema,43,false
+Sudeste,RJ,Seropédica,44,false
+Sudeste,RJ,Silva Jardim,42,false
+Sudeste,RJ,Sumidouro,43,false
+Sudeste,RJ,Tanguá,43,false
+Sudeste,RJ,Teresópolis,43,false
+Sudeste,RJ,Trajano de Moraes,42,false
+Sudeste,RJ,Três Rios,43,false
+Sudeste,RJ,Valença,44,false
+Sudeste,RJ,VarreSai,42,false
+Sudeste,RJ,Vassouras,44,false
+Sudeste,RJ,Volta Redonda,44,false
+Norte,RN,Acari,37,false
+Norte,RN,Açu,37,false
+Norte,RN,Afonso Bezerra,37,false
+Norte,RN,Água Nova,38,false
+Norte,RN,Alexandria,38,false
+Norte,RN,Almino Afonso,38,false
+Norte,RN,Alto do Rodrigues,37,false
+Norte,RN,Angicos,37,false
+Norte,RN,Antônio Martins,38,false
+Norte,RN,Apodi,38,false
+Norte,RN,Areia Branca,1,false
+Norte,RN,Arês,35,false
+Norte,RN,Augusto Severo,37,false
+Norte,RN,Baía Formosa,35,false
+Norte,RN,Baraúna,1,false
+Norte,RN,Barcelona,36,false
+Norte,RN,Bento Fernandes,36,false
+Norte,RN,Bodó,36,false
+Norte,RN,Bom Jesus,1,false
+Norte,RN,Brejinho,1,false
+Norte,RN,Caiçara do Norte,36,false
+Norte,RN,Caiçara do Rio do Vento,36,false
+Norte,RN,Caicó,37,false
+Norte,RN,Campo Redondo,1,false
+Norte,RN,Canguaretama,35,false
+Norte,RN,Caraúbas,1,false
+Norte,RN,Carnaúba dos Dantas,37,false
+Norte,RN,Carnaubais,37,false
+Norte,RN,CearáMirim,35,false
+Norte,RN,Cerro Corá,36,false
+Norte,RN,Coronel Ezequiel,36,false
+Norte,RN,Coronel João Pessoa,38,false
+Norte,RN,Cruzeta,37,false
+Norte,RN,Currais Novos,37,false
+Norte,RN,Doutor Severiano,38,false
+Norte,RN,Encanto,38,false
+Norte,RN,Equador,37,false
+Norte,RN,Espírito Santo,1,false
+Norte,RN,Extremoz,35,false
+Norte,RN,Felipe Guerra,38,false
+Norte,RN,Fernando Pedroza,37,false
+Norte,RN,Florânia,37,false
+Norte,RN,Francisco Dantas,38,false
+Norte,RN,Frutuoso Gomes,38,false
+Norte,RN,Galinhos,36,false
+Norte,RN,Goianinha,35,false
+Norte,RN,Governador DixSept Rosado,38,false
+Norte,RN,Grossos,37,false
+Norte,RN,Guamaré,36,false
+Norte,RN,Ielmo Marinho,36,false
+Norte,RN,Ipanguaçu,1,false
+Norte,RN,Ipueira,37,false
+Norte,RN,Itajá,52,false
+Norte,RN,Itaú,38,false
+Norte,RN,Jaçanã,36,false
+Norte,RN,Jandaíra,1,false
+Norte,RN,Janduís,37,false
+Norte,RN,Januário Cicco,36,false
+Norte,RN,Japi,36,false
+Norte,RN,Jardim de Angicos,36,false
+Norte,RN,Jardim de Piranhas,37,false
+Norte,RN,Jardim do Seridó,37,false
+Norte,RN,João Câmara,36,false
+Norte,RN,João Dias,38,false
+Norte,RN,José da Penha,38,false
+Norte,RN,Jucurutu,37,false
+Norte,RN,Jundiá,1,false
+Norte,RN,Lagoa d'Anta,1,false
+Norte,RN,Lagoa de Pedras,35,false
+Norte,RN,Lagoa de Velhos,36,false
+Norte,RN,Lagoa Nova,36,false
+Norte,RN,Lagoa Salgada,35,false
+Norte,RN,Lajes,36,false
+Norte,RN,Lajes Pintadas,36,false
+Norte,RN,Lucrécia,38,false
+Norte,RN,Luís Gomes,38,false
+Norte,RN,Macaíba,35,false
+Norte,RN,Macau,37,false
+Norte,RN,Major Sales,38,false
+Norte,RN,Marcelino Vieira,38,false
+Norte,RN,Martins,38,false
+Norte,RN,Maxaranguape,35,false
+Norte,RN,Messias Targino,38,false
+Norte,RN,Montanhas,35,false
+Norte,RN,Monte Alegre,1,false
+Norte,RN,Monte das Gameleiras,36,false
+Norte,RN,Mossoró,37,false
+Norte,RN,Natal,35,true
+Norte,RN,Nísia Floresta,35,false
+Norte,RN,Nova Cruz,1,false
+Norte,RN,Olhod'Água do Borges,1,false
+Norte,RN,Ouro Branco,1,false
+Norte,RN,Paraná,1,false
+Norte,RN,Paraú,37,false
+Norte,RN,Parazinho,1,false
+Norte,RN,Parelhas,37,false
+Norte,RN,Parnamirim,35,false
+Norte,RN,Passa e Fica,36,false
+Norte,RN,Passagem,1,false
+Norte,RN,Patu,38,false
+Norte,RN,Pau dos Ferros,38,false
+Norte,RN,Pedra Grande,1,false
+Norte,RN,Pedra Preta,1,false
+Norte,RN,Pedro Avelino,36,false
+Norte,RN,Pedro Velho,35,false
+Norte,RN,Pendências,37,false
+Norte,RN,Pilões,1,false
+Norte,RN,Poço Branco,36,false
+Norte,RN,Portalegre,38,false
+Norte,RN,Porto do Mangue,37,false
+Norte,RN,Presidente Juscelino,1,false
+Norte,RN,Pureza,1,false
+Norte,RN,Rafael Fernandes,38,false
+Norte,RN,Rafael Godeiro,38,false
+Norte,RN,Riacho da Cruz,1,false
+Norte,RN,Riacho de Santana,1,false
+Norte,RN,Riachuelo,1,false
+Norte,RN,Rio do Fogo,35,false
+Norte,RN,Rodolfo Fernandes,38,false
+Norte,RN,Ruy Barbosa,1,false
+Norte,RN,Santa Cruz,1,false
+Norte,RN,Santa Maria,1,false
+Norte,RN,Santana do Matos,37,false
+Norte,RN,Santana do Seridó,37,false
+Norte,RN,Santo Antônio,1,false
+Norte,RN,São Bento do Norte,1,false
+Norte,RN,São Bento do Trairí,36,false
+Norte,RN,São Fernando,37,false
+Norte,RN,São Francisco do Oeste,38,false
+Norte,RN,São Gonçalo do Amarante,1,false
+Norte,RN,São João do Sabugi,37,false
+Norte,RN,São José de Mipibu,35,false
+Norte,RN,São José do Campestre,36,false
+Norte,RN,São José do Seridó,37,false
+Norte,RN,São Miguel,1,false
+Norte,RN,São Miguel do Gostoso,36,false
+Norte,RN,São Paulo do Potengi,36,false
+Norte,RN,São Pedro,1,false
+Norte,RN,São Rafael,1,false
+Norte,RN,São Tomé,1,false
+Norte,RN,São Vicente,1,false
+Norte,RN,Senador Elói de Souza,36,false
+Norte,RN,Senador Georgino Avelino,35,false
+Norte,RN,Serra de São Bento,36,false
+Norte,RN,Serra do Mel,37,false
+Norte,RN,Serra Negra do Norte,37,false
+Norte,RN,Serrinha,1,false
+Norte,RN,Serrinha dos Pintos,38,false
+Norte,RN,Severiano Melo,38,false
+Norte,RN,Sítio Novo,1,false
+Norte,RN,Taboleiro Grande,38,false
+Norte,RN,Taipu,36,false
+Norte,RN,Tangará,1,false
+Norte,RN,Tenente Ananias,38,false
+Norte,RN,Tenente Laurentino Cruz,37,false
+Norte,RN,Tibau,37,false
+Norte,RN,Tibau do Sul,35,false
+Norte,RN,Timbaúba dos Batistas,37,false
+Norte,RN,Touros,35,false
+Norte,RN,Triunfo Potiguar,37,false
+Norte,RN,Umarizal,38,false
+Norte,RN,Upanema,37,false
+Norte,RN,Várzea,1,false
+Norte,RN,VenhaVer,38,false
+Norte,RN,Vera Cruz,1,false
+Norte,RN,Viçosa,1,false
+Norte,RN,Vila Flor,35,false
+Norte,RO,Alta Floresta D'Oeste,1,false
+Norte,RO,Alto Alegre,1,false
+Norte,RO,Alto Alegre dos Parecis,62,false
+Norte,RO,Alto Paraíso,1,false
+Norte,RO,Alvorada D'Oeste,1,false
+Norte,RO,Amajari,61,false
+Norte,RO,Ariquemes,63,false
+Norte,RO,Boa Vista,1,false
+Norte,RO,Bonfim,1,false
+Norte,RO,Buritis,1,false
+Norte,RO,Cabixi,61,false
+Norte,RO,Cacaulândia,63,false
+Norte,RO,Cacoal,61,false
+Norte,RO,Campo Novo de Rondônia,64,false
+Norte,RO,Candeias do Jamari,64,false
+Norte,RO,Cantá,61,false
+Norte,RO,Caracaraí,61,false
+Norte,RO,Caroebe,60,false
+Norte,RO,Castanheiras,62,false
+Norte,RO,Cerejeiras,61,false
+Norte,RO,Chupinguaia,61,false
+Norte,RO,Colorado do Oeste,61,false
+Norte,RO,Corumbiara,61,false
+Norte,RO,Costa Marques,64,false
+Norte,RO,Cujubim,63,false
+Norte,RO,Espigão D'Oeste,1,false
+Norte,RO,Governador Jorge Teixeira,63,false
+Norte,RO,GuajaráMirim,65,false
+Norte,RO,Iracema,1,false
+Norte,RO,Itapuã do Oeste,63,false
+Norte,RO,Jaru,62,false
+Norte,RO,JiParaná,62,false
+Norte,RO,Machadinho D'Oeste,1,false
+Norte,RO,Ministro Andreazza,62,false
+Norte,RO,Mirante da Serra,63,false
+Norte,RO,Monte Negro,63,false
+Norte,RO,Mucajaí,1,false
+Norte,RO,Normandia,60,false
+Norte,RO,Nova Brasilândia D'Oeste,1,false
+Norte,RO,Nova Mamoré,65,false
+Norte,RO,Nova União,1,false
+Norte,RO,Novo Horizonte do Oeste,62,false
+Norte,RO,Ouro Preto do Oeste,62,false
+Norte,RO,Pacaraima,61,false
+Norte,RO,Parecis,62,false
+Norte,RO,Pimenta Bueno,61,false
+Norte,RO,Pimenteiras do Oeste,1,false
+Norte,RO,Porto Velho,64,true
+Norte,RO,Presidente Médici,1,false
+Norte,RO,Primavera de Rondônia,61,false
+Norte,RO,Rio Crespo,63,false
+Norte,RO,Rolim de Moura,62,false
+Norte,RO,Rorainópolis,60,false
+Norte,RO,Santa Luzia D'Oeste,1,false
+Norte,RO,São Felipe D'Oeste,1,false
+Norte,RO,São Francisco do Guaporé,64,false
+Norte,RO,São João da Baliza,60,false
+Norte,RO,São Luiz,1,false
+Norte,RO,São Miguel do Guaporé,63,false
+Norte,RO,Seringueiras,63,false
+Norte,RO,Teixeirópolis,62,false
+Norte,RO,Theobroma,62,false
+Norte,RO,Uiramutã,60,false
+Norte,RO,Urupá,62,false
+Norte,RO,Vale do Anari,62,false
+Norte,RO,Vale do Paraíso,62,false
+Norte,RO,Vilhena,1,false
+Sul,RS,Aceguá,54,false
+Sul,RS,Água Santa,52,false
+Sul,RS,Agudo,53,false
+Sul,RS,Ajuricaba,54,false
+Sul,RS,Alecrim,55,false
+Sul,RS,Alegrete,56,false
+Sul,RS,Alegria,54,false
+Sul,RS,Almirante Tamandaré do Sul,53,false
+Sul,RS,Alpestre,53,false
+Sul,RS,Alto Alegre,53,false
+Sul,RS,Alto Feliz,51,false
+Sul,RS,Alvorada,51,false
+Sul,RS,Amaral Ferrador,52,false
+Sul,RS,Ametista do Sul,53,false
+Sul,RS,André da Rocha,52,false
+Sul,RS,Anta Gorda,52,false
+Sul,RS,Antônio Prado,51,false
+Sul,RS,Arambaré,51,false
+Sul,RS,Araricá,51,false
+Sul,RS,Aratiba,52,false
+Sul,RS,Arroio do Meio,52,false
+Sul,RS,Arroio do Padre,52,false
+Sul,RS,Arroio do Sal,50,false
+Sul,RS,Arroio do Tigre,53,false
+Sul,RS,Arroio dos Ratos,52,false
+Sul,RS,Arroio Grande,53,false
+Sul,RS,Arvorezinha,52,false
+Sul,RS,Augusto Pestana,54,false
+Sul,RS,Áurea,52,false
+Sul,RS,Bagé,50,false
+Sul,RS,Balneário Pinhal,50,false
+Sul,RS,Barão,51,false
+Sul,RS,Barão de Cotegipe,52,false
+Sul,RS,Barão do Triunfo,52,false
+Sul,RS,Barra do Guarita,54,false
+Sul,RS,Barra do Quaraí,58,false
+Sul,RS,Barra do Ribeiro,51,false
+Sul,RS,Barra do Rio Azul,52,false
+Sul,RS,Barra Funda,53,false
+Sul,RS,Barracão,51,false
+Sul,RS,Barros Cassal,53,false
+Sul,RS,Benjamin Constant do Sul,53,false
+Sul,RS,Bento Gonçalves,52,false
+Sul,RS,Boa Vista das Missões,53,false
+Sul,RS,Boa Vista do Buricá,54,false
+Sul,RS,Boa Vista do Cadeado,54,false
+Sul,RS,Boa Vista do Incra,53,false
+Sul,RS,Boa Vista do Sul,52,false
+Sul,RS,Bom Jesus,52,false
+Sul,RS,Bom Princípio,51,false
+Sul,RS,Bom Progresso,54,false
+Sul,RS,Bom Retiro do Sul,52,false
+Sul,RS,Boqueirão do Leão,52,false
+Sul,RS,Bossoroca,55,false
+Sul,RS,Bozano,54,false
+Sul,RS,Braga,54,false
+Sul,RS,Brochier,52,false
+Sul,RS,Butiá,52,false
+Sul,RS,Caçapava do Sul,53,false
+Sul,RS,Cacequi,55,false
+Sul,RS,Cachoeira do Sul,53,false
+Sul,RS,Cachoeirinha,51,false
+Sul,RS,Cacique Doble,52,false
+Sul,RS,Caibaté,55,false
+Sul,RS,Caiçara,53,false
+Sul,RS,Camaquã,52,false
+Sul,RS,Camargo,52,false
+Sul,RS,Cambará do Sul,50,false
+Sul,RS,Campestre da Serra,51,false
+Sul,RS,Campina das Missões,55,false
+Sul,RS,Campinas do Sul,53,false
+Sul,RS,Campo Bom,51,false
+Sul,RS,Campo Novo,54,false
+Sul,RS,Campos Borges,53,false
+Sul,RS,Candelária,53,false
+Sul,RS,Cândido Godói,55,false
+Sul,RS,Candiota,54,false
+Sul,RS,Canela,51,false
+Sul,RS,Canguçu,53,false
+Sul,RS,Canoas,51,false
+Sul,RS,Canudos do Vale,52,false
+Sul,RS,Capão Bonito do Sul,51,false
+Sul,RS,Capão da Canoa,50,false
+Sul,RS,Capão do Cipó,55,false
+Sul,RS,Capão do Leão,52,false
+Sul,RS,Capela de Santana,51,false
+Sul,RS,Capitão,52,false
+Sul,RS,Capivari do Sul,51,false
+Sul,RS,Caraá,50,false
+Sul,RS,Carazinho,53,false
+Sul,RS,Carlos Barbosa,52,false
+Sul,RS,Carlos Gomes,52,false
+Sul,RS,Casca,52,false
+Sul,RS,Caseiros,52,false
+Sul,RS,Catuípe,54,false
+Sul,RS,Caxias do Sul,51,true
+Sul,RS,Centenário,52,false
+Sul,RS,Cerrito,53,false
+Sul,RS,Cerro Branco,53,false
+Sul,RS,Cerro Grande,53,false
+Sul,RS,Cerro Grande do Sul,52,false
+Sul,RS,Cerro Largo,55,false
+Sul,RS,Chapada,53,false
+Sul,RS,Charqueadas,52,false
+Sul,RS,Charrua,52,false
+Sul,RS,Chiapetta,54,false
+Sul,RS,Chuí,53,false
+Sul,RS,Chuvisca,52,false
+Sul,RS,Cidreira,50,false
+Sul,RS,Ciríaco,52,false
+Sul,RS,Colinas,52,false
+Sul,RS,Colorado,53,false
+Sul,RS,Condor,53,false
+Sul,RS,Constantina,53,false
+Sul,RS,Coqueiro Baixo,52,false
+Sul,RS,Coqueiros do Sul,53,false
+Sul,RS,Coronel Barros,54,false
+Sul,RS,Coronel Bicaco,54,false
+Sul,RS,Coronel Pilar,52,false
+Sul,RS,Cotiporã,52,false
+Sul,RS,Coxilha,52,false
+Sul,RS,Crissiumal,54,false
+Sul,RS,Cristal,52,false
+Sul,RS,Cristal do Sul,53,false
+Sul,RS,Cruz Alta,54,false
+Sul,RS,Cruzaltense,53,false
+Sul,RS,Cruzeiro do Sul,73,false
+Sul,RS,David Canabarro,52,false
+Sul,RS,Derrubadas,54,false
+Sul,RS,Dezesseis de Novembro,55,false
+Sul,RS,Dilermando de Aguiar,54,false
+Sul,RS,Dois Irmãos,51,false
+Sul,RS,Dois Irmãos das Missões,54,false
+Sul,RS,Dois Lajeados,52,false
+Sul,RS,Dom Feliciano,52,false
+Sul,RS,Dom Pedrito,55,false
+Sul,RS,Dom Pedro de Alcântara,50,false
+Sul,RS,Dona Francisca,53,false
+Sul,RS,Doutor Maurício Cardoso,54,false
+Sul,RS,Doutor Ricardo,52,false
+Sul,RS,Eldorado do Sul,52,false
+Sul,RS,Encantado,52,false
+Sul,RS,Encruzilhada do Sul,53,false
+Sul,RS,Engenho Velho,53,false
+Sul,RS,Entre Rios do Sul,53,false
+Sul,RS,EntreIjuís,54,false
+Sul,RS,Erebango,52,false
+Sul,RS,Erechim,52,false
+Sul,RS,Ernestina,53,false
+Sul,RS,Erval Grande,53,false
+Sul,RS,Erval Seco,54,false
+Sul,RS,Esmeralda,51,false
+Sul,RS,Esperança do Sul,54,false
+Sul,RS,Espumoso,53,false
+Sul,RS,Estação,52,false
+Sul,RS,Estância Velha,51,false
+Sul,RS,Esteio,51,false
+Sul,RS,Estrela,52,false
+Sul,RS,Estrela Velha,53,false
+Sul,RS,Eugênio de Castro,54,false
+Sul,RS,Fagundes Varela,52,false
+Sul,RS,Farroupilha,51,false
+Sul,RS,Faxinal do Soturno,53,false
+Sul,RS,Faxinalzinho,53,false
+Sul,RS,Fazenda Vilanova,52,false
+Sul,RS,Feliz,51,false
+Sul,RS,Flores da Cunha,51,false
+Sul,RS,Floriano Peixoto,52,false
+Sul,RS,Fontoura Xavier,52,false
+Sul,RS,Formigueiro,53,false
+Sul,RS,Forquetinha,52,false
+Sul,RS,Fortaleza dos Valos,53,false
+Sul,RS,Frederico Westphalen,53,false
+Sul,RS,Garibaldi,52,false
+Sul,RS,Garruchos,56,false
+Sul,RS,Gaurama,52,false
+Sul,RS,General Câmara,52,false
+Sul,RS,Gentil,52,false
+Sul,RS,Getúlio Vargas,52,false
+Sul,RS,Giruá,54,false
+Sul,RS,Glorinha,51,false
+Sul,RS,Gramado,51,false
+Sul,RS,Gramado dos Loureiros,53,false
+Sul,RS,Gramado Xavier,53,false
+Sul,RS,Gravataí,51,false
+Sul,RS,Guabiju,52,false
+Sul,RS,Guaíba,51,false
+Sul,RS,Guaporé,52,false
+Sul,RS,Guarani das Missões,55,false
+Sul,RS,Harmonia,51,false
+Sul,RS,Herval,53,false
+Sul,RS,Herveiras,53,false
+Sul,RS,Horizontina,54,false
+Sul,RS,Hulha Negra,54,false
+Sul,RS,Humaitá,54,false
+Sul,RS,Ibarama,53,false
+Sul,RS,Ibiaçá,52,false
+Sul,RS,Ibiraiaras,52,false
+Sul,RS,Ibirapuitã,53,false
+Sul,RS,Ibirubá,53,false
+Sul,RS,Igrejinha,51,false
+Sul,RS,Ijuí,54,false
+Sul,RS,Ilópolis,52,false
+Sul,RS,Imbé,50,false
+Sul,RS,Imigrante,52,false
+Sul,RS,Independência,54,false
+Sul,RS,Inhacorá,54,false
+Sul,RS,Ipê,51,false
+Sul,RS,Ipiranga do Sul,52,false
+Sul,RS,Iraí,53,false
+Sul,RS,Itaara,54,false
+Sul,RS,Itacurubi,55,false
+Sul,RS,Itapuca,52,false
+Sul,RS,Itaqui,57,false
+Sul,RS,Itati,50,false
+Sul,RS,Itatiba do Sul,52,false
+Sul,RS,Ivorá,54,false
+Sul,RS,Ivoti,51,false
+Sul,RS,Jaboticaba,53,false
+Sul,RS,Jacuizinho,53,false
+Sul,RS,Jacutinga,53,false
+Sul,RS,Jaguarão,53,false
+Sul,RS,Jaguari,55,false
+Sul,RS,Jaquirana,50,false
+Sul,RS,Jari,54,false
+Sul,RS,Jóia,54,false
+Sul,RS,Júlio de Castilhos,54,false
+Sul,RS,Lagoa Bonita do Sul,53,false
+Sul,RS,Lagoa dos Três Cantos,53,false
+Sul,RS,Lagoa Vermelha,52,false
+Sul,RS,Lagoão,53,false
+Sul,RS,Lajeado,52,false
+Sul,RS,Lajeado do Bugre,53,false
+Sul,RS,Lavras do Sul,54,false
+Sul,RS,Liberato Salzano,53,false
+Sul,RS,Lindolfo Collor,51,false
+Sul,RS,Linha Nova,51,false
+Sul,RS,Maçambará,56,false
+Sul,RS,Machadinho,52,false
+Sul,RS,Mampituba,50,false
+Sul,RS,Manoel Viana,55,false
+Sul,RS,Maquiné,50,false
+Sul,RS,Maratá,52,false
+Sul,RS,Marau,52,false
+Sul,RS,Marcelino Ramos,52,false
+Sul,RS,Mariana Pimentel,52,false
+Sul,RS,Mariano Moro,52,false
+Sul,RS,Marques de Souza,52,false
+Sul,RS,Mata,54,false
+Sul,RS,Mato Castelhano,52,false
+Sul,RS,Mato Leitão,52,false
+Sul,RS,Mato Queimado,55,false
+Sul,RS,Maximiliano de Almeida,52,false
+Sul,RS,Minas do Leão,52,false
+Sul,RS,Miraguaí,54,false
+Sul,RS,Montauri,52,false
+Sul,RS,Monte Alegre dos Campos,51,false
+Sul,RS,Monte Belo do Sul,52,false
+Sul,RS,Montenegro,51,false
+Sul,RS,Mormaço,53,false
+Sul,RS,Morrinhos do Sul,50,false
+Sul,RS,Morro Redondo,53,false
+Sul,RS,Morro Reuter,51,false
+Sul,RS,Mostardas,51,false
+Sul,RS,Muçum,52,false
+Sul,RS,Muitos Capões,51,false
+Sul,RS,Muliterno,52,false
+Sul,RS,NãoMeToque,53,false
+Sul,RS,Nicolau Vergueiro,52,false
+Sul,RS,Nonoai,53,false
+Sul,RS,Nova Alvorada,52,false
+Sul,RS,Nova Araçá,52,false
+Sul,RS,Nova Bassano,52,false
+Sul,RS,Nova Boa Vista,53,false
+Sul,RS,Nova Bréscia,52,false
+Sul,RS,Nova Candelária,54,false
+Sul,RS,Nova Esperança do Sul,55,false
+Sul,RS,Nova Hartz,51,false
+Sul,RS,Nova Pádua,51,false
+Sul,RS,Nova Palma,53,false
+Sul,RS,Nova Petrópolis,51,false
+Sul,RS,Nova Prata,52,false
+Sul,RS,Nova Ramada,54,false
+Sul,RS,Nova Roma do Sul,51,false
+Sul,RS,Nova Santa Rita,51,false
+Sul,RS,Novo Barreiro,53,false
+Sul,RS,Novo Cabrais,53,false
+Sul,RS,Novo Hamburgo,51,false
+Sul,RS,Novo Machado,55,false
+Sul,RS,Novo Tiradentes,53,false
+Sul,RS,Novo Xingu,53,false
+Sul,RS,Osório,50,false
+Sul,RS,Paim Filho,52,false
+Sul,RS,Palmares do Sul,51,false
+Sul,RS,Palmeira das Missões,53,false
+Sul,RS,Palmitinho,54,false
+Sul,RS,Panambi,54,false
+Sul,RS,Pantano Grande,52,false
+Sul,RS,Paraí,52,false
+Sul,RS,Paraíso do Sul,53,false
+Sul,RS,Pareci Novo,51,false
+Sul,RS,Parobé,51,false
+Sul,RS,Passa Sete,53,false
+Sul,RS,Passo do Sobrado,52,false
+Sul,RS,Passo Fundo,52,true
+Sul,RS,Paulo Bento,52,false
+Sul,RS,Paverama,52,false
+Sul,RS,Pedras Altas,54,false
+Sul,RS,Pedro Osório,53,false
+Sul,RS,Pejuçara,54,false
+Sul,RS,Pelotas,52,true
+Sul,RS,Picada Café,51,false
+Sul,RS,Pinhal,52,false
+Sul,RS,Pinhal da Serra,51,false
+Sul,RS,Pinhal Grande,53,false
+Sul,RS,Pinheirinho do Vale,54,false
+Sul,RS,Pinheiro Machado,53,false
+Sul,RS,Pirapó,55,false
+Sul,RS,Piratini,53,false
+Sul,RS,Planalto,53,false
+Sul,RS,Poço das Antas,52,false
+Sul,RS,Pontão,53,false
+Sul,RS,Ponte Preta,52,false
+Sul,RS,Portão,51,false
+Sul,RS,Porto Alegre,51,true
+Sul,RS,Porto Lucena,55,false
+Sul,RS,Porto Mauá,55,false
+Sul,RS,Porto Vera Cruz,55,false
+Sul,RS,Porto Xavier,55,false
+Sul,RS,Pouso Novo,52,false
+Sul,RS,Presidente Lucena,51,false
+Sul,RS,Progresso,53,false
+Sul,RS,Protásio Alves,51,false
+Sul,RS,Putinga,52,false
+Sul,RS,Quaraí,56,false
+Sul,RS,Quatro Irmãos,52,false
+Sul,RS,Quevedos,54,false
+Sul,RS,Quinze de Novembro,54,false
+Sul,RS,Redentora,54,false
+Sul,RS,Relvado,52,false
+Sul,RS,Restinga Seca,53,false
+Sul,RS,Rio dos Índios,53,false
+Sul,RS,Rio Grande,52,false
+Sul,RS,Rio Pardo,52,false
+Sul,RS,Riozinho,50,false
+Sul,RS,Roca Sales,52,false
+Sul,RS,Rodeio Bonito,53,false
+Sul,RS,Rolador,55,false
+Sul,RS,Rolante,51,false
+Sul,RS,Ronda Alta,53,false
+Sul,RS,Rondinha,53,false
+Sul,RS,Roque Gonzales,55,false
+Sul,RS,Rosário do Sul,55,false
+Sul,RS,Sagrada Família,53,false
+Sul,RS,Saldanha Marinho,53,false
+Sul,RS,Salto do Jacuí,53,false
+Sul,RS,Salvador das Missões,55,false
+Sul,RS,Salvador do Sul,52,false
+Sul,RS,Sananduva,52,false
+Sul,RS,Santa Bárbara do Sul,53,false
+Sul,RS,Santa Cecília do Sul,52,false
+Sul,RS,Santa Clara do Sul,52,false
+Sul,RS,Santa Cruz do Sul,52,false
+Sul,RS,Santa Margarida do Sul,54,false
+Sul,RS,Santa Maria,54,true
+Sul,RS,Santa Maria do Herval,51,false
+Sul,RS,Santa Rosa,54,false
+Sul,RS,Santa Tereza,52,false
+Sul,RS,Santa Vitória do Palmar,53,false
+Sul,RS,Santana da Boa Vista,53,false
+Sul,RS,Sant'Ana do Livramento,56,false
+Sul,RS,Santiago,55,false
+Sul,RS,Santo Ângelo,54,false
+Sul,RS,Santo Antônio da Patrulha,51,false
+Sul,RS,Santo Antônio das Missões,55,false
+Sul,RS,Santo Antônio do Palma,52,false
+Sul,RS,Santo Antônio do Planalto,53,false
+Sul,RS,Santo Augusto,54,false
+Sul,RS,Santo Cristo,55,false
+Sul,RS,Santo Expedito do Sul,52,false
+Sul,RS,São Borja,56,false
+Sul,RS,São Domingos do Sul,52,false
+Sul,RS,São Francisco de Assis,55,false
+Sul,RS,São Francisco de Paula,51,false
+Sul,RS,São Gabriel,54,false
+Sul,RS,São Jerônimo,52,false
+Sul,RS,São João da Urtiga,52,false
+Sul,RS,São João do Polêsine,53,false
+Sul,RS,São Jorge,52,false
+Sul,RS,São José das Missões,53,false
+Sul,RS,São José do Herval,52,false
+Sul,RS,São José do Hortêncio,51,false
+Sul,RS,São José do Inhacorá,54,false
+Sul,RS,São José do Norte,52,false
+Sul,RS,São José do Ouro,52,false
+Sul,RS,São José do Sul,51,false
+Sul,RS,São José dos Ausentes,50,false
+Sul,RS,São Leopoldo,51,false
+Sul,RS,São Lourenço do Sul,52,false
+Sul,RS,São Luiz Gonzaga,55,false
+Sul,RS,São Marcos,51,false
+Sul,RS,São Martinho,1,false
+Sul,RS,São Martinho da Serra,54,false
+Sul,RS,São Miguel das Missões,55,false
+Sul,RS,São Nicolau,55,false
+Sul,RS,São Paulo das Missões,55,false
+Sul,RS,São Pedro da Serra,52,false
+Sul,RS,São Pedro das Missões,53,false
+Sul,RS,São Pedro do Butiá,55,false
+Sul,RS,São Pedro do Sul,54,false
+Sul,RS,São Sebastião do Caí,51,false
+Sul,RS,São Sepé,54,false
+Sul,RS,São Valentim,53,false
+Sul,RS,São Valentim do Sul,52,false
+Sul,RS,São Valério do Sul,54,false
+Sul,RS,São Vendelino,51,false
+Sul,RS,São Vicente do Sul,55,false
+Sul,RS,Sapiranga,51,false
+Sul,RS,Sapucaia do Sul,51,false
+Sul,RS,Sarandi,53,false
+Sul,RS,Seberi,53,false
+Sul,RS,Sede Nova,54,false
+Sul,RS,Segredo,53,false
+Sul,RS,Selbach,53,false
+Sul,RS,Senador Salgado Filho,55,false
+Sul,RS,Sentinela do Sul,52,false
+Sul,RS,Serafina Corrêa,52,false
+Sul,RS,Sério,52,false
+Sul,RS,Sertão,52,false
+Sul,RS,Sertão Santana,52,false
+Sul,RS,Sete de Setembro,54,false
+Sul,RS,Severiano de Almeida,52,false
+Sul,RS,Silveira Martins,54,false
+Sul,RS,Sinimbu,53,false
+Sul,RS,Sobradinho,53,false
+Sul,RS,Soledade,53,false
+Sul,RS,Tabaí,52,false
+Sul,RS,Tapejara,52,false
+Sul,RS,Tapera,53,false
+Sul,RS,Tapes,51,false
+Sul,RS,Taquara,51,false
+Sul,RS,Taquari,52,false
+Sul,RS,Taquaruçu do Sul,53,false
+Sul,RS,Tavares,51,false
+Sul,RS,Tenente Portela,54,false
+Sul,RS,Terra de Areia,50,false
+Sul,RS,Teutônia,52,false
+Sul,RS,Tio Hugo,53,false
+Sul,RS,Tiradentes do Sul,54,false
+Sul,RS,Toropi,54,false
+Sul,RS,Torres,50,false
+Sul,RS,Tramandaí,50,false
+Sul,RS,Travesseiro,52,false
+Sul,RS,Três Arroios,52,false
+Sul,RS,Três Cachoeiras,50,false
+Sul,RS,Três Coroas,51,false
+Sul,RS,Três de Maio,54,false
+Sul,RS,Três Forquilhas,50,false
+Sul,RS,Três Palmeiras,53,false
+Sul,RS,Três Passos,54,false
+Sul,RS,Trindade do Sul,53,false
+Sul,RS,Triunfo,52,false
+Sul,RS,Tucunduva,54,false
+Sul,RS,Tunas,53,false
+Sul,RS,Tupanci do Sul,52,false
+Sul,RS,Tupanciretã,54,false
+Sul,RS,Tupandi,51,false
+Sul,RS,Tuparendi,54,false
+Sul,RS,Turuçu,52,false
+Sul,RS,Ubiretama,55,false
+Sul,RS,União da Serra,52,false
+Sul,RS,Unistalda,55,false
+Sul,RS,Uruguaiana,57,false
+Sul,RS,Vacaria,51,false
+Sul,RS,Vale do Sol,53,false
+Sul,RS,Vale Real,51,false
+Sul,RS,Vale Verde,52,false
+Sul,RS,Vanini,52,false
+Sul,RS,Venâncio Aires,52,false
+Sul,RS,Vera Cruz,53,false
+Sul,RS,Veranópolis,52,false
+Sul,RS,Vespasiano Correa,52,false
+Sul,RS,Viadutos,52,false
+Sul,RS,Viamão,51,false
+Sul,RS,Vicente Dutra,53,false
+Sul,RS,Victor Graeff,53,false
+Sul,RS,Vila Flores,52,false
+Sul,RS,Vila Lângaro,52,false
+Sul,RS,Vila Maria,52,false
+Sul,RS,Vila Nova do Sul,54,false
+Sul,RS,Vista Alegre,53,false
+Sul,RS,Vista Alegre do Prata,52,false
+Sul,RS,Vista Gaúcha,54,false
+Sul,RS,Vitória das Missões,55,false
+Sul,RS,Westfalia,52,false
+Sul,RS,Xangrilá,50,false
+Sul,SC,Abdon Batista,51,false
+Sul,SC,Abelardo Luz,52,false
+Sul,SC,Agrolândia,50,false
+Sul,SC,Agronômica,50,false
+Sul,SC,Água Doce,52,false
+Sul,SC,Águas de Chapecó,53,false
+Sul,SC,Águas Frias,53,false
+Sul,SC,Águas Mornas,49,false
+Sul,SC,Alfredo Wagner,49,false
+Sul,SC,Alto Bela Vista,52,false
+Sul,SC,Anchieta,41,false
+Sul,SC,Angelina,49,false
+Sul,SC,Anita Garibaldi,51,false
+Sul,SC,Anitápolis,49,false
+Sul,SC,Antônio Carlos,49,false
+Sul,SC,Apiúna,49,false
+Sul,SC,Arabutã,52,false
+Sul,SC,Araquari,49,false
+Sul,SC,Araranguá,49,false
+Sul,SC,Armazém,49,false
+Sul,SC,Arroio Trinta,51,false
+Sul,SC,Arvoredo,52,false
+Sul,SC,Ascurra,49,false
+Sul,SC,Atalanta,50,false
+Sul,SC,Aurora,50,false
+Sul,SC,Balneário Arroio do Silva,49,false
+Sul,SC,Balneário Barra do Sul,49,false
+Sul,SC,Balneário Camboriú,49,false
+Sul,SC,Balneário Gaivota,50,false
+Sul,SC,Balneário Piçarras,49,false
+Sul,SC,Bandeirante,54,false
+Sul,SC,Barra Bonita,53,false
+Sul,SC,Barra Velha,49,false
+Sul,SC,Bela Vista do Toldo,50,false
+Sul,SC,Belmonte,54,false
+Sul,SC,Benedito Novo,49,false
+Sul,SC,Biguaçu,49,false
+Sul,SC,Blumenau,49,false
+Sul,SC,Bocaina do Sul,50,false
+Sul,SC,Bom Jardim da Serra,50,false
+Sul,SC,Bom Jesus,52,false
+Sul,SC,Bom Jesus do Oeste,53,false
+Sul,SC,Bom Retiro,49,false
+Sul,SC,Bombinhas,48,false
+Sul,SC,Botuverá,49,false
+Sul,SC,Braço do Norte,49,false
+Sul,SC,Braço do Trombudo,50,false
+Sul,SC,Brunópolis,51,false
+Sul,SC,Brusque,49,false
+Sul,SC,Caçador,51,false
+Sul,SC,Caibi,53,false
+Sul,SC,Calmon,51,false
+Sul,SC,Camboriú,49,false
+Sul,SC,Campo Alegre,49,false
+Sul,SC,Campo Belo do Sul,51,false
+Sul,SC,Campo Erê,53,false
+Sul,SC,Campos Novos,51,false
+Sul,SC,Canelinha,49,false
+Sul,SC,Canoinhas,50,false
+Sul,SC,Capão Alto,51,false
+Sul,SC,Capinzal,52,false
+Sul,SC,Capivari de Baixo,49,false
+Sul,SC,Catanduvas,52,false
+Sul,SC,Caxambu do Sul,53,false
+Sul,SC,Celso Ramos,51,false
+Sul,SC,Cerro Negro,51,false
+Sul,SC,Chapadão do Lageado,50,false
+Sul,SC,Chapecó,53,true
+Sul,SC,Cocal do Sul,49,false
+Sul,SC,Concórdia,52,false
+Sul,SC,Cordilheira Alta,53,false
+Sul,SC,Coronel Freitas,53,false
+Sul,SC,Coronel Martins,53,false
+Sul,SC,Correia Pinto,50,false
+Sul,SC,Corupá,49,false
+Sul,SC,Criciúma,49,true
+Sul,SC,Cunha Porã,53,false
+Sul,SC,Cunhataí,53,false
+Sul,SC,Curitibanos,51,false
+Sul,SC,Descanso,54,false
+Sul,SC,Dionísio Cerqueira,54,false
+Sul,SC,Dona Emma,50,false
+Sul,SC,Doutor Pedrinho,49,false
+Sul,SC,Entre Rios,53,false
+Sul,SC,Ermo,50,false
+Sul,SC,Erval Velho,51,false
+Sul,SC,Faxinal dos Guedes,52,false
+Sul,SC,Flor do Sertão,53,false
+Sul,SC,Florianópolis,49,true
+Sul,SC,Formosa do Sul,53,false
+Sul,SC,Forquilhinha,49,false
+Sul,SC,Fraiburgo,51,false
+Sul,SC,Frei Rogério,51,false
+Sul,SC,Galvão,53,false
+Sul,SC,Garopaba,49,false
+Sul,SC,Garuva,49,false
+Sul,SC,Gaspar,49,false
+Sul,SC,Governador Celso Ramos,49,false
+Sul,SC,Grão Pará,49,false
+Sul,SC,Gravatal,49,false
+Sul,SC,Guabiruba,49,false
+Sul,SC,Guaraciaba,54,false
+Sul,SC,Guaramirim,49,false
+Sul,SC,Guarujá do Sul,54,false
+Sul,SC,Guatambú,53,false
+Sul,SC,Herval d'Oeste,51,false
+Sul,SC,Ibiam,51,false
+Sul,SC,Ibicaré,51,false
+Sul,SC,Ibirama,50,false
+Sul,SC,Içara,49,false
+Sul,SC,Ilhota,49,false
+Sul,SC,Imaruí,49,false
+Sul,SC,Imbituba,49,false
+Sul,SC,Imbuia,49,false
+Sul,SC,Indaial,49,false
+Sul,SC,Iomerê,51,false
+Sul,SC,Ipira,52,false
+Sul,SC,Iporã do Oeste,54,false
+Sul,SC,Ipuaçu,52,false
+Sul,SC,Ipumirim,52,false
+Sul,SC,Iraceminha,53,false
+Sul,SC,Irani,52,false
+Sul,SC,Irati,53,false
+Sul,SC,Irineópolis,51,false
+Sul,SC,Itá,52,false
+Sul,SC,Itaiópolis,50,false
+Sul,SC,Itajaí,49,false
+Sul,SC,Itapema,49,false
+Sul,SC,Itapiranga,54,false
+Sul,SC,Itapoá,49,false
+Sul,SC,Ituporanga,50,false
+Sul,SC,Jaborá,52,false
+Sul,SC,Jacinto Machado,50,false
+Sul,SC,Jaguaruna,49,false
+Sul,SC,Jaraguá do Sul,49,false
+Sul,SC,Jardinópolis,53,false
+Sul,SC,Joaçaba,52,false
+Sul,SC,Joinville,49,true
+Sul,SC,José Boiteux,50,false
+Sul,SC,Jupiá,53,false
+Sul,SC,Lacerdópolis,52,false
+Sul,SC,Lages,50,true
+Sul,SC,Laguna,49,false
+Sul,SC,Lajeado Grande,53,false
+Sul,SC,Laurentino,50,false
+Sul,SC,Lauro Muller,49,false
+Sul,SC,Lebon Régis,51,false
+Sul,SC,Leoberto Leal,49,false
+Sul,SC,Lindóia do Sul,52,false
+Sul,SC,Lontras,50,false
+Sul,SC,Luiz Alves,49,false
+Sul,SC,Luzerna,51,false
+Sul,SC,Macieira,51,false
+Sul,SC,Mafra,50,false
+Sul,SC,Major Gercino,49,false
+Sul,SC,Major Vieira,50,false
+Sul,SC,Maracajá,49,false
+Sul,SC,Maravilha,53,false
+Sul,SC,Marema,53,false
+Sul,SC,Massaranduba,49,false
+Sul,SC,Matos Costa,51,false
+Sul,SC,Meleiro,50,false
+Sul,SC,Mirim Doce,50,false
+Sul,SC,Modelo,53,false
+Sul,SC,Mondaí,53,false
+Sul,SC,Monte Carlo,51,false
+Sul,SC,Monte Castelo,50,false
+Sul,SC,Morro da Fumaça,49,false
+Sul,SC,Morro Grande,50,false
+Sul,SC,Navegantes,49,false
+Sul,SC,Nova Erechim,53,false
+Sul,SC,Nova Itaberaba,53,false
+Sul,SC,Nova Trento,49,false
+Sul,SC,Nova Veneza,49,false
+Sul,SC,Novo Horizonte,53,false
+Sul,SC,Orleans,49,false
+Sul,SC,Otacílio Costa,50,false
+Sul,SC,Ouro,52,false
+Sul,SC,Ouro Verde,52,false
+Sul,SC,Paial,52,false
+Sul,SC,Painel,50,false
+Sul,SC,Palhoça,49,false
+Sul,SC,Palma Sola,53,false
+Sul,SC,Palmeira,50,false
+Sul,SC,Palmitos,53,false
+Sul,SC,Papanduva,50,false
+Sul,SC,Paraíso,54,false
+Sul,SC,Passo de Torres,50,false
+Sul,SC,Passos Maia,52,false
+Sul,SC,Paulo Lopes,49,false
+Sul,SC,Pedras Grandes,49,false
+Sul,SC,Penha,49,false
+Sul,SC,Peritiba,52,false
+Sul,SC,Petrolândia,50,false
+Sul,SC,Pinhalzinho,53,false
+Sul,SC,Pinheiro Preto,51,false
+Sul,SC,Piratuba,52,false
+Sul,SC,Planalto Alegre,53,false
+Sul,SC,Pomerode,49,false
+Sul,SC,Ponte Alta,50,false
+Sul,SC,Ponte Alta do Norte,50,false
+Sul,SC,Ponte Serrada,52,false
+Sul,SC,Porto Belo,49,false
+Sul,SC,Porto União,51,false
+Sul,SC,Pouso Redondo,50,false
+Sul,SC,Praia Grande,50,false
+Sul,SC,Presidente Castello Branco,52,false
+Sul,SC,Presidente Getúlio,50,false
+Sul,SC,Presidente Nereu,49,false
+Sul,SC,Princesa,54,false
+Sul,SC,Quilombo,53,false
+Sul,SC,Rancho Queimado,49,false
+Sul,SC,Rio das Antas,51,false
+Sul,SC,Rio do Campo,50,false
+Sul,SC,Rio do Oeste,50,false
+Sul,SC,Rio do Sul,50,false
+Sul,SC,Rio dos Cedros,49,false
+Sul,SC,Rio Fortuna,49,false
+Sul,SC,Rio Negrinho,50,false
+Sul,SC,Rio Rufino,50,false
+Sul,SC,Riqueza,53,false
+Sul,SC,Rodeio,49,false
+Sul,SC,Romelândia,53,false
+Sul,SC,Salete,50,false
+Sul,SC,Saltinho,53,false
+Sul,SC,Salto Veloso,51,false
+Sul,SC,Sangão,49,false
+Sul,SC,Santa Cecília,50,false
+Sul,SC,Santa Helena,54,false
+Sul,SC,Santa Rosa de Lima,49,false
+Sul,SC,Santa Rosa do Sul,50,false
+Sul,SC,Santa Terezinha,50,false
+Sul,SC,Santa Terezinha do Progresso,53,false
+Sul,SC,Santiago do Sul,53,false
+Sul,SC,Santo Amaro da Imperatriz,49,false
+Sul,SC,São Bento do Sul,49,false
+Sul,SC,São Bernardino,53,false
+Sul,SC,São Bonifácio,49,false
+Sul,SC,São Carlos,53,false
+Sul,SC,São Cristovão do Sul,50,false
+Sul,SC,São Domingos,46,false
+Sul,SC,São Francisco do Sul,49,false
+Sul,SC,São João Batista,49,false
+Sul,SC,São João do Itaperiú,49,false
+Sul,SC,São João do Oeste,54,false
+Sul,SC,São João do Sul,50,false
+Sul,SC,São Joaquim,50,false
+Sul,SC,São José,49,false
+Sul,SC,São José do Cedro,53,false
+Sul,SC,São José do Cerrito,51,false
+Sul,SC,São Lourenço do Oeste,53,false
+Sul,SC,São Ludgero,49,false
+Sul,SC,São Martinho,49,false
+Sul,SC,São Miguel da Boa Vista,53,false
+Sul,SC,São Miguel do Oeste,54,false
+Sul,SC,São Pedro de Alcântara,49,false
+Sul,SC,Saudades,53,false
+Sul,SC,Schroeder,49,false
+Sul,SC,Seara,52,false
+Sul,SC,Serra Alta,53,false
+Sul,SC,Siderópolis,49,false
+Sul,SC,Sombrio,50,false
+Sul,SC,Sul Brasil,53,false
+Sul,SC,Taió,50,false
+Sul,SC,Tangará,51,false
+Sul,SC,Tigrinhos,53,false
+Sul,SC,Tijucas,49,false
+Sul,SC,Timbé do Sul,50,false
+Sul,SC,Timbó,49,false
+Sul,SC,Timbó Grande,51,false
+Sul,SC,Três Barras,50,false
+Sul,SC,Treviso,49,false
+Sul,SC,Treze de Maio,49,false
+Sul,SC,Treze Tílias,51,false
+Sul,SC,Trombudo Central,50,false
+Sul,SC,Tubarão,49,false
+Sul,SC,Tunápolis,54,false
+Sul,SC,Turvo,50,false
+Sul,SC,União do Oeste,53,false
+Sul,SC,Urubici,50,false
+Sul,SC,Urupema,50,false
+Sul,SC,Urussanga,49,false
+Sul,SC,Vargeão,52,false
+Sul,SC,Vargem,51,false
+Sul,SC,Vargem Bonita,52,false
+Sul,SC,Vidal Ramos,49,false
+Sul,SC,Videira,51,false
+Sul,SC,Vitor Meireles,50,false
+Sul,SC,Witmarsum,50,false
+Sul,SC,Xanxerê,52,false
+Sul,SC,Xavantina,52,false
+Sul,SC,Xaxim,53,false
+Sul,SC,Zortéa,52,false
+Nordeste,SE,Amparo de São Francisco,37,false
+Nordeste,SE,Aquidabã,37,false
+Nordeste,SE,Aracaju,37,true
+Nordeste,SE,Arauá,38,false
+Nordeste,SE,Areia Branca,37,false
+Nordeste,SE,Barra dos Coqueiros,37,false
+Nordeste,SE,Boquim,38,false
+Nordeste,SE,Brejo Grande,36,false
+Nordeste,SE,Campo do Brito,37,false
+Nordeste,SE,Canhoba,37,false
+Nordeste,SE,Canindé de São Francisco,38,false
+Nordeste,SE,Capela,37,false
+Nordeste,SE,Carira,38,false
+Nordeste,SE,Carmópolis,37,false
+Nordeste,SE,Cedro de São João,37,false
+Nordeste,SE,Cristinápolis,38,false
+Nordeste,SE,Cumbe,37,false
+Nordeste,SE,Divina Pastora,37,false
+Nordeste,SE,Estância,37,false
+Nordeste,SE,Feira Nova,37,false
+Nordeste,SE,Frei Paulo,38,false
+Nordeste,SE,Gararu,37,false
+Nordeste,SE,General Maynard,37,false
+Nordeste,SE,Gracho Cardoso,37,false
+Nordeste,SE,Ilha das Flores,37,false
+Nordeste,SE,Indiaroba,38,false
+Nordeste,SE,Itabaiana,37,false
+Nordeste,SE,Itabaianinha,38,false
+Nordeste,SE,Itabi,37,false
+Nordeste,SE,Itaporanga d'Ajuda,37,false
+Nordeste,SE,Japaratuba,37,false
+Nordeste,SE,Japoatã,37,false
+Nordeste,SE,Lagarto,38,false
+Nordeste,SE,Laranjeiras,37,false
+Nordeste,SE,Macambira,38,false
+Nordeste,SE,Malhada dos Bois,37,false
+Nordeste,SE,Malhador,37,false
+Nordeste,SE,Maruim,37,false
+Nordeste,SE,Moita Bonita,37,false
+Nordeste,SE,Monte Alegre de Sergipe,38,false
+Nordeste,SE,Muribeca,37,false
+Nordeste,SE,Neópolis,37,false
+Nordeste,SE,Nossa Senhora Aparecida,37,false
+Nordeste,SE,Nossa Senhora da Glória,37,false
+Nordeste,SE,Nossa Senhora das Dores,37,false
+Nordeste,SE,Nossa Senhora de Lourdes,37,false
+Nordeste,SE,Nossa Senhora do Socorro,37,false
+Nordeste,SE,Pacatuba,37,false
+Nordeste,SE,Pedra Mole,38,false
+Nordeste,SE,Pedrinhas,38,false
+Nordeste,SE,Pinhão,38,false
+Nordeste,SE,Pirambu,37,false
+Nordeste,SE,Poço Redondo,38,false
+Nordeste,SE,Poço Verde,38,false
+Nordeste,SE,Porto da Folha,37,false
+Nordeste,SE,Propriá,37,false
+Nordeste,SE,Riachão do Dantas,38,false
+Nordeste,SE,Riachuelo,37,false
+Nordeste,SE,Ribeirópolis,37,false
+Nordeste,SE,Rosário do Catete,37,false
+Nordeste,SE,Salgado,37,false
+Nordeste,SE,Santa Luzia do Itanhy,37,false
+Nordeste,SE,Santa Rosa de Lima,37,false
+Nordeste,SE,Santana do São Francisco,37,false
+Nordeste,SE,Santo Amaro das Brotas,37,false
+Nordeste,SE,São Cristóvão,37,true
+Nordeste,SE,São Domingos,38,true
+Nordeste,SE,São Francisco,37,false
+Nordeste,SE,São Miguel do Aleixo,37,false
+Nordeste,SE,Simão Dias,38,true
+Nordeste,SE,Siriri,37,false
+Nordeste,SE,Telha,37,false
+Nordeste,SE,Tobias Barreto,38,false
+Nordeste,SE,Tomar do Geru,38,false
+Nordeste,SE,Umbaúba,38,false
+Sudeste,SP,Adamantina,51,false
+Sudeste,SP,Adolfo,50,false
+Sudeste,SP,Aguaí,47,false
+Sudeste,SP,Águas da Prata,47,false
+Sudeste,SP,Águas de Lindóia,47,false
+Sudeste,SP,Águas de Santa Bárbara,49,false
+Sudeste,SP,Águas de São Pedro,48,false
+Sudeste,SP,Agudos,49,false
+Sudeste,SP,Alambari,48,false
+Sudeste,SP,Alfredo Marcondes,51,false
+Sudeste,SP,Altair,49,false
+Sudeste,SP,Altinópolis,47,false
+Sudeste,SP,Alto Alegre,1,false
+Sudeste,SP,Alumínio,47,false
+Sudeste,SP,Álvares Florence,50,false
+Sudeste,SP,Álvares Machado,51,false
+Sudeste,SP,Álvaro de Carvalho,50,false
+Sudeste,SP,Alvinlândia,50,false
+Sudeste,SP,Americana,47,false
+Sudeste,SP,Américo Brasiliense,48,false
+Sudeste,SP,Américo de Campos,50,false
+Sudeste,SP,Amparo,1,false
+Sudeste,SP,Analândia,48,false
+Sudeste,SP,Andradina,51,false
+Sudeste,SP,Angatuba,48,false
+Sudeste,SP,Anhembi,48,false
+Sudeste,SP,Anhumas,1,false
+Sudeste,SP,Aparecida,1,false
+Sudeste,SP,Aparecida d'Oeste,1,false
+Sudeste,SP,Apiaí,49,false
+Sudeste,SP,Araçariguama,47,false
+Sudeste,SP,Araçatuba,50,false
+Sudeste,SP,Araçoiaba da Serra,48,false
+Sudeste,SP,Aramina,48,false
+Sudeste,SP,Arandu,49,false
+Sudeste,SP,Arapeí,44,false
+Sudeste,SP,Araraquara,48,false
+Sudeste,SP,Araras,47,false
+Sudeste,SP,ArcoÍris,50,false
+Sudeste,SP,Arealva,49,false
+Sudeste,SP,Areias,1,false
+Sudeste,SP,Areiópolis,49,false
+Sudeste,SP,Ariranha,49,false
+Sudeste,SP,Artur Nogueira,47,false
+Sudeste,SP,Arujá,46,false
+Sudeste,SP,Aspásia,51,false
+Sudeste,SP,Assis,50,false
+Sudeste,SP,Atibaia,47,false
+Sudeste,SP,Auriflama,51,false
+Sudeste,SP,Avaí,49,false
+Sudeste,SP,Avanhandava,50,false
+Sudeste,SP,Avaré,49,false
+Sudeste,SP,Bady Bassitt,49,false
+Sudeste,SP,Balbinos,49,false
+Sudeste,SP,Bálsamo,1,false
+Sudeste,SP,Bananal,44,false
+Sudeste,SP,Barão de Antonina,50,false
+Sudeste,SP,Barbosa,50,false
+Sudeste,SP,Bariri,49,false
+Sudeste,SP,Barra Bonita,1,false
+Sudeste,SP,Barra do Chapéu,49,false
+Sudeste,SP,Barra do Turvo,49,false
+Sudeste,SP,Barretos,49,false
+Sudeste,SP,Barrinha,1,false
+Sudeste,SP,Barueri,76,false
+Sudeste,SP,Bastos,51,false
+Sudeste,SP,Batatais,48,false
+Sudeste,SP,Bauru,49,false
+Sudeste,SP,Bebedouro,1,false
+Sudeste,SP,Bento de Abreu,51,false
+Sudeste,SP,Bernardino de Campos,49,false
+Sudeste,SP,Bertioga,46,false
+Sudeste,SP,Bilac,50,false
+Sudeste,SP,Birigui,50,false
+Sudeste,SP,BiritibaMirim,46,false
+Sudeste,SP,Boa Esperança do Sul,48,false
+Sudeste,SP,Bocaina,1,false
+Sudeste,SP,Bofete,48,false
+Sudeste,SP,Boituva,48,false
+Sudeste,SP,Bom Jesus dos Perdões,46,false
+Sudeste,SP,Bom Sucesso de Itararé,49,false
+Sudeste,SP,Borá,51,false
+Sudeste,SP,Boracéia,49,false
+Sudeste,SP,Borborema,1,false
+Sudeste,SP,Borebi,49,false
+Sudeste,SP,Botucatu,48,false
+Sudeste,SP,Bragança Paulista,47,false
+Sudeste,SP,Braúna,50,false
+Sudeste,SP,Brejo Alegre,50,false
+Sudeste,SP,Brodowski,48,false
+Sudeste,SP,Brotas,1,false
+Sudeste,SP,Buri,49,false
+Sudeste,SP,Buritama,50,false
+Sudeste,SP,Buritizal,1,false
+Sudeste,SP,Cabrália Paulista,49,false
+Sudeste,SP,Cabreúva,47,false
+Sudeste,SP,Caçapava,46,false
+Sudeste,SP,Cachoeira Paulista,45,false
+Sudeste,SP,Caconde,47,false
+Sudeste,SP,Cafelândia,1,false
+Sudeste,SP,Caiabu,51,false
+Sudeste,SP,Caieiras,47,false
+Sudeste,SP,Caiuá,52,false
+Sudeste,SP,Cajamar,47,false
+Sudeste,SP,Cajati,48,false
+Sudeste,SP,Cajobi,49,false
+Sudeste,SP,Cajuru,47,false
+Sudeste,SP,Campina do Monte Alegre,48,false
+Sudeste,SP,Campinas,47,true
+Sudeste,SP,Campo Limpo Paulista,47,false
+Sudeste,SP,Campos do Jordão,46,false
+Sudeste,SP,Campos Novos Paulista,50,false
+Sudeste,SP,Cananéia,48,false
+Sudeste,SP,Canas,45,false
+Sudeste,SP,Cândido Mota,50,false
+Sudeste,SP,Cândido Rodrigues,49,false
+Sudeste,SP,Canitar,50,false
+Sudeste,SP,Capão Bonito,1,false
+Sudeste,SP,Capela do Alto,48,false
+Sudeste,SP,Capivari,1,false
+Sudeste,SP,Caraguatatuba,45,false
+Sudeste,SP,Carapicuíba,47,false
+Sudeste,SP,Cardoso,1,false
+Sudeste,SP,Casa Branca,1,false
+Sudeste,SP,Cássia dos Coqueiros,47,false
+Sudeste,SP,Castilho,51,false
+Sudeste,SP,Catanduva,49,false
+Sudeste,SP,Catiguá,49,false
+Sudeste,SP,Cedral,1,false
+Sudeste,SP,Cerqueira César,49,false
+Sudeste,SP,Cerquilho,48,false
+Sudeste,SP,Cesário Lange,48,false
+Sudeste,SP,Charqueada,48,false
+Sudeste,SP,Chavantes,50,false
+Sudeste,SP,Clementina,50,false
+Sudeste,SP,Colina,1,false
+Sudeste,SP,Colômbia,49,false
+Sudeste,SP,Conchal,47,false
+Sudeste,SP,Conchas,48,false
+Sudeste,SP,Cordeirópolis,47,false
+Sudeste,SP,Coroados,50,false
+Sudeste,SP,Coronel Macedo,49,false
+Sudeste,SP,Corumbataí,48,false
+Sudeste,SP,Cosmópolis,47,false
+Sudeste,SP,Cosmorama,50,false
+Sudeste,SP,Cotia,47,false
+Sudeste,SP,Cravinhos,48,false
+Sudeste,SP,Cristais Paulista,47,false
+Sudeste,SP,Cruzália,51,false
+Sudeste,SP,Cruzeiro,1,false
+Sudeste,SP,Cubatão,46,false
+Sudeste,SP,Cunha,45,false
+Sudeste,SP,Descalvado,48,false
+Sudeste,SP,Diadema,47,false
+Sudeste,SP,Dirce Reis,51,false
+Sudeste,SP,Divinolândia,47,false
+Sudeste,SP,Dobrada,48,false
+Sudeste,SP,Dois Córregos,48,false
+Sudeste,SP,Dolcinópolis,51,false
+Sudeste,SP,Dourado,1,false
+Sudeste,SP,Dracena,52,false
+Sudeste,SP,Duartina,49,false
+Sudeste,SP,Dumont,48,false
+Sudeste,SP,Echaporã,50,false
+Sudeste,SP,Eldorado,1,false
+Sudeste,SP,Elias Fausto,47,false
+Sudeste,SP,Elisiário,49,false
+Sudeste,SP,Embaúba,49,false
+Sudeste,SP,Embu,85,false
+Sudeste,SP,EmbuGuaçu,47,false
+Sudeste,SP,Emilianópolis,51,false
+Sudeste,SP,Engenheiro Coelho,47,false
+Sudeste,SP,Espírito Santo do Pinhal,47,false
+Sudeste,SP,Espírito Santo do Turvo,49,false
+Sudeste,SP,Estiva Gerbi,47,false
+Sudeste,SP,Estrela do Norte,49,false
+Sudeste,SP,Estrela d'Oeste,1,false
+Sudeste,SP,Euclides da Cunha Paulista,53,false
+Sudeste,SP,Fartura,1,false
+Sudeste,SP,Fernando Prestes,49,false
+Sudeste,SP,Fernandópolis,50,false
+Sudeste,SP,Fernão,50,false
+Sudeste,SP,Ferraz de Vasconcelos,46,false
+Sudeste,SP,Flora Rica,51,false
+Sudeste,SP,Floreal,50,false
+Sudeste,SP,Flórida Paulista,51,false
+Sudeste,SP,Florínia,51,false
+Sudeste,SP,Franca,47,false
+Sudeste,SP,Francisco Morato,47,false
+Sudeste,SP,Franco da Rocha,47,false
+Sudeste,SP,Gabriel Monteiro,51,false
+Sudeste,SP,Gália,50,false
+Sudeste,SP,Garça,50,false
+Sudeste,SP,Gastão Vidigal,50,false
+Sudeste,SP,Gavião Peixoto,48,false
+Sudeste,SP,General Salgado,50,false
+Sudeste,SP,Getulina,50,false
+Sudeste,SP,Glicério,1,false
+Sudeste,SP,Guaiçara,50,false
+Sudeste,SP,Guaimbê,50,false
+Sudeste,SP,Guaíra,1,false
+Sudeste,SP,Guapiaçu,49,false
+Sudeste,SP,Guapiara,49,false
+Sudeste,SP,Guará,1,false
+Sudeste,SP,Guaraçaí,51,false
+Sudeste,SP,Guaraci,1,false
+Sudeste,SP,Guarani d'Oeste,1,false
+Sudeste,SP,Guarantã,50,false
+Sudeste,SP,Guararapes,51,false
+Sudeste,SP,Guararema,1,false
+Sudeste,SP,Guaratinguetá,45,false
+Sudeste,SP,Guareí,48,false
+Sudeste,SP,Guariba,48,false
+Sudeste,SP,Guarujá,46,false
+Sudeste,SP,Guarulhos,47,false
+Sudeste,SP,Guatapará,1,false
+Sudeste,SP,Guzolândia,51,false
+Sudeste,SP,Herculândia,50,false
+Sudeste,SP,Holambra,47,false
+Sudeste,SP,Hortolândia,47,false
+Sudeste,SP,Iacanga,49,false
+Sudeste,SP,Iacri,51,false
+Sudeste,SP,Iaras,49,false
+Sudeste,SP,Ibaté,48,false
+Sudeste,SP,Ibirá,49,false
+Sudeste,SP,Ibirarema,50,false
+Sudeste,SP,Ibitinga,49,false
+Sudeste,SP,Ibiúna,47,false
+Sudeste,SP,Icém,49,false
+Sudeste,SP,Iepê,51,false
+Sudeste,SP,Igaraçu do Tietê,49,false
+Sudeste,SP,Igarapava,48,false
+Sudeste,SP,Igaratá,46,false
+Sudeste,SP,Iguape,1,false
+Sudeste,SP,Ilha Comprida,1,false
+Sudeste,SP,Ilha Solteira,51,false
+Sudeste,SP,Ilhabela,45,false
+Sudeste,SP,Indaiatuba,47,false
+Sudeste,SP,Indiana,51,false
+Sudeste,SP,Indiaporã,50,false
+Sudeste,SP,Inúbia Paulista,51,false
+Sudeste,SP,Ipaussu,50,false
+Sudeste,SP,Iperó,48,false
+Sudeste,SP,Ipeúna,48,false
+Sudeste,SP,Ipiguá,49,false
+Sudeste,SP,Iporanga,49,false
+Sudeste,SP,Ipuã,1,false
+Sudeste,SP,Iracemápolis,48,false
+Sudeste,SP,Irapuã,49,false
+Sudeste,SP,Irapuru,51,false
+Sudeste,SP,Itaberá,49,false
+Sudeste,SP,Itaí,1,false
+Sudeste,SP,Itajobi,49,false
+Sudeste,SP,Itaju,49,false
+Sudeste,SP,Itanhaém,47,false
+Sudeste,SP,Itaóca,49,false
+Sudeste,SP,Itapecerica da Serra,19,false
+Sudeste,SP,Itapetininga,48,false
+Sudeste,SP,Itapeva,1,false
+Sudeste,SP,Itapevi,47,false
+Sudeste,SP,Itapira,47,false
+Sudeste,SP,Itapirapuã Paulista,49,false
+Sudeste,SP,Itápolis,49,false
+Sudeste,SP,Itaporanga,1,false
+Sudeste,SP,Itapuí,49,false
+Sudeste,SP,Itapura,1,false
+Sudeste,SP,Itaquaquecetuba,46,false
+Sudeste,SP,Itararé,1,false
+Sudeste,SP,Itariri,47,false
+Sudeste,SP,Itatiba,47,false
+Sudeste,SP,Itatinga,49,false
+Sudeste,SP,Itirapina,48,false
+Sudeste,SP,Itirapuã,47,false
+Sudeste,SP,Itobi,47,false
+Sudeste,SP,Itu,47,false
+Sudeste,SP,Itupeva,1,false
+Sudeste,SP,Ituverava,1,false
+Sudeste,SP,Jaborandi,1,false
+Sudeste,SP,Jaboticabal,48,false
+Sudeste,SP,Jacareí,46,false
+Sudeste,SP,Jaci,50,false
+Sudeste,SP,Jacupiranga,48,false
+Sudeste,SP,Jaguariúna,47,false
+Sudeste,SP,Jales,51,false
+Sudeste,SP,Jambeiro,46,false
+Sudeste,SP,Jandira,47,false
+Sudeste,SP,Jardinópolis,1,false
+Sudeste,SP,Jarinu,47,false
+Sudeste,SP,Jaú,49,false
+Sudeste,SP,Jeriquara,48,false
+Sudeste,SP,Joanópolis,46,false
+Sudeste,SP,João Ramalho,51,false
+Sudeste,SP,José Bonifácio,1,false
+Sudeste,SP,Júlio Mesquita,50,false
+Sudeste,SP,Jumirim,48,false
+Sudeste,SP,Jundiaí,47,false
+Sudeste,SP,Junqueirópolis,51,false
+Sudeste,SP,Juquiá,48,false
+Sudeste,SP,Juquitiba,47,false
+Sudeste,SP,Lagoinha,1,false
+Sudeste,SP,Laranjal Paulista,48,false
+Sudeste,SP,Lavínia,51,false
+Sudeste,SP,Lavrinhas,45,false
+Sudeste,SP,Leme,47,false
+Sudeste,SP,Lençóis Paulista,49,false
+Sudeste,SP,Limeira,47,false
+Sudeste,SP,Lindóia,47,false
+Sudeste,SP,Lins,50,false
+Sudeste,SP,Lorena,45,false
+Sudeste,SP,Lourdes,1,false
+Sudeste,SP,Louveira,47,false
+Sudeste,SP,Lucélia,51,false
+Sudeste,SP,Lucianópolis,50,false
+Sudeste,SP,Luís Antônio,48,false
+Sudeste,SP,Luiziânia,50,false
+Sudeste,SP,Lupércio,50,false
+Sudeste,SP,Lutécia,50,false
+Sudeste,SP,Macatuba,49,false
+Sudeste,SP,Macaubal,50,false
+Sudeste,SP,Macedônia,50,false
+Sudeste,SP,Magda,50,false
+Sudeste,SP,Mairinque,1,false
+Sudeste,SP,Mairiporã,23,false
+Sudeste,SP,Manduri,49,false
+Sudeste,SP,Marabá Paulista,52,false
+Sudeste,SP,Maracaí,51,false
+Sudeste,SP,Marapoama,49,false
+Sudeste,SP,Mariápolis,51,false
+Sudeste,SP,Marília,50,false
+Sudeste,SP,Marinópolis,51,false
+Sudeste,SP,Martinópolis,51,false
+Sudeste,SP,Matão,48,false
+Sudeste,SP,Mauá,1,false
+Sudeste,SP,Mendonça,1,false
+Sudeste,SP,Meridiano,50,false
+Sudeste,SP,Mesópolis,51,false
+Sudeste,SP,Miguelópolis,48,false
+Sudeste,SP,Mineiros do Tietê,48,false
+Sudeste,SP,Mira Estrela,50,false
+Sudeste,SP,Miracatu,47,false
+Sudeste,SP,Mirandópolis,1,false
+Sudeste,SP,Mirante do Paranapanema,52,false
+Sudeste,SP,Mirassol,50,false
+Sudeste,SP,Mirassolândia,49,false
+Sudeste,SP,Mococa,47,false
+Sudeste,SP,Mogi das Cruzes,46,false
+Sudeste,SP,Mogi Guaçu,47,false
+Sudeste,SP,Moji Mirim,1,false
+Sudeste,SP,Mombuca,48,false
+Sudeste,SP,Monções,50,false
+Sudeste,SP,Mongaguá,47,false
+Sudeste,SP,Monte Alegre do Sul,47,false
+Sudeste,SP,Monte Alto,48,false
+Sudeste,SP,Monte Aprazível,50,false
+Sudeste,SP,Monte Azul Paulista,49,false
+Sudeste,SP,Monte Castelo,1,false
+Sudeste,SP,Monte Mor,47,false
+Sudeste,SP,Monteiro Lobato,46,false
+Sudeste,SP,Morro Agudo,1,false
+Sudeste,SP,Morungaba,47,false
+Sudeste,SP,Motuca,48,false
+Sudeste,SP,Murutinga do Sul,51,false
+Sudeste,SP,Nantes,51,false
+Sudeste,SP,Narandiba,52,false
+Sudeste,SP,Natividade da Serra,45,false
+Sudeste,SP,Nazaré Paulista,46,false
+Sudeste,SP,Neves Paulista,50,false
+Sudeste,SP,Nhandeara,50,false
+Sudeste,SP,Nipoã,50,false
+Sudeste,SP,Nova Aliança,49,false
+Sudeste,SP,Nova Campina,49,false
+Sudeste,SP,Nova Canaã Paulista,51,false
+Sudeste,SP,Nova Castilho,50,false
+Sudeste,SP,Nova Europa,49,false
+Sudeste,SP,Nova Granada,1,false
+Sudeste,SP,Nova Guataporanga,52,false
+Sudeste,SP,Nova Independência,51,false
+Sudeste,SP,Nova Luzitânia,50,false
+Sudeste,SP,Nova Odessa,47,false
+Sudeste,SP,Novais,49,false
+Sudeste,SP,Novo Horizonte,1,false
+Sudeste,SP,Nuporanga,48,false
+Sudeste,SP,Ocauçu,50,false
+Sudeste,SP,Óleo,49,false
+Sudeste,SP,Olímpia,49,false
+Sudeste,SP,Onda Verde,49,false
+Sudeste,SP,Oriente,50,false
+Sudeste,SP,Orindiúva,49,false
+Sudeste,SP,Orlândia,48,false
+Sudeste,SP,Osasco,47,false
+Sudeste,SP,Oscar Bressane,50,false
+Sudeste,SP,Osvaldo Cruz,51,false
+Sudeste,SP,Ourinhos,50,false
+Sudeste,SP,Ouro Verde,1,false
+Sudeste,SP,Ouroeste,50,false
+Sudeste,SP,Pacaembu,1,false
+Sudeste,SP,Palestina,1,false
+Sudeste,SP,Palmares Paulista,49,false
+Sudeste,SP,Palmeira d'Oeste,1,false
+Sudeste,SP,Palmital,1,false
+Sudeste,SP,Panorama,52,false
+Sudeste,SP,Paraguaçu Paulista,51,false
+Sudeste,SP,Paraibuna,46,false
+Sudeste,SP,Paraíso,1,false
+Sudeste,SP,Paranapanema,49,false
+Sudeste,SP,Paranapuã,51,false
+Sudeste,SP,Parapuã,51,false
+Sudeste,SP,Pardinho,48,false
+Sudeste,SP,PariqueraAçu,48,false
+Sudeste,SP,Parisi,50,false
+Sudeste,SP,Patrocínio Paulista,47,false
+Sudeste,SP,Paulicéia,52,false
+Sudeste,SP,Paulínia,47,false
+Sudeste,SP,Paulistânia,1,false
+Sudeste,SP,Paulo de Faria,49,false
+Sudeste,SP,Pederneiras,49,false
+Sudeste,SP,Pedra Bela,46,false
+Sudeste,SP,Pedranópolis,50,false
+Sudeste,SP,Pedregulho,47,false
+Sudeste,SP,Pedreira,1,false
+Sudeste,SP,Pedrinhas Paulista,51,false
+Sudeste,SP,Pedro de Toledo,47,false
+Sudeste,SP,Penápolis,50,false
+Sudeste,SP,Pereira Barreto,51,false
+Sudeste,SP,Pereiras,48,false
+Sudeste,SP,Peruíbe,47,false
+Sudeste,SP,Piacatu,51,false
+Sudeste,SP,Piedade,47,false
+Sudeste,SP,Pilar do Sul,48,false
+Sudeste,SP,Pindamonhangaba,45,false
+Sudeste,SP,Pindorama,1,false
+Sudeste,SP,Pinhalzinho,1,false
+Sudeste,SP,Piquerobi,52,false
+Sudeste,SP,Piquete,45,false
+Sudeste,SP,Piracaia,46,false
+Sudeste,SP,Piracicaba,48,false
+Sudeste,SP,Piraju,49,false
+Sudeste,SP,Pirajuí,49,false
+Sudeste,SP,Pirangi,49,false
+Sudeste,SP,Pirapora do Bom Jesus,47,false
+Sudeste,SP,Pirapozinho,51,false
+Sudeste,SP,Pirassununga,47,false
+Sudeste,SP,Piratininga,49,false
+Sudeste,SP,Pitangueiras,1,false
+Sudeste,SP,Planalto,1,false
+Sudeste,SP,Platina,50,false
+Sudeste,SP,Poá,46,false
+Sudeste,SP,Poloni,50,false
+Sudeste,SP,Pompéia,1,false
+Sudeste,SP,Pongaí,49,false
+Sudeste,SP,Pontal,1,false
+Sudeste,SP,Pontalinda,51,false
+Sudeste,SP,Pontes Gestal,50,false
+Sudeste,SP,Populina,51,false
+Sudeste,SP,Porangaba,48,false
+Sudeste,SP,Porto Feliz,48,false
+Sudeste,SP,Porto Ferreira,47,false
+Sudeste,SP,Potim,45,false
+Sudeste,SP,Potirendaba,49,false
+Sudeste,SP,Pracinha,51,false
+Sudeste,SP,Pradópolis,48,false
+Sudeste,SP,Praia Grande,46,false
+Sudeste,SP,Pratânia,49,false
+Sudeste,SP,Presidente Alves,49,false
+Sudeste,SP,Presidente Bernardes,1,false
+Sudeste,SP,Presidente Epitácio,52,false
+Sudeste,SP,Presidente Prudente,51,false
+Sudeste,SP,Presidente Venceslau,52,false
+Sudeste,SP,Promissão,50,false
+Sudeste,SP,Quadra,48,false
+Sudeste,SP,Quatá,51,false
+Sudeste,SP,Queiroz,50,false
+Sudeste,SP,Queluz,45,false
+Sudeste,SP,Quintana,50,false
+Sudeste,SP,Rafard,48,false
+Sudeste,SP,Rancharia,51,false
+Sudeste,SP,Redenção da Serra,46,false
+Sudeste,SP,Regente Feijó,51,false
+Sudeste,SP,Reginópolis,49,false
+Sudeste,SP,Registro,48,false
+Sudeste,SP,Restinga,47,false
+Sudeste,SP,Ribeira,1,false
+Sudeste,SP,Ribeirão Bonito,1,false
+Sudeste,SP,Ribeirão Branco,49,false
+Sudeste,SP,Ribeirão Corrente,48,false
+Sudeste,SP,Ribeirão do Sul,50,false
+Sudeste,SP,Ribeirão dos Índios,52,false
+Sudeste,SP,Ribeirão Grande,48,false
+Sudeste,SP,Ribeirão Pires,46,false
+Sudeste,SP,Ribeirão Preto,48,true
+Sudeste,SP,Rifaina,47,false
+Sudeste,SP,Rincão,48,false
+Sudeste,SP,Rinópolis,51,false
+Sudeste,SP,Rio Claro,48,false
+Sudeste,SP,Rio das Pedras,1,false
+Sudeste,SP,Rio Grande da Serra,46,false
+Sudeste,SP,Riolândia,1,false
+Sudeste,SP,Riversul,49,false
+Sudeste,SP,Rosana,53,false
+Sudeste,SP,Roseira,45,false
+Sudeste,SP,Rubiácea,51,false
+Sudeste,SP,Rubinéia,51,false
+Sudeste,SP,Sabino,50,false
+Sudeste,SP,Sagres,51,false
+Sudeste,SP,Sales,49,false
+Sudeste,SP,Sales Oliveira,48,false
+Sudeste,SP,Salesópolis,46,false
+Sudeste,SP,Salmourão,51,false
+Sudeste,SP,Saltinho,1,false
+Sudeste,SP,Salto,93,false
+Sudeste,SP,Salto de Pirapora,48,false
+Sudeste,SP,Salto Grande,50,false
+Sudeste,SP,Sandovalina,52,false
+Sudeste,SP,Santa Adélia,49,false
+Sudeste,SP,Santa Albertina,51,false
+Sudeste,SP,Santa Bárbara d'Oeste,1,false
+Sudeste,SP,Santa Branca,46,false
+Sudeste,SP,Santa Clara d'Oeste,1,false
+Sudeste,SP,Santa Cruz da Conceição,47,false
+Sudeste,SP,Santa Cruz da Esperança,47,false
+Sudeste,SP,Santa Cruz das Palmeiras,47,false
+Sudeste,SP,Santa Cruz do Rio Pardo,50,false
+Sudeste,SP,Santa Ernestina,48,false
+Sudeste,SP,Santa Fé do Sul,51,false
+Sudeste,SP,Santa Gertrudes,1,false
+Sudeste,SP,Santa Isabel,49,false
+Sudeste,SP,Santa Lúcia,1,false
+Sudeste,SP,Santa Maria da Serra,48,false
+Sudeste,SP,Santa Mercedes,52,false
+Sudeste,SP,Santa Rita do Passa Quatro,47,false
+Sudeste,SP,Santa Rita d'Oeste,1,false
+Sudeste,SP,Santa Rosa de Viterbo,47,false
+Sudeste,SP,Santa Salete,51,false
+Sudeste,SP,Santana da Ponte Pensa,51,false
+Sudeste,SP,Santana de Parnaíba,47,false
+Sudeste,SP,Santo Anastácio,52,false
+Sudeste,SP,Santo André,1,false
+Sudeste,SP,Santo Antônio da Alegria,47,false
+Sudeste,SP,Santo Antônio de Posse,47,false
+Sudeste,SP,Santo Antônio do Aracanguá,50,false
+Sudeste,SP,Santo Antônio do Jardim,47,false
+Sudeste,SP,Santo Antônio do Pinhal,46,false
+Sudeste,SP,Santo Expedito,51,false
+Sudeste,SP,Santópolis do Aguapeí,51,false
+Sudeste,SP,Santos,34,false
+Sudeste,SP,São Bento do Sapucaí,46,false
+Sudeste,SP,São Bernardo do Campo,47,false
+Sudeste,SP,São Caetano do Sul,47,false
+Sudeste,SP,São Carlos,48,false
+Sudeste,SP,São Francisco,1,false
+Sudeste,SP,São João da Boa Vista,53,false
+Sudeste,SP,São João das Duas Pontes,50,false
+Sudeste,SP,São João de Iracema,50,false
+Sudeste,SP,São João do Pau d'Alho,1,false
+Sudeste,SP,São Joaquim da Barra,55,false
+Sudeste,SP,São José da Bela Vista,1,false
+Sudeste,SP,São José do Barreiro,1,false
+Sudeste,SP,São José do Rio Pardo,47,false
+Sudeste,SP,São José do Rio Preto,49,false
+Sudeste,SP,São José dos Campos,46,true
+Sudeste,SP,São Lourenço da Serra,47,false
+Sudeste,SP,São Luís do Paraitinga,45,false
+Sudeste,SP,São Manuel,49,false
+Sudeste,SP,São Miguel Arcanjo,48,false
+Sudeste,SP,São Paulo,47,true
+Sudeste,SP,São Pedro,1,false
+Sudeste,SP,São Pedro do Turvo,50,false
+Sudeste,SP,São Roque,1,false
+Sudeste,SP,São Sebastião,1,false
+Sudeste,SP,São Sebastião da Grama,47,false
+Sudeste,SP,São Simão,51,false
+Sudeste,SP,São Vicente,1,false
+Sudeste,SP,Sarapuí,48,false
+Sudeste,SP,Sarutaiá,49,false
+Sudeste,SP,Sebastianópolis do Sul,50,false
+Sudeste,SP,Serra Azul,1,false
+Sudeste,SP,Serra Negra,1,false
+Sudeste,SP,Serrana,48,false
+Sudeste,SP,Sertãozinho,1,false
+Sudeste,SP,Sete Barras,48,false
+Sudeste,SP,Severínia,49,false
+Sudeste,SP,Silveiras,45,false
+Sudeste,SP,Socorro,1,false
+Sudeste,SP,Sorocaba,47,false
+Sudeste,SP,Sud Mennucci,51,false
+Sudeste,SP,Sumaré,1,false
+Sudeste,SP,Suzanápolis,51,false
+Sudeste,SP,Suzano,46,false
+Sudeste,SP,Tabapuã,49,false
+Sudeste,SP,Tabatinga,1,false
+Sudeste,SP,Taboão da Serra,47,false
+Sudeste,SP,Taciba,51,false
+Sudeste,SP,Taguaí,49,false
+Sudeste,SP,Taiaçu,49,false
+Sudeste,SP,Taiúva,48,false
+Sudeste,SP,Tambaú,47,false
+Sudeste,SP,Tanabi,50,false
+Sudeste,SP,Tapiraí,1,false
+Sudeste,SP,Tapiratiba,1,false
+Sudeste,SP,Taquaral,1,false
+Sudeste,SP,Taquaritinga,49,false
+Sudeste,SP,Taquarituba,49,false
+Sudeste,SP,Taquarivaí,49,false
+Sudeste,SP,Tarabai,52,false
+Sudeste,SP,Tarumã,1,false
+Sudeste,SP,Tatuí,48,false
+Sudeste,SP,Taubaté,46,false
+Sudeste,SP,Tejupá,49,false
+Sudeste,SP,Teodoro Sampaio,1,false
+Sudeste,SP,Terra Roxa,1,false
+Sudeste,SP,Tietê,48,false
+Sudeste,SP,Timburi,50,false
+Sudeste,SP,Torre de Pedra,48,false
+Sudeste,SP,Torrinha,48,false
+Sudeste,SP,Trabiju,48,false
+Sudeste,SP,Tremembé,46,false
+Sudeste,SP,Três Fronteiras,51,false
+Sudeste,SP,Tuiuti,47,false
+Sudeste,SP,Tupã,51,false
+Sudeste,SP,Tupi Paulista,52,false
+Sudeste,SP,Turiúba,50,false
+Sudeste,SP,Turmalina,1,false
+Sudeste,SP,Ubarana,50,false
+Sudeste,SP,Ubatuba,45,false
+Sudeste,SP,Ubirajara,50,false
+Sudeste,SP,Uchoa,49,false
+Sudeste,SP,União Paulista,50,false
+Sudeste,SP,Urânia,1,false
+Sudeste,SP,Uru,49,false
+Sudeste,SP,Urupês,49,false
+Sudeste,SP,Valentim Gentil,50,false
+Sudeste,SP,Valinhos,47,false
+Sudeste,SP,Valparaíso,1,false
+Sudeste,SP,Vargem,1,false
+Sudeste,SP,Vargem Grande do Sul,47,false
+Sudeste,SP,Vargem Grande Paulista,47,false
+Sudeste,SP,Várzea Paulista,47,false
+Sudeste,SP,Vera Cruz,1,false
+Sudeste,SP,Vinhedo,47,false
+Sudeste,SP,Viradouro,48,false
+Sudeste,SP,Vista Alegre do Alto,49,false
+Sudeste,SP,Vitória Brasil,50,false
+Sudeste,SP,Votorantim,47,false
+Sudeste,SP,Votuporanga,50,false
+Sudeste,SP,Zacarias,50,false
+Norte,TO,Abreulândia,49,false
+Norte,TO,Aguiarnópolis,47,false
+Norte,TO,Aliança do Tocantins,49,false
+Norte,TO,Almas,47,false
+Norte,TO,Alvorada,1,false
+Norte,TO,Ananás,48,false
+Norte,TO,Angico,48,false
+Norte,TO,Aparecida do Rio Negro,48,false
+Norte,TO,Aragominas,49,false
+Norte,TO,Araguacema,50,false
+Norte,TO,Araguaçu,50,false
+Norte,TO,Araguaína,48,false
+Norte,TO,Araguanã,1,false
+Norte,TO,Araguatins,1,false
+Norte,TO,Arapoema,49,false
+Norte,TO,Arraias,47,false
+Norte,TO,Augustinópolis,48,false
+Norte,TO,Aurora do Tocantins,46,false
+Norte,TO,Axixá do Tocantins,48,false
+Norte,TO,Babaçulândia,48,false
+Norte,TO,Bandeirantes do Tocantins,49,false
+Norte,TO,Barra do Ouro,1,false
+Norte,TO,Barrolândia,49,false
+Norte,TO,Bernardo Sayão,49,false
+Norte,TO,Bom Jesus do Tocantins,1,false
+Norte,TO,Brasilândia do Tocantins,48,false
+Norte,TO,Brejinho de Nazaré,49,false
+Norte,TO,Buriti do Tocantins,48,false
+Norte,TO,Cachoeirinha,1,false
+Norte,TO,Campos Lindos,47,false
+Norte,TO,Cariri do Tocantins,49,false
+Norte,TO,Carmolândia,48,false
+Norte,TO,Carrasco Bonito,48,false
+Norte,TO,Caseara,50,false
+Norte,TO,Centenário,1,false
+Norte,TO,Chapada da Natividade,48,false
+Norte,TO,Chapada de Areia,49,false
+Norte,TO,Colinas do Tocantins,48,false
+Norte,TO,Colméia,49,false
+Norte,TO,Combinado,47,false
+Norte,TO,Conceição do Tocantins,47,false
+Norte,TO,Couto Magalhães,1,false
+Norte,TO,Cristalândia,1,false
+Norte,TO,Crixás do Tocantins,49,false
+Norte,TO,Darcinópolis,48,false
+Norte,TO,Dianópolis,47,false
+Norte,TO,Divinópolis do Tocantins,49,false
+Norte,TO,Dois Irmãos do Tocantins,49,false
+Norte,TO,Dueré,49,false
+Norte,TO,Esperantina,1,false
+Norte,TO,Fátima,1,false
+Norte,TO,Figueirópolis,49,false
+Norte,TO,Filadélfia,40,false
+Norte,TO,Formoso do Araguaia,50,false
+Norte,TO,Fortaleza do Tabocão,49,false
+Norte,TO,Goianorte,49,false
+Norte,TO,Goiatins,47,false
+Norte,TO,Guaraí,1,false
+Norte,TO,Gurupi,49,false
+Norte,TO,Ipueiras,1,false
+Norte,TO,Itacajá,48,false
+Norte,TO,Itaguatins,1,false
+Norte,TO,Itapiratins,48,false
+Norte,TO,Itaporã do Tocantins,49,false
+Norte,TO,Jaú do Tocantins,49,false
+Norte,TO,Juarina,49,false
+Norte,TO,Lagoa da Confusão,50,false
+Norte,TO,Lagoa do Tocantins,48,false
+Norte,TO,Lajeado,1,false
+Norte,TO,Lavandeira,47,false
+Norte,TO,Lizarda,47,false
+Norte,TO,Luzinópolis,48,false
+Norte,TO,Marianópolis do Tocantins,50,false
+Norte,TO,Mateiros,46,false
+Norte,TO,Maurilândia do Tocantins,48,false
+Norte,TO,Miracema do Tocantins,48,false
+Norte,TO,Miranorte,49,false
+Norte,TO,Monte do Carmo,48,false
+Norte,TO,Monte Santo do Tocantins,49,false
+Norte,TO,Muricilândia,49,false
+Norte,TO,Natividade,42,false
+Norte,TO,Nazaré,1,false
+Norte,TO,Nova Olinda,1,false
+Norte,TO,Nova Rosalândia,49,false
+Norte,TO,Novo Acordo,48,false
+Norte,TO,Novo Alegre,47,false
+Norte,TO,Novo Jardim,1,false
+Norte,TO,Oliveira de Fátima,49,false
+Norte,TO,Palmas,48,true
+Norte,TO,Palmeirante,48,false
+Norte,TO,Palmeiras do Tocantins,1,false
+Norte,TO,Palmeirópolis,48,false
+Norte,TO,Paraíso do Tocantins,49,false
+Norte,TO,Paranã,48,false
+Norte,TO,Pau D'Arco,1,false
+Norte,TO,Pedro Afonso,48,false
+Norte,TO,Peixe,1,false
+Norte,TO,Pequizeiro,49,false
+Norte,TO,Pindorama do Tocantins,48,false
+Norte,TO,Piraquê,48,false
+Norte,TO,Pium,49,false
+Norte,TO,Ponte Alta do Bom Jesus,46,false
+Norte,TO,Ponte Alta do Tocantins,48,false
+Norte,TO,Porto Alegre do Tocantins,47,false
+Norte,TO,Porto Nacional,48,false
+Norte,TO,Praia Norte,48,false
+Norte,TO,Presidente Kennedy,41,false
+Norte,TO,Pugmil,49,false
+Norte,TO,Recursolândia,47,false
+Norte,TO,Riachinho,48,false
+Norte,TO,Rio da Conceição,47,false
+Norte,TO,Rio dos Bois,49,false
+Norte,TO,Rio Sono,48,false
+Norte,TO,Sampaio,48,false
+Norte,TO,Sandolândia,50,false
+Norte,TO,Santa Fé do Araguaia,49,false
+Norte,TO,Santa Maria do Tocantins,48,false
+Norte,TO,Santa Rita do Tocantins,49,false
+Norte,TO,Santa Rosa do Tocantins,48,false
+Norte,TO,Santa Tereza do Tocantins,48,false
+Norte,TO,Santa Terezinha do Tocantins,48,false
+Norte,TO,São Bento do Tocantins,48,false
+Norte,TO,São Félix do Tocantins,47,false
+Norte,TO,São Miguel do Tocantins,48,false
+Norte,TO,São Salvador do Tocantins,48,false
+Norte,TO,São Sebastião do Tocantins,48,false
+Norte,TO,São Valério,1,false
+Norte,TO,Silvanópolis,48,false
+Norte,TO,Sítio Novo do Tocantins,48,false
+Norte,TO,Sucupira,49,false
+Norte,TO,Taguatinga,46,false
+Norte,TO,Taipas do Tocantins,47,false
+Norte,TO,Talismã,49,false
+Norte,TO,Tocantínia,48,false
+Norte,TO,Tocantinópolis,47,false
+Norte,TO,Tupirama,48,false
+Norte,TO,Tupiratins,48,false

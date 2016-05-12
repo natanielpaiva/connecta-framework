@@ -48,6 +48,7 @@ public class PrintResult {
         }
 
         TextTable dd = new TextTable(columnsName, data);
+        dd.setAddRowNumbering(true);
         dd.printTable();
     }
 
