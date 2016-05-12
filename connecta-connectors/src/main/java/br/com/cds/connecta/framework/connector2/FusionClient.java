@@ -5,6 +5,7 @@ import br.com.cds.connecta.framework.connector2.common.PrintResult;
 import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import org.apache.metamodel.DataContext;
@@ -87,7 +88,7 @@ public class FusionClient {
 
         for (Row row : execute) {   // Linhas
             SelectItem[] selectItems = row.getSelectItems();
-            Map<String, Object> object = new HashMap<>(selectItems.length);
+            Map<String, Object> object = new LinkedHashMap<>(selectItems.length);
 
             for (int i = 0; i < selectItems.length; i++) {  // Colunas
                 String columnLabel = null;
