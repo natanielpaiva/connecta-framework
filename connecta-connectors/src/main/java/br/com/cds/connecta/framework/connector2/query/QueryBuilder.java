@@ -72,6 +72,12 @@ public class QueryBuilder {
         this.query.select(FunctionType.COUNT, column);
         return this;
     }
+    
+    public QueryBuilder addSum(Column column) {
+        this.query.select(FunctionType.SUM, column);
+        return this;
+    }
+    
 
     public QueryBuilder addColumn(Column column) {
         this.query.select(column);

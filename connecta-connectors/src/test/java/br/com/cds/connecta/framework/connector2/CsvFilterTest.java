@@ -1,6 +1,7 @@
 package br.com.cds.connecta.framework.connector2;
 
 import static br.com.cds.connecta.framework.connector2.TestUtil.getFile;
+import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
 import br.com.cds.connecta.framework.connector2.common.PrintResult;
 import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
@@ -299,5 +300,43 @@ public class CsvFilterTest {
             );
         }
     }
+    
+//    @Test
+//    public void drill() {
+//        List<ConnectorColumn> connectorColumns = new ArrayList<>();
+//
+//        ConnectorColumn regiao = new ConnectorColumn();
+//        regiao.setId(Long.valueOf(1));
+//        regiao.setName("Regiao");
+//        regiao.setLabel("Região");
+//
+//        ConnectorColumn venda = new ConnectorColumn();
+//        venda.setId(Long.valueOf(1));
+//        venda.setName("vendas");
+//        venda.setLabel("vendas");
+//
+//        connectorColumns.add(regiao);
+//        connectorColumns.add(venda);
+//        
+//        ContextFactory contextFactory = new FileDataContextFactory(new CSVDataContextFactory(csvCities));
+//
+//        List<Map<String, Object>> all;
+//        
+//         QueryBuilder queryContext = new QueryBuilder()
+//                 //.setColumns(connectorColumns)
+//                 .addGroupBy(contextFactory.getColumn("Regiao"))
+//                 .addSum(contextFactory.getColumn("vendas"))
+//                 //.addFilter(contextFactory.getColumn("UF"), QueryFilterOperator.EQUAL, new QueryFilterValue("AC"))
+//                 .addFilter(contextFactory.getColumn("UF"), QueryFilterOperator.IN, new QueryFilterValue(Arrays.asList(new String[]{"AC","DF"})))
+//                 ;
+//        Request request = new Request(contextFactory, queryContext);
+//        
+//        List<Map<String, Object>> all1 = client.getAll(request);
+//       
+//        PrintResult.printMap(all1);
+//       
+//    }
+    
+    
 
 }
