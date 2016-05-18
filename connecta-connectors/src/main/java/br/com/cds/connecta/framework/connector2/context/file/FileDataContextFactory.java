@@ -23,6 +23,7 @@ import org.apache.metamodel.schema.Column;
 import org.apache.metamodel.schema.ColumnType;
 import org.apache.metamodel.schema.Table;
 import org.apache.metamodel.util.SimpleTableDef;
+import org.apache.zookeeper.server.persistence.Util;
 
 /**
  *
@@ -53,7 +54,9 @@ public class FileDataContextFactory extends Base implements ContextFactory {
                 queryContext.build().select(columnByName);
             }
             return dataContext.executeQuery(from);
-        } else {
+        } else if(!from.getSelectClause().getItems().isEmpty()){
+            return dataContext.executeQuery(from);
+        }else{
             return dataContext.executeQuery(from.selectAll());
         }
 
