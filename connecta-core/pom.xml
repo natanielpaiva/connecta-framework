@@ -225,7 +225,7 @@
         </dependency>
     </dependencies>
 
-    <build>
+<!--    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -244,6 +244,6 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
-    </build>
+    </build>-->
     
 </project>
