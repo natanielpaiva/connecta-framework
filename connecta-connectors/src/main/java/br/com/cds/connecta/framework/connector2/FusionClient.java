@@ -3,10 +3,13 @@ package br.com.cds.connecta.framework.connector2;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.PrintResult;
 import java.sql.Blob;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import org.apache.metamodel.DataContext;
 import org.apache.metamodel.data.DataSet;
@@ -102,6 +105,14 @@ public class FusionClient {
 
                 if (value instanceof Blob) {
                     value = "(BINARY)";
+                }else if(value instanceof Double){
+                    //Converte os valores decimais para o formato do metamodel
+                    Locale locale  = new Locale("en", "US");
+                    DecimalFormat decimalFormat = (DecimalFormat)
+                            NumberFormat.getNumberInstance(locale);
+                    decimalFormat.applyPattern("###.##");
+                    
+                    value = new Double(decimalFormat.format(((Number)value)));
                 }
 
                 // Caso não tenha colunas informadas, pega da definição do select
