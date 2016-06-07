@@ -267,16 +267,7 @@ public class CsvTest {
         assertThat(columns.get(4).getFormula(), hasToString("holiday"));
         assertThat(columns.get(4).getType(), hasToString("BOOLEAN"));
         
-
-        
-        
         PrintResult.printMap(all);
-//        assertThat(all.get(0).size(), is(4));
-//        assertThat(all, hasSize(greaterThan(0)));
-//        assertThat(all.get(0), hasKey("id"));
-//        assertThat(all.get(0), hasKey("gender"));
-//        assertThat(all.get(0), hasKey("age"));
-//        assertThat(all.get(0), hasKey("name"));
 
     }
 

@@ -87,8 +87,8 @@ public class Solr {
             }
             result.add(object);
         }
-       // PrintResult printResult = new PrintResult();
-       // printResult.print(result);
+        PrintResult printResult = new PrintResult();
+        printResult.print(result);
         return result;
 
     }
