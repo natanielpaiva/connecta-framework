@@ -110,7 +110,7 @@ public class FusionClient {
                     Locale locale  = new Locale("en", "US");
                     DecimalFormat decimalFormat = (DecimalFormat)
                             NumberFormat.getNumberInstance(locale);
-                    decimalFormat.applyPattern("###.##");
+                    decimalFormat.applyPattern("###.00");
                     
                     value = new Double(decimalFormat.format(((Number)value)));
                 }
