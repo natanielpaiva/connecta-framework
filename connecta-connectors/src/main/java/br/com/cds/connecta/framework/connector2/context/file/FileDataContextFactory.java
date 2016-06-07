@@ -4,7 +4,6 @@ import br.com.cds.connecta.framework.connector2.common.Base;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
 import br.com.cds.connecta.framework.connector2.common.FileContextFactory;
-import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataContextFactory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -23,7 +22,6 @@ import org.apache.metamodel.schema.Column;
 import org.apache.metamodel.schema.ColumnType;
 import org.apache.metamodel.schema.Table;
 import org.apache.metamodel.util.SimpleTableDef;
-import org.apache.zookeeper.server.persistence.Util;
 
 /**
  *
@@ -127,7 +125,6 @@ public class FileDataContextFactory extends Base implements ContextFactory {
             }else if (value.getClass().toString().contains("Double")) {
                 columnsTypes[key.getColumnNumber()] = ColumnType.DOUBLE;
             }
-            
         }
       
         String[] columnNames = dc.getDefaultSchema().getTables()[0].getColumnNames();
