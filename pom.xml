@@ -4,17 +4,24 @@
     
     <groupId>br.com.cds.connecta.framework</groupId>
     <artifactId>connecta-parent</artifactId>
+    <name>Connecta Framework</name>
+    <description>Upstream Framework project for the Connecta suite</description>
     <version>0.2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Connecta Framework</name>
-    <description>Manages dependencies and configuration</description>
 
     <properties>
+        <java.version>1.7</java.version>
         <spring-framework.version>4.1.5.RELEASE</spring-framework.version>
-        <!--<spring-framework.version>4.2.4.RELEASE</spring-framework.version>-->
         <hibernate.version>4.3.10.Final</hibernate.version>
         <svn.url>http://dsvn.cds.com.br/svn</svn.url>
         <nexus.url>http://192.168.1.185:8081/nexus</nexus.url>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <build.warname>${project.artifactId}-${project.version}</build.warname>
+        <!--Plataforma padrão, caso não tenha sido informado nada-->
+        <hibernate.transaction.manager_lookup_class>org.hibernate.transaction.JBossTransactionManagerLookup</hibernate.transaction.manager_lookup_class>
+        <hibernate.dialect>org.hibernate.dialect.H2Dialect</hibernate.dialect>
     </properties>
 
     <dependencyManagement>
@@ -355,7 +362,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            <plugin>
+<!--            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
@@ -364,22 +371,18 @@
                     <target>1.7</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
-            </plugin>
+            </plugin>-->
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
-
-    <!--	<repositories>
-            <repository>
-                    <id>cdt</id>
-                    <name>NexusCDT</name>
-                    <url>http://192.168.1.185:8081/nexus/content/groups/public/</url>
-            </repository>
-            <repository>
-                    <id>cds</id>
-                    <name>NexusCDS</name>
-                    <url>http://nexus.cds.com.br/content/groups/public</url>
-            </repository>
-    </repositories>-->
 
     <scm>
         <connection>scm:svn:${svn.url}/connecta-2.0/connecta-framework/trunk/</connection>
@@ -399,6 +402,55 @@
                 <maven.test.skip>true</maven.test.skip>
             </properties>
         </profile>
+        <!--Detalhes da build do Connecta-->
+        <profile>
+            <id>weblogic</id>
+            <properties>
+                <hibernate.transaction.manager_lookup_class>
+                    org.hibernate.transaction.WeblogicTransactionManagerLookup
+                </hibernate.transaction.manager_lookup_class>
+            </properties>
+        </profile>
+        <profile>
+            <id>jboss</id>
+            <properties>
+                <hibernate.transaction.manager_lookup_class>
+                    org.hibernate.transaction.JBossTransactionManagerLookup
+                </hibernate.transaction.manager_lookup_class>
+            </properties>
+        </profile>
+        <profile>
+            <id>oracle</id>
+            <properties>
+                <hibernate.dialect>
+                    org.hibernate.dialect.Oracle10gDialect
+                </hibernate.dialect>
+            </properties>
+        </profile>
+        <profile>
+            <id>postgresql</id>
+            <properties>
+                <hibernate.dialect>
+                    org.hibernate.dialect.PostgreSQLDialect
+                </hibernate.dialect>
+            </properties>
+        </profile>
+        <profile>
+            <id>mysql</id>
+            <properties>
+                <hibernate.dialect>
+                    org.hibernate.dialect.MySQL5Dialect
+                </hibernate.dialect>
+            </properties>
+        </profile>
+        <profile>
+            <id>h2</id>
+            <properties>
+                <hibernate.dialect>
+                    org.hibernate.dialect.H2Dialect
+                </hibernate.dialect>
+            </properties>
+        </profile>
     </profiles>
 
 <!--    <distributionManagement>
@@ -412,7 +464,20 @@
             <name>Releases</name>
             <url>${nexus.url}/content/repositories/releases/</url>
         </repository>
-    </distributionManagement>-->
+    </distributionManagement>
+
+    <repositories>
+            <repository>
+                    <id>cdt</id>
+                    <name>NexusCDT</name>
+                    <url>http://192.168.1.185:8081/nexus/content/groups/public/</url>
+            </repository>
+            <repository>
+                    <id>cds</id>
+                    <name>NexusCDS</name>
+                    <url>http://nexus.cds.com.br/content/groups/public</url>
+            </repository>
+    </repositories>-->
 	
     <modules>
         <module>connecta-core</module>

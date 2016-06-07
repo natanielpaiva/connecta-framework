@@ -39,7 +39,12 @@ public class PrintResult {
 
             for (int j = 0; j < columnsName.length; j++) {
                 if( map.get( columnsName[j] ) != null) {
-                    data[i][j] = map.get(columnsName[j]).toString();
+                    //data[i][j] = map.get(columnsName[j]).toString().substring(0, 10);
+                    String value = map.get(columnsName[j]).toString();
+                    if(value.length() >= 50){
+                       value = value.substring(0, 49).concat("... ");
+                    }
+                    data[i][j] = value;
                 } else {
                     data[i][j] = "null";
                 }

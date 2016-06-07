@@ -4,7 +4,6 @@ import br.com.cds.connecta.framework.connector2.common.Base;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
 import br.com.cds.connecta.framework.connector2.common.FileContextFactory;
-import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataContextFactory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -53,7 +52,9 @@ public class FileDataContextFactory extends Base implements ContextFactory {
                 queryContext.build().select(columnByName);
             }
             return dataContext.executeQuery(from);
-        } else {
+        } else if(!from.getSelectClause().getItems().isEmpty()){
+            return dataContext.executeQuery(from);
+        }else{
             return dataContext.executeQuery(from.selectAll());
         }
 
@@ -124,7 +125,6 @@ public class FileDataContextFactory extends Base implements ContextFactory {
             }else if (value.getClass().toString().contains("Double")) {
                 columnsTypes[key.getColumnNumber()] = ColumnType.DOUBLE;
             }
-            
         }
       
         String[] columnNames = dc.getDefaultSchema().getTables()[0].getColumnNames();
