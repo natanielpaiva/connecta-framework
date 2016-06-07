@@ -117,12 +117,15 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         
         Query from = queryContext.build().from(discoveredTable);
         
-        if (listColumns != null) {
+        if (listColumns != null &&
+                from.getSelectClause().getItems().isEmpty()) {
             for (ConnectorColumn column : listColumns) {
                 Column columnByName = discoveredTable.getColumnByName(column.getName());
                 queryContext.build().select(columnByName);
             }
 
+            return dataContext.executeQuery(from);
+        } else if(!from.getSelectClause().getItems().isEmpty()) {
             return dataContext.executeQuery(from);
         } else {
             return dataContext.executeQuery(from.selectAll());
