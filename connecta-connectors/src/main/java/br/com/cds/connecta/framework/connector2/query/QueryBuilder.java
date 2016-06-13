@@ -88,4 +88,9 @@ public class QueryBuilder {
         return query;
     }
     
+    public QueryBuilder addOrder(Column column){
+        this.query.orderBy(column);
+        return this;
+    }
+    
 }
