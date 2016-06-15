@@ -21,6 +21,7 @@ import br.com.cds.connecta.framework.core.exception.SystemException;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import org.apache.log4j.Logger;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.ObjectError;
@@ -33,7 +34,7 @@ public class InitController {
 
     @Autowired
     protected TranslateMessage translate;
-    
+
     private final Logger logger = Logger.getLogger(InitController.class);
 
     /**
@@ -107,7 +108,16 @@ public class InitController {
 
         return new ResponseEntity(mms, HttpStatus.BAD_REQUEST);
     }
-    
+
+    @ExceptionHandler({
+        DataIntegrityViolationException.class
+    })
+    public ResponseEntity handleException(DataIntegrityViolationException e) {
+        MessageModel message = getTranslatedMessage(MessageEnum.INTEGRITY_ERROR.name(), MessageTypeEnum.WARN);
+
+        return new ResponseEntity(message, HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler({
         ConstraintViolationException.class
     })
@@ -116,9 +126,9 @@ public class InitController {
 
         for (ConstraintViolation violation : e.getConstraintViolations()) {
             MessageModel translatedMessage = getTranslatedMessage(MessageEnum.REJECTED.name(), MessageTypeEnum.WARN);
-            
+
             translatedMessage.setMessage(violation.getMessage());
-            
+
             mms.add(translatedMessage);
         }
 
