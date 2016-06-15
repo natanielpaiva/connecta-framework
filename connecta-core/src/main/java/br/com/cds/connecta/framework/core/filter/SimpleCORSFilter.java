@@ -29,6 +29,11 @@ public class SimpleCORSFilter implements Filter {
         response.setHeader("Access-Control-Allow-Headers", request.getHeader("Access-Control-Request-Headers"));
         response.setHeader("Access-Control-Allow-Credentials", "true");
         chain.doFilter(req, res);
+        
+        if(response.getStatus() == HttpServletResponse.SC_NO_CONTENT){
+            response.setHeader("Content-Length", "0");
+        }
+        
     }
 
     @Override
