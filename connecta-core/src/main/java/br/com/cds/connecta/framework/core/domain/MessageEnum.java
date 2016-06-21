@@ -12,6 +12,8 @@ public enum MessageEnum {
     FORBIDDEN,
     NOT_FOUND,
     CONFLICT,
+    INTEGRITY_ERROR,
+    FALID_CONNECTION,
     
     // Success messages
     OPERATION_SUCESS;
