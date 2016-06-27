@@ -14,6 +14,7 @@ import org.apache.log4j.Logger;
 public class ConnectaConfigurationService extends Observable {
 
     private static final String SOLR_INDEX_ROOT_PROP = "connecta.search.solrbackend";
+    private static final String PORTAL_INDEX_ROOT_PROP = "connecta.portal.backend.url";
     private final Logger logger = Logger.getLogger(ConnectaConfigurationService.class);
     private static ConnectaConfigurationService instance;
     private ConnectaConfiguration configuration = new ConnectaConfiguration();
@@ -23,6 +24,7 @@ public class ConnectaConfigurationService extends Observable {
             Properties props = new Properties();
             props.load(getClass().getClassLoader().getResourceAsStream("application.properties"));
             configuration.setSolrBackend(props.getProperty(SOLR_INDEX_ROOT_PROP));
+            configuration.setConnectaPortalBackend(props.getProperty(PORTAL_INDEX_ROOT_PROP));
         } catch (IOException ex) {
             logger.error("Could not read application.properties", ex);
         }
