@@ -42,9 +42,10 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     private String table;
     private final String user;
     private final String password;
-    
+    private Connection conn = null;
+
     private Table tableContext;
-    
+
     private DatabaseDataContextFactory(String sql, String table, String user, String password, ConnectorDriver connectorDriver) {
         this.sql = sql;
         this.table = table;
@@ -52,9 +53,9 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         this.password = password;
         this.jdbcUrl = connectorDriver.jdbcUrl();
     }
-    
+
     /**
-     *  
+     *
      * @param sql
      * @param connectorDriver
      * @param user
@@ -94,15 +95,15 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     }
 
     public Connection getConnection() {
-        Connection conn = null;
-        try {
-            logger.info("JDBC URL: " + jdbcUrl);
-            conn = DriverManager.getConnection(jdbcUrl, user, password);
-        } catch (SQLException ex) {
-            // TODO Enviar Exception
-            logger.error("Connection problem", ex);
+        if (conn == null) {
+            try {
+                logger.info("JDBC URL: " + jdbcUrl);
+                conn = DriverManager.getConnection(jdbcUrl, user, password);
+            } catch (SQLException ex) {
+                // TODO Enviar Exception
+                logger.error("Connection problem", ex);
+            }
         }
-
         return conn;
     }
 
@@ -112,20 +113,20 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
 
         Table discoveredTable = discoverTable(schema);
         discoveredTable.getColumns(); // chamada pra reconhecer as colunas
-        
+
         List<ConnectorColumn> listColumns = queryContext.getColumns();
-        
+
         Query from = queryContext.build().from(discoveredTable);
-        
-        if (listColumns != null &&
-                from.getSelectClause().getItems().isEmpty()) {
+
+        if (listColumns != null
+                && from.getSelectClause().getItems().isEmpty()) {
             for (ConnectorColumn column : listColumns) {
                 Column columnByName = discoveredTable.getColumnByName(column.getName());
                 queryContext.build().select(columnByName);
             }
 
             return dataContext.executeQuery(from);
-        } else if(!from.getSelectClause().getItems().isEmpty()) {
+        } else if (!from.getSelectClause().getItems().isEmpty()) {
             return dataContext.executeQuery(from);
         } else {
             return dataContext.executeQuery(from.selectAll());
@@ -156,7 +157,8 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     }
 
     /**
-     *  Lista as colunas de um context
+     * Lista as colunas de um context
+     *
      * @return
      */
     @Override
@@ -183,7 +185,8 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     }
 
     /**
-     *  Retorna todos os Schemas do Banco
+     * Retorna todos os Schemas do Banco
+     *
      * @return
      */
     @Override
@@ -212,7 +215,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     public Table getTable() {
         Schema schema = discoverSchema();
         if (queryContext == null || queryContext.getTable() == null) {
-            if (table==null) {
+            if (table == null) {
                 return discoverTable(schema);
             } else {
                 return schema.getTableByName(table);
@@ -228,8 +231,9 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     }
 
     /**
-     * TODO Criar o PojoDataContext já com os tipos de dados detectados na consulta
-     * 
+     * TODO Criar o PojoDataContext já com os tipos de dados detectados na
+     * consulta
+     *
      */
     private void sqlCreateDataContext() {
         List<Map<String, ?>> rowset = new ArrayList<>();
@@ -260,12 +264,22 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
 
         } catch (SQLException ex) {
             logger.error(ex.getMessage(), ex);
+        } finally {
+            closeConnection();
         }
     }
-    
+
+    private void closeConnection() {
+        try {
+            conn.close();
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+        }
+    }
+
     private DataContext tableCreateDataContext() {
         dataContext = DataContextFactory.createJdbcDataContext(getConnection());
-        
+
         return dataContext;
     }
 
