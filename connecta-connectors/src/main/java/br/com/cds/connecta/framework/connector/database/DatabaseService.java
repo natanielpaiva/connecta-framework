@@ -5,9 +5,12 @@
  */
 package br.com.cds.connecta.framework.connector.database;
 
-import br.com.cds.connecta.framework.connector.database.service.DatabaseTable;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
+
+import br.com.cds.connecta.framework.connector.database.service.DatabaseTable;
 
 /**
  *
@@ -15,11 +18,18 @@ import java.util.List;
  */
 public class DatabaseService {
 
-    public List getTables(String server, String schema, String user, String password) throws SQLException{
+    public List getTables(String server, String schema, String user, String password) 
+    		throws SQLException{
 
         DatabaseTable databaseTable = new DatabaseTable();
         return databaseTable.getTables(server, schema, user, password);
 
+    }
+    
+    public Connection testConnection(String server, String user, String password) 
+    		throws SQLException{
+    	
+    	return DriverManager.getConnection(server, user, password);
     }
     
    
