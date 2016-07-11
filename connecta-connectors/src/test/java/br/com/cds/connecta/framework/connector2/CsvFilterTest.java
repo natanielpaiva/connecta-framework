@@ -284,7 +284,7 @@ public class CsvFilterTest {
     }
 
     private void testOneColumnFilterIn(ContextFactory contextFactory, String columnName, Object[] values) {
-        Collection<Matcher<Object>> in = new ArrayList<>(values.length);
+        Collection<Matcher<? super Object>> in = new ArrayList<>(values.length);
         for (Object value : values) {
             in.add(is(value));
         }
@@ -295,9 +295,48 @@ public class CsvFilterTest {
             assertThat(map, hasKey(columnName));
             assertThat(
                     (Object) map.get(columnName),
-                    anyOf((Iterable<Matcher<Object>>) in)
+                    anyOf((Iterable<Matcher<? super Object>>) in)
             );
         }
     }
+    
+    String[] drillOrder = {"Regiao","UF","Cidade"};
+    
+    @Test
+    public void testDrill(){
+        
+        FileDataContextFactory contextFactory = 
+                new FileDataContextFactory(new CSVDataContextFactory(csvCities)); 
+       
+        String columnMetric = "vendas";
+        
+        for (int i = 0; i < drillOrder.length; i++) {
+            String columnDrill = drillOrder[i];
+            List<Map<String,Object>> all = getResultDrillDrown(contextFactory, columnDrill, columnMetric);
+            
+            for (Map<String, Object> map : all) {
+                assertThat(map, hasKey(columnDrill));
+            }
+        }
 
+    }
+    
+    private List<Map<String, Object>> getResultDrillDrown(ContextFactory contextFactory, 
+                String columnNameDrill, String columnNameMetric) {
+                
+        Column columnDrill = contextFactory.getColumn(columnNameDrill);
+        Column columnMetrics = contextFactory.getColumn(columnNameMetric);
+        
+        QueryBuilder builder = new QueryBuilder()
+                .addGroupBy(columnDrill)
+                .addFilter(columnDrill, QueryFilterOperator.GREATER_THAN, 
+                        new QueryFilterValue<>(50))
+                .addSum(columnMetrics);
+        
+        Request request = new Request(contextFactory, builder);
+        List<Map<String, Object>> all = client.getAll(request);
+        PrintResult.printMap(all);
+        assertThat(all, hasSize(greaterThan(0)));
+        return all;
+    }
 }
