@@ -48,9 +48,10 @@ public class Base {
 				props.load(getClass().getClassLoader().getResourceAsStream("application.properties"));
 				redisHost = props.getProperty("connecta.redis.host");
 				redisPort = props.getProperty("connecta.redis.port");
-			} catch (IOException e) {
-				logger.error("erro ao tentar iniciar o redis");
+			} catch (Exception e){
+				logger.error("Erro ao tentar recuperar os endereços do Redis");
 			}
+	        
 	        jedis = new Jedis(redisHost != null ? redisHost : "localhost",
 	        					redisPort != null ? new Integer(redisPort) : new Integer(6379));
 		}
