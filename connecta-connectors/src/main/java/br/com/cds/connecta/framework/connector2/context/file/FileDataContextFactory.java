@@ -30,9 +30,9 @@ import org.apache.metamodel.util.SimpleTableDef;
 public class FileDataContextFactory extends Base implements ContextFactory {
 
     private final Logger logger = Logger.getLogger(FileDataContextFactory.class);
-    
+
     public FileDataContextFactory(FileContextFactory fileContextFactory) {
-        
+
         dataContext = converterDataContextToPojoDataContext(fileContextFactory.createDataContext());
     }
 
@@ -52,9 +52,9 @@ public class FileDataContextFactory extends Base implements ContextFactory {
                 queryContext.build().select(columnByName);
             }
             return dataContext.executeQuery(from);
-        } else if(!from.getSelectClause().getItems().isEmpty()){
+        } else if (!from.getSelectClause().getItems().isEmpty()) {
             return dataContext.executeQuery(from);
-        }else{
+        } else {
             return dataContext.executeQuery(from.selectAll());
         }
 
@@ -102,57 +102,57 @@ public class FileDataContextFactory extends Base implements ContextFactory {
     public DataContext createDataContext() {
         return dataContext;
     }
-    
-      public final DataContext converterDataContextToPojoDataContext(DataContext dc) {
-        
+
+    public final DataContext converterDataContextToPojoDataContext(DataContext dc) {
+
         DataSet execute = getDataSet(dc);
 
         ColumnType[] columnsTypes = createColumnsDefalt(dc);
-        
+
         Map<Column, TypeConverter<?, ?>> map = discoverPossibleConverters(dc);
 
         for (Map.Entry<Column, TypeConverter<?, ?>> entrySet : map.entrySet()) {
             Column key = entrySet.getKey();
 
             TypeConverter<? extends Object, ? extends Object> value = entrySet.getValue();
-            
+
             if (value.getClass().toString().contains("Boolean")) {
                 columnsTypes[key.getColumnNumber()] = ColumnType.BOOLEAN;
             } else if (value.getClass().toString().contains("Integer")) {
                 columnsTypes[key.getColumnNumber()] = ColumnType.INTEGER;
-            }else if (value.getClass().toString().contains("Date")) {
+            } else if (value.getClass().toString().contains("Date")) {
                 columnsTypes[key.getColumnNumber()] = ColumnType.DATE;
-            }else if (value.getClass().toString().contains("Double")) {
+            } else if (value.getClass().toString().contains("Double")) {
                 columnsTypes[key.getColumnNumber()] = ColumnType.DOUBLE;
             }
         }
-      
+
         String[] columnNames = dc.getDefaultSchema().getTables()[0].getColumnNames();
-        SimpleTableDef std = new SimpleTableDef("DEFAULT_TABLE_NAME", columnNames, columnsTypes);
+        SimpleTableDef std = new SimpleTableDef(dc.getDefaultSchema().getTables()[0].getName(), columnNames, columnsTypes);
+        //SimpleTableDef std = new SimpleTableDef("file", columnNames, columnsTypes);
         List<Object[]> list = new ArrayList<>();
-        
-        
+
         for (Row ex : execute) {
             Object[] obj = new Object[columnNames.length];
-            for(int i = 0; i < columnNames.length; i++){
+            for (int i = 0; i < columnNames.length; i++) {
 
-                if(columnsTypes[i].equals(ColumnType.INTEGER)){
+                if (columnsTypes[i].equals(ColumnType.INTEGER)) {
                     obj[i] = Integer.valueOf(ex.getValues()[i].toString());
-                }else if(columnsTypes[i].equals(ColumnType.BOOLEAN)){
+                } else if (columnsTypes[i].equals(ColumnType.BOOLEAN)) {
                     obj[i] = ex.getValues()[i].toString();
-                }else if(columnsTypes[i].equals(ColumnType.DATE)){
+                } else if (columnsTypes[i].equals(ColumnType.DATE)) {
                     obj[i] = String.valueOf(ex.getValues()[i].toString());
-                }else if(columnsTypes[i].equals(ColumnType.DOUBLE)){
-                    obj[i] = Double.valueOf(ex.getValues()[i].toString());    
-                }else {
+                } else if (columnsTypes[i].equals(ColumnType.DOUBLE)) {
+                    obj[i] = Double.valueOf(ex.getValues()[i].toString());
+                } else {
                     obj[i] = ex.getValues()[i];
                 }
             }
             list.add(obj);
         }
-        
+
         TableDataProvider<?> tableDataProvider = new ArrayTableDataProvider(std, list);
-        dataContext = new PojoDataContext("DEFAULT_SCHEMA_NAME", tableDataProvider);
+        dataContext = new PojoDataContext(dc.getDefaultSchema().getName(), tableDataProvider);
         return dataContext;
     }
 
@@ -173,7 +173,5 @@ public class FileDataContextFactory extends Base implements ContextFactory {
         DataSet execute = dc.query().from(dc.getDefaultSchema().getTable(0)).selectAll().execute();
         return execute;
     }
-    
-    
 
 }

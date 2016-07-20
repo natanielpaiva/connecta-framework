@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<departamentos>
+    <departamento id="1">
+        <nome>Departamento de Inovações</nome>
+        <responsavel>
+            <nome></nome>
+            <email></email>
+        </responsavel>
+    </departamento>
+    
+    <departamento id="2">
+        <nome>Departamento Financeiro</nome>
+    </departamento>
+    
+    <departamento id="3">
+        <nome>Departamento Jurídico</nome>
+    </departamento>
+    
+    <departamento id="4">
+        <nome>Departamento de Marketing</nome>
+    </departamento>
+    
+    <departamento id="5">
+        <nome>Departamento de Compras</nome>
+    </departamento>
+    
+    <departamento id="6">
+        <nome>Departamento de Vendas</nome>
+    </departamento>
+    
+    <departamento id="7">
+        <nome>Departamento Administrativo</nome>
+    </departamento>
+    
+    <departamento id="8">
+        <nome>Departamento Operacional</nome>
+    </departamento>
+    
+    <departamento id="9">
+        <nome>Departamento de Recursos humanos</nome>
+    </departamento>
+
+</departamentos>
