@@ -137,7 +137,11 @@ public class FileDataContextFactory extends Base implements ContextFactory {
             for (int i = 0; i < columnNames.length; i++) {
 
                 if (columnsTypes[i].equals(ColumnType.INTEGER)) {
-                    obj[i] = Integer.valueOf(ex.getValues()[i].toString());
+                    if (ex.getValues()[i].toString().equals("")) {
+                        obj[i] = Integer.valueOf("0");
+                    } else {
+                        obj[i] = Integer.valueOf(ex.getValues()[i].toString());
+                    }
                 } else if (columnsTypes[i].equals(ColumnType.BOOLEAN)) {
                     obj[i] = ex.getValues()[i].toString();
                 } else if (columnsTypes[i].equals(ColumnType.DATE)) {
