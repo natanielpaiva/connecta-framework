@@ -143,7 +143,11 @@ public class FileDataContextFactory extends Base implements ContextFactory {
                 } else if (columnsTypes[i].equals(ColumnType.DATE)) {
                     obj[i] = String.valueOf(ex.getValues()[i].toString());
                 } else if (columnsTypes[i].equals(ColumnType.DOUBLE)) {
-                    obj[i] = Double.valueOf(ex.getValues()[i].toString());
+                    if (ex.getValues()[i].toString().equals("")) {
+                        obj[i] = Double.valueOf("0");
+                    } else {
+                        obj[i] = Double.valueOf(ex.getValues()[i].toString());
+                    }
                 } else {
                     obj[i] = ex.getValues()[i];
                 }
