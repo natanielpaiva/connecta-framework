@@ -80,7 +80,7 @@ public class CsvTest {
         Request request = new Request(contextFactory, query);
 
         List<Map<String, Object>> all = client.getAll(request);
-        //PrintResult.printMap(all);
+        PrintResult.printMap(all);
         assertThat(all, hasSize(greaterThan(0)));
     }
 
@@ -109,9 +109,10 @@ public class CsvTest {
         connectorColumns.add(column1);
         connectorColumns.add(column2);
 
-        Request request = new Request(contextFactory, query.setColumns(connectorColumns));
+        Request request = new Request(contextFactory, query.setColumns(connectorColumns).setPagination(1, 10));
 
         List<Map<String, Object>> all = client.getAll(request);
+        PrintResult.printMap(all);
 
         assertThat(all.get(0).size(), is(2));
         assertThat(all, hasSize(greaterThan(0)));
@@ -129,6 +130,7 @@ public class CsvTest {
         Request request = new Request(contextFactory, query);
 
         List<ConnectorColumn> columns = client.getColumns(request);
+        PrintResult.printColumns(columns);
 
         assertThat(columns.get(0).getName(), hasToString("id"));
         assertThat(columns.get(0).getLabel(), hasToString("id"));
@@ -173,6 +175,7 @@ public class CsvTest {
         QueryBuilder query = new QueryBuilder();
 
         List<ConnectorColumn> connectorColumns = new ArrayList<>();
+        
         ConnectorColumn column1 = new ConnectorColumn();
         column1.setId(Long.valueOf(1));
         column1.setName("age");

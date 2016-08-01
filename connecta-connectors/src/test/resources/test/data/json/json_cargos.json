@@ -1,0 +1,38 @@
+[
+      {
+        "idCargo": 1,
+        "cargo": "Programador",
+        "salario": 7000,
+        "ativo": "S"
+      },
+      {
+        "idCargo": 2,
+        "cargo": "Designer",
+        "salario": 5000,
+        "ativo": "S"
+      },
+      {
+        "idCargo": 3,
+        "cargo": "Analista de Precesso",
+        "salario": 4000,
+        "ativo": "S"
+      },
+      {
+        "idCargo": 4,
+        "cargo": "Analista de dados",
+        "salario": 3000,
+        "ativo": "N"
+      },
+      {
+        "idCargo": 5,
+        "cargo": "Analista de sistemas",
+        "salario": 6000.22,
+        "ativo": "N"
+      },
+      {
+        "idCargo": 6,
+        "cargo": "Web Designer",
+        "salario": 1000,
+        "ativo": "N"
+      }
+]
