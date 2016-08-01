@@ -1,17 +1,27 @@
 package br.com.cds.connecta.framework.connector2.context.database.postgresql;
 
 import br.com.cds.connecta.framework.connector2.context.database.ConnectorDriver;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author diego
  */
-public class PostgresqlConnection  {
+public class PostgresqlDriver implements ConnectorDriver {
+
+    private String host;
+    private String port;
+    private String database;
+
+    public PostgresqlDriver(String host, String port, String database) {
+        this.host = host;
+        this.port = port;
+        this.database = database;
+    }
+
+    @Override
+    public String jdbcUrl() {
+        return "jdbc:postgresql://" + host + ":" + port + "/" + database;
+    }
 
 //    public void getConnection() {
 //        
@@ -29,7 +39,4 @@ public class PostgresqlConnection  {
 //            Logger.getLogger(PostgresqlConnection.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 //    }
-
-   
-    
 }

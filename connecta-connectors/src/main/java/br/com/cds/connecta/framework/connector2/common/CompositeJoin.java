@@ -1,6 +1,6 @@
 package br.com.cds.connecta.framework.connector2.common;
 
-import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
+import org.apache.metamodel.query.JoinType;
 import org.apache.metamodel.schema.Column;
 
 /**
@@ -9,49 +9,52 @@ import org.apache.metamodel.schema.Column;
  */
 public class CompositeJoin {
 
-    QueryBuilder queryContext;
-
-    ContextFactory leftContextFactory, rightContextFactory;
+    ContextFactory contextFactory;
     
-    Column leftColumn, rightColumn; 
-
-    public CompositeJoin(ContextFactory leftContextFactory, String leftColumn,ContextFactory rightContextFactory,  String rightColumn) {
-        this.leftContextFactory = leftContextFactory;
-        this.leftColumn = leftContextFactory.getColumn(leftColumn);
-        this.rightContextFactory = rightContextFactory;
-        this.rightColumn = rightContextFactory.getColumn(rightColumn);
-    }
-
-    public ContextFactory getLeftContextFactory() {
-        return leftContextFactory;
-    }
-
-    public void setLeftContextFactory(ContextFactory leftContextFactory) {
-        this.leftContextFactory = leftContextFactory;
-    }
-
-    public ContextFactory getRightContextFactory() {
-        return rightContextFactory;
-    }
-
-    public void setRightContextFactory(ContextFactory rightContextFactory) {
-        this.rightContextFactory = rightContextFactory;
-    }
-
-    public Column getLeftColumn() {
-        return leftColumn;
-    }
-
-    public Column getRightColumn() {
-        return rightColumn;
+    Column column; 
+    
+    String alias;
+    
+    JoinType joinType;
+    
+    public CompositeJoin(ContextFactory contextFactory, String column, String alias,
+                    JoinType joinType) {
+        this.contextFactory = contextFactory;
+        this.column = contextFactory.getColumn(column);
+        this.alias = alias;
+        this.joinType = joinType;
+        
     }
     
-
-    public QueryBuilder getQueryContext() {
-        return queryContext;
+    public ContextFactory getContextFactory() {
+        return contextFactory;
     }
 
-    public void setQueryContext(QueryBuilder queryContext) {
-        this.queryContext = queryContext;
+    public void setContextFactory(ContextFactory contextFactory) {
+        this.contextFactory = contextFactory;
+    }
+
+    public Column getColumn() {
+        return column;
+    }
+
+    public void setColumn(Column column) {
+        this.column = column;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+    
+    public JoinType getJoinType() {
+        return joinType;
+    }
+
+    public void setJoinType(JoinType joinType) {
+        this.joinType = joinType;
     }
 }

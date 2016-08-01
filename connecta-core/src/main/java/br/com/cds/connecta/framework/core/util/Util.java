@@ -7,13 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- *
- *
- * @author Ryan A. Thuin
- * @version 1.0.0
- *
- */
 public class Util {
 
     public static boolean isEmpty(Collection<?> collection) {
@@ -94,4 +87,6 @@ public class Util {
         
         return postfix;
     }
+    
+    
 }
