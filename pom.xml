@@ -6,7 +6,7 @@
 	<artifactId>connecta-parent</artifactId>
 	<name>Connecta Framework</name>
 	<description>Upstream Framework project for the Connecta suite</description>
-	<version>0.4.0-SNAPSHOT</version>
+	<version>0.4.0-RELEASE</version>
 	<packaging>pom</packaging>
 
 	<properties>
