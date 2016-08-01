@@ -6,6 +6,7 @@ import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
 import java.util.List;
 import org.apache.metamodel.DataContext;
 import org.apache.metamodel.data.DataSet;
+import org.apache.metamodel.schema.Column;
 
 /**
  * 
@@ -52,6 +53,12 @@ public class Request {
         dataContextFactory.setQueryContext(queryContext);
 
         return dataContextFactory.getColumns();
+    }
+    public Column getColumn(String nameColumn) {
+        dataContextFactory.createDataContext();
+        dataContextFactory.setQueryContext(queryContext);
+
+        return dataContextFactory.getColumn(nameColumn);
     }
     
 }

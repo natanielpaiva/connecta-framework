@@ -361,7 +361,7 @@ public class ExcelFiterText {
     }
 
     private void testOneColumnFilterIn(ContextFactory contextFactory, String columnName, Object[] values) {
-        Collection<Matcher<Object>> in = new ArrayList<>(values.length);
+        Collection<Matcher<? super Object>> in = new ArrayList<>(values.length);
         for (Object value : values) {
             in.add(is(value));
         }
@@ -372,7 +372,7 @@ public class ExcelFiterText {
             assertThat(map, hasKey(columnName));
             assertThat(
                     (Object) map.get(columnName),
-                    anyOf((Iterable<Matcher<Object>>) in)
+                    anyOf((Iterable<Matcher<? super Object>>) in)
             );
         }
     }
