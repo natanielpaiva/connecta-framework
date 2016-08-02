@@ -38,6 +38,10 @@
 			<id>d-maven</id>
 			<url>http://d-maven.googlecode.com/svn/trunk/repo</url>
 		</repository>
+		<repository>
+			<id>jTextUtil</id>
+			<url>http://maven.jpushoa.com/nexus/content/repositories/thirdparty/</url>
+		</repository>
 	</repositories>
 
 	<dependencies>
