@@ -58,6 +58,8 @@ public class InitController {
 
         MessageModel message = getTranslatedMessage(e.getExceptionEnum().name(), MessageTypeEnum.ERROR,
                 translatedResourceName);
+        
+        logger.error(e.getMessage(), e);
 
         return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
     }
@@ -70,6 +72,8 @@ public class InitController {
 
         MessageModel message = getTranslatedMessage(e.getExceptionEnum().name(), MessageTypeEnum.ERROR,
                 translatedResourceName, translatedFieldName);
+        
+        logger.error(e.getMessage(), e);
 
         return new ResponseEntity<>(message, HttpStatus.CONFLICT);
     }
@@ -81,6 +85,7 @@ public class InitController {
 
         for (Message message : e.getMessages()) {
             messageModels.add(getTranslatedMessage(message.getMessage(), MessageTypeEnum.ERROR));
+            logger.error(message.getMessage(), e);
         }
 
         return new ResponseEntity(messageModels, HttpStatus.BAD_REQUEST);
@@ -93,6 +98,8 @@ public class InitController {
     })
     public ResponseEntity handleException(Exception e) {
         MessageModel mm = getTranslatedMessage(e.getMessage(), MessageTypeEnum.WARN);
+        
+        logger.error(e.getMessage(), e);
 
         return new ResponseEntity(mm, HttpStatus.BAD_REQUEST);
     }
@@ -106,6 +113,8 @@ public class InitController {
         for (ObjectError error : e.getBindingResult().getAllErrors()) {
             mms.add(getTranslatedMessage(error.getDefaultMessage(), MessageTypeEnum.WARN));
         }
+        
+        logger.error(e.getMessage(), e);
 
         return new ResponseEntity(mms, HttpStatus.BAD_REQUEST);
     }
@@ -124,6 +133,7 @@ public class InitController {
     })
     public ResponseEntity handleException(SQLException e) {
         MessageModel message = getTranslatedMessage(MessageEnum.FALID_CONNECTION.name(), MessageTypeEnum.ERROR);
+        logger.error(e.getMessage(), e);
         return new ResponseEntity(message, HttpStatus.BAD_REQUEST);
     }
 
