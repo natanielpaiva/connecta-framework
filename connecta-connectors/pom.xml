@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>br.com.cds.connecta.framework</groupId>
 		<artifactId>connecta-parent</artifactId>
-		<version>0.5.0-RELEASE</version>
+		<version>0.6.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>connecta-connectors</artifactId>
