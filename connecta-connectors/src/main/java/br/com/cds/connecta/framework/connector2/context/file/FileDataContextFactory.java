@@ -46,7 +46,7 @@ public class FileDataContextFactory extends Base implements ContextFactory {
 
         Query from = queryContext.build().from(table);
 
-        if (listColumns != null) {
+        if (listColumns != null && from.getSelectClause().getItems().isEmpty()) {
             for (ConnectorColumn column : listColumns) {
                 Column columnByName = table.getColumnByName(column.getName());
                 queryContext.build().select(columnByName);
