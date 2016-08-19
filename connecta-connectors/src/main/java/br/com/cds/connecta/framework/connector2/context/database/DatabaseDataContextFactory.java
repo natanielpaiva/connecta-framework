@@ -2,6 +2,7 @@ package br.com.cds.connecta.framework.connector2.context.database;
 
 import br.com.cds.connecta.framework.connector2.common.Base;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
+import br.com.cds.connecta.framework.connector2.common.ConnectorTableColumn;
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
 import com.google.common.io.Files;
 import com.google.gson.Gson;
@@ -256,6 +257,36 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     public Column getColumn(String columnName) {
         return getTable().getColumnByName(columnName);
     }
+    
+    public List getTablesColumns() {
+        Schema discoverSchema = discoverSchema();
+
+        Table[] tables = discoverSchema.getTables();
+
+        List<ConnectorTableColumn> listConnectorTables = new ArrayList<>();
+
+        for (Table tb : tables) {
+
+            ConnectorTableColumn connectorTable = new ConnectorTableColumn();
+            connectorTable.setTableName(tb.getName());
+
+            List<ConnectorColumn> connectorColumns = new ArrayList<>();
+            for (Column column : tb.getColumns()) {
+
+                ConnectorColumn cc = new ConnectorColumn();
+                cc.setName(column.getName());
+                cc.setType(column.getType().getName());
+                cc.setLabel(column.getName());
+
+                connectorColumns.add(cc);
+            }
+            connectorTable.setConnectorColumn(connectorColumns);
+            listConnectorTables.add(connectorTable);
+        }
+
+        return listConnectorTables;
+    }
+    
 
     /**
      * TODO Criar o PojoDataContext já com os tipos de dados detectados na
@@ -461,7 +492,8 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
             case 1111:
                 return ColumnType.OTHER;
             default:
-                throw new Error("Unknown column type");
+                return ColumnType.VARCHAR;
+            //throw new Error("Unknown column type");
         }
 
     }
@@ -484,5 +516,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         filename = rndchars + "_" + datetime + "_" + millis;
         return filename;
     }
+
+    
 
 }
