@@ -347,6 +347,18 @@
 				<version>4.3.4</version>
 				<type>jar</type>
 			</dependency>
+
+			<!-- JAVA MAIL -->
+			<dependency>
+				<groupId>com.sun.mail</groupId>
+				<artifactId>javax.mail</artifactId>
+				<version>1.5.6</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.velocity</groupId>
+				<artifactId>velocity</artifactId>
+				<version>1.7</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -437,31 +449,13 @@
 		</profile>
 	</profiles>
 
-<!--    <distributionManagement>
-        <snapshotRepository>
-            <id>Nexus-Snapshots</id>
-            <name>Snapshots</name>
-            <url>${nexus.url}/content/repositories/snapshots/</url>
-        </snapshotRepository>
-        <repository>
-            <id>Nexus-Releases</id>
-            <name>Releases</name>
-            <url>${nexus.url}/content/repositories/releases/</url>
-        </repository>
-    </distributionManagement>
-
-    <repositories>
-            <repository>
-                    <id>cdt</id>
-                    <name>NexusCDT</name>
-                    <url>http://192.168.1.185:8081/nexus/content/groups/public/</url>
-            </repository>
-            <repository>
-                    <id>cds</id>
-                    <name>NexusCDS</name>
-                    <url>http://nexus.cds.com.br/content/groups/public</url>
-            </repository>
-    </repositories>-->
+	<!-- <distributionManagement> <snapshotRepository> <id>Nexus-Snapshots</id> 
+		<name>Snapshots</name> <url>${nexus.url}/content/repositories/snapshots/</url> 
+		</snapshotRepository> <repository> <id>Nexus-Releases</id> <name>Releases</name> 
+		<url>${nexus.url}/content/repositories/releases/</url> </repository> </distributionManagement> 
+		<repositories> <repository> <id>cdt</id> <name>NexusCDT</name> <url>http://192.168.1.185:8081/nexus/content/groups/public/</url> 
+		</repository> <repository> <id>cds</id> <name>NexusCDS</name> <url>http://nexus.cds.com.br/content/groups/public</url> 
+		</repository> </repositories> -->
 
 	<modules>
 		<module>connecta-core</module>
