@@ -351,6 +351,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
                 saveResultSetOnRedis(hash);
                 montaDataContext(rowset, columns);
             } else {
+            	setCached(true);
                 logger.info("Get analysis from cache");
                 JsonReader reader
                         = new JsonReader(new InputStreamReader(new ByteArrayInputStream(resultsetBytes), "UTF-8"));
