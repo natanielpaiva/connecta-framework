@@ -55,7 +55,6 @@ public class ReportService {
     }
 
     public HashMap<String, List<String>> getMetadata(String path, String session) {
-
         HashMap<String, List<String>> metadata = new HashMap<>();
 
         ReportRef rep = new ReportRef();
@@ -92,6 +91,10 @@ public class ReportService {
                     Document xml = DomUtils.converterStringToDocumentXML(objeto
                             .getCatalogObject());
 
+                    if(xml == null){
+                        return null;
+                    }
+
                     Element root = xml.getDocumentElement();
 
                     NodeList rootChilds = root.getChildNodes();
@@ -103,20 +106,20 @@ public class ReportService {
                     int i = 1;
 
                     for (ReportAttr attr : header) {
-
-                        String columnName = null;
+                        String formula =  attr.getFormula();
+                        String columnName;
 
                         // quando não há título personalizado para a coluna
                         if (attr.getValue().trim().equals("")) {
 
-                            boolean flag = attr.getFormula().indexOf("CASE") > -1
-                                    || attr.getFormula().indexOf("WHEN") > -1
-                                    || attr.getFormula().indexOf("AGGREGATE") > -1
-                                    || attr.getFormula().indexOf("SUM") > -1
-                                    || attr.getFormula().indexOf("AVERAGE") > -1;
+                            boolean flag = formula.indexOf("CASE") > -1
+                                    || formula.indexOf("WHEN") > -1
+                                    || formula.indexOf("AGGREGATE") > -1
+                                    || formula.indexOf("SUM") > -1
+                                    || formula.indexOf("AVERAGE") > -1;
 
-                            if (!flag) {
-                                columnName = attr.getFormula().split("\\.")[1];
+                            if (!flag && !formula.isEmpty() && formula.contains(".")) {
+                                columnName = formula.split("\\.")[1];
                             } else {
                                 columnName = "column" + i;
                             }
@@ -238,7 +241,7 @@ public class ReportService {
     private List<FilterBean> getColumnsFilter(List<String> filtros) {
         List<FilterBean> resultado = new ArrayList<FilterBean>();
 
-        if (!filtros.isEmpty()) {
+        if (filtros != null && !filtros.isEmpty()) {
             for (String xml : filtros) {
                 FilterBean filtro = this.getFilterObject(xml);
                 resultado.add(filtro);

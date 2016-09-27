@@ -22,6 +22,8 @@ public class Login {
 
     private UserBean user;
 
+    public Login(){}
+
     public Login(String wsdlLocation) {
 
         URL url = null;
