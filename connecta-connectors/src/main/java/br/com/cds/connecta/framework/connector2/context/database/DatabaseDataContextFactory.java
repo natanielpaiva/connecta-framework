@@ -41,6 +41,7 @@ import org.apache.metamodel.pojo.TableDataProvider;
 import org.apache.metamodel.query.Query;
 import org.apache.metamodel.schema.Column;
 import org.apache.metamodel.schema.ColumnType;
+import org.apache.metamodel.schema.ColumnTypeImpl;
 import org.apache.metamodel.schema.MutableColumn;
 import org.apache.metamodel.schema.MutableTable;
 import org.apache.metamodel.schema.Schema;
@@ -449,54 +450,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     }
 
     private ColumnType discoverTypeColumn(int type) {
-        switch (type) {
-            case -7:
-                return ColumnType.BIT;
-            case -6:
-                return ColumnType.TINYINT;
-            case -5:
-                return ColumnType.BIGINT;
-            case -4:
-                return ColumnType.LONGVARBINARY;
-            case -3:
-                return ColumnType.VARBINARY;
-            case -2:
-                return ColumnType.BINARY;
-            case -1:
-                return ColumnType.LONGVARCHAR;
-            case 0:
-                return ColumnType.NULL;
-            case 1:
-                return ColumnType.CHAR;
-            case 2:
-                return ColumnType.NUMERIC;
-            case 3:
-                return ColumnType.DECIMAL;
-            case 4:
-                return ColumnType.INTEGER;
-            case 5:
-                return ColumnType.SMALLINT;
-            case 6:
-                return ColumnType.FLOAT;
-            case 7:
-                return ColumnType.REAL;
-            case 8:
-                return ColumnType.DOUBLE;
-            case 12:
-                return ColumnType.VARCHAR;
-            case 91:
-                return ColumnType.DATE;
-            case 92:
-                return ColumnType.TIME;
-            case 93:
-                return ColumnType.TIMESTAMP;
-            case 1111:
-                return ColumnType.OTHER;
-            default:
-                return ColumnType.VARCHAR;
-            //throw new Error("Unknown column type");
-        }
-
+    	return ColumnTypeImpl.convertColumnType(type);
     }
 
     public boolean isCached() {
