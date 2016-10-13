@@ -1,15 +1,5 @@
 package br.com.cds.connecta.framework.connector2.context.database;
 
-import br.com.cds.connecta.framework.connector2.common.Base;
-import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
-import br.com.cds.connecta.framework.connector2.common.ConnectorTableColumn;
-import br.com.cds.connecta.framework.connector2.common.ContextFactory;
-import com.google.common.io.Files;
-import com.google.gson.Gson;
-import com.google.gson.internal.LinkedTreeMap;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -30,6 +20,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.log4j.Logger;
 import org.apache.metamodel.DataContext;
@@ -47,6 +38,21 @@ import org.apache.metamodel.schema.MutableTable;
 import org.apache.metamodel.schema.Schema;
 import org.apache.metamodel.schema.Table;
 import org.apache.metamodel.util.SimpleTableDef;
+
+import com.google.common.io.Files;
+import com.google.gson.ExclusionStrategy;
+import com.google.gson.FieldAttributes;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.internal.LinkedTreeMap;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+
+import br.com.cds.connecta.framework.connector2.common.Base;
+import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
+import br.com.cds.connecta.framework.connector2.common.ConnectorTableColumn;
+import br.com.cds.connecta.framework.connector2.common.ContextFactory;
 import redis.clients.jedis.exceptions.JedisConnectionException;
 
 /**
@@ -298,7 +304,10 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         List<Map<String, ?>> rowset = new ArrayList<>();
         byte[] resultsetBytes = null;
         String hash = createHashOfSQL();
-        final Gson gson = new Gson();
+        final Gson gson = new GsonBuilder()
+        		.setExclusionStrategies(new LobExclusionStrategy())
+        		.create();
+        
         boolean isUpdating = updatingCache.length > 0 ? updatingCache[0] : false;
 
         try {
@@ -349,7 +358,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
                 writer.close();
                 out.close();
 
-                saveResultSetOnRedis(hash);
+                if(!rowset.isEmpty()) saveResultSetOnRedis(hash);
                 montaDataContext(rowset, columns);
             } else {
             	setCached(true);
@@ -422,7 +431,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
                 i++;
             }
         }
-        return columns;
+        return columns == null ? new String[]{} : columns;
     }
 
     private void montaDataContext(List<Map<String, ?>> rowset, String[] columns) {
