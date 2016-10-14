@@ -1,14 +1,5 @@
 package br.com.cds.connecta.framework.connector2.context.database;
 
-import br.com.cds.connecta.framework.connector2.common.Base;
-import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
-import br.com.cds.connecta.framework.connector2.common.ContextFactory;
-import com.google.common.io.Files;
-import com.google.gson.Gson;
-import com.google.gson.internal.LinkedTreeMap;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -29,6 +20,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.log4j.Logger;
 import org.apache.metamodel.DataContext;
@@ -40,11 +32,27 @@ import org.apache.metamodel.pojo.TableDataProvider;
 import org.apache.metamodel.query.Query;
 import org.apache.metamodel.schema.Column;
 import org.apache.metamodel.schema.ColumnType;
+import org.apache.metamodel.schema.ColumnTypeImpl;
 import org.apache.metamodel.schema.MutableColumn;
 import org.apache.metamodel.schema.MutableTable;
 import org.apache.metamodel.schema.Schema;
 import org.apache.metamodel.schema.Table;
 import org.apache.metamodel.util.SimpleTableDef;
+
+import com.google.common.io.Files;
+import com.google.gson.ExclusionStrategy;
+import com.google.gson.FieldAttributes;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.internal.LinkedTreeMap;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+
+import br.com.cds.connecta.framework.connector2.common.Base;
+import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
+import br.com.cds.connecta.framework.connector2.common.ConnectorTableColumn;
+import br.com.cds.connecta.framework.connector2.common.ContextFactory;
 import redis.clients.jedis.exceptions.JedisConnectionException;
 
 /**
@@ -256,6 +264,36 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     public Column getColumn(String columnName) {
         return getTable().getColumnByName(columnName);
     }
+    
+    public List getTablesColumns() {
+        Schema discoverSchema = discoverSchema();
+
+        Table[] tables = discoverSchema.getTables();
+
+        List<ConnectorTableColumn> listConnectorTables = new ArrayList<>();
+
+        for (Table tb : tables) {
+
+            ConnectorTableColumn connectorTable = new ConnectorTableColumn();
+            connectorTable.setTableName(tb.getName());
+
+            List<ConnectorColumn> connectorColumns = new ArrayList<>();
+            for (Column column : tb.getColumns()) {
+
+                ConnectorColumn cc = new ConnectorColumn();
+                cc.setName(column.getName());
+                cc.setType(column.getType().getName());
+                cc.setLabel(column.getName());
+
+                connectorColumns.add(cc);
+            }
+            connectorTable.setConnectorColumn(connectorColumns);
+            listConnectorTables.add(connectorTable);
+        }
+
+        return listConnectorTables;
+    }
+    
 
     /**
      * TODO Criar o PojoDataContext já com os tipos de dados detectados na
@@ -266,7 +304,10 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         List<Map<String, ?>> rowset = new ArrayList<>();
         byte[] resultsetBytes = null;
         String hash = createHashOfSQL();
-        final Gson gson = new Gson();
+        final Gson gson = new GsonBuilder()
+        		.setExclusionStrategies(new LobExclusionStrategy())
+        		.create();
+        
         boolean isUpdating = updatingCache.length > 0 ? updatingCache[0] : false;
 
         try {
@@ -317,9 +358,10 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
                 writer.close();
                 out.close();
 
-                saveResultSetOnRedis(hash);
+                if(!rowset.isEmpty()) saveResultSetOnRedis(hash);
                 montaDataContext(rowset, columns);
             } else {
+            	setCached(true);
                 logger.info("Get analysis from cache");
                 JsonReader reader
                         = new JsonReader(new InputStreamReader(new ByteArrayInputStream(resultsetBytes), "UTF-8"));
@@ -389,7 +431,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
                 i++;
             }
         }
-        return columns;
+        return columns == null ? new String[]{} : columns;
     }
 
     private void montaDataContext(List<Map<String, ?>> rowset, String[] columns) {
@@ -417,53 +459,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     }
 
     private ColumnType discoverTypeColumn(int type) {
-        switch (type) {
-            case -7:
-                return ColumnType.BIT;
-            case -6:
-                return ColumnType.TINYINT;
-            case -5:
-                return ColumnType.BIGINT;
-            case -4:
-                return ColumnType.LONGVARBINARY;
-            case -3:
-                return ColumnType.VARBINARY;
-            case -2:
-                return ColumnType.BINARY;
-            case -1:
-                return ColumnType.LONGVARCHAR;
-            case 0:
-                return ColumnType.NULL;
-            case 1:
-                return ColumnType.CHAR;
-            case 2:
-                return ColumnType.NUMERIC;
-            case 3:
-                return ColumnType.DECIMAL;
-            case 4:
-                return ColumnType.INTEGER;
-            case 5:
-                return ColumnType.SMALLINT;
-            case 6:
-                return ColumnType.FLOAT;
-            case 7:
-                return ColumnType.REAL;
-            case 8:
-                return ColumnType.DOUBLE;
-            case 12:
-                return ColumnType.VARCHAR;
-            case 91:
-                return ColumnType.DATE;
-            case 92:
-                return ColumnType.TIME;
-            case 93:
-                return ColumnType.TIMESTAMP;
-            case 1111:
-                return ColumnType.OTHER;
-            default:
-                throw new Error("Unknown column type");
-        }
-
+    	return ColumnTypeImpl.convertColumnType(type);
     }
 
     public boolean isCached() {
@@ -484,5 +480,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
         filename = rndchars + "_" + datetime + "_" + millis;
         return filename;
     }
+
+    
 
 }

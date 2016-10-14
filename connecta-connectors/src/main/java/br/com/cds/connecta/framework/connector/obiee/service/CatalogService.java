@@ -11,11 +11,6 @@ import java.util.List;
 
 import javax.xml.ws.soap.SOAPFaultException;
 
-//import net.sf.json.JSONObject;
-//import br.com.cds.presenter.businnes.bean.obiee.FileBIBean;
-//import br.com.cds.presenter.businnes.wsdl.oracle.bi.web.soap.ItemInfo;
-//import br.com.cds.presenter.businnes.wsdl.oracle.bi.web.soap.ItemInfoType;
-//import br.com.cds.presenter.businnes.wsdl.oracle.bi.web.soap.WebCatalogService;
 /**
  *
  * @author jhonatas
@@ -25,7 +20,7 @@ import javax.xml.ws.soap.SOAPFaultException;
  */
 public class CatalogService {
 
-    private static final String PATH = "/shared/";
+    private static final String PATH = "/shared";
     private String pathTemp = PATH;
     private WebCatalogService service;
 
@@ -55,9 +50,9 @@ public class CatalogService {
         List<ItemInfo> lista;
 
         try {
-            lista = service.getWebCatalogServiceSoap().getSubItems(pathTemp, "", true, null, session);
+            lista = service.getWebCatalogServiceSoap().getSubItems(pathTemp, "*", true, null, session);
 
-            if (!lista.isEmpty()) {
+            if (lista != null && !lista.isEmpty()) {
                 for (ItemInfo item : lista) {
                     FileBIBean.Type tipo = getTypeOfItemInfo(item.getType());
                     arquivos.add(new FileBIBean(item.getCaption(), item.getPath(), tipo));

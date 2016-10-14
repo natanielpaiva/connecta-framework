@@ -5,26 +5,10 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import org.apache.metamodel.DataContext;
 import org.apache.metamodel.DataContextFactory;
-import org.apache.metamodel.MetaModelException;
-import org.apache.metamodel.convert.Converters;
-import org.apache.metamodel.convert.TypeConverter;
-import org.apache.metamodel.data.DataSet;
-import org.apache.metamodel.data.Row;
-import org.apache.metamodel.pojo.ArrayTableDataProvider;
-import org.apache.metamodel.pojo.MapTableDataProvider;
-import org.apache.metamodel.pojo.PojoDataContext;
-import org.apache.metamodel.pojo.TableDataProvider;
-import org.apache.metamodel.query.builder.SatisfiedSelectBuilder;
-import org.apache.metamodel.schema.Column;
-import org.apache.metamodel.schema.ColumnType;
+import org.apache.metamodel.csv.CsvConfiguration;
 import org.apache.metamodel.util.FileHelper;
-import org.apache.metamodel.util.SimpleTableDef;
 
 /**
  *
@@ -89,6 +73,15 @@ public class CSVDataContextFactory implements FileContextFactory {
         return dataContext;
     }
 
+    public CSVDataContextFactory(String csv, CsvConfiguration csvConfiguration) {
+        this.csv = csv;
+
+        InputStream inputStream = new ByteArrayInputStream(this.csv.getBytes(StandardCharsets.UTF_8));
+        dataContext = DataContextFactory.createCsvDataContext(inputStream, csvConfiguration);
+    }
+    
+    
+    
     
 //    public DataContext converterDataContextToPojoDataContext(DataContext dc) {
 //        
