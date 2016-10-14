@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>br.com.cds.connecta.framework</groupId>
 		<artifactId>connecta-parent</artifactId>
-		<version>0.6.0-SNAPSHOT</version>
+		<version>0.6.0-RELEASE</version>
 	</parent>
 
 	<artifactId>connecta-core</artifactId>
@@ -50,16 +50,6 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 		</dependency>
-
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.security</groupId> -->
-<!-- 			<artifactId>spring-security-ldap</artifactId> -->
-<!-- 		</dependency> -->
-
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.ldap</groupId> -->
-<!-- 			<artifactId>spring-ldap-core</artifactId> -->
-<!-- 		</dependency> -->
 
 		<!-- Transactions -->
 		<dependency>
@@ -242,6 +232,16 @@
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
+		</dependency>
+
+		<!-- EMAIL -->
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
 		</dependency>
 	</dependencies>
 

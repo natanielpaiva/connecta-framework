@@ -32,10 +32,26 @@ public class AuthFilter extends GenericFilterBean {
 
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
-
+        Boolean publicDashValidated = false;
+        
+        //validação do src da diretiva de viewer
+        PublicDash pd = new PublicDash(request.getParameter("key"), 
+        		request.getParameter("viewerId"));
+        
+        //após validar os viewers, é a validação de cada requisição executada após o carregamento
+        //dos viewers
+        if(!pd.validate()){
+        	String publicDashboardValidated = request.getHeader("publicDashboardValidated");
+            publicDashValidated = Boolean.parseBoolean(publicDashboardValidated);
+            
+            pd = new PublicDash(request.getHeader("publicDashboardKey"), 
+            		request.getHeader("publicDashboardId"));
+        }
+        
+        //caso nao seja publico, valida o token do oauth
         if (!request.getMethod().equalsIgnoreCase("OPTIONS")
-                && !isPublic(request.getServletPath())) {
-
+                && !isPublic(request.getServletPath(), pd, publicDashValidated)) {
+        	
             String headerToken = request.getHeader("Authorization");
 
             String token = headerToken == null ? getTokenFromCookie(request) : headerToken;
@@ -50,7 +66,6 @@ public class AuthFilter extends GenericFilterBean {
     }
 
     private String getTokenFromCookie(HttpServletRequest request) {
-
         Cookie[] cookies = request.getCookies();
 
         if (Util.isNotEmpty(cookies)) {
@@ -70,16 +85,23 @@ public class AuthFilter extends GenericFilterBean {
         return null;
     }
 
-    public boolean isPublic(String uri) {
+    public boolean isPublic(String uri, PublicDash pd, Boolean publicDashboardValidated) {
+    	boolean isPublic = false;
+    	
+    	if(publicDashboardValidated && pd.validate()){
+    		isPublic = authService.validatePublicKeyDash(pd.publicKey, pd.resourceId);
+    	}else if(pd.validate()){
+    		isPublic = authService.validatePublicKey(pd.publicKey, pd.resourceId);
+    	}
         if (Util.isNotNull(uri)) {
             // adicionar uris de exceptions
             for (String ex : exceptions) {
                 if (uri.equals(ex)) {
-                    return true;
+                	isPublic = true;
                 }
             }
         }
-        return false;
+        return isPublic;
     }
 
     public List<String> getExceptions() {
@@ -96,5 +118,20 @@ public class AuthFilter extends GenericFilterBean {
 
     public void setAuthService(IAuthService authService) {
         this.authService = authService;
+    }
+    
+    private class PublicDash{
+    	String publicKey;
+    	String resourceId;
+    	
+    	public PublicDash(String publicKey, String viewerId){
+    		this.publicKey = publicKey;
+    		this.resourceId = viewerId;
+    	}
+    	
+    	public boolean validate(){
+    		return Util.isNotNull(publicKey)
+    				&& Util.isNotNull(resourceId);
+    	}
     }
 }

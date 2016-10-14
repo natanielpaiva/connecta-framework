@@ -1,5 +1,6 @@
 package br.com.cds.connecta.framework.connector.obiee.bean;
 
+
 /**
  *
  * @author jhonatas
@@ -8,7 +9,7 @@ public class FileBIBean {
 
     public enum Type {
         folder, link, object, noaccess, unknow
-    };
+    }
 
     private String name;
     private String path;
@@ -49,4 +50,5 @@ public class FileBIBean {
     public void setType(Type type) {
         this.type = type;
     }
+
 }

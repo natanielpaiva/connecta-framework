@@ -10,6 +10,8 @@ public class ConnectaConfiguration {
     private String solrBackend;
 
     private String connectaPortalBackend;
+    
+    private LdapConfiguration ldapConfiguration;
 
     public String getSolrBackend() {
         return solrBackend;
@@ -26,5 +28,13 @@ public class ConnectaConfiguration {
     public void setConnectaPortalBackend(String connectaPortalBackend) {
         this.connectaPortalBackend = connectaPortalBackend;
     }
+
+	public LdapConfiguration getLdapConfiguration() {
+		return ldapConfiguration;
+	}
+
+	public void setLdapConfiguration(LdapConfiguration ldapConfiguration) {
+		this.ldapConfiguration = ldapConfiguration;
+	}
 
 }
