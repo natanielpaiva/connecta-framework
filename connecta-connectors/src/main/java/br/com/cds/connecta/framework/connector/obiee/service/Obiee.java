@@ -6,6 +6,7 @@
 package br.com.cds.connecta.framework.connector.obiee.service;
 
 import br.com.cds.connecta.framework.connector.obiee.SAWSessionService;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
@@ -27,17 +28,10 @@ public final class Obiee {
         this.path = path;
         this.session = serviceSession();
     }
-    
-//    public Obiee(String wsdlLocation, String login, String password) {
-//        this.wsdlLocation = wsdlLocation;
-//        this.login = login;
-//        this.password = password;
-//        this.session = serviceSession();
-//    }
 
     public Obiee() {
     }
-    
+
     public List getCatalog() {
         CatalogService catalogService = new CatalogService(this.wsdlLocation);
         return catalogService.listFileBI(this.session, this.path);
@@ -60,5 +54,9 @@ public final class Obiee {
             e.printStackTrace();
         }
         return ss;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 }

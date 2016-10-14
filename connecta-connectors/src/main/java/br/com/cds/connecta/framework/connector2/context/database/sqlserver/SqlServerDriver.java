@@ -1,4 +1,4 @@
-package br.com.cds.connecta.framework.connector2.context.database.postgresql;
+package br.com.cds.connecta.framework.connector2.context.database.sqlserver;
 
 import br.com.cds.connecta.framework.connector2.context.database.ConnectorDriver;
 
@@ -6,13 +6,13 @@ import br.com.cds.connecta.framework.connector2.context.database.ConnectorDriver
  *
  * @author diego
  */
-public class PostgresqlDriver implements ConnectorDriver {
+public class SqlServerDriver implements ConnectorDriver {
 
     private String host;
     private String port;
     private String database;
 
-    public PostgresqlDriver(String host, String port, String database) {
+    public SqlServerDriver(String host, String port, String database) {
         this.host = host;
         this.port = port;
         this.database = database;
@@ -20,6 +20,6 @@ public class PostgresqlDriver implements ConnectorDriver {
 
     @Override
     public String jdbcUrl() {
-        return "jdbc:postgresql://" + host + ":" + port + "/" + database;
+        return "jdbc:sqlserver://" + host + ":" + port + ";DatabaseName=" + database;
     }
 }
