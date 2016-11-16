@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>br.com.cds.connecta.framework</groupId>
 		<artifactId>connecta-parent</artifactId>
-		<version>0.6.0-RELEASE</version>
+		<version>0.7.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>connecta-core</artifactId>
@@ -49,6 +49,14 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
 		</dependency>
 
 		<!-- Transactions -->
@@ -118,6 +126,12 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+		
+		<!-- Web Socket-->
+		<dependency>
+			<groupId>javax.websocket</groupId>
+			<artifactId>javax.websocket-api</artifactId>
 		</dependency>
 
 		<!-- Commons -->
