@@ -98,6 +98,7 @@ public class AuthFilter extends GenericFilterBean {
             for (String ex : exceptions) {
                 if (uri.equals(ex)) {
                 	isPublic = true;
+                	break;
                 }
             }
         }
