@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>br.com.cds.connecta.framework</groupId>
 		<artifactId>connecta-parent</artifactId>
-		<version>0.6.0-RELEASE</version>
+		<version>0.7.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>connecta-connectors</artifactId>
@@ -21,8 +21,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.2</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
