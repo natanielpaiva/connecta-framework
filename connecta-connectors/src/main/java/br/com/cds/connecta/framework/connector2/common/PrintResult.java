@@ -1,6 +1,5 @@
 package br.com.cds.connecta.framework.connector2.common;
 
-import dnl.utils.text.table.TextTable;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -52,9 +51,6 @@ public class PrintResult {
 
         }
 
-        TextTable dd = new TextTable(columnsName, data);
-        dd.setAddRowNumbering(true);
-        dd.printTable();
     }
 
     public static void printColumns(List<ConnectorColumn> connectorColumns) {
@@ -71,8 +67,6 @@ public class PrintResult {
             data[i][3] = cc.getType();
         }
 
-        TextTable dd = new TextTable(columnNames, data);
-        dd.printTable();
     }
 
     public static void printArrayString(String[] list) {
@@ -84,8 +78,6 @@ public class PrintResult {
             data[i][0] = list[i];
         }
 
-        TextTable dd = new TextTable(columnNames, data);
-        dd.printTable();
     }
 
 }
