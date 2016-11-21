@@ -38,10 +38,6 @@
 			<id>d-maven</id>
 			<url>http://d-maven.googlecode.com/svn/trunk/repo</url>
 		</repository>
-                <repository>
-			<id>jTextUtil</id>
-			<url>http://maven.jpushoa.com/nexus/content/repositories/thirdparty/</url>
-		</repository>
 	</repositories>
 
 	<dependencies>
@@ -115,11 +111,6 @@
 			<artifactId>solr-solrj</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>dnl.utils</groupId>
-			<artifactId>j-text-utils</artifactId>
-			<version>0.3.3</version>
-		</dependency>
 
 		<dependency>
 			<groupId>mysql</groupId>
@@ -163,5 +154,11 @@
 			<version>20020423</version>
 			<type>jar</type>
 		</dependency>
+	 <dependency>
+	  <groupId>commons-lang</groupId>
+	  <artifactId>commons-lang</artifactId>
+	  <version>2.6</version>
+	  <type>jar</type>
+	 </dependency>
 	</dependencies>
 </project>
