@@ -3,11 +3,20 @@ package br.com.cds.connecta.framework.connector2.context.http;
 import br.com.cds.connecta.framework.connector2.common.Base;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 import org.apache.metamodel.data.DataSet;
 import org.apache.metamodel.schema.Column;
 import org.apache.metamodel.schema.Table;
@@ -47,7 +56,6 @@ public class HttpDataContextFactory extends Base implements ContextFactory {
             httpResponse.setStatusCode(response.getStatusCode().name());
 
         } catch (HttpClientErrorException e) {
-            System.out.println("--- " + e.getMessage());
             httpResponse.setBody(e.getMessage());
             
             Set<Map.Entry<String, List<String>>> entrySet = e.getResponseHeaders().entrySet();
@@ -108,6 +116,44 @@ public class HttpDataContextFactory extends Base implements ContextFactory {
     @Override
     public String[] getTables() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    static {
+        disableSslVerification();
+    }
+
+    private static void disableSslVerification() {
+        try{
+            // Create a trust manager that does not validate certificate chains
+            TrustManager[] trustAllCerts = new TrustManager[] {new X509TrustManager() {
+                public X509Certificate[] getAcceptedIssuers() {
+                    return null;
+                }
+                public void checkClientTrusted(X509Certificate[] certs, String authType) {
+                }
+                public void checkServerTrusted(X509Certificate[] certs, String authType) {
+                }
+            }
+            };
+
+            // Install the all-trusting trust manager
+            SSLContext sc = SSLContext.getInstance("SSL");
+            sc.init(null, trustAllCerts, new java.security.SecureRandom());
+            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+
+            // Create all-trusting host name verifier
+            HostnameVerifier allHostsValid = new HostnameVerifier() {
+                public boolean verify(String hostname, SSLSession session) {
+                    return true;
+                }
+            };
+
+            // Install the all-trusting host verifier
+            HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
+        } catch (NoSuchAlgorithmException | KeyManagementException e) {
+            e.printStackTrace();
+        }
     }
 
 }
