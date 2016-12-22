@@ -9,4 +9,6 @@ The Framework for Connecta Java applications.
 
 ...
 
-`mvn clean install`
+```
+$ mvn clean install
+```
