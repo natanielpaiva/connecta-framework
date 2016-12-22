@@ -96,7 +96,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
      */
     public DatabaseDataContextFactory(String sql,
             ConnectorDriver connectorDriver,
-            String user, String password, boolean... updatingCache) {
+            String user, String password, boolean... updatingCache) throws SQLException {
         this(sql, null, user, password, connectorDriver);
         sqlCreateDataContext(updatingCache);
     }
@@ -300,7 +300,7 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
      * consulta
      *
      */
-    private void sqlCreateDataContext(boolean... updatingCache) {
+    private void sqlCreateDataContext(boolean... updatingCache) throws SQLException {
         List<Map<String, ?>> rowset = new ArrayList<>();
         byte[] resultsetBytes = null;
         String hash = createHashOfSQL();
@@ -372,8 +372,6 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
 
                 montaDataContext(rowset, columns);
             }
-        } catch (SQLException ex) {
-            logger.error(ex.getMessage(), ex);
         } catch (IOException e) {
             logger.error(e.getMessage(), e);
         } finally {
