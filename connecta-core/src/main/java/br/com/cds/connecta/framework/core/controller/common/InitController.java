@@ -132,7 +132,8 @@ public class InitController {
         SQLException.class
     })
     public ResponseEntity handleException(SQLException e) {
-        MessageModel message = getTranslatedMessage(MessageEnum.FALID_CONNECTION.name(), MessageTypeEnum.ERROR);
+    	String sqlMsg = e.getCause() != null ? e.getCause().getMessage() : e.getMessage();
+        MessageModel message = getTranslatedMessage(MessageEnum.FALID_CONNECTION.name(), MessageTypeEnum.ERROR, sqlMsg);
         logger.error(e.getMessage(), e);
         return new ResponseEntity(message, HttpStatus.BAD_REQUEST);
     }

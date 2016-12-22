@@ -10,6 +10,7 @@ import br.com.cds.connecta.framework.connector2.query.QueryFilterOperator;
 import br.com.cds.connecta.framework.connector2.query.QueryFilterValue;
 import br.com.cds.connecta.framework.connector2.query.QueryFilterValueBetween;
 import java.math.BigDecimal;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -94,7 +95,7 @@ public class DatabaseFilterTest {
     }
 
     @Test
-    public void listPossibleValuesForFilterWithoutPreviousFiltersSQLMySQL() {
+    public void listPossibleValuesForFilterWithoutPreviousFiltersSQLMySQL() throws SQLException {
         String columnName = "tipo";
 
         ContextFactory contextFactory = makeMySQLSQLContextFactory();
@@ -119,7 +120,7 @@ public class DatabaseFilterTest {
     }
 
     @Test
-    public void listPossibleValuesForFilterWithPreviousFiltersSQLMySQL() {
+    public void listPossibleValuesForFilterWithPreviousFiltersSQLMySQL() throws SQLException {
         String columnName = "tipo";
         String value = "Reembolso";
         String columnPossibleValuesName = "projeto";
@@ -197,7 +198,7 @@ public class DatabaseFilterTest {
     }
 
     @Test
-    public void listPossibleValuesForFilterWithoutPreviousFiltersSQLOracle() {
+    public void listPossibleValuesForFilterWithoutPreviousFiltersSQLOracle() throws SQLException {
         String columnName = "TP";
 
         ContextFactory contextFactory = makeOracleSQLContextFactory();
@@ -222,7 +223,7 @@ public class DatabaseFilterTest {
     }
 
     @Test
-    public void listPossibleValuesForFilterWithPreviousFiltersSQLOracle() {
+    public void listPossibleValuesForFilterWithPreviousFiltersSQLOracle() throws SQLException {
         String columnName = "TP";
         String value = "DATABASE";
         String columnPossibleValuesName = "QT";
@@ -294,7 +295,7 @@ public class DatabaseFilterTest {
     }
 
     @Test
-    public void filterOneColumnDatabaseSQLMySQL() {
+    public void filterOneColumnDatabaseSQLMySQL() throws SQLException {
         ContextFactory contextFactory = makeMySQLSQLContextFactory();
 
         testOneColumnFilterEqual(contextFactory, "tipo", "Reembolso");
@@ -311,7 +312,7 @@ public class DatabaseFilterTest {
     }
 
     @Test
-    public void filterTwoColumnsDatabaseSQLMySQL() {
+    public void filterTwoColumnsDatabaseSQLMySQL() throws SQLException {
         String column1 = "tipo";
         String value1 = "Reembolso";
         String column2 = "projeto";
@@ -375,7 +376,7 @@ public class DatabaseFilterTest {
     }
 
     @Test
-    public void filterOneColumnDatabaseSQLOracle() {
+    public void filterOneColumnDatabaseSQLOracle() throws SQLException {
         ContextFactory contextFactory = makeOracleSQLContextFactory();
 
         testOneColumnFilterEqual(contextFactory, "TP", "DATABASE");
@@ -392,7 +393,7 @@ public class DatabaseFilterTest {
     }
 
     @Test
-    public void filterTwoColumnsDatabaseSQLOracle() {
+    public void filterTwoColumnsDatabaseSQLOracle() throws SQLException {
         String column1 = "TP";
         String value1 = "DATABASE";
         String column2 = "QT";
@@ -418,7 +419,7 @@ public class DatabaseFilterTest {
         return new DatabaseDataContextFactory(mysqlDriver, table, MYSQL_USER, MYSQL_PASS);
     }
 
-    private DatabaseDataContextFactory makeMySQLSQLContextFactory() {
+    private DatabaseDataContextFactory makeMySQLSQLContextFactory() throws SQLException {
         return new DatabaseDataContextFactory(
                 TestUtil.getTestResourceAsString("test/sql/mysql-filter.sql"),
                 mysqlDriver, MYSQL_USER, MYSQL_PASS);
@@ -428,7 +429,7 @@ public class DatabaseFilterTest {
         return new DatabaseDataContextFactory(oracleDriver, table, ORACLE_USER, ORACLE_PASS);
     }
 
-    private DatabaseDataContextFactory makeOracleSQLContextFactory() {
+    private DatabaseDataContextFactory makeOracleSQLContextFactory() throws SQLException {
         return new DatabaseDataContextFactory(
                 TestUtil.getTestResourceAsString("test/sql/oracle-filter.sql"),
                 oracleDriver, ORACLE_USER, ORACLE_PASS);
