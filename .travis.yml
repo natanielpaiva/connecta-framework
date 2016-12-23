@@ -6,4 +6,4 @@ group: stable
 dist: precise
 os: linux
 before_install:
-- echo 'MAVEN_OPTS="$MAVEN_OPTS -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn"' >> ~/.mavenrc
+- export JAVA_OPTS="$JAVA_OPTS -Dorg.slf4j.simpleLogger.defaultLogLevel=warn"
