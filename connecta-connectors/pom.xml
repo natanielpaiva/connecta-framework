@@ -58,6 +58,13 @@
 			<systemPath>${basedir}/lib/ojdbc6-11.2.0.3.jar</systemPath>
 		</dependency>
 		<dependency>
+			<groupId>com.microsoft</groupId>
+			<artifactId>sqljdbc42</artifactId>
+			<version>42</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/sqljdbc42.jar</systemPath>
+		</dependency>
+		<dependency>
 			<groupId>wsdl4j</groupId>
 			<artifactId>wsdl4j</artifactId>
 			<version>1.6.3</version>
