@@ -5,3 +5,5 @@ jdk:
 group: stable
 dist: precise
 os: linux
+before_install:
+- echo 'MAVEN_OPTS="$MAVEN_OPTS -q"' >> ~/.mavenrc
