@@ -11,8 +11,6 @@
 	<name>Connecta Core</name>
 	<packaging>jar</packaging>
 
-
-
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
