@@ -38,7 +38,6 @@
 			<id>d-maven</id>
 			<url>http://d-maven.googlecode.com/svn/trunk/repo</url>
 		</repository>
-		
 	</repositories>
 
 	<dependencies>
@@ -120,8 +119,6 @@
 			<groupId>org.apache.solr</groupId>
 			<artifactId>solr-solrj</artifactId>
 		</dependency>
-
-		
 
 		<dependency>
 			<groupId>mysql</groupId>
