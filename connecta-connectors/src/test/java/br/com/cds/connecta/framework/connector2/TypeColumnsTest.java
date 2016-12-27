@@ -14,6 +14,7 @@ import br.com.cds.connecta.framework.connector2.context.file.json.JsonDataContex
 import br.com.cds.connecta.framework.connector2.context.file.xml.XMLDataContextFactory;
 import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
 import java.io.File;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 import org.apache.log4j.Logger;
@@ -125,7 +126,7 @@ public class TypeColumnsTest {
         return new DatabaseDataContextFactory(driver, table, MYSQL_USER, MYSQL_PASS);
     }
 
-    private ContextFactory contextDataBaseSqlUsuario() {
+    private ContextFactory contextDataBaseSqlUsuario() throws SQLException {
         String sql = "select * from tb_usuario";
         ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
         return new DatabaseDataContextFactory(sql, driver, MYSQL_USER, MYSQL_PASS);

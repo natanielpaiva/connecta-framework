@@ -1,5 +1,6 @@
 package br.com.cds.connecta.framework.connector2.common;
 
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -51,6 +52,7 @@ public class PrintResult {
 
         }
 
+
     }
 
     public static void printColumns(List<ConnectorColumn> connectorColumns) {
@@ -77,6 +79,7 @@ public class PrintResult {
         for (int i = 0; i < list.length; i++) {
             data[i][0] = list[i];
         }
+
 
     }
 

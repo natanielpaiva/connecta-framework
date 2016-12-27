@@ -7,6 +7,8 @@ import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
 import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataContextFactory;
 import br.com.cds.connecta.framework.connector2.context.database.ConnectorDriver;
 import br.com.cds.connecta.framework.connector2.context.database.sqlserver.SqlServerDriver;
+
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 import org.apache.log4j.Logger;
@@ -38,7 +40,7 @@ public class DatabaseSqlServerTest {
      * Testa execução de consulta SQL
      */
     @Test
-    public void manualQuerySqlServer() {
+    public void manualQuerySqlServer() throws SQLException {
         String sql = getTestResourceAsString("test/sql/sqlserver.sql");
         ConnectorDriver driver = new SqlServerDriver(SQLSERVER_HOST, SQLSERVER_PORT, SQLSERVER_DB);
 
