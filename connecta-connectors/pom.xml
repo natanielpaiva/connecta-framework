@@ -8,7 +8,6 @@
 		<artifactId>connecta-parent</artifactId>
 		<version>0.9.0-SNAPSHOT</version>
 	</parent>
-
 	<artifactId>connecta-connectors</artifactId>
 	<name>Connecta Connectors</name>
 	<description>API to read data from remote services</description>
