@@ -1,29 +1,29 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <parent>
         <groupId>br.com.cds.connecta.framework</groupId>
         <artifactId>connecta-parent</artifactId>
-        <version>0.7.0-SNAPSHOT</version>
+        <version>0.8.0-RELEASE</version>
     </parent>
 
     <artifactId>connecta-amcharts</artifactId>
     <name>Connecta AmCharts</name>
     <description>Java mirror model for AmCharts configuration</description>
     <packaging>jar</packaging>
-    
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
     <repositories>
         <repository>
             <id>julman99-github</id>
             <url>https://raw.github.com/julman99/mvn-repo/master</url>
         </repository>
     </repositories>
-    
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -45,13 +45,13 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
         </dependency>
-        
+
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
         </dependency>
-        
-        
+
+
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>

@@ -9,6 +9,8 @@ import br.com.cds.connecta.framework.connector2.context.database.DatabaseDataCon
 import br.com.cds.connecta.framework.connector2.context.database.ConnectorDriver;
 import br.com.cds.connecta.framework.connector2.context.database.mysql.MySQLDriver;
 import br.com.cds.connecta.framework.connector2.context.database.oracle.OracleDriver;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -48,7 +50,7 @@ public class DatabaseTest {
      * Testa execução de consulta SQL
      */
     @Test
-    public void manualQueryMySQL() {
+    public void manualQueryMySQL() throws SQLException {
         String sql = getTestResourceAsString("test/sql/mysql.sql");
 
         ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
@@ -79,7 +81,7 @@ public class DatabaseTest {
     }
 
     @Test
-    public void manualQueryMySQLWithListColumns() {
+    public void manualQueryMySQLWithListColumns() throws SQLException {
         String sql = getTestResourceAsString("test/sql/mysql.sql");
 
         ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
@@ -120,7 +122,7 @@ public class DatabaseTest {
      * Verifica quando se passa uma consulta sql retona a tabela Default
      */
     @Test
-    public void manualQueryMySQLReturnTableDefault() {
+    public void manualQueryMySQLReturnTableDefault() throws SQLException {
         String sql = getTestResourceAsString("test/sql/mysql.sql");
 
         ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
@@ -133,7 +135,7 @@ public class DatabaseTest {
     }
 
     @Test
-    public void manualQueryMySQLReturnSchemaDefault() {
+    public void manualQueryMySQLReturnSchemaDefault() throws SQLException {
         String sql = getTestResourceAsString("test/sql/mysql.sql");
 
         ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
@@ -150,7 +152,7 @@ public class DatabaseTest {
      * Verifica a lista de columns de uma consulta mysql
      */
     @Test
-    public void manualQueryMySQLReturnColumns() {
+    public void manualQueryMySQLReturnColumns() throws SQLException {
         String sql = getTestResourceAsString("test/sql/mysql.sql");
 
         ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
@@ -272,7 +274,7 @@ public class DatabaseTest {
      * Testa execução de consulta SQL
      */
     @Test
-    public void manualQueryOracle() {
+    public void manualQueryOracle() throws SQLException {
         String sql = getTestResourceAsString("test/sql/oracle.sql");
 
         ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
@@ -293,7 +295,7 @@ public class DatabaseTest {
     }
 
     @Test
-    public void manualQueryOracleWithListColumns() {
+    public void manualQueryOracleWithListColumns() throws SQLException {
         String sql = getTestResourceAsString("test/sql/oracle.sql");
 
         ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
@@ -335,7 +337,7 @@ public class DatabaseTest {
      * Verifica quando se passa uma consulta sql retona a tabela Default
      */
     @Test
-    public void manualQueryOracleReturnTableDefault() {
+    public void manualQueryOracleReturnTableDefault() throws SQLException {
         String sql = getTestResourceAsString("test/sql/oracle.sql");
 
         ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
@@ -349,7 +351,7 @@ public class DatabaseTest {
 //
 
     @Test
-    public void manualQueryOracleReturnSchemaDefault() {
+    public void manualQueryOracleReturnSchemaDefault() throws SQLException {
         String sql = getTestResourceAsString("test/sql/oracle.sql");
         ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
         ContextFactory contextFactory = new DatabaseDataContextFactory(sql, driver, ORACLE_USER, ORACLE_PASS);
@@ -365,7 +367,7 @@ public class DatabaseTest {
      * Verifica a lista de columns de uma consulta mysql
      */
     @Test
-    public void manualQueryOracleReturnColumns() {
+    public void manualQueryOracleReturnColumns() throws SQLException {
         String sql = getTestResourceAsString("test/sql/oracle.sql");
         ConnectorDriver driver = new OracleDriver(ORACLE_HOST, ORACLE_PORT, ORACLE_SID);
         ContextFactory contextFactory = new DatabaseDataContextFactory(sql, driver, ORACLE_USER, ORACLE_PASS);
