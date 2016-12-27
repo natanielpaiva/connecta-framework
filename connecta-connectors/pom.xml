@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>br.com.cds.connecta.framework</groupId>
 		<artifactId>connecta-parent</artifactId>
-		<version>0.7.0-SNAPSHOT</version>
+		<version>0.8.0-RELEASE</version>
 	</parent>
 
 	<artifactId>connecta-connectors</artifactId>
@@ -53,6 +53,15 @@
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0.3</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/ojdbc6-11.2.0.3.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.microsoft</groupId>
+			<artifactId>sqljdbc42</artifactId>
+			<version>42</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/sqljdbc42.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>wsdl4j</groupId>
@@ -111,7 +120,6 @@
 			<artifactId>solr-solrj</artifactId>
 		</dependency>
 
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -131,7 +139,7 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<dependency>
             <groupId>commons-dbutils</groupId>
             <artifactId>commons-dbutils</artifactId>

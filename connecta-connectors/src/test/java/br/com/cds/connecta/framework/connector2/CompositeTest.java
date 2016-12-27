@@ -14,6 +14,7 @@ import br.com.cds.connecta.framework.connector2.context.file.json.JsonDataContex
 import br.com.cds.connecta.framework.connector2.context.file.xml.XMLDataContextFactory;
 import br.com.cds.connecta.framework.connector2.query.QueryBuilder;
 import java.io.File;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -55,7 +56,7 @@ public class CompositeTest {
             + "7,Carlos H,2,carlos.diaz@cds.com.br";
 
     @Test
-    public void allResultCsvWithDataBase() {
+    public void allResultCsvWithDataBase() throws SQLException {
         long start = System.currentTimeMillis();
 
         ContextFactory contextStringCsv = contextStringCsv();
@@ -80,7 +81,7 @@ public class CompositeTest {
     }
 
     @Test
-    public void columnsCsvWithDataBase() {
+    public void columnsCsvWithDataBase() throws SQLException {
         long start = System.currentTimeMillis();
 
         ContextFactory contextStringCsv = contextStringCsv();
@@ -147,7 +148,7 @@ public class CompositeTest {
     }
 
     @Test
-    public void filterColumnsCsvWithDataBase() {
+    public void filterColumnsCsvWithDataBase() throws SQLException {
         long start = System.currentTimeMillis();
 
         ContextFactory contextStringCsv = contextStringCsv();
@@ -273,7 +274,7 @@ public class CompositeTest {
         return new DatabaseDataContextFactory(driver, table, MYSQL_USER, MYSQL_PASS);
     }
 
-    private ContextFactory contextDataBaseSqlUsuario() {
+    private ContextFactory contextDataBaseSqlUsuario() throws SQLException {
         String sql = "select * from tb_usuario";
         ConnectorDriver driver = new MySQLDriver(MYSQL_HOST, MYSQL_PORT, MYSQL_DB);
         return new DatabaseDataContextFactory(sql, driver, MYSQL_USER, MYSQL_PASS, true);

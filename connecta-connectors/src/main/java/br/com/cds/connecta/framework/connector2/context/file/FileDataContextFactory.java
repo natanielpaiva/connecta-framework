@@ -46,7 +46,7 @@ public class FileDataContextFactory extends Base implements ContextFactory {
 
         Query from = queryContext.build().from(table);
 
-        if (listColumns != null) {
+        if (listColumns != null && from.getSelectClause().getItems().isEmpty()) {
             for (ConnectorColumn column : listColumns) {
                 Column columnByName = table.getColumnByName(column.getName());
                 queryContext.build().select(columnByName);
@@ -143,7 +143,12 @@ public class FileDataContextFactory extends Base implements ContextFactory {
                         obj[i] = Integer.valueOf(ex.getValues()[i].toString());
                     }
                 } else if (columnsTypes[i].equals(ColumnType.BOOLEAN)) {
-                    obj[i] = ex.getValues()[i].toString();
+                    if(ex.getValues()[i] == null){
+                        obj[i] = String.valueOf("");
+                    }else{
+                        obj[i] = ex.getValues()[i].toString();
+                    }
+                    
                 } else if (columnsTypes[i].equals(ColumnType.DATE)) {
                     obj[i] = String.valueOf(ex.getValues()[i].toString());
                 } else if (columnsTypes[i].equals(ColumnType.DOUBLE)) {
