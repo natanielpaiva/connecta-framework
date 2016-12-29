@@ -5,14 +5,9 @@ group: stable
 dist: precise
 os: linux
 
-env:
-  global:
-   - JAVA_OPTS="$JAVA_OPTS -Dorg.slf4j.simpleLogger.defaultLogLevel=warn"
-   - MAVEN_CONTAINER_OVERRIDE="-DbeamSurefireArgline='-Xmx512m' -Dorg.slf4j.simpleLogger.defaultLogLevel=warn"
-
-before_install:
- - export JAVA_OPTS="$JAVA_OPTS -Dorg.slf4j.simpleLogger.defaultLogLevel=warn"
-
 cache:
   directories:
     - $HOME/.m2/repository
+
+after_success:
+  - mvn clean test jacoco:report coveralls:report
