@@ -36,7 +36,7 @@
 		</repository>
 		<repository>
 			<id>oracleMavenRepo</id>
-			<url>http://mvnrepository.com</url>
+			<url>http://central.maven.org/maven2/</url>
 		</repository>
 	</repositories>
 
@@ -50,9 +50,9 @@
 			<artifactId>hamcrest-all</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>cn.guoyukun.jdbc</groupId>
-			<artifactId>oracle-ojdbc6</artifactId>
-			<version>11.2.0.3.0</version>
+		    <groupId>cn.easyproject</groupId>
+		    <artifactId>ojdbc7</artifactId>
+		    <version>12.1.0.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
