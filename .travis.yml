@@ -8,6 +8,7 @@ os: linux
 cache:
   directories:
     - $HOME/.m2/repository
-
+install:
+  - mvn install:install-file -Dfile=connecta-connectors/lib/ojdbc7.jar -DgroupId=com.oracle -DartifactId=ojdbc7 -Dversion=12.1.0.2 -Dpackaging=jar
 after_success:
   - mvn clean test jacoco:report coveralls:report

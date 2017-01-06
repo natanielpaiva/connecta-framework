@@ -7,6 +7,7 @@
 		<artifactId>connecta-parent</artifactId>
 		<version>0.9.0-SNAPSHOT</version>
 	</parent>
+
 	<artifactId>connecta-core</artifactId>
 	<name>Connecta Core</name>
 	<packaging>jar</packaging>
@@ -127,12 +128,6 @@
 			<artifactId>javax.servlet-api</artifactId>
 		</dependency>
 		
-		<!-- Web Socket-->
-		<dependency>
-			<groupId>javax.websocket</groupId>
-			<artifactId>javax.websocket-api</artifactId>
-		</dependency>
-
 		<!-- Web Socket-->
 		<dependency>
 			<groupId>javax.websocket</groupId>
