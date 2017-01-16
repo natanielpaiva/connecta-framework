@@ -96,7 +96,7 @@ public class AuthFilter extends GenericFilterBean {
         if (Util.isNotNull(uri)) {
             // adicionar uris de exceptions
             for (String ex : exceptions) {
-                if (uri.equals(ex)) {
+                if (uri.equals(ex) || uri.contains(ex)) {
                 	isPublic = true;
                 	break;
                 }
