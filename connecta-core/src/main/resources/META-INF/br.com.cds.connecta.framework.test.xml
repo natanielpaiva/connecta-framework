@@ -20,7 +20,7 @@
     <!--PERSISTENCE-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.h2.Driver" />
-        <property name="url" value="jdbc:h2:mem:connecta;INIT=create schema if not exists CONNECTA;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"/>
+        <property name="url" value="jdbc:h2:mem:connecta;INIT=create schema if not exists CONNECTA\;SET SCHEMA CONNECTA;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"/>
         <property name="username" value="CONNECTA"/>
         <property name="password" value="CONNECTA"/>
     </bean>
