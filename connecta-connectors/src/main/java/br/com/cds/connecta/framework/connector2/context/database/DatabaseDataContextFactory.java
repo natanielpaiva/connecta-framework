@@ -408,7 +408,8 @@ public class DatabaseDataContextFactory extends Base implements ContextFactory {
     private String createHashOfSQL() {
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-            messageDigest.update(this.sql.getBytes());
+            String key = this.jdbcUrl + ":" + this.sql;
+            messageDigest.update(key.getBytes());
 
             return new String(messageDigest.digest());
         } catch (NoSuchAlgorithmException e) {
