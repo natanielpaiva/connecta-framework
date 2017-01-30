@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>br.com.cds.connecta.framework</groupId>
+  <artifactId>connecta-core</artifactId>
+  <version>0.9.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20170130.115025</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20170130115025</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.9.0-20170130.115025-1</value>
+        <updated>20170130115025</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.9.0-20170130.115025-1</value>
+        <updated>20170130115025</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
