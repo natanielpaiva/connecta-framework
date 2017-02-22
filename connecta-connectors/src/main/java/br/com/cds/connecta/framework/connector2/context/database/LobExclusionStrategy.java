@@ -21,7 +21,9 @@ public class LobExclusionStrategy implements ExclusionStrategy {
     	ORACLE_BLOB("oracle.sql.BLOB"),
     	ORACLE_CLOB("oracle.sql.CLOB"),
     	MYSQL_BLOB("com.mysql.jdbc.Blob"),
-    	MYSQL_CLOB("com.mysql.jdbc.Clob")
+    	MYSQL_CLOB("com.mysql.jdbc.Clob"),
+    	SQLSERVER_BLOB("com.microsoft.sqlserver.jdbc.SQLServerBlob"),
+    	SQLSERVER_CLOB("com.microsoft.sqlserver.jdbc.SQLServerClob")
     	;
     	
     	private final String clazz;

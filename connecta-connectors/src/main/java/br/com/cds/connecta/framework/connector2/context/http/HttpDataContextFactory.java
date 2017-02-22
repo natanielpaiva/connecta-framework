@@ -3,10 +3,12 @@ package br.com.cds.connecta.framework.connector2.context.http;
 import br.com.cds.connecta.framework.connector2.common.Base;
 import br.com.cds.connecta.framework.connector2.common.ConnectorColumn;
 import br.com.cds.connecta.framework.connector2.common.ContextFactory;
+import java.nio.charset.Charset;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -76,15 +78,16 @@ public class HttpDataContextFactory extends Base implements ContextFactory {
 
     private HttpEntity<String> factoryBodyHttp(List<Header> headers, String body) {
 
-        HttpHeaders HttpHeader = new HttpHeaders();
+        HttpHeaders httpHeader = new HttpHeaders();
         if (!headers.isEmpty()) {
             for (Header header : headers) {
                 if(header.getKey() != null && header.getValue() != null)
-                HttpHeader.set(header.getKey(), header.getValue());
+                httpHeader.set(header.getKey(), header.getValue());
             }
         }
+       // httpHeader.setAcceptCharset(Arrays.asList(Charset.forName("UTF-8")));
 
-        return new HttpEntity<>(body, HttpHeader);
+        return new HttpEntity<>(body, httpHeader);
 
     }
 
