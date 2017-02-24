@@ -1,6 +1,7 @@
 # Created by http://www.gitignore.io
 
 src/main/resources/java/
+nb-configuration.xml
 
 ### Eclipse ###
 *.pydevproject
