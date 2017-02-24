@@ -4,8 +4,8 @@
   <artifactId>connecta-connectors</artifactId>
   <versioning>
     <versions>
-      <version>0.9.0-SNAPSHOT</version>
+      <version>0.10.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20170210153204</lastUpdated>
+    <lastUpdated>20170224125604</lastUpdated>
   </versioning>
 </metadata>
