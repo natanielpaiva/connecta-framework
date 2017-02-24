@@ -4,8 +4,8 @@
   <artifactId>connecta-core</artifactId>
   <versioning>
     <versions>
-      <version>0.9.0-SNAPSHOT</version>
+      <version>0.10.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20170210153134</lastUpdated>
+    <lastUpdated>20170224125541</lastUpdated>
   </versioning>
 </metadata>
