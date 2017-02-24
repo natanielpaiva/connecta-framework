@@ -4,8 +4,8 @@
   <artifactId>connecta-parent</artifactId>
   <versioning>
     <versions>
-      <version>0.9.0-SNAPSHOT</version>
+      <version>0.10.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20170210153122</lastUpdated>
+    <lastUpdated>20170224125528</lastUpdated>
   </versioning>
 </metadata>
