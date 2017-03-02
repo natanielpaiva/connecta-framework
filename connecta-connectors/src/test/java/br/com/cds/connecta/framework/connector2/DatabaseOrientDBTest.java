@@ -12,11 +12,13 @@ import java.util.List;
 import java.util.Map;
 import org.apache.log4j.Logger;
 import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  *
  * @author diego
  */
+@Ignore
 public class DatabaseOrientDBTest {
 
     private static final String MYSQL_HOST = "167.114.116.94";
