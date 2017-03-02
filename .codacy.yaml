@@ -13,4 +13,4 @@ engines:
 #   exclude_paths:
 #     - config/engines.yml
 exclude_paths:
-  - src/test/
+  - src/test/**/*
