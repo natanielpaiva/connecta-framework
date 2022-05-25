@@ -11,7 +11,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<spring-framework.version>4.1.5.RELEASE</spring-framework.version>
+		<spring-framework.version>5.2.22.RELEASE</spring-framework.version>
 		<hibernate.version>4.3.10.Final</hibernate.version>
 		<svn.url>http://dsvn.cds.com.br/svn</svn.url>
 		<nexus.url>http://192.168.2.10:8081/nexus</nexus.url>
